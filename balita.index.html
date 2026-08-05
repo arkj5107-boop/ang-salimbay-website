@@ -7,173 +7,358 @@
 <title>Balita | Ang Salimbay</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f4f4f4;
+    background:#ffffff;
     color:#222;
 }
 
+
+/* HEADER */
+
 header{
-    background:#6B0015;
-    color:#fff;
+    background:#800000;
+    color:white;
     text-align:center;
-    padding:25px;
+    padding:35px 20px;
 }
 
 header h1{
-    font-size:45px;
-    letter-spacing:2px;
+    font-size:42px;
+    letter-spacing:3px;
 }
 
 header p{
-    margin-top:8px;
-    font-size:16px;
+    margin-top:10px;
+    font-size:17px;
 }
 
+
+/* NAVIGATION */
+
 nav{
-    background:#500010;
+    background:#5a0000;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
 }
 
 nav a{
-    color:#fff;
+    color:white;
     text-decoration:none;
-    padding:15px 18px;
+    padding:15px 22px;
     font-weight:bold;
 }
 
 nav a:hover{
-    background:white;
-    color:#6B0015;
+    background:#a00000;
 }
 
-.hero{
-    background:linear-gradient(rgba(107,0,21,.85),rgba(107,0,21,.85)),
-    url("Images/hero.jpg");
-    background-size:cover;
-    background-position:center;
-    color:white;
+
+/* INTRO */
+
+.intro{
+    padding:40px 10%;
     text-align:center;
-    padding:80px 20px;
 }
 
-.hero h2{
-    font-size:42px;
+.intro h2{
+    color:#800000;
+    font-size:32px;
 }
 
-.hero p{
+.intro p{
     margin-top:15px;
-    max-width:700px;
-    margin:auto;
+    line-height:1.7;
+}
+
+
+
+/* FUN FACT */
+
+.funfact{
+    background:#fff5f5;
+    margin:20px 10%;
+    padding:25px;
+    border-left:7px solid #800000;
+}
+
+.funfact h3{
+    color:#800000;
+    margin-bottom:15px;
+}
+
+.funfact ul{
+    margin-left:20px;
     line-height:1.8;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    padding:40px 0;
+
+
+/* NEWS */
+
+.news-section{
+    padding:40px 10%;
 }
 
-.section-title{
-    color:#6B0015;
-    margin-bottom:25px;
-    border-left:6px solid #6B0015;
-    padding-left:12px;
+.news-section h2{
+    text-align:center;
+    color:#800000;
+    font-size:32px;
+    margin-bottom:30px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-}
 
-.card{
+.news-card{
+
     background:white;
-    border-radius:10px;
+    border:2px solid #800000;
+    border-radius:12px;
+    margin-bottom:30px;
     overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
-.card img{
+
+.news-card img{
+
     width:100%;
-    height:220px;
+    height:250px;
     object-fit:cover;
+    background:#ddd;
+
 }
 
-.card-content{
-    padding:18px;
+
+.news-content{
+
+    padding:25px;
+
 }
 
-.card h3{
-    color:#6B0015;
+
+.news-content h3{
+
+    color:#800000;
+    font-size:25px;
     margin-bottom:10px;
+
 }
 
-.card p{
-    line-height:1.6;
+
+.news-content .date{
+
+    color:#777;
+    font-size:14px;
+    margin-bottom:15px;
+
 }
 
-button{
-    margin-top:18px;
-    padding:10px 18px;
-    background:#6B0015;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
+
+.news-content p{
+
+    line-height:1.7;
+    text-align:justify;
+
 }
 
-button:hover{
-    background:#8B001B;
-}
+
+
+/* FOOTER */
 
 footer{
-    background:#6B0015;
+
+    background:#5a0000;
     color:white;
     text-align:center;
-    padding:30px;
-    margin-top:50px;
+    padding:25px;
+    margin-top:40px;
+
 }
+
+
+footer p{
+    margin:5px;
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+header h1{
+    font-size:30px;
+}
+
+.intro,
+.news-section{
+    padding:30px 5%;
+}
+
+.funfact{
+    margin:20px 5%;
+}
+
+}
+
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
+
 <h1>ANG SALIMBAY</h1>
-<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+
+<p>Opisyal na Publikasyon ng Sucat Senior High School</p>
+
 </header>
 
+
+
 <nav>
+
 <a href="index.html">Home</a>
 <a href="balita.html">Balita</a>
 <a href="editoryal.html">Editoryal</a>
 <a href="lathalain.html">Lathalain</a>
-<a href="column.html">Column</a>
 <a href="isports.html">Isports</a>
-<a href="cartoon.html">Editorial Cartooning</a>
 <a href="about.html">Tungkol sa Amin</a>
+
 </nav>
 
-<section class="hero">
-<h2>Mga Balita</h2>
+
+
+
+<section class="intro">
+
+<h2>📰 Mga Nagbabagang Balita</h2>
+
 <p>
-Basahin ang pinakabago at mahahalagang balita mula sa Sucat Senior High School at sa komunidad.
+Ang pahina ng <b>Balita</b> ng Ang Salimbay ay nagsisilbing daluyan
+ng mga napapanahon at makabuluhang impormasyon mula sa paaralan at
+komunidad. Dito matatagpuan ang mga ulat tungkol sa mahahalagang
+pangyayari, tagumpay, anunsyo, at isyung may epekto sa mga Sucsenian.
 </p>
+
 </section>
 
-<div class="container">
 
-<h2 class="section-title">Lahat ng Balita</h2>
 
-<div class="grid">
+
+<section class="funfact">
+
+<h3>Alam Mo Ba? | News Writing Facts</h3>
+
+<ul>
+
+<li>Ang balita ay dapat nakabatay sa katotohanan at beripikadong impormasyon.</li>
+
+<li>Ginagamit ng mamamahayag ang <b>5Ws and 1H</b> upang maging kumpleto ang ulat.</li>
+
+<li>Ang pinakamahalagang detalye ay inilalagay sa unang bahagi ng balita.</li>
+
+<li>Ang isang mahusay na balita ay malinaw, patas, at walang kinikilingan.</li>
+
+</ul>
+
+</section>
+
+
+
+
+<section class="news-section">
+
+
+<h2>Pinakabagong Ulat</h2>
+
+
+
+<div class="news-card">
+
+<img src="news1.jpg">
+
+
+<div class="news-content">
+
+<h3>ILAGAY DITO ANG PAMAGAT NG BALITA</h3>
+
+<p class="date">
+Agosto 5, 2026 | Ang Salimbay News
+</p>
+
+
+<p>
+
+Dito ilalagay ang buong nilalaman ng balita.
+Ilagay ang detalye ng pangyayari, mga pahayag ng sangkot,
+at mahahalagang impormasyon para sa mga mambabasa.
+
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="news-card">
+
+<img src="news2.jpg">
+
+
+<div class="news-content">
+
+<h3>IKALAWANG PAMAGAT NG BALITA</h3>
+
+<p class="date">
+Agosto 5, 2026 | Ang Salimbay News
+</p>
+
+
+<p>
+
+Dito ilalagay ang isa pang balita o ulat mula sa paaralan
+at komunidad.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+<footer>
+
+<p><b>ANG SALIMBAY</b></p>
+
+<p>Serving truth, amplifying voices.</p>
+
+<p>© 2026 Sucat Senior High School Publication</p>
+
+</footer>
+
+
+
+</body>
+</html>
