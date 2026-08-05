@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editoryal | Ang Salimbay</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#222;
+}
+
+header{
+    background:#6B0015;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    font-size:45px;
+}
+
+nav{
+    background:#500010;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:white;
+    color:#6B0015;
+}
+
+.hero{
+    background:linear-gradient(rgba(107,0,21,.85),rgba(107,0,21,.85)),
+    url("Images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    margin-top:15px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.section-title{
+    color:#6B0015;
+    margin-bottom:25px;
+    border-left:6px solid #6B0015;
+    padding-left:12px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card h3{
+    color:#6B0015;
+}
+
+.card p{
+    margin-top:10px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:18px;
+    padding:10px 18px;
+    background:#6B0015;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#8B001B;
+}
+
+footer{
+    background:#6B0015;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>ANG SALIMBAY</h1>
+<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="balita.html">Balita</a>
+<a href="editoryal.html">Editoryal</a>
+<a href="lathalain.html">Lathalain</a>
+<a href="column.html">Column</a>
+<a href="isports.html">Isports</a>
+<a href="cartoon.html">Editorial Cartooning</a>
+<a href="about.html">Tungkol sa Amin</a>
+</nav>
+
+<section class="hero">
+<h2>Mga Editoryal</h2>
+<p>
+Mga opisyal na editoryal ng Ang Salimbay na nagbibigay ng pananaw sa mahahalagang isyu sa paaralan at lipunan.
+</p>
+</section>
+
+<div class="container">
+
+<h2 class="section-title">Pinakabagong Editoryal</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="Images/editorial1.jpg">
+<div class="card-content">
+<h3>Kabataan: Tinig ng Pagbabago</h3>
+<p>Ang kabataan ay may mahalagang papel sa paghubog ng kinabukasan. Sa pamamagitan ng tamang edukasyon at aktibong pakikilahok, nagiging daan sila ng positibong pagbabago.</p>
+<a href="articles/editorial1.html"><button>Basahin</button></a>
+</div>
+</div>
+
+<div class="card">
+<img src="Images/editorial2.jpg">
+<div class="card-content">
+<h3>Disiplina sa Panahon ng Makabagong Teknolohiya</h3>
+<p>Sa paglaganap ng teknolohiya, mahalagang mapanatili ang responsableng paggamit nito upang maging kapaki-pakinabang sa pag-aaral at pang-araw-araw na buhay.</p>
+<a href="articles/editorial2.html"><button>Basahin</button></a>
+</div>
+</div>
+
+<div class="card">
+<img src="Images/editorial3.jpg">
+<div class="card-content">
+<h3>Kalikasan: Responsibilidad ng Lahat</h3>
+<p>Ang pangangalaga sa kapaligiran ay hindi lamang tungkulin ng pamahalaan kundi ng bawat mamamayan, lalo na ng kabataan.</p>
+<a href="articles/editorial3.html"><button>Basahin</button></a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<h2>ANG SALIMBAY</h2>
+<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+<p>© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.</p>
+</footer>
+
+</body>
+</html>
+``
