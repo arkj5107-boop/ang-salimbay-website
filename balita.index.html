@@ -1,56 +1,179 @@
 <!DOCTYPE html>
 <html lang="tl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balita | Ang Salimbay</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Balita | Ang Salimbay</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#222;
+}
+
+header{
+    background:#6B0015;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    font-size:45px;
+    letter-spacing:2px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:16px;
+}
+
+nav{
+    background:#500010;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:15px 18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:white;
+    color:#6B0015;
+}
+
+.hero{
+    background:linear-gradient(rgba(107,0,21,.85),rgba(107,0,21,.85)),
+    url("Images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    margin-top:15px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.section-title{
+    color:#6B0015;
+    margin-bottom:25px;
+    border-left:6px solid #6B0015;
+    padding-left:12px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card h3{
+    color:#6B0015;
+    margin-bottom:10px;
+}
+
+.card p{
+    line-height:1.6;
+}
+
+button{
+    margin-top:18px;
+    padding:10px 18px;
+    background:#6B0015;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#8B001B;
+}
+
+footer{
+    background:#6B0015;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+</style>
+
 </head>
+
 <body>
 
 <header>
-    <h1>ANG SALIMBAY</h1>
-    <p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+<h1>ANG SALIMBAY</h1>
+<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="balita.html">Balita</a>
-    <a href="editoryal.html">Editoryal</a>
-    <a href="lathalain.html">Lathalain</a>
-    <a href="column.html">Column</a>
-    <a href="isports.html">Isports</a>
-    <a href="cartoon.html">Editorial Cartooning</a>
-    <a href="about.html">Tungkol sa Amin</a>
+<a href="index.html">Home</a>
+<a href="balita.html">Balita</a>
+<a href="editoryal.html">Editoryal</a>
+<a href="lathalain.html">Lathalain</a>
+<a href="column.html">Column</a>
+<a href="isports.html">Isports</a>
+<a href="cartoon.html">Editorial Cartooning</a>
+<a href="about.html">Tungkol sa Amin</a>
 </nav>
+
+<section class="hero">
+<h2>Mga Balita</h2>
+<p>
+Basahin ang pinakabago at mahahalagang balita mula sa Sucat Senior High School at sa komunidad.
+</p>
+</section>
 
 <div class="container">
 
-<h2 class="section-title">Mga Balita</h2>
+<h2 class="section-title">Lahat ng Balita</h2>
 
-<div class="card">
-    <img src="Images/balita1.jpg" alt="Balita 1">
-    <div class="card-content">
-        <h3>Sucat SHS Nagbukas ng Bagong Taong Panuruan</h3>
-        <p>Matagumpay na nagbukas ang panibagong taong panuruan sa Sucat Senior High School.</p>
-        <a href="articles/balita1.html"><button>Basahin</button></a>
-    </div>
-</div>
-
-<div class="card">
-    <img src="Images/balita2.jpg" alt="Balita 2">
-    <div class="card-content">
-        <h3>Mga Mag-aaral Nagwagi sa Paligsahan</h3>
-        <p>Nag-uwi ng iba't ibang parangal ang mga mag-aaral sa iba't ibang kompetisyon.</p>
-        <a href="articles/balita2.html"><button>Basahin</button></a>
-    </div>
-</div>
-
-</div>
-
-<footer>
-    <p>© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.</p>
-</footer>
-
-</body>
-</html>
+<div class="grid">
