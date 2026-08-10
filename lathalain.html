@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,12 +18,12 @@
 }
 
 body{
-    background:white;
+    background:#ffffff;
     color:#222;
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:#800000;
@@ -37,11 +39,11 @@ header h1{
 
 header p{
     margin-top:10px;
+    font-size:17px;
 }
 
 
-
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 
 nav{
     background:#5a0000;
@@ -53,7 +55,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    padding:15px 20px;
+    padding:15px 22px;
     font-weight:bold;
 }
 
@@ -62,8 +64,7 @@ nav a:hover{
 }
 
 
-
-/* INTRO */
+/* ================= INTRO ================= */
 
 .intro{
     padding:40px 10%;
@@ -81,104 +82,118 @@ nav a:hover{
 }
 
 
-
-/* FUN FACT */
+/* ================= FUN FACT ================= */
 
 .funfact{
-
     background:#fff5f5;
     margin:20px 10%;
     padding:25px;
     border-left:7px solid #800000;
-
 }
 
 .funfact h3{
-
     color:#800000;
     margin-bottom:15px;
-
 }
 
 .funfact ul{
-
     margin-left:20px;
     line-height:1.8;
-
 }
 
 
-
-/* ARTICLE SECTION */
+/* ================= ARTICLE SECTION ================= */
 
 .article-section{
-
     padding:40px 10%;
-
 }
 
-
 .article-section h2{
-
     text-align:center;
     color:#800000;
     font-size:32px;
     margin-bottom:30px;
-
 }
 
 
+/* ================= SECTION TITLE ================= */
 
-.article-card{
-
-    border:2px solid #800000;
-    border-radius:12px;
-    padding:25px;
-    margin-bottom:30px;
-    background:white;
-
-}
-
-
-
-.article-card h3{
-
+.section-title{
     color:#800000;
-    font-size:26px;
-    margin-bottom:10px;
-
+    font-size:32px;
+    margin-bottom:30px;
+    border-left:7px solid #800000;
+    padding-left:15px;
 }
 
 
-.article-card .writer{
+/* ================= CARDS ================= */
 
-    color:#777;
-    font-size:14px;
-    margin-bottom:15px;
-
+.grid{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
 }
 
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);
+    margin-bottom:0;
+}
 
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+}
 
-.article-card p{
+.card-content{
+    padding:25px;
+}
 
+.card-content h3{
+    color:#800000;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.card-content p{
     line-height:1.7;
     text-align:justify;
+    font-size:17px;
+}
 
+.card-content a{
+    text-decoration:none;
+}
+
+.card-content button{
+    margin-top:18px;
+    padding:11px 20px;
+    background:#800000;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.card-content button:hover{
+    background:#5a0000;
 }
 
 
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-
     background:#5a0000;
     color:white;
     text-align:center;
     padding:25px;
     margin-top:40px;
-
 }
 
 footer p{
@@ -186,23 +201,42 @@ footer p{
 }
 
 
-
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-header h1{
-    font-size:30px;
-}
+    header h1{
+        font-size:30px;
+    }
 
-.intro,
-.article-section{
-    padding:30px 5%;
-}
+    .intro,
+    .article-section{
+        padding:30px 5%;
+    }
 
-.funfact{
-    margin:20px 5%;
-}
+    .funfact{
+        margin:20px 5%;
+    }
+
+    .section-title{
+        font-size:27px;
+    }
+
+    .card img{
+        height:230px;
+    }
+
+    .card-content{
+        padding:20px;
+    }
+
+    .card-content h3{
+        font-size:22px;
+    }
+
+    .card-content p{
+        font-size:16px;
+    }
 
 }
 
@@ -214,37 +248,45 @@ header h1{
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <h1>ANG SALIMBAY</h1>
 
-<p>Opisyal na Publikasyon ng Sucat Senior High School</p>
+<p>
+Opisyal na Publikasyon ng Sucat Senior High School
+</p>
 
 </header>
 
 
-
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
 <a href="index.html">Home</a>
+
 <a href="balita.index.html">Balita</a>
+
 <a href="editoryal.html">Editoryal at Kolum</a>
+
 <a href="lathalain.html">Lathalain</a>
+
 <a href="isports.html">Isports</a>
+
 <a href="Agham.html">Agham</a>
+
 <a href="About.html">Tungkol sa Amin</a>
 
 </nav>
 
 
-
-
+<!-- ================= INTRO ================= -->
 
 <section class="intro">
 
 <h2>📖 Lathalain</h2>
-
 
 <p>
 
@@ -257,79 +299,112 @@ Sucsenian.
 
 </p>
 
-
 </section>
 
 
-
-
+<!-- ================= FUN FACT ================= -->
 
 <section class="funfact">
 
-
 <h3>Alam Mo Ba? | Feature Writing Facts</h3>
-
 
 <ul>
 
-<li>Ang lathalain ay hindi lamang nagbibigay ng impormasyon kundi nagkukuwento rin ng karanasan at damdamin.</li>
+<li>
+Ang lathalain ay hindi lamang nagbibigay ng impormasyon kundi
+nagkukuwento rin ng karanasan at damdamin.
+</li>
 
-<li>Mas malaya ang estilo ng pagsulat sa lathalain kumpara sa karaniwang balita.</li>
+<li>
+Mas malaya ang estilo ng pagsulat sa lathalain kumpara sa
+karaniwang balita.
+</li>
 
-<li>Ginagamit ang malikhaing paglalarawan upang mas maging buhay ang isang kuwento.</li>
+<li>
+Ginagamit ang malikhaing paglalarawan upang mas maging buhay
+ang isang kuwento.
+</li>
 
-<li>Ang mahusay na lathalain ay nag-iiwan ng aral, inspirasyon, o bagong pananaw sa mambabasa.</li>
+<li>
+Ang mahusay na lathalain ay nag-iiwan ng aral, inspirasyon,
+o bagong pananaw sa mambabasa.
+</li>
 
 </ul>
-
 
 </section>
 
 
-
-
-
+<!-- ================= ARTICLE ================= -->
 
 <section class="article-section">
 
+<h2 class="section-title">
+Mga Tampok na Kuwento
+</h2>
 
-<h2>Mga Tampok na Kuwento</h2>
+
+<div class="grid">
 
 
-<div class="article-card">
+<!-- ================= CARD 1 ================= -->
 
-<h3>Basang Kalsada, Masayang Parada</h3>
+<div class="card">
+
+<img
+src="Messenger_creation_E01A3847-1D12-4638-84AD.jpeg"
+alt="Basang Kalsada, Masayang Parada"
+>
+
+<div class="card-content">
+
+<h3>
+Basang Kalsada, Masayang Parada
+</h3>
 
 <p>
-Pista ng Sto. Domingo de Guzman, Hindi Nagpatinag sa Ulan
+
+Pista ng Sto. Domingo de Guzman, Hindi Nagpatinag sa Ulan.
+Sa kabila ng makulimlim na langit at walang patid na ulan,
+nagpatuloy ang masayang pagdiriwang, karakol, at parada ng
+mga taga-Sucat bilang pagpapakita ng pananampalataya at
+pagkakaisa ng komunidad.
+
 </p>
 
-<a href="fiesta-sto-domingo.html">Basahin ang buong lathalain →</a>
+<a href="fiesta-sto-domingo.html">
+
+<button>
+Basahin
+</button>
+
+</a>
+
+</div>
 
 </div>
 
 
-
-
-
-
+</div>
 
 </section>
 
 
-
-
-
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p><b>ANG SALIMBAY</b></p>
+<p>
+<b>ANG SALIMBAY</b>
+</p>
 
-<p>© 2026 Sucat Senior High School Publication</p>
+<p>
+© 2026 Sucat Senior High School Publication
+</p>
 
 </footer>
 
 
-
 </body>
+
 </html>
