@@ -122,7 +122,6 @@ nav a:hover{
 .search-box{
     max-width:800px;
     margin:auto;
-    position:relative;
 }
 
 .search-box input{
@@ -149,7 +148,8 @@ nav a:hover{
 /* ================= SEARCH RESULTS ================= */
 
 .search-results{
-    margin-top:20px;
+    max-width:800px;
+    margin:20px auto 0;
     display:none;
 }
 
@@ -205,7 +205,9 @@ nav a:hover{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
     gap:25px;
 }
 
@@ -334,6 +336,8 @@ footer{
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <h1>ANG SALIMBAY</h1>
@@ -345,18 +349,28 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </header>
 
 
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
 
 <a href="index.html">Home</a>
+
 <a href="balita.index.html">Balita</a>
+
 <a href="editoryal.html">Editoryal at Kolum</a>
+
 <a href="lathalain.html">Lathalain</a>
+
 <a href="isports.html">Isports</a>
+
 <a href="Agham.html">Agham</a>
+
 <a href="About.html">Tungkol sa Amin</a>
 
 </nav>
 
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -389,13 +403,16 @@ balita para sa buong komunidad.
 <input
 type="search"
 id="searchInput"
-placeholder="Maghanap ng balita, paksa, pangalan..."
+placeholder="Maghanap ng balita, paksa, pangalan, petsa..."
 autocomplete="off"
 >
 
 </div>
 
-<p class="search-info" id="searchInfo">
+<p
+class="search-info"
+id="searchInfo"
+>
 I-type ang kahit bahagi ng salita.
 </p>
 
@@ -403,7 +420,6 @@ I-type ang kahit bahagi ng salita.
 class="search-results"
 id="searchResults"
 >
-
 </div>
 
 </section>
@@ -415,12 +431,10 @@ id="searchResults"
 Pinakabagong Balita
 </h2>
 
-
 <div
 class="grid"
 id="articleGrid"
 >
-
 </div>
 
 
@@ -466,9 +480,10 @@ at ng komunidad ng paaralan.
 
 </div>
 
-
 </div>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -487,25 +502,57 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </footer>
 
 
-<!-- IMPORTANT -->
-<!-- articles.js MUST be in the same folder as index.html -->
+<!-- ================= ARTICLE DATABASE ================= -->
 
 <script src="articles.js"></script>
 
 
-<script>
+<!-- ================= SEARCH ENGINE ================= -->
 
-/* =========================================
-   CREATE ARTICLE CARDS
-========================================= */
+<script>
 
 const articleGrid =
 document.getElementById("articleGrid");
 
+const searchInput =
+document.getElementById("searchInput");
+
+const searchResults =
+document.getElementById("searchResults");
+
+const searchInfo =
+document.getElementById("searchInfo");
+
+
+/* ================= DISPLAY ARTICLES ================= */
 
 function displayArticles(list){
 
     articleGrid.innerHTML = "";
+
+    if(list.length === 0){
+
+        articleGrid.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                background:white;
+                padding:30px;
+                text-align:center;
+                border-radius:10px;
+            ">
+                <h3 style="color:#6B0015;">
+                    Walang nahanap na artikulo.
+                </h3>
+
+                <p style="margin-top:10px;">
+                    Subukan ang ibang salita.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
 
     list.forEach(function(article){
 
@@ -513,6 +560,7 @@ function displayArticles(list){
         document.createElement("div");
 
         card.className = "card";
+
 
         let imageHTML = "";
 
@@ -526,6 +574,7 @@ function displayArticles(list){
             `;
 
         }
+
 
         card.innerHTML = `
 
@@ -541,15 +590,39 @@ function displayArticles(list){
                     ${article.description}
                 </p>
 
+                <p style="
+                    color:#777;
+                    font-size:13px;
+                    margin-top:12px;
+                ">
+
+                    ${article.category}
+                    •
+                    ${article.date}
+
+                </p>
+
+                <p style="
+                    color:#777;
+                    font-size:13px;
+                ">
+
+                    ✍️ ${article.author}
+
+                </p>
+
                 <a href="${article.url}">
+
                     <button>
                         Basahin
                     </button>
+
                 </a>
 
             </div>
 
         `;
+
 
         articleGrid.appendChild(card);
 
@@ -558,26 +631,12 @@ function displayArticles(list){
 }
 
 
-/* =========================================
-   SHOW ALL ARTICLES
-========================================= */
+/* ================= INITIAL LOAD ================= */
 
 displayArticles(articles);
 
 
-/* =========================================
-   SEARCH
-========================================= */
-
-const searchInput =
-document.getElementById("searchInput");
-
-const searchResults =
-document.getElementById("searchResults");
-
-const searchInfo =
-document.getElementById("searchInfo");
-
+/* ================= SEARCH ENGINE ================= */
 
 searchInput.addEventListener(
     "input",
@@ -589,7 +648,7 @@ searchInput.addEventListener(
         .trim();
 
 
-        /* EMPTY SEARCH */
+        /* EMPTY */
 
         if(query === ""){
 
@@ -607,7 +666,16 @@ searchInput.addEventListener(
         }
 
 
-        /* SEARCH ALL ARTICLE DATA */
+        /*
+        SEARCHES:
+        - TITLE
+        - CATEGORY
+        - DESCRIPTION
+        - KEYWORDS
+        - DATE
+        - AUTHOR
+        - FULL TEXT
+        */
 
         const results =
         articles.filter(function(article){
@@ -616,25 +684,59 @@ searchInput.addEventListener(
 
                 article.title +
                 " " +
+
                 article.category +
                 " " +
+
                 article.description +
                 " " +
-                article.keywords
+
+                article.keywords +
+                " " +
+
+                article.date +
+                " " +
+
+                article.author +
+                " " +
+
+                article.content
 
             ).toLowerCase();
+
+
+            /*
+            PARTIAL SEARCH
+
+            Example:
+
+            "perfor"
+            finds
+            "Performing"
+
+            "wilmar"
+            finds
+            "Wilmarie"
+
+            "hunyo"
+            finds
+            "Hunyo 22, 2026"
+
+            "2026"
+            finds all 2026 articles
+            */
 
             return searchableText.includes(query);
 
         });
 
 
-        /* UPDATE MAIN ARTICLES */
+        /* SHOW MATCHING CARDS */
 
         displayArticles(results);
 
 
-        /* UPDATE RESULT INFORMATION */
+        /* RESULT COUNT */
 
         searchResults.classList.add("show");
 
@@ -642,7 +744,10 @@ searchInput.addEventListener(
         if(results.length === 0){
 
             searchInfo.textContent =
-            "Walang nahanap para sa: " + searchInput.value;
+            'Walang nahanap para sa "' +
+            searchInput.value +
+            '".';
+
 
             searchResults.innerHTML = `
 
@@ -653,8 +758,8 @@ searchInput.addEventListener(
                     </h4>
 
                     <p>
-                        Subukan ang ibang salita o bahagi
-                        ng pamagat.
+                        Subukan ang ibang salita,
+                        pangalan, petsa, o paksa.
                     </p>
 
                 </div>
@@ -671,7 +776,7 @@ searchInput.addEventListener(
         " artikulo ang nahanap.";
 
 
-        /* RESULT LIST */
+        /* RESULT HEADER */
 
         searchResults.innerHTML = `
 
@@ -681,6 +786,8 @@ searchInput.addEventListener(
 
         `;
 
+
+        /* RESULT LIST */
 
         results.forEach(function(article){
 
@@ -699,6 +806,10 @@ searchInput.addEventListener(
 
                 <small>
                     ${article.category}
+                    •
+                    ${article.date}
+                    •
+                    ✍️ ${article.author}
                 </small>
 
                 <p>
