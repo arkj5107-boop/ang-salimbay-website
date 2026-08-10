@@ -77,7 +77,6 @@ nav a:hover{
 
     color:white;
     text-align:center;
-
     padding:90px 20px;
 }
 
@@ -104,7 +103,7 @@ nav a:hover{
 }
 
 
-/* ================= SEARCH BAR ================= */
+/* ================= SEARCH ================= */
 
 .search-section{
     background:white;
@@ -116,45 +115,79 @@ nav a:hover{
 
 .search-section h2{
     color:#6B0015;
-    margin-bottom:15px;
     text-align:center;
+    margin-bottom:15px;
 }
 
 .search-box{
-    display:flex;
     max-width:800px;
     margin:auto;
+    position:relative;
 }
 
 .search-box input{
     width:100%;
-    padding:15px 18px;
+    padding:16px 20px;
     border:2px solid #6B0015;
-    border-radius:7px 0 0 7px;
+    border-radius:8px;
     font-size:17px;
     outline:none;
 }
 
-.search-box button{
-    margin:0;
-    padding:0 25px;
-    background:#6B0015;
-    color:white;
-    border:none;
-    border-radius:0 7px 7px 0;
-    font-size:17px;
-    cursor:pointer;
+.search-box input:focus{
+    box-shadow:0 0 0 3px rgba(107,0,21,.12);
 }
 
-.search-box button:hover{
-    background:#500010;
-}
-
-.search-result{
+.search-info{
     text-align:center;
-    margin-top:15px;
-    color:#666;
-    font-size:15px;
+    color:#777;
+    margin-top:12px;
+    font-size:14px;
+}
+
+
+/* ================= SEARCH RESULTS ================= */
+
+.search-results{
+    margin-top:20px;
+    display:none;
+}
+
+.search-results.show{
+    display:block;
+}
+
+.search-results h3{
+    color:#6B0015;
+    margin-bottom:15px;
+}
+
+.search-result-card{
+    background:#fff;
+    border-radius:8px;
+    padding:15px;
+    margin-bottom:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.search-result-card:hover{
+    transform:translateY(-2px);
+}
+
+.search-result-card h4{
+    color:#6B0015;
+    margin-bottom:6px;
+}
+
+.search-result-card small{
+    color:#777;
+}
+
+.search-result-card p{
+    margin-top:7px;
+    line-height:1.5;
 }
 
 
@@ -266,31 +299,6 @@ footer{
     margin-top:50px;
 }
 
-footer a{
-    color:white;
-}
-
-
-/* ================= HIDDEN SEARCH CARDS ================= */
-
-.card.hidden{
-    display:none;
-}
-
-
-/* ================= NO RESULT ================= */
-
-.no-result{
-    display:none;
-    text-align:center;
-    background:white;
-    padding:35px;
-    border-radius:10px;
-    color:#777;
-    font-size:18px;
-    margin-top:20px;
-}
-
 
 /* ================= MOBILE ================= */
 
@@ -312,14 +320,6 @@ footer a{
         width:92%;
     }
 
-    .search-box input{
-        font-size:15px;
-    }
-
-    .search-box button{
-        padding:0 18px;
-    }
-
     .card img{
         height:220px;
     }
@@ -334,8 +334,6 @@ footer a{
 <body>
 
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
 <h1>ANG SALIMBAY</h1>
@@ -347,28 +345,18 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
-
 <nav>
 
 <a href="index.html">Home</a>
-
 <a href="balita.index.html">Balita</a>
-
 <a href="editoryal.html">Editoryal at Kolum</a>
-
 <a href="lathalain.html">Lathalain</a>
-
 <a href="isports.html">Isports</a>
-
 <a href="Agham.html">Agham</a>
-
 <a href="About.html">Tungkol sa Amin</a>
 
 </nav>
 
-
-<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -387,8 +375,6 @@ balita para sa buong komunidad.
 </section>
 
 
-<!-- ================= MAIN CONTAINER ================= -->
-
 <div class="container">
 
 
@@ -401,21 +387,24 @@ balita para sa buong komunidad.
 <div class="search-box">
 
 <input
-type="text"
+type="search"
 id="searchInput"
-placeholder="Maghanap ng balita, artikulo, paksa..."
+placeholder="Maghanap ng balita, paksa, pangalan..."
 autocomplete="off"
 >
 
-<button onclick="searchArticles()">
-Hanapin
-</button>
-
 </div>
 
-<p class="search-result" id="searchResult">
-I-type ang nais mong hanapin.
+<p class="search-info" id="searchInfo">
+I-type ang kahit bahagi ng salita.
 </p>
+
+<div
+class="search-results"
+id="searchResults"
+>
+
+</div>
 
 </section>
 
@@ -427,294 +416,319 @@ Pinakabagong Balita
 </h2>
 
 
-<div class="grid" id="articleGrid">
-
-
-<!-- ================= ARTICLE 1 ================= -->
-
 <div
-class="card searchable-card"
-data-search="
-salimbay nanghikayat kampanya batang mamamahayag
-pamamahayag balita pahayagan sucat senior high school
-publikasyon filipino journalism
-">
-
-<img
-src="Images/Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg"
+class="grid"
+id="articleGrid"
 >
 
-<div class="card-content">
+</div>
 
-<h3>
-Ang Salimbay Nanghikayat!
-</h3>
+
+<br><br>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<h2 class="section-title">
+Mga Kategorya
+</h2>
+
+<div class="categories">
+
+<span>Balita</span>
+<span>Editoryal</span>
+<span>Lathalain</span>
+<span>Column</span>
+<span>Isports</span>
+<span>Agham at Teknolohiya</span>
+<span>Editorial Cartooning</span>
+
+</div>
+
+
+<br><br>
+
+
+<!-- ================= ABOUT ================= -->
+
+<h2 class="section-title">
+Tungkol sa Ang Salimbay
+</h2>
+
+<div class="about">
+
+Ang <strong>Ang Salimbay</strong> ay ang opisyal na pahayagang
+Filipino ng <strong>Sucat Senior High School</strong>.
+Layunin nitong maging mapagkakatiwalaang daluyan ng balita,
+impormasyon, opinyon, at mga akdang pampahayagan na
+sumasalamin sa <strong>BOSES</strong> ng mga mag-aaral
+at ng komunidad ng paaralan.
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<h2>ANG SALIMBAY</h2>
 
 <p>
-
-Opisyal na publikasyong Filipino ng paaralan, nagsagawa
-ng pag-aanunsyo ang mga kasapi nito upang hikayatin ang
-bawat mag-aaral ng Sucat Senior High School na makilahok
-sa mga gawaing pampamahayag.
-
+Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </p>
 
-<a href="nanghikayat.html">
-<button>Basahin</button>
-</a>
-
-</div>
-
-</div>
-
-
-<!-- ================= ARTICLE 2 ================= -->
-
-<div
-class="card searchable-card"
-data-search="
-performing arts hall pasinaya where art comes alive
-sucat senior high school sshs sining
-dr jay boy evano art performance
-pva pathway cypheria dance troupe
-ribbon cutting ceremony
-">
-
-<img
-src="Messenger_creation_CC6E278C-72C7-4F31-934B-DE99E607B71E.jpeg"
->
-
-<div class="card-content">
-
-<h3>
-Bagong Performing Arts Hall Pinasinayaan sa SSHS
-</h3>
+<br>
 
 <p>
-
-Pormal nang binuksan ang bagong Performing Arts Hall
-ng Sucat Senior High School (SSHS) sa isinagawang
-pasinaya na may temang “𝙒𝙝𝙚𝙧𝙚 𝘼𝙧𝙩 𝘾𝙤𝙢𝙚𝙨 𝘼𝙡𝙞𝙫𝙚”
-nitong Hunyo 22, 2026, alas-10:00 ng umaga.
-
+© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
 </p>
 
-<a href="performinghall.html">
-<button>Basahin</button>
-</a>
+</footer>
 
-</div>
 
-</div>
+<!-- IMPORTANT -->
+<!-- articles.js MUST be in the same folder as index.html -->
 
+<script src="articles.js"></script>
 
-<!-- ================= ARTICLE 3 ================= -->
 
-<div
-class="card searchable-card"
-data-search="
-career guidance career support program sim diamond
-soroptimist international manila diamond
-dream it be it dib organization
-christine codrington scholarship program
-dioceldo sy big dream students
-sucat senior high school
-">
+<script>
 
-<img
-src="Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg"
->
+/* =========================================
+   CREATE ARTICLE CARDS
+========================================= */
 
-<div class="card-content">
+const articleGrid =
+document.getElementById("articleGrid");
 
-<h3>
-Career Guidance sa SSHS!
-</h3>
 
-<p>
+function displayArticles(list){
 
-Career Support Program para sa mga mag-aaral ng
-Sucat Senior High School (SSHS) sa pangunguna ng
-Soroptimist International Manila Diamond (SIMD) –
-Dream It, Be It (DIBI) Organization ngayong Hunyo 25,
-2026.
+    articleGrid.innerHTML = "";
 
-</p>
+    list.forEach(function(article){
 
-<a href="career.html">
-<button>Basahin</button>
-</a>
+        const card =
+        document.createElement("div");
 
-</div>
+        card.className = "card";
 
-</div>
+        let imageHTML = "";
 
+        if(article.image){
 
-<!-- ================= ARTICLE 4 ================= -->
+            imageHTML = `
+                <img
+                    src="${article.image}"
+                    alt="${article.title}"
+                >
+            `;
 
-<div
-class="card searchable-card"
-data-search="
-munwalk sneaker turn over ceremony sapatos
-muntinlupa city pamahalaang lungsod
-jorge endozo erwin alfonso rhodora mandap
-zhane ayanna palomo joel cruz
-sucat senior high school sshs
-zumba performers
-">
+        }
 
-<img
-src="Images/received_2517081808793748.jpeg"
->
+        card.innerHTML = `
 
-<div class="card-content">
+            ${imageHTML}
 
-<h3>
-TINGNAN | MUNwalk SNEAKER Turn Over Ceremony sa SSHS
-</h3>
+            <div class="card-content">
 
-<p>
+                <h3>
+                    ${article.title}
+                </h3>
 
-Ipinamahagi ang mga libreng sapatos ng Pamahalaang
-Lungsod ng Muntinlupa para sa mga mag-aaral ng
-Sucat Senior High School bilang bahagi ng programa
-para sa kanilang kapakanan at suporta.
+                <p>
+                    ${article.description}
+                </p>
 
-</p>
+                <a href="${article.url}">
+                    <button>
+                        Basahin
+                    </button>
+                </a>
 
-<a href="munwalk.html">
-<button>Basahin</button>
-</a>
+            </div>
 
-</div>
+        `;
 
-</div>
+        articleGrid.appendChild(card);
 
+    });
 
-<!-- ================= ARTICLE 5 ================= -->
+}
 
-<div
-class="card searchable-card"
-data-search="
-ang salimbay bagong mamamahayag pagpupulong
-ang katha school paper adviser spa
-nheil patrick raymunde
-division school press conference dspc
-radio broadcasting tv broadcasting
-individual categories pagsulat pagbigkas pagguhit larawan
-hulyo 18 2026
-">
 
-<img
-src="Images/received_1259784629511883.jpeg"
->
+/* =========================================
+   SHOW ALL ARTICLES
+========================================= */
 
-<div class="card-content">
+displayArticles(articles);
 
-<h3>
-Ang Salimbay, Nagbukas ng Pinto Para sa mga Bagong Mamamahayag
-</h3>
 
-<p>
+/* =========================================
+   SEARCH
+========================================= */
 
-Nagkaroon ng pagpupulong ang Ang Salimbay noong
-Hulyo 18, 2026 bilang daan sa paghahanap ng mga
-panibagong miyembro ng pahayagan at mga mag-aaral
-na naghahangad maging mamamahayag ng Sucat Senior
-High School.
+const searchInput =
+document.getElementById("searchInput");
 
-</p>
+const searchResults =
+document.getElementById("searchResults");
 
-<a href="pagpupulong.html">
-<button>Basahin</button>
-</a>
+const searchInfo =
+document.getElementById("searchInfo");
 
-</div>
 
-</div>
+searchInput.addEventListener(
+    "input",
+    function(){
 
+        const query =
+        searchInput.value
+        .toLowerCase()
+        .trim();
 
-<!-- ================= ARTICLE 6 ================= -->
 
-<div
-class="card searchable-card"
-data-search="
-nakakas ilaw liwanag pag asa jeremy cortez
-sucat senior high school candle lighting ceremony
-sr scout scout adviser lyn mar danugo
-every nation campus alabang
-kalapastangan fitterkarma
-scripture reflection
-">
+        /* EMPTY SEARCH */
 
-<img
-src="Images/Messenger_creation_1695648618385477.jpeg"
->
+        if(query === ""){
 
-<div class="card-content">
+            searchResults.innerHTML = "";
 
-<h3>
-Nakakas ilaw na Liwanag ng Pag-asa
-</h3>
+            searchResults.classList.remove("show");
 
-<p>
+            searchInfo.textContent =
+            "I-type ang kahit bahagi ng salita.";
 
-Nagkaisa ang pamayanan ng Sucat Senior High School
-sa isang candle-lighting ceremony upang parangalan
-ang buhay ni Jeremy A. Cortez at alalahanin ang
-kaniyang pagiging tapat at maaasahang Sr. Scout.
+            displayArticles(articles);
 
-</p>
+            return;
 
-<a href="jeremy.html">
-<button>Basahin</button>
-</a>
+        }
 
-</div>
 
-</div>
+        /* SEARCH ALL ARTICLE DATA */
 
+        const results =
+        articles.filter(function(article){
 
-<!-- ================= ARTICLE 7 ================= -->
+            const searchableText = (
 
-<div
-class="card searchable-card"
-data-search="
-lingkod bayan lingkodbayan editoryal senado
-senador senate attendance session days
-bato dela rosa camille villar alan cayetano
-serbisyo publiko pananagutan politika
-gma public affairs
-">
+                article.title +
+                " " +
+                article.category +
+                " " +
+                article.description +
+                " " +
+                article.keywords
 
-<div class="card-content">
+            ).toLowerCase();
 
-<h3>
-EDITORYAL | Lingkod-Bayan o Lingkod Ba ’yan?
-</h3>
+            return searchableText.includes(query);
 
-<p>
+        });
 
-Isang editoryal tungkol sa pananagutan, pagdalo sa
-sesyon ng Senado, serbisyo publiko, at kahalagahan
-ng pagiging mapanuri sa mga lider ng bansa.
 
-</p>
+        /* UPDATE MAIN ARTICLES */
 
-<a href="editoryal.html">
-<button>Basahin</button>
-</a>
+        displayArticles(results);
 
-</div>
 
-</div>
+        /* UPDATE RESULT INFORMATION */
 
+        searchResults.classList.add("show");
 
-<!-- ================= ARTICLE 8 ================= -->
 
-<div
-class="card searchable-card"
-data-search="
-eskuwelagim eskuwelahan karahasan paaralan
-las pinas national high school lpnhs
-school violence
+        if(results.length === 0){
+
+            searchInfo.textContent =
+            "Walang nahanap para sa: " + searchInput.value;
+
+            searchResults.innerHTML = `
+
+                <div class="search-result-card">
+
+                    <h4>
+                        Walang nahanap na artikulo.
+                    </h4>
+
+                    <p>
+                        Subukan ang ibang salita o bahagi
+                        ng pamagat.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        searchInfo.textContent =
+        results.length +
+        " artikulo ang nahanap.";
+
+
+        /* RESULT LIST */
+
+        searchResults.innerHTML = `
+
+            <h3>
+                Mga Resulta ng Paghahanap
+            </h3>
+
+        `;
+
+
+        results.forEach(function(article){
+
+            const resultCard =
+            document.createElement("div");
+
+            resultCard.className =
+            "search-result-card";
+
+
+            resultCard.innerHTML = `
+
+                <h4>
+                    ${article.title}
+                </h4>
+
+                <small>
+                    ${article.category}
+                </small>
+
+                <p>
+                    ${article.description}
+                </p>
+
+            `;
+
+
+            resultCard.addEventListener(
+                "click",
+                function(){
+
+                    window.location.href =
+                    article.url;
+
+                }
+            );
+
+
+            searchResults.appendChild(resultCard);
+
+        });
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
