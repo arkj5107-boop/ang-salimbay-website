@@ -10,9 +10,9 @@
 
 <style>
 
-/* =====================================================
+/* =========================
    GENERAL
-===================================================== */
+========================= */
 
 *{
     margin:0;
@@ -27,9 +27,9 @@ body{
 }
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header{
     background:#6B0015;
@@ -49,9 +49,9 @@ header p{
 }
 
 
-/* =====================================================
+/* =========================
    NAVIGATION
-===================================================== */
+========================= */
 
 nav{
     background:#500010;
@@ -65,7 +65,6 @@ nav a{
     text-decoration:none;
     padding:15px 18px;
     font-weight:bold;
-    transition:.2s;
 }
 
 nav a:hover{
@@ -74,16 +73,16 @@ nav a:hover{
 }
 
 
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero{
 
     background:
     linear-gradient(
-        rgba(107,0,21,.8),
-        rgba(107,0,21,.8)
+        rgba(107,0,21,.80),
+        rgba(107,0,21,.80)
     ),
     url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
 
@@ -109,9 +108,9 @@ nav a:hover{
 }
 
 
-/* =====================================================
+/* =========================
    CONTAINER
-===================================================== */
+========================= */
 
 .container{
     width:90%;
@@ -121,20 +120,20 @@ nav a:hover{
 }
 
 
-/* =====================================================
-   SEARCH
-===================================================== */
+/* =========================
+   SEARCH BOX
+========================= */
 
 .search-section{
 
     background:white;
 
-    padding:25px;
+    padding:30px;
 
-    border-radius:10px;
+    border-radius:12px;
 
     box-shadow:
-    0 4px 12px rgba(0,0,0,.10);
+    0 4px 15px rgba(0,0,0,.12);
 
     margin-bottom:40px;
 }
@@ -145,27 +144,27 @@ nav a:hover{
 
     text-align:center;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .search-box{
 
-    max-width:800px;
+    max-width:850px;
 
     margin:auto;
 
-    position:relative;
 }
 
 .search-box input{
 
     width:100%;
 
-    padding:16px 20px;
+    padding:17px 20px;
 
-    border:2px solid #6B0015;
+    border:
+    2px solid #6B0015;
 
-    border-radius:8px;
+    border-radius:9px;
 
     font-size:17px;
 
@@ -175,7 +174,8 @@ nav a:hover{
 .search-box input:focus{
 
     box-shadow:
-    0 0 0 3px rgba(107,0,21,.12);
+    0 0 0 4px
+    rgba(107,0,21,.12);
 }
 
 .search-info{
@@ -190,13 +190,13 @@ nav a:hover{
 }
 
 
-/* =====================================================
+/* =========================
    SEARCH RESULTS
-===================================================== */
+========================= */
 
 .search-results{
 
-    max-width:800px;
+    max-width:850px;
 
     margin:20px auto 0;
 
@@ -204,6 +204,7 @@ nav a:hover{
 }
 
 .search-results.show{
+
     display:block;
 }
 
@@ -218,9 +219,9 @@ nav a:hover{
 
     background:white;
 
-    border-radius:8px;
+    border-radius:9px;
 
-    padding:15px;
+    padding:17px;
 
     margin-bottom:12px;
 
@@ -237,32 +238,38 @@ nav a:hover{
     transform:translateY(-2px);
 
     box-shadow:
-    0 5px 12px rgba(0,0,0,.15);
+    0 5px 15px rgba(0,0,0,.15);
 }
 
 .search-result-card h4{
 
     color:#6B0015;
 
-    margin-bottom:6px;
+    font-size:18px;
+
+    margin-bottom:7px;
 }
 
-.search-result-card small{
+.search-result-card .meta{
 
     color:#777;
+
+    font-size:13px;
+
+    line-height:1.7;
 }
 
 .search-result-card p{
 
-    margin-top:7px;
+    margin-top:8px;
 
     line-height:1.5;
 }
 
 
-/* =====================================================
+/* =========================
    SECTION TITLE
-===================================================== */
+========================= */
 
 .section-title{
 
@@ -270,30 +277,34 @@ nav a:hover{
 
     margin-bottom:25px;
 
-    border-left:6px solid #6B0015;
+    border-left:
+    6px solid #6B0015;
 
     padding-left:12px;
 }
 
 
-/* =====================================================
+/* =========================
    ARTICLE GRID
-===================================================== */
+========================= */
 
 .grid{
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+    repeat(
+        auto-fit,
+        minmax(300px,1fr)
+    );
 
     gap:25px;
 }
 
 
-/* =====================================================
+/* =========================
    ARTICLE CARD
-===================================================== */
+========================= */
 
 .card{
 
@@ -314,7 +325,7 @@ nav a:hover{
     transform:translateY(-4px);
 }
 
-.card img{
+.card-image{
 
     width:100%;
 
@@ -323,6 +334,8 @@ nav a:hover{
     object-fit:cover;
 
     display:block;
+
+    background:#eee;
 }
 
 .card-content{
@@ -342,6 +355,17 @@ nav a:hover{
     margin-top:10px;
 
     line-height:1.6;
+}
+
+.card-meta{
+
+    color:#777;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-top:12px;
 }
 
 .card a{
@@ -364,6 +388,8 @@ nav a:hover{
     cursor:pointer;
 
     border-radius:5px;
+
+    font-weight:bold;
 }
 
 .card button:hover{
@@ -372,30 +398,9 @@ nav a:hover{
 }
 
 
-/* =====================================================
-   ARTICLE CREDITS
-===================================================== */
-
-.article-credits{
-
-    color:#666;
-
-    font-size:13px;
-
-    line-height:1.7;
-
-    margin-top:12px;
-}
-
-.article-credits div{
-
-    margin-bottom:2px;
-}
-
-
-/* =====================================================
+/* =========================
    CATEGORIES
-===================================================== */
+========================= */
 
 .categories{
 
@@ -418,9 +423,9 @@ nav a:hover{
 }
 
 
-/* =====================================================
+/* =========================
    ABOUT
-===================================================== */
+========================= */
 
 .about{
 
@@ -434,9 +439,9 @@ nav a:hover{
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer{
 
@@ -452,35 +457,40 @@ footer{
 }
 
 
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
 @media(max-width:600px){
 
     header h1{
+
         font-size:32px;
     }
 
     .hero{
+
         padding:65px 20px;
     }
 
     .hero h1{
+
         font-size:30px;
     }
 
     .container{
+
         width:92%;
     }
 
-    .card img{
-        height:220px;
+    .search-section{
+
+        padding:20px;
     }
 
-    nav a{
-        padding:13px 12px;
-        font-size:14px;
+    .card-image{
+
+        height:220px;
     }
 
 }
@@ -493,9 +503,9 @@ footer{
 <body>
 
 
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
@@ -508,17 +518,15 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </header>
 
 
-<!-- =====================================================
+<!-- =========================
      NAVIGATION
-===================================================== -->
+========================= -->
 
 <nav>
 
 <a href="index.html">Home</a>
 
-<a href="balita.index.html">
-Balita
-</a>
+<a href="balita.index.html">Balita</a>
 
 <a href="editoryal.html">
 Editoryal at Kolum
@@ -543,9 +551,9 @@ Tungkol sa Amin
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================
      HERO
-===================================================== -->
+========================= -->
 
 <section class="hero">
 
@@ -564,16 +572,12 @@ balita para sa buong komunidad.
 </section>
 
 
-<!-- =====================================================
-     MAIN CONTAINER
-===================================================== -->
-
 <div class="container">
 
 
-<!-- =====================================================
-     SEARCH ENGINE
-===================================================== -->
+<!-- =========================
+     SEARCH
+========================= -->
 
 <section class="search-section">
 
@@ -584,10 +588,15 @@ balita para sa buong komunidad.
 <div class="search-box">
 
 <input
+
 type="search"
+
 id="searchInput"
+
 placeholder="Maghanap ng balita, paksa, pangalan, petsa..."
+
 autocomplete="off"
+
 >
 
 </div>
@@ -599,6 +608,7 @@ id="searchInfo"
 I-type ang kahit bahagi ng salita.
 </p>
 
+
 <div
 class="search-results"
 id="searchResults"
@@ -608,31 +618,39 @@ id="searchResults"
 </section>
 
 
-<!-- =====================================================
-     LATEST ARTICLES
-===================================================== -->
+<!-- =========================
+     LATEST NEWS
+========================= -->
 
 <h2 class="section-title">
+
 Pinakabagong Balita
+
 </h2>
+
 
 <div
 class="grid"
 id="articleGrid"
 >
+
 </div>
 
 
-<br><br>
+<br>
+<br>
 
 
-<!-- =====================================================
+<!-- =========================
      CATEGORIES
-===================================================== -->
+========================= -->
 
 <h2 class="section-title">
+
 Mga Kategorya
+
 </h2>
+
 
 <div class="categories">
 
@@ -653,25 +671,31 @@ Mga Kategorya
 </div>
 
 
-<br><br>
+<br>
+<br>
 
 
-<!-- =====================================================
+<!-- =========================
      ABOUT
-===================================================== -->
+========================= -->
 
 <h2 class="section-title">
+
 Tungkol sa Ang Salimbay
+
 </h2>
+
 
 <div class="about">
 
-Ang <strong>Ang Salimbay</strong> ay ang opisyal na pahayagang
-Filipino ng <strong>Sucat Senior High School</strong>.
+Ang <strong>Ang Salimbay</strong> ay ang opisyal na
+pahayagang Filipino ng
+<strong>Sucat Senior High School</strong>.
 
-Layunin nitong maging mapagkakatiwalaang daluyan ng balita,
-impormasyon, opinyon, at mga akdang pampahayagan na
-sumasalamin sa <strong>BOSES</strong> ng mga mag-aaral
+Layunin nitong maging mapagkakatiwalaang daluyan ng
+balita, impormasyon, opinyon, at mga akdang pampahayagan
+na sumasalamin sa
+<strong>BOSES</strong> ng mga mag-aaral
 at ng komunidad ng paaralan.
 
 </div>
@@ -680,9 +704,9 @@ at ng komunidad ng paaralan.
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
@@ -703,4 +727,588 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </footer>
 
 
-<!-- =================================================
+<!-- =====================================================
+     IMPORTANT:
+     ARTICLES DATABASE
+===================================================== -->
+
+<script src="./articles.js"></script>
+
+
+<!-- =====================================================
+     SEARCH + ARTICLE DISPLAY ENGINE
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+    const articleGrid =
+    document.getElementById(
+        "articleGrid"
+    );
+
+    const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+    const searchResults =
+    document.getElementById(
+        "searchResults"
+    );
+
+    const searchInfo =
+    document.getElementById(
+        "searchInfo"
+    );
+
+
+    /* =================================================
+       CHECK ARTICLES.JS
+    ================================================= */
+
+    if(
+        typeof articles === "undefined"
+        ||
+        !Array.isArray(articles)
+    ){
+
+        articleGrid.innerHTML = `
+
+            <div style="
+                grid-column:1/-1;
+                background:white;
+                padding:30px;
+                border-radius:10px;
+                text-align:center;
+            ">
+
+                <h3 style="color:#6B0015;">
+                    Hindi ma-load ang articles.js
+                </h3>
+
+                <p style="
+                    margin-top:10px;
+                    color:#777;
+                ">
+                    Siguraduhing ang
+                    <strong>articles.js</strong>
+                    ay nasa parehong folder
+                    ng index.html.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* =================================================
+       ESCAPE HTML
+       Para ligtas ang text ng articles
+    ================================================= */
+
+    function escapeHTML(text){
+
+        if(text === undefined || text === null){
+
+            return "";
+
+        }
+
+        return String(text)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+    }
+
+
+    /* =================================================
+       DISPLAY ARTICLES
+    ================================================= */
+
+    function displayArticles(list){
+
+        articleGrid.innerHTML = "";
+
+
+        if(
+            !list ||
+            list.length === 0
+        ){
+
+            articleGrid.innerHTML = `
+
+                <div style="
+                    grid-column:1/-1;
+                    background:white;
+                    padding:30px;
+                    text-align:center;
+                    border-radius:10px;
+                ">
+
+                    <h3 style="color:#6B0015;">
+                        Walang nahanap na artikulo.
+                    </h3>
+
+                    <p style="
+                        margin-top:10px;
+                        color:#777;
+                    ">
+                        Subukan ang ibang salita,
+                        pangalan, petsa o paksa.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        list.forEach(function(article){
+
+            const card =
+            document.createElement("div");
+
+            card.className =
+            "card";
+
+
+            /* =========================
+               IMAGE
+            ========================= */
+
+            let imageHTML = "";
+
+
+            if(article.image){
+
+                imageHTML = `
+
+                    <img
+
+                    class="card-image"
+
+                    src="${escapeHTML(article.image)}"
+
+                    alt="${escapeHTML(article.title)}"
+
+                    loading="lazy"
+
+                    onerror="
+                    this.style.display='none';
+                    "
+
+                    >
+
+                `;
+
+            }
+
+
+            /* =========================
+               CREDITS
+            ========================= */
+
+            let creditsHTML = "";
+
+
+            if(article.author){
+
+                creditsHTML += `
+                    ✍️
+                    <strong>Sumulat:</strong>
+                    ${escapeHTML(article.author)}
+                    <br>
+                `;
+
+            }
+
+
+            if(article.photographer){
+
+                creditsHTML += `
+                    📷
+                    <strong>Litrato:</strong>
+                    ${escapeHTML(article.photographer)}
+                    <br>
+                `;
+
+            }
+
+
+            if(article.illustrator){
+
+                creditsHTML += `
+                    🎨
+                    <strong>Guhit:</strong>
+                    ${escapeHTML(article.illustrator)}
+                    <br>
+                `;
+
+            }
+
+
+            if(article.editor){
+
+                creditsHTML += `
+                    📝
+                    <strong>Editor:</strong>
+                    ${escapeHTML(article.editor)}
+                    <br>
+                `;
+
+            }
+
+
+            if(article.otherCredit){
+
+                creditsHTML += `
+                    👤
+                    <strong>Iba pa:</strong>
+                    ${escapeHTML(article.otherCredit)}
+                `;
+
+            }
+
+
+            /* =========================
+               CARD
+            ========================= */
+
+            card.innerHTML = `
+
+                ${imageHTML}
+
+                <div class="card-content">
+
+                    <h3>
+                        ${escapeHTML(article.title)}
+                    </h3>
+
+
+                    <p>
+                        ${escapeHTML(article.description)}
+                    </p>
+
+
+                    <div class="card-meta">
+
+                        <strong>
+                        ${escapeHTML(article.category)}
+                        </strong>
+
+                        •
+                        ${escapeHTML(article.date)}
+
+                        <br>
+
+                        ${creditsHTML}
+
+                    </div>
+
+
+                    <a
+                    href="${escapeHTML(article.url)}"
+                    >
+
+                        <button>
+                            Basahin
+                        </button>
+
+                    </a>
+
+                </div>
+
+            `;
+
+
+            articleGrid.appendChild(card);
+
+        });
+
+    }
+
+
+    /* =================================================
+       INITIAL DISPLAY
+    ================================================= */
+
+    displayArticles(articles);
+
+
+    /* =================================================
+       SEARCH NORMALIZER
+    ================================================= */
+
+    function normalize(text){
+
+        return String(
+            text || ""
+        )
+
+        .toLowerCase()
+
+        .normalize("NFD")
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .trim();
+
+    }
+
+
+    /* =================================================
+       SEARCH ENGINE
+    ================================================= */
+
+    searchInput.addEventListener(
+    "input",
+    function(){
+
+        const query =
+        normalize(
+            searchInput.value
+        );
+
+
+        /* =========================
+           EMPTY SEARCH
+        ========================= */
+
+        if(query === ""){
+
+            searchInfo.textContent =
+            "I-type ang kahit bahagi ng salita.";
+
+            searchResults.innerHTML =
+            "";
+
+            searchResults.classList
+            .remove("show");
+
+            displayArticles(
+                articles
+            );
+
+            return;
+
+        }
+
+
+        /* =========================
+           SEARCH EVERYTHING
+        ========================= */
+
+        const results =
+        articles.filter(
+        function(article){
+
+            const searchableText = [
+
+                article.title,
+
+                article.description,
+
+                article.category,
+
+                article.date,
+
+                article.author,
+
+                article.photographer,
+
+                article.illustrator,
+
+                article.editor,
+
+                article.otherCredit,
+
+                article.keywords,
+
+                article.content
+
+            ]
+
+            .filter(Boolean)
+
+            .join(" ");
+
+
+            return normalize(
+                searchableText
+            )
+            .includes(query);
+
+        });
+
+
+        /* =========================
+           SHOW MATCHING ARTICLES
+        ========================= */
+
+        displayArticles(
+            results
+        );
+
+
+        /* =========================
+           SHOW RESULTS
+        ========================= */
+
+        searchResults.classList
+        .add("show");
+
+
+        if(
+            results.length === 0
+        ){
+
+            searchInfo.textContent =
+            `Walang nahanap para sa "${searchInput.value}".`;
+
+
+            searchResults.innerHTML = `
+
+                <div class="
+                search-result-card
+                ">
+
+                    <h4>
+                        Walang nahanap na artikulo.
+                    </h4>
+
+                    <p>
+                        Subukan ang ibang salita,
+                        pangalan, petsa,
+                        kategorya o paksa.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        searchInfo.textContent =
+
+        results.length +
+
+        " artikulo ang nahanap.";
+
+
+        /* =========================
+           RESULT LIST
+        ========================= */
+
+        searchResults.innerHTML = `
+
+            <h3>
+                Mga Resulta ng Paghahanap
+            </h3>
+
+        `;
+
+
+        results.forEach(
+        function(article){
+
+            const resultCard =
+            document.createElement(
+                "div"
+            );
+
+
+            resultCard.className =
+            "search-result-card";
+
+
+            resultCard.innerHTML = `
+
+                <h4>
+                    ${escapeHTML(
+                        article.title
+                    )}
+                </h4>
+
+
+                <div class="meta">
+
+                    <strong>
+                    ${escapeHTML(
+                        article.category
+                    )}
+                    </strong>
+
+                    •
+
+                    ${escapeHTML(
+                        article.date
+                    )}
+
+                    <br>
+
+                    ✍️
+                    ${escapeHTML(
+                        article.author || ""
+                    )}
+
+                    ${
+                        article.photographer
+                        ?
+                        `<br>📷 ${escapeHTML(
+                            article.photographer
+                        )}`
+                        :
+                        ""
+                    }
+
+                    ${
+                        article.illustrator
+                        ?
+                        `<br>🎨 ${escapeHTML(
+                            article.illustrator
+                        )}`
+                        :
+                        ""
+                    }
+
+                    ${
+                        article.editor
+                        ?
+                        `<br>📝 ${escapeHTML(
+                            article.editor
+                        )}`
+                        :
+                        ""
+                    }
+
+                </div>
+
+
+                <p>
+
+                   
