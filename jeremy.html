@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nakakasilaw na Liwanag ng Pag-asa | Ang Salimbay</title>
+<title>Nakakas ilaw na Liwanag ng Pag-asa | Ang Salimbay</title>
 
 <style>
 
@@ -17,12 +17,9 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-html,
 body{
-    background:#ffffff;
+    background:white;
     color:#222;
-    width:100%;
-    overflow-x:hidden;
 }
 
 
@@ -42,7 +39,6 @@ header h1{
 
 header p{
     margin-top:10px;
-    font-size:17px;
 }
 
 
@@ -58,7 +54,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    padding:15px 22px;
+    padding:15px 20px;
     font-weight:bold;
 }
 
@@ -73,37 +69,27 @@ nav a:hover{
     max-width:900px;
     margin:50px auto;
     padding:0 25px;
-
-    /* IMPORTANT:
-       Pinipigilan nito ang text na maging columns */
-    column-count:1;
-    column-width:auto;
 }
 
 
-/* TITLE */
+/* ================= TITLE ================= */
 
 .article h1{
     color:#800000;
-    font-family:Arial, Helvetica, sans-serif;
     font-size:42px;
-    line-height:1.2;
+    line-height:1.25;
     text-align:center;
     margin-bottom:15px;
-
-    column-span:all;
 }
 
 
-/* CATEGORY */
+/* ================= CATEGORY ================= */
 
 .article .category{
     text-align:center;
     color:#777;
     font-size:15px;
     margin-bottom:35px;
-
-    column-span:all;
 }
 
 
@@ -113,14 +99,11 @@ nav a:hover{
     width:100%;
     height:420px;
     background:#fff5f5;
-
-    display:block;
-
-    margin:0 auto 35px auto;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:35px;
     overflow:hidden;
-
-    column-span:all;
 }
 
 .image-box img{
@@ -137,28 +120,18 @@ nav a:hover{
     text-align:center;
     color:#777;
     font-size:13px;
-    line-height:1.5;
-
-    margin-top:-20px;
+    margin-top:-25px;
     margin-bottom:30px;
-
-    column-span:all;
 }
 
 
 /* ================= ARTICLE TEXT ================= */
 
 .article p{
-    font-family:Arial, Helvetica, sans-serif;
     font-size:18px;
     line-height:1.8;
     text-align:justify;
-
     margin-bottom:22px;
-
-    /* IMPORTANT */
-    column-count:1;
-    column-span:none;
 }
 
 .article .lead{
@@ -172,17 +145,21 @@ nav a:hover{
 .highlight{
     border-left:7px solid #800000;
     background:#fff5f5;
-
     padding:20px 25px;
-
     margin:30px 0;
-
     color:#800000;
     font-size:20px;
     font-weight:bold;
     line-height:1.6;
+}
 
-    column-count:1;
+
+/* ================= ENDING ================= */
+
+.ending{
+    font-weight:bold;
+    font-size:20px !important;
+    color:#800000;
 }
 
 
@@ -191,15 +168,11 @@ nav a:hover{
 .author{
     margin-top:35px;
     padding-top:20px;
-
     border-top:1px solid #ddd;
-
     color:#666;
     font-size:14px;
     text-align:right;
     line-height:1.8;
-
-    column-span:all;
 }
 
 
@@ -229,8 +202,6 @@ footer p{
     .article{
         margin:30px auto;
         padding:0 18px;
-
-        column-count:1;
     }
 
     .article h1{
@@ -239,7 +210,6 @@ footer p{
 
     .article p{
         font-size:17px;
-        column-count:1;
     }
 
     .article .lead{
@@ -304,13 +274,17 @@ Opisyal na Publikasyon ng Sucat Senior High School
 
 
 <h1>
-Nakakasilaw na Liwanag ng Pag-asa:
+
+Nakakas ilaw na Liwanag ng Pag-asa:
 Sucat Senior High School, Nagkaisa sa Paggunita kay Jeremy A. Cortez
+
 </h1>
 
 
 <p class="category">
-TINGNAN | Ang Salimbay
+
+TINGNAN | Ang Salimbay | 2026
+
 </p>
 
 
@@ -319,7 +293,7 @@ TINGNAN | Ang Salimbay
 <div class="image-box">
 
 <img
-src="Images/Messenger_creation_1695648618385477.jpeg"
+src="Messenger_creation_1695648618385477.jpeg"
 alt="Candle-lighting ceremony para kay Jeremy A. Cortez"
 >
 
@@ -327,8 +301,10 @@ alt="Candle-lighting ceremony para kay Jeremy A. Cortez"
 
 
 <p class="caption">
-Mga kandilang sinindihan bilang paggunita kay Jeremy A. Cortez
-at sagisag ng pagkakaisa at pag-asa ng komunidad ng Sucat Senior High School.
+
+Candle-lighting ceremony ng pamayanan ng Sucat Senior High School
+bilang paggunita sa buhay ni Jeremy A. Cortez.
+
 </p>
 
 
@@ -337,18 +313,18 @@ at sagisag ng pagkakaisa at pag-asa ng komunidad ng Sucat Senior High School.
 <p class="lead">
 
 Nagkaisa ang pamayanan ng Sucat Senior High School sa isang
-<strong>candle-lighting ceremony</strong> upang parangalan ang buhay ni
-<strong>Jeremy A. Cortez</strong>, isang mag-aaral ng SSHS na naging
-halimbawa ng pagiging tapat at maaasahang Sr. Scout.
+<strong>candle-lighting ceremony</strong> upang parangalan ang buhay
+ni <strong>Jeremy A. Cortez</strong>, isang mag-aaral ng SSHS na
+naging halimbawa ng pagiging tapat at maaasahang Sr. Scout.
 
 </p>
 
 
 <p>
 
-Ayon naman kay <strong>Mr. Lyn Mar P. Danugo</strong>, Scout Adviser ni
-Jeremy, hiniling mismo ng mag-aaral noon na huwag siyang bigyan ng
-espesyal na pagtrato. Sa halip, pinili niyang mamuhay nang may
+Ayon naman kay <strong>G. Lyn Mar P. Danugo</strong>, Scout Adviser
+ni Jeremy, hiniling mismo ng mag-aaral noon na huwag siyang bigyan
+ng espesyal na pagtrato. Sa halip, pinili niyang mamuhay nang may
 paglilingkod, kababaang-loob, at pakikilahok sa komunidad—mga
 pagpapahalagang nag-iwan ng inspirasyon sa kaniyang mga nakasama.
 
@@ -359,35 +335,35 @@ pagpapahalagang nag-iwan ng inspirasyon sa kaniyang mga nakasama.
 
 Kasunod ng mensahe ay isinagawa ang candle-lighting ceremony.
 Naunang nagbigay-pugay ang mga Scout at malalapit na kaibigan ni
-Jeremy habang tumutugtog ang awiting <strong>“Sa Kabilang Buhay”</strong>
+Jeremy habang tumutugtog ang awiting <em>“Sa Kabilang Buhay”</em>
 ng Bandang Lapis.
-
-</p>
-
-
-<p>
-
-Ipinasa ang apoy ng kandila sa mga mag-aaral bilang sagisag ng
-pagkakaisa at pag-asa, bago inilagay ang mga ito sa harap ng flagpole
-bilang paggunita sa kaniyang buhay.
 
 </p>
 
 
 <div class="highlight">
 
-Ang liwanag ng bawat kandila ay naging sagisag ng pagkakaisa at
-pag-asa ng buong komunidad.
+Ang liwanag ng bawat kandila ay naging sagisag ng pagkakaisa,
+pag-asa, at pag-alala ng buong komunidad.
 
 </div>
 
 
 <p>
 
+Ipinasa ang apoy ng kandila sa mga mag-aaral bilang sagisag ng
+pagkakaisa at pag-asa, bago inilagay ang mga ito sa harap ng
+flagpole bilang paggunita sa kaniyang buhay.
+
+</p>
+
+
+<p>
+
 Sa scripture reflection na pinangunahan ng mga kinatawan ng
-<strong>Every Nation Campus Alabang</strong> at ng isang piling mag-aaral,
-bَinigyang-diin ang kahalagahan ng pagdadalamhati, pananalangin, at
-pagtitiwala sa Diyos sa gitna ng pagkawala.
+<strong>Every Nation Campus Alabang</strong> at ng isang piling
+mag-aaral, binigyang-diin ang kahalagahan ng pagdadalamhati,
+pananalangin, at pagtitiwala sa Diyos sa gitna ng pagkawala.
 
 </p>
 
@@ -396,8 +372,8 @@ pagtitiwala sa Diyos sa gitna ng pagkawala.
 
 Bago pa man tuluyang magtapos ang programa, isang nakabibinging
 katahimikan ang bumalot sa lahat habang pinatugtog ang paboritong
-kanta ni Jeremy na <strong>“Kalapastangan”</strong> ng Fitterkarma.
-Naging emosyonal ang mga malalapit sa kaniya sa sandaling iyon.
+kanta ni Jeremy na <em>“Kalapastangan”</em> ng Fitterkarma.
+Kasabay nito, bumuhos ang luha ng mga malalapit sa kaniya.
 
 </p>
 
@@ -405,10 +381,11 @@ Naging emosyonal ang mga malalapit sa kaniya sa sandaling iyon.
 <p>
 
 Sa pagtatapos ng programa, hinikayat ang buong komunidad ng
-Sucat Senior High School, sa pangunguna ng Punongguro na si
-<strong>Dr. Jay E. Evano</strong>, na alalahanin si Jeremy hindi sa
-pamamagitan ng mga haka-haka, kundi sa pamamagitan ng mga mabubuting
-halimbawang iniwan niya bilang isang mapagkumbaba at tapat na mag-aaral.
+<strong>Sucat Senior High School</strong>, sa pangunguna ng
+Punongguro na si <strong>Dr. Jay E. Evano</strong>, na alalahanin
+si Jeremy hindi sa pamamagitan ng mga haka-haka, kundi sa pamamagitan
+ng mga mabubuting halimbawang iniwan niya bilang isang mapagkumbaba
+at tapat na mag-aaral.
 
 </p>
 
@@ -416,8 +393,17 @@ halimbawang iniwan niya bilang isang mapagkumbaba at tapat na mag-aaral.
 <p>
 
 Higit sa pagluluksa, naging panawagan ang pagtitipon para sa
-katotohanan, paggalang sa kaniyang alaala, at pagkakaisa ng komunidad
-sa panahon ng pagdadalamhati.
+katotohanan, paggalang sa kaniyang alaala, at pagkakaisa ng
+komunidad sa panahon ng pagdadalamhati.
+
+</p>
+
+
+<p class="ending">
+
+Sa gitna ng pagluluksa, nananatiling buhay ang liwanag ng kaniyang
+kabutihan—isang liwanag na patuloy na magsisilbing alaala at
+inspirasyon sa buong pamayanan ng Sucat Senior High School.
 
 </p>
 
@@ -426,12 +412,11 @@ sa panahon ng pagdadalamhati.
 
 <div class="author">
 
-✍️ <strong>Sean Michael Bandilla</strong> at
-<strong>Rashad Arkjan Miranda</strong>
+✍️ Sean Michael Bandilla at Rashad Arkjan Miranda
 
 <br>
 
-🖼️ <strong>Bryan James Ebante</strong>
+🖼️ Bryan James Ebante
 
 </div>
 
