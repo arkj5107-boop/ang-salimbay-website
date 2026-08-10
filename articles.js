@@ -1,171 +1,15 @@
 const articles = [
 
 /* =====================================================
-   1. BASANG KALSADA
+   1. PERFORMING ARTS HALL
 ===================================================== */
 
 {
     title:
-    "Basang Kalsada, Masayang Parada: Pista ni Sto. Domingo de Guzman, Hindi Nagpatinag sa Ulan",
+    "Bagong Performing Arts Hall Pinasinayaan sa SSHS",
 
     description:
-    "Pista ni Sto. Domingo de Guzman sa Sucat na itinuloy sa kabila ng ulan, tampok ang karakol, parada, pananampalataya, at pagkakaisa ng komunidad.",
-
-    category:
-    "Lathalain",
-
-    date:
-    "Agosto 8, 2026",
-
-    sortDate:
-    "2026-08-08",
-
-    writer:
-    "Rashad Arkjan Miranda",
-
-    photographer:
-    "",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    videographer:
-    "",
-
-    designer:
-    "",
-
-    keywords:
-    "Basang Kalsada Masayang Parada Sto Domingo de Guzman pista fiesta Sucat ulan karakol parada pananampalataya komunidad",
-
-    content:
-    "Basang Kalsada Masayang Parada Pista Sto Domingo de Guzman Sucat ulan karakol parada fiesta",
-
-    image:
-    "Messenger_creation_E01A3847-1D12-4638-84AD-98AC4A477C96.png",
-
-    url:
-    "fiesta-sto-domingo.html"
-},
-
-
-/* =====================================================
-   2. BAGONG MAMAMAHAYAG
-===================================================== */
-
-{
-    title:
-    "Ang Salimbay, Nagbukas ng Pinto Para sa mga Bagong Mamamahayag",
-
-    description:
-    "Nagkaroon ng pagpupulong ang Ang Salimbay bilang daan sa paghahanap ng mga panibagong miyembro ng pahayagan.",
-
-    category:
-    "Balita",
-
-    date:
-    "Hulyo 18, 2026",
-
-    sortDate:
-    "2026-07-18",
-
-    writer:
-    "Wilmarie Gonzales",
-
-    photographer:
-    "",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    videographer:
-    "",
-
-    designer:
-    "",
-
-    keywords:
-    "Ang Salimbay bagong mamamahayag journalism pagpupulong School Paper Adviser SPA Nheil Patrick Raymunde Ang Katha DSPC Radio Broadcasting TV Broadcasting",
-
-    content:
-    "Ang Katha Ang Salimbay Nheil Patrick Raymunde journalism mamamahayag pagsusulat pagbigkas pagguhit larawan photography",
-
-    image:
-    "received_1259784629511883.jpeg",
-
-    url:
-    "pagpupulong.html"
-},
-
-
-/* =====================================================
-   3. MUNWALK
-===================================================== */
-
-{
-    title:
-    "MUNwalk SNEAKER Turn Over Ceremony sa Sucat Senior High School (SSHS)",
-
-    description:
-    "Ipinamahagi ang mga libreng sapatos ng Pamahalaang Lungsod ng Muntinlupa para sa mga mag-aaral ng Sucat Senior High School.",
-
-    category:
-    "Balita",
-
-    date:
-    "Hulyo 15, 2026",
-
-    sortDate:
-    "2026-07-15",
-
-    writer:
-    "Wilmarie Gonzales",
-
-    photographer:
-    "",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    videographer:
-    "",
-
-    designer:
-    "",
-
-    keywords:
-    "MUNwalk SNEAKER sapatos Muntinlupa SSHS Pamahalaang Lungsod Jorge Endozo Erwin Alfonso Rhodora Mandap Joel Cruz Wesly Aquino Zhane Ayanna Palomo",
-
-    content:
-    "MUNwalk SNEAKER Turn Over Ceremony libreng sapatos Muntinlupa Sucat Senior High School DDRM SSLG GPTA",
-
-    image:
-    "received_2517081808793748.jpeg",
-
-    url:
-    "munwalk.html"
-},
-
-
-/* =====================================================
-   4. PERFORMING ARTS HALL
-===================================================== */
-
-{
-    title:
-    "Bagong Performing Arts Hall, Pinasinayaan sa SSHS",
-
-    description:
-    "Pormal nang binuksan ang bagong Performing Arts Hall ng Sucat Senior High School sa isang pasinaya na may temang Where Art Comes Alive.",
+    "Pormal nang binuksan ang bagong Performing Arts Hall ng Sucat Senior High School (SSHS) sa isinagawang pasinaya na may temang Where Art Comes Alive nitong Hunyo 22, 2026.",
 
     category:
     "Balita",
@@ -173,10 +17,7 @@ const articles = [
     date:
     "Hunyo 22, 2026",
 
-    sortDate:
-    "2026-06-22",
-
-    writer:
+    author:
     "Wilmarie A. Gonzales",
 
     photographer:
@@ -188,17 +29,14 @@ const articles = [
     editor:
     "",
 
-    videographer:
-    "",
-
-    designer:
+    otherCredit:
     "",
 
     keywords:
-    "Performing Arts Hall SSHS sining pasinaya Where Art Comes Alive Jay Boy Evano Meniano Ebora Ada Trinidad Tagle Jorge Endozo PVA Cypheria Dance Troupe ribbon cutting",
+    "Performing Arts Hall SSHS Sucat Senior High School Where Art Comes Alive sining pasinaya Dr Jay Boy Evano Meniano Ebora Ada Trinidad Tagle Jorge Endozo PVA Cypheria Dance Troupe ribbon cutting",
 
     content:
-    "Performing Visual Arts PVA Pathway Cypheria Dance Troupe Ribbon Cutting Ceremony Performing Arts Hall sining",
+    "PVA Performing Visual Arts Cypheria Dance Troupe sining pagtatanghal pasilidad paaralan",
 
     image:
     "Messenger_creation_CC6E278C-72C7-4F31-934B-DE99E607B71E.jpeg",
@@ -209,7 +47,7 @@ const articles = [
 
 
 /* =====================================================
-   5. CAREER GUIDANCE
+   2. CAREER GUIDANCE
 ===================================================== */
 
 {
@@ -217,7 +55,7 @@ const articles = [
     "Career Guidance ng SIM Diamond, Dinaluhan ng mga Kababaihang Mag-aaral ng SSHS",
 
     description:
-    "Nagkaroon ng Career Support Program para sa mga mag-aaral ng Sucat Senior High School sa pangunguna ng Soroptimist International Manila Diamond.",
+    "Nagkaroon ng Career Support Program para sa mga mag-aaral ng Sucat Senior High School sa pangunguna ng Soroptimist International Manila Diamond – Dream It, Be It Organization noong Hunyo 25, 2026.",
 
     category:
     "Balita",
@@ -225,10 +63,7 @@ const articles = [
     date:
     "Hunyo 25, 2026",
 
-    sortDate:
-    "2026-06-25",
-
-    writer:
+    author:
     "Wilmarie A. Gonzales",
 
     photographer:
@@ -240,17 +75,14 @@ const articles = [
     editor:
     "",
 
-    videographer:
-    "",
-
-    designer:
+    otherCredit:
     "",
 
     keywords:
-    "Career Guidance SIM Diamond DIBI Scholarship career Christine Codrington Kinwood Galiza Christina Dela Cruz Frey SMART Dioceldo Sy",
+    "Career Guidance SIM Diamond Soroptimist International Manila Diamond SIMD Dream It Be It DIBI Christine Codrington Kinwood Galiza Christina Dela Cruz Frey scholarship Dioceldo Sy career support",
 
     content:
-    "Soroptimist International Manila Diamond Dream It Be It Career Support Program Scholarship Program Dioceldo Big Dream",
+    "career planning SMART scholarship students kababaihan mag aaral",
 
     image:
     "Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg",
@@ -261,7 +93,7 @@ const articles = [
 
 
 /* =====================================================
-   6. KAMPANYA PARA SA MGA BATANG MAMAMAHAYAG
+   3. KAMPANYA NG ANG SALIMBAY
 ===================================================== */
 
 {
@@ -269,7 +101,7 @@ const articles = [
     "Kampanya Para sa mga Batang Mamamahayag, Inilunsad ng Ang Salimbay",
 
     description:
-    "Inilunsad ng Ang Salimbay ang kampanya upang hikayatin ang mga mag-aaral ng SSHS na makilahok sa pamamahayag.",
+    "Bilang paghahanda sa pagpili ng mga bagong miyembro ng opisyal na publikasyong Filipino ng paaralan, inilunsad ng Ang Salimbay ang kampanya upang hikayatin ang mga mag-aaral na makilahok sa pamamahayag.",
 
     category:
     "Balita",
@@ -277,11 +109,8 @@ const articles = [
     date:
     "2026",
 
-    sortDate:
-    "2026-01-01",
-
-    writer:
-    "",
+    author:
+    "Ang Salimbay",
 
     photographer:
     "Ram Mendoza / Bryan James Ebante / Rashad Arkjan Miranda",
@@ -292,20 +121,23 @@ const articles = [
     editor:
     "",
 
-    videographer:
-    "",
-
-    designer:
+    otherCredit:
     "",
 
     keywords:
-    "Ang Salimbay kampanya mamamahayag journalism batang mamamahayag recruitment publication",
+    "Ang Salimbay kampanya batang mamamahayag journalism pamamahayag bagong miyembro Sucat Senior High School",
 
     content:
-    "pag-aanunsyo pamamahayag pagsusulat balita paaralan komunidad",
+    "pahayagan pamamahayag tinig mag aaral journalism campaign",
+
+    /*
+       NOTE:
+       Ito ang filename na ginagamit mismo ng
+       nanghikayat.html sa GitHub.
+    */
 
     image:
-    "Images/Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg",
+    "Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg",
 
     url:
     "nanghikayat.html"
@@ -313,7 +145,99 @@ const articles = [
 
 
 /* =====================================================
-   7. JEREMY A. CORTEZ
+   4. PAGPUPULONG / BAGONG MAMAMAHAYAG
+===================================================== */
+
+{
+    title:
+    "Ang Salimbay, Nagbukas ng Pinto Para sa mga Bagong Mamamahayag",
+
+    description:
+    "Nagkaroon ng pagpupulong ang Ang Salimbay noong Hulyo 18, 2026 bilang daan sa paghahanap ng mga panibagong miyembro ng pahayagan.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hulyo 18, 2026",
+
+    author:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    keywords:
+    "Ang Salimbay bagong mamamahayag journalism pagpupulong Nheil Patrick Raymunde Ang Katha DSPC 2024 Radio Broadcasting TV Broadcasting Individual Categories",
+
+    content:
+    "pagsulat pagbigkas pagguhit photography pagsusulit bagong miyembro",
+
+    image:
+    "received_1259784629511883.jpeg",
+
+    url:
+    "pagpupulong.html"
+},
+
+
+/* =====================================================
+   5. MUNWALK
+===================================================== */
+
+{
+    title:
+    "MUNwalk SNEAKER Turn Over Ceremony sa Sucat Senior High School",
+
+    description:
+    "Ipinamahagi ang mga libreng sapatos ng Pamahalaang Lungsod ng Muntinlupa para sa mga mag-aaral ng Sucat Senior High School.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hulyo 15, 2026",
+
+    author:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    keywords:
+    "MUNwalk SNEAKER sapatos Muntinlupa SSHS Jorge Endozo Erwin Alfonso Rhodora Mandap Joel Cruz Wesly Aquino Zhane Ayanna Palomo Marvie Salmingo Mayor Ruffy Biazon",
+
+    content:
+    "libreng sapatos Pamahalaang Lungsod Muntinlupa taxpayers zumba Sucsen Performers",
+
+    image:
+    "Messenger_creation_2777425902629198.jpeg",
+
+    url:
+    "munwalk.html"
+},
+
+
+/* =====================================================
+   6. JEREMY CORTEZ
 ===================================================== */
 
 {
@@ -321,7 +245,7 @@ const articles = [
     "Nakakasilaw na Liwanag ng Pag-asa: Sucat Senior High School, Nagkaisa sa Paggunita kay Jeremy A. Cortez",
 
     description:
-    "Nagkaisa ang pamayanan ng Sucat Senior High School sa isang candle-lighting ceremony bilang paggunita kay Jeremy A. Cortez.",
+    "Nagkaisa ang pamayanan ng Sucat Senior High School sa isang candle-lighting ceremony upang parangalan ang buhay ni Jeremy A. Cortez.",
 
     category:
     "Lathalain",
@@ -329,35 +253,29 @@ const articles = [
     date:
     "2026",
 
-    sortDate:
-    "2026-01-02",
-
-    writer:
+    author:
     "Sean Michael Bandilla at Rashad Arkjan Miranda",
 
     photographer:
-    "Bryan James Ebante",
+    "",
 
     illustrator:
-    "",
+    "Bryan James Ebante",
 
     editor:
     "",
 
-    videographer:
-    "",
-
-    designer:
+    otherCredit:
     "",
 
     keywords:
-    "Jeremy A Cortez SSHS paggunita candle lighting Sr Scout Scout Adviser Lyn Mar Danugo Every Nation Campus Alabang",
+    "Jeremy A Cortez candle lighting paggunita Sucat Senior High School Scout Sr Scout Lyn Mar Danugo Every Nation Campus Alabang Sa Kabilang Buhay Kalapastangan Fitterkarma",
 
     content:
-    "candle lighting ceremony paggunita pagkakaisa pag-asa Sucat Senior High School Jeremy",
+    "Scout candle lighting scripture reflection alaala pagdadalamhati pagkakaisa",
 
     image:
-    "Messenger_creation_1695648618385477.jpeg",
+    "received_1259784629511883.jpeg",
 
     url:
     "jeremy.html"
@@ -365,15 +283,15 @@ const articles = [
 
 
 /* =====================================================
-   8. LINGKOD-BAYAN
+   7. LINGKOD-BAYAN
 ===================================================== */
 
 {
     title:
-    "Lingkod-Bayan o Lingkod ba ’yan?",
+    "Lingkod-Bayan o Lingkod ba 'yan?",
 
     description:
-    "Isang editoryal tungkol sa pananagutan, attendance, at tungkulin ng mga halal na opisyal sa serbisyo publiko.",
+    "Isang editoryal tungkol sa pananagutan, attendance, at tunay na paglilingkod ng mga halal na opisyal sa bayan.",
 
     category:
     "Editoryal",
@@ -381,32 +299,26 @@ const articles = [
     date:
     "2026",
 
-    sortDate:
-    "2026-01-03",
-
-    writer:
+    author:
     "Kenneth Tuscano",
 
     photographer:
-    "",
+    "Ram Mendoza",
 
     illustrator:
-    "Ram Mendoza",
+    "",
 
     editor:
     "",
 
-    videographer:
-    "",
-
-    designer:
+    otherCredit:
     "",
 
     keywords:
-    "Lingkod Bayan Lingkod ba yan Senado senador attendance serbisyo publiko GMA Public Affairs Bato dela Rosa Camille Villar Alan Cayetano",
+    "Lingkod Bayan Senado senador attendance serbisyo publiko Bato dela Rosa Camille Villar Alan Cayetano GMA Public Affairs",
 
     content:
-    "Senado session days attendance absenteeism serbisyo publiko pananagutan",
+    "58 session days Senate attendance public service accountability elections botante",
 
     image:
     "received_1552567129154682.jpeg",
@@ -417,7 +329,7 @@ const articles = [
 
 
 /* =====================================================
-   9. ESKUWELAGIM
+   8. ESKUWELAGIM
 ===================================================== */
 
 {
@@ -425,7 +337,7 @@ const articles = [
     "EskuweLAGIM",
 
     description:
-    "Editoryal tungkol sa kaligtasan sa paaralan, disiplina, at pananagutan ng komunidad sa paglikha ng ligtas na kapaligiran.",
+    "Isang editoryal tungkol sa kaligtasan sa paaralan, karahasan, disiplina, seguridad, at pananagutan ng komunidad.",
 
     category:
     "Editoryal",
@@ -433,50 +345,78 @@ const articles = [
     date:
     "2026",
 
-    sortDate:
-    "2026-01-04",
-
-    writer:
+    author:
     "Kenneth Tuscano",
+
+    photographer:
+    "Ram Mendoza",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    keywords:
+    "EskuweLAGIM paaralan kaligtasan karahasan seguridad Las Piñas National High School LPNHS school violence metal detector guwardiya",
+
+    content:
+    "paaralan seguridad estudyante guro magulang komunidad disiplina",
+
+    image:
+    "received_2517081808793748.jpeg",
+
+    url:
+    "lagim.html"
+},
+
+
+/* =====================================================
+   9. BASANG KALSADA MASAYANG PARADA
+===================================================== */
+
+{
+    title:
+    "Basang Kalsada, Masayang Parada: Pista ni Sto. Domingo de Guzman, Hindi Nagpatinag sa Ulan",
+
+    description:
+    "Hindi nagpahuli ang mga taga-Sucat sa pagdiriwang ng pista ni Sto. Domingo de Guzman sa kabila ng ulan, karakol, at parada.",
+
+    category:
+    "Lathalain",
+
+    date:
+    "Agosto 8, 2026",
+
+    author:
+    "Rashad Arkjan Miranda",
 
     photographer:
     "",
 
     illustrator:
-    "Ram Mendoza",
+    "",
 
     editor:
     "",
 
-    videographer:
-    "",
-
-    designer:
+    otherCredit:
     "",
 
     keywords:
-    "EskuweLAGIM paaralan kaligtasan karahasan seguridad Las Piñas National High School LPNHS school safety",
+    "Sto Domingo de Guzman pista fiesta Sucat Muntinlupa ulan karakol parada Sto Domingo de Guzman Parish Barangay Sucat",
 
     content:
-    "paaralan seguridad disiplina edukasyon kaligtasan komunidad",
+    "Basang Kalsada Masayang Parada pista ulan karakol parada komunidad",
 
     image:
-    "Messenger_creation_2777425902629198.jpeg",
+    "Messenger_creation_C6572A7C-EC18-4B97-A68C-32D28DF9E756.jpeg",
 
     url:
-    "lagim.html"
+    "fiesta-sto-domingo.html"
 }
 
 ];
-
-
-/* =====================================================
-   AUTOMATIC NEWEST-FIRST
-===================================================== */
-
-articles.sort(function(a,b){
-
-    return new Date(b.sortDate) -
-           new Date(a.sortDate);
-
-});
