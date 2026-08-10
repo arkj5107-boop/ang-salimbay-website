@@ -1311,4 +1311,38 @@ function(){
 
                 <p>
 
-                   
+                    ${escapeHTML(
+                        article.description
+                    )}
+
+                </p>
+
+            `;
+
+
+            resultCard.addEventListener(
+            "click",
+            function(){
+
+                window.location.href =
+                article.url;
+
+            });
+
+
+            searchResults.appendChild(
+                resultCard
+            );
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
