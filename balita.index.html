@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,7 +14,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -21,7 +23,7 @@ body{
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:#800000;
@@ -41,7 +43,7 @@ header p{
 }
 
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 
 nav{
     background:#5a0000;
@@ -62,7 +64,7 @@ nav a:hover{
 }
 
 
-/* INTRO */
+/* ================= INTRO ================= */
 
 .intro{
     padding:40px 10%;
@@ -80,8 +82,7 @@ nav a:hover{
 }
 
 
-
-/* FUN FACT */
+/* ================= FUN FACT ================= */
 
 .funfact{
     background:#fff5f5;
@@ -101,8 +102,7 @@ nav a:hover{
 }
 
 
-
-/* NEWS */
+/* ================= NEWS SECTION ================= */
 
 .news-section{
     padding:40px 10%;
@@ -116,95 +116,127 @@ nav a:hover{
 }
 
 
-.news-card{
+/* ================= SECTION TITLE ================= */
 
-    background:white;
-    border:2px solid #800000;
-    border-radius:12px;
+.section-title{
+    color:#800000;
+    font-size:32px;
     margin-bottom:30px;
+    border-left:7px solid #800000;
+    padding-left:15px;
+}
+
+
+/* ================= CARDS ================= */
+
+.grid{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
     overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);
+    margin-bottom:0;
 }
 
-
-.news-card img{
-
+.card img{
     width:100%;
-    height:250px;
+    height:300px;
     object-fit:cover;
-    background:#ddd;
-
+    display:block;
 }
 
-
-.news-content{
-
+.card-content{
     padding:25px;
-
 }
 
-
-.news-content h3{
-
+.card-content h3{
     color:#800000;
     font-size:25px;
-    margin-bottom:10px;
-
+    margin-bottom:12px;
 }
 
-
-.news-content .date{
-
-    color:#777;
-    font-size:14px;
-    margin-bottom:15px;
-
-}
-
-
-.news-content p{
-
+.card-content p{
     line-height:1.7;
     text-align:justify;
+    font-size:17px;
+}
 
+.card-content a{
+    text-decoration:none;
+}
+
+.card-content button{
+    margin-top:18px;
+    padding:11px 20px;
+    background:#800000;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.card-content button:hover{
+    background:#5a0000;
 }
 
 
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-
     background:#5a0000;
     color:white;
     text-align:center;
     padding:25px;
     margin-top:40px;
-
 }
-
 
 footer p{
     margin:5px;
 }
 
 
-
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-header h1{
-    font-size:30px;
-}
+    header h1{
+        font-size:30px;
+    }
 
-.intro,
-.news-section{
-    padding:30px 5%;
-}
+    .intro,
+    .news-section{
+        padding:30px 5%;
+    }
 
-.funfact{
-    margin:20px 5%;
-}
+    .funfact{
+        margin:20px 5%;
+    }
+
+    .section-title{
+        font-size:27px;
+    }
+
+    .card img{
+        height:230px;
+    }
+
+    .card-content{
+        padding:20px;
+    }
+
+    .card-content h3{
+        font-size:22px;
+    }
+
+    .card-content p{
+        font-size:16px;
+    }
 
 }
 
@@ -216,44 +248,59 @@ header h1{
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <h1>ANG SALIMBAY</h1>
 
-<p>Opisyal na Publikasyon ng Sucat Senior High School</p>
+<p>
+Opisyal na Publikasyon ng Sucat Senior High School
+</p>
 
 </header>
 
 
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
+
 <a href="index.html">Home</a>
+
 <a href="balita.index.html">Balita</a>
+
 <a href="editoryal.html">Editoryal at kolum</a>
+
 <a href="lathalain.html">Lathalain</a>
+
 <a href="isports.html">Isports</a>
+
 <a href="Agham.html">Agham</a>
+
 <a href="About.html">Tungkol sa Amin</a>
+
 </nav>
 
 
-
+<!-- ================= INTRO ================= -->
 
 <section class="intro">
 
 <h2>📰 Mga Nagbabagang Balita</h2>
 
 <p>
+
 Ang pahina ng <b>Balita</b> ng Ang Salimbay ay nagsisilbing daluyan
 ng mga napapanahon at makabuluhang impormasyon mula sa paaralan at
 komunidad. Dito matatagpuan ang mga ulat tungkol sa mahahalagang
 pangyayari, tagumpay, anunsyo, at isyung may epekto sa mga Sucsenian.
+
 </p>
 
 </section>
 
 
-
+<!-- ================= FUN FACT ================= -->
 
 <section class="funfact">
 
@@ -261,111 +308,170 @@ pangyayari, tagumpay, anunsyo, at isyung may epekto sa mga Sucsenian.
 
 <ul>
 
-<li>Ang balita ay dapat nakabatay sa katotohanan at beripikadong impormasyon.</li>
+<li>
+Ang balita ay dapat nakabatay sa katotohanan at beripikadong impormasyon.
+</li>
 
-<li>Ginagamit ng mamamahayag ang <b>5Ws and 1H</b> upang maging kumpleto ang ulat.</li>
+<li>
+Ginagamit ng mamamahayag ang <b>5Ws and 1H</b> upang maging kumpleto ang ulat.
+</li>
 
-<li>Ang pinakamahalagang detalye ay inilalagay sa unang bahagi ng balita.</li>
+<li>
+Ang pinakamahalagang detalye ay inilalagay sa unang bahagi ng balita.
+</li>
 
-<li>Ang isang mahusay na balita ay malinaw, patas, at walang kinikilingan.</li>
+<li>
+Ang isang mahusay na balita ay malinaw, patas, at walang kinikilingan.
+</li>
 
 </ul>
 
 </section>
 
 
-
+<!-- ================= NEWS ================= -->
 
 <section class="news-section">
 
+<h2 class="section-title">
+Pinakabagong Ulat
+</h2>
 
-<h2>Pinakabagong Ulat</h2>
-
-
-
-<h2 class="section-title">Pinakabagong Ulat</h2>
 
 <div class="grid">
 
+
+<!-- ================= CARD 1 ================= -->
+
 <div class="card">
 
-    <div class="article-card">
-        <h3>Ang Salimbay Nanghikayat!</h3>
+<img
+src="Images/Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg"
+alt="Ang Salimbay Nanghikayat"
+>
 
-        <p>
-            Opisyal na publikasyong Filipino ng paaralan, nagsagawa ng
-            pag-aanunsyo ang mga kasapi nito upang hikayatin ang bawat
-            mag-aaral ng Sucat Senior High School na makilahok sa mga
-            gawaing pampamahayag.
-        </p>
+<div class="card-content">
 
-        <a href="nanghikayat.html">
-            <button>Basahin</button>
-        </a>
-    </div>
+<h3>
+Ang Salimbay Nanghikayat!
+</h3>
 
-</div>
+<p>
 
+Opisyal na publikasyong Filipino ng paaralan, nagsagawa ng
+pag-aanunsyo ang mga kasapi nito upang hikayatin ang bawat
+mag-aaral ng Sucat Senior High School na makilahok sa mga
+gawaing pampamahayag.
 
-<div class="article-card">
+</p>
 
-    <div class="card-content">
+<a href="nanghikayat.html">
 
-        <h3>Bagong Performing Arts Hall Pinasinayaan sa SSHS</h3>
+<button>
+Basahin
+</button>
 
-        <p>
-            Pormal nang binuksan ang bagong Performing Arts Hall ng
-            Sucat Senior High School (SSHS) sa isinagawang pasinaya
-            na may temang “Where Art Comes Alive” nitong Hunyo 22,
-            2026, alas-10:00 ng umaga.
-        </p>
-
-        <a href="performinghall.html">
-            <button>Basahin</button>
-        </a>
-
-    </div>
-
-</div>
-
-
-<div class="article-card">
-
-    <div class="card-content">
-
-        <h3>Career Guidance sa SSHS!</h3>
-
-        <p>
-            Career Support Program para sa mga mag-aaral ng Sucat
-            Senior High School (SSHS) sa pangunguna ng Soroptimist
-            International Manila Diamond (SIMD) – Dream It, Be It
-            (DIBI) Organization ngayong Hunyo 25, 2026.
-        </p>
-
-        <a href="career.html">
-            <button>Basahin</button>
-        </a>
-
-    </div>
-
-</div>
+</a>
 
 </div>
 
 </div>
 
 
+<!-- ================= CARD 2 ================= -->
 
+<div class="card">
+
+<img
+src="Images/Messenger_creation_CC6E278C-72C7-4F31-934B-DE99E607B71E.jpeg"
+alt="Bagong Performing Arts Hall Pinasinayaan sa SSHS"
+>
+
+<div class="card-content">
+
+<h3>
+Bagong Performing Arts Hall Pinasinayaan sa SSHS
+</h3>
+
+<p>
+
+Pormal nang binuksan ang bagong Performing Arts Hall ng
+Sucat Senior High School (SSHS) sa isinagawang pasinaya
+na may temang “Where Art Comes Alive” nitong Hunyo 22,
+2026, alas-10:00 ng umaga.
+
+</p>
+
+<a href="performinghall.html">
+
+<button>
+Basahin
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ================= CARD 3 ================= -->
+
+<div class="card">
+
+<img
+src="Images/Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg"
+alt="Career Guidance sa SSHS"
+>
+
+<div class="card-content">
+
+<h3>
+Career Guidance sa SSHS!
+</h3>
+
+<p>
+
+Career Support Program para sa mga mag-aaral ng Sucat
+Senior High School (SSHS) sa pangunguna ng Soroptimist
+International Manila Diamond (SIMD) – Dream It, Be It
+(DIBI) Organization ngayong Hunyo 25, 2026.
+
+</p>
+
+<a href="career.html">
+
+<button>
+Basahin
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p><b>ANG SALIMBAY</b></p>
+<p>
+<b>ANG SALIMBAY</b>
+</p>
 
-<p>© 2026 Sucat Senior High School Publication</p>
+<p>
+© 2026 Sucat Senior High School Publication
+</p>
 
 </footer>
 
 
-
 </body>
+
 </html>
