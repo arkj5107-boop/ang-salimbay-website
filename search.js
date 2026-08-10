@@ -1,845 +1,482 @@
-<!DOCTYPE html>
-<html lang="tl">
+const articles = [
 
-<head>
+/* =====================================================
+   1. BASANG KALSADA
+===================================================== */
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{
+    title:
+    "Basang Kalsada, Masayang Parada: Pista ni Sto. Domingo de Guzman, Hindi Nagpatinag sa Ulan",
 
-<title>Ang Salimbay | Opisyal na Pahayagang Filipino ng Sucat Senior High School</title>
+    description:
+    "Pista ni Sto. Domingo de Guzman sa Sucat na itinuloy sa kabila ng ulan, tampok ang karakol, parada, pananampalataya, at pagkakaisa ng komunidad.",
 
-<style>
+    category:
+    "Lathalain",
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    date:
+    "Agosto 8, 2026",
+
+    sortDate:
+    "2026-08-08",
+
+    writer:
+    "Rashad Arkjan Miranda",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Basang Kalsada Masayang Parada Sto Domingo de Guzman pista fiesta Sucat ulan karakol parada pananampalataya komunidad",
+
+    content:
+    "Basang Kalsada Masayang Parada Pista Sto Domingo de Guzman Sucat ulan karakol parada fiesta",
+
+    image:
+    "Messenger_creation_E01A3847-1D12-4638-84AD-98AC4A477C96.png",
+
+    url:
+    "fiesta-sto-domingo.html"
+},
+
+
+/* =====================================================
+   2. BAGONG MAMAMAHAYAG
+===================================================== */
+
+{
+    title:
+    "Ang Salimbay, Nagbukas ng Pinto Para sa mga Bagong Mamamahayag",
+
+    description:
+    "Nagkaroon ng pagpupulong ang Ang Salimbay bilang daan sa paghahanap ng mga panibagong miyembro ng pahayagan.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hulyo 18, 2026",
+
+    sortDate:
+    "2026-07-18",
+
+    writer:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Ang Salimbay bagong mamamahayag journalism pagpupulong School Paper Adviser SPA Nheil Patrick Raymunde Ang Katha DSPC Radio Broadcasting TV Broadcasting",
+
+    content:
+    "Ang Katha Ang Salimbay Nheil Patrick Raymunde journalism mamamahayag pagsusulat pagbigkas pagguhit larawan photography",
+
+    image:
+    "received_1259784629511883.jpeg",
+
+    url:
+    "pagpupulong.html"
+},
+
+
+/* =====================================================
+   3. MUNWALK
+===================================================== */
+
+{
+    title:
+    "MUNwalk SNEAKER Turn Over Ceremony sa Sucat Senior High School (SSHS)",
+
+    description:
+    "Ipinamahagi ang mga libreng sapatos ng Pamahalaang Lungsod ng Muntinlupa para sa mga mag-aaral ng Sucat Senior High School.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hulyo 15, 2026",
+
+    sortDate:
+    "2026-07-15",
+
+    writer:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "MUNwalk SNEAKER sapatos Muntinlupa SSHS Pamahalaang Lungsod Jorge Endozo Erwin Alfonso Rhodora Mandap Joel Cruz Wesly Aquino Zhane Ayanna Palomo",
+
+    content:
+    "MUNwalk SNEAKER Turn Over Ceremony libreng sapatos Muntinlupa Sucat Senior High School DDRM SSLG GPTA",
+
+    image:
+    "received_2517081808793748.jpeg",
+
+    url:
+    "munwalk.html"
+},
+
+
+/* =====================================================
+   4. PERFORMING ARTS HALL
+===================================================== */
+
+{
+    title:
+    "Bagong Performing Arts Hall, Pinasinayaan sa SSHS",
+
+    description:
+    "Pormal nang binuksan ang bagong Performing Arts Hall ng Sucat Senior High School sa isang pasinaya na may temang Where Art Comes Alive.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hunyo 22, 2026",
+
+    sortDate:
+    "2026-06-22",
+
+    writer:
+    "Wilmarie A. Gonzales",
+
+    photographer:
+    "Joanna Zyme M. Beltran",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Performing Arts Hall SSHS sining pasinaya Where Art Comes Alive Jay Boy Evano Meniano Ebora Ada Trinidad Tagle Jorge Endozo PVA Cypheria Dance Troupe ribbon cutting",
+
+    content:
+    "Performing Visual Arts PVA Pathway Cypheria Dance Troupe Ribbon Cutting Ceremony Performing Arts Hall sining",
+
+    image:
+    "Messenger_creation_CC6E278C-72C7-4F31-934B-DE99E607B71E.jpeg",
+
+    url:
+    "performinghall.html"
+},
+
+
+/* =====================================================
+   5. CAREER GUIDANCE
+===================================================== */
+
+{
+    title:
+    "Career Guidance ng SIM Diamond, Dinaluhan ng mga Kababaihang Mag-aaral ng SSHS",
+
+    description:
+    "Nagkaroon ng Career Support Program para sa mga mag-aaral ng Sucat Senior High School sa pangunguna ng Soroptimist International Manila Diamond.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hunyo 25, 2026",
+
+    sortDate:
+    "2026-06-25",
+
+    writer:
+    "Wilmarie A. Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Career Guidance SIM Diamond DIBI Scholarship career Christine Codrington Kinwood Galiza Christina Dela Cruz Frey SMART Dioceldo Sy",
+
+    content:
+    "Soroptimist International Manila Diamond Dream It Be It Career Support Program Scholarship Program Dioceldo Big Dream",
+
+    image:
+    "Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg",
+
+    url:
+    "career.html"
+},
+
+
+/* =====================================================
+   6. KAMPANYA PARA SA MGA BATANG MAMAMAHAYAG
+===================================================== */
+
+{
+    title:
+    "Kampanya Para sa mga Batang Mamamahayag, Inilunsad ng Ang Salimbay",
+
+    description:
+    "Inilunsad ng Ang Salimbay ang kampanya upang hikayatin ang mga mag-aaral ng SSHS na makilahok sa pamamahayag.",
+
+    category:
+    "Balita",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-01",
+
+    writer:
+    "",
+
+    photographer:
+    "Ram Mendoza / Bryan James Ebante / Rashad Arkjan Miranda",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Ang Salimbay kampanya mamamahayag journalism batang mamamahayag recruitment publication",
+
+    content:
+    "pag-aanunsyo pamamahayag pagsusulat balita paaralan komunidad",
+
+    image:
+    "Images/Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg",
+
+    url:
+    "nanghikayat.html"
+},
+
+
+/* =====================================================
+   7. JEREMY A. CORTEZ
+===================================================== */
+
+{
+    title:
+    "Nakakasilaw na Liwanag ng Pag-asa: Sucat Senior High School, Nagkaisa sa Paggunita kay Jeremy A. Cortez",
+
+    description:
+    "Nagkaisa ang pamayanan ng Sucat Senior High School sa isang candle-lighting ceremony bilang paggunita kay Jeremy A. Cortez.",
+
+    category:
+    "Lathalain",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-02",
+
+    writer:
+    "Sean Michael Bandilla at Rashad Arkjan Miranda",
+
+    photographer:
+    "Bryan James Ebante",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Jeremy A Cortez SSHS paggunita candle lighting Sr Scout Scout Adviser Lyn Mar Danugo Every Nation Campus Alabang",
+
+    content:
+    "candle lighting ceremony paggunita pagkakaisa pag-asa Sucat Senior High School Jeremy",
+
+    image:
+    "Messenger_creation_1695648618385477.jpeg",
+
+    url:
+    "jeremy.html"
+},
+
+
+/* =====================================================
+   8. LINGKOD-BAYAN
+===================================================== */
+
+{
+    title:
+    "Lingkod-Bayan o Lingkod ba ’yan?",
+
+    description:
+    "Isang editoryal tungkol sa pananagutan, attendance, at tungkulin ng mga halal na opisyal sa serbisyo publiko.",
+
+    category:
+    "Editoryal",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-03",
+
+    writer:
+    "Kenneth Tuscano",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Lingkod Bayan Lingkod ba yan Senado senador attendance serbisyo publiko GMA Public Affairs Bato dela Rosa Camille Villar Alan Cayetano",
+
+    content:
+    "Senado session days attendance absenteeism serbisyo publiko pananagutan",
+
+    image:
+    "received_1552567129154682.jpeg",
+
+    url:
+    "lingkod.html"
+},
+
+
+/* =====================================================
+   9. ESKUWELAGIM
+===================================================== */
+
+{
+    title:
+    "EskuweLAGIM",
+
+    description:
+    "Editoryal tungkol sa kaligtasan sa paaralan, disiplina, at pananagutan ng komunidad sa paglikha ng ligtas na kapaligiran.",
+
+    category:
+    "Editoryal",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-04",
+
+    writer:
+    "Kenneth Tuscano",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "EskuweLAGIM paaralan kaligtasan karahasan seguridad Las Piñas National High School LPNHS school safety",
+
+    content:
+    "paaralan seguridad disiplina edukasyon kaligtasan komunidad",
+
+    image:
+    "Messenger_creation_2777425902629198.jpeg",
+
+    url:
+    "lagim.html"
 }
 
-body{
-    background:#f4f4f4;
-    color:#222;
-}
+];
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   AUTOMATIC NEWEST-FIRST
+===================================================== */
 
-header{
-    background:#6B0015;
-    color:#fff;
-    text-align:center;
-    padding:25px;
-}
+articles.sort(function(a,b){
 
-header h1{
-    font-size:45px;
-    letter-spacing:2px;
-}
+    return new Date(b.sortDate) -
+           new Date(a.sortDate);
 
-header p{
-    margin-top:8px;
-    font-size:16px;
-}
-
-
-/* ================= NAVIGATION ================= */
-
-nav{
-    background:#500010;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    padding:15px 18px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    background:white;
-    color:#6B0015;
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-    background:
-    linear-gradient(rgba(107,0,21,.8),rgba(107,0,21,.8)),
-    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
-
-    background-size:cover;
-    background-position:center;
-
-    color:white;
-    text-align:center;
-    padding:90px 20px;
-}
-
-.hero h1{
-    font-size:42px;
-}
-
-.hero p{
-    margin-top:15px;
-    max-width:700px;
-    margin-left:auto;
-    margin-right:auto;
-    line-height:1.8;
-}
-
-
-/* ================= CONTAINER ================= */
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    padding:40px 0;
-}
-
-
-/* ================= SEARCH ================= */
-
-.search-section{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,.10);
-    margin-bottom:40px;
-}
-
-.search-section h2{
-    color:#6B0015;
-    text-align:center;
-    margin-bottom:15px;
-}
-
-.search-box{
-    max-width:800px;
-    margin:auto;
-}
-
-.search-box input{
-    width:100%;
-    padding:16px 20px;
-    border:2px solid #6B0015;
-    border-radius:8px;
-    font-size:17px;
-    outline:none;
-}
-
-.search-box input:focus{
-    box-shadow:0 0 0 3px rgba(107,0,21,.12);
-}
-
-.search-info{
-    text-align:center;
-    color:#777;
-    margin-top:12px;
-    font-size:14px;
-}
-
-
-/* ================= SEARCH RESULTS ================= */
-
-.search-results{
-    max-width:800px;
-    margin:20px auto 0;
-    display:none;
-}
-
-.search-results.show{
-    display:block;
-}
-
-.search-results h3{
-    color:#6B0015;
-    margin-bottom:15px;
-}
-
-.search-result-card{
-    background:#fff;
-    border-radius:8px;
-    padding:15px;
-    margin-bottom:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.10);
-    cursor:pointer;
-    transition:.2s;
-}
-
-.search-result-card:hover{
-    transform:translateY(-2px);
-}
-
-.search-result-card h4{
-    color:#6B0015;
-    margin-bottom:6px;
-}
-
-.search-result-card small{
-    color:#777;
-}
-
-.search-result-card p{
-    margin-top:7px;
-    line-height:1.5;
-}
-
-
-/* ================= SECTION TITLE ================= */
-
-.section-title{
-    color:#6B0015;
-    margin-bottom:25px;
-    border-left:6px solid #6B0015;
-    padding-left:12px;
-}
-
-
-/* ================= GRID ================= */
-
-.grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-    gap:25px;
-}
-
-
-/* ================= CARD ================= */
-
-.card{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    display:block;
-}
-
-.card-content{
-    padding:18px;
-}
-
-.card h3{
-    color:#6B0015;
-}
-
-.card p{
-    margin-top:10px;
-    line-height:1.6;
-}
-
-.card a{
-    text-decoration:none;
-}
-
-.card button{
-    margin-top:18px;
-    padding:10px 18px;
-    background:#6B0015;
-    color:white;
-    border:none;
-    cursor:pointer;
-    border-radius:5px;
-}
-
-.card button:hover{
-    background:#500010;
-}
-
-
-/* ================= CATEGORIES ================= */
-
-.categories{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.categories span{
-    background:#6B0015;
-    color:white;
-    padding:10px 16px;
-    border-radius:20px;
-}
-
-
-/* ================= ABOUT ================= */
-
-.about{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    line-height:1.8;
-}
-
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#6B0015;
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:50px;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
-
-    header h1{
-        font-size:32px;
-    }
-
-    .hero{
-        padding:65px 20px;
-    }
-
-    .hero h1{
-        font-size:30px;
-    }
-
-    .container{
-        width:92%;
-    }
-
-    .card img{
-        height:220px;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-<h1>ANG SALIMBAY</h1>
-
-<p>
-Opisyal na Pahayagang Filipino ng Sucat Senior High School
-</p>
-
-</header>
-
-
-<!-- ================= NAVIGATION ================= -->
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="balita.index.html">Balita</a>
-
-<a href="editoryal.html">Editoryal at Kolum</a>
-
-<a href="lathalain.html">Lathalain</a>
-
-<a href="isports.html">Isports</a>
-
-<a href="Agham.html">Agham</a>
-
-<a href="About.html">Tungkol sa Amin</a>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<h1>
-TINIG. KATOTOHANAN. INTEGRIDAD.
-</h1>
-
-<p>
-
-Ang opisyal na pahayagang Filipino ng Sucat Senior High School
-na naghahatid ng makatotohanan, napapanahon, at makabuluhang
-balita para sa buong komunidad.
-
-</p>
-
-</section>
-
-
-<div class="container">
-
-
-<!-- ================= SEARCH ================= -->
-
-<section class="search-section">
-
-<h2>🔎 Maghanap sa Ang Salimbay</h2>
-
-<div class="search-box">
-
-<input
-type="search"
-id="searchInput"
-placeholder="Maghanap ng balita, paksa, pangalan, petsa..."
-autocomplete="off"
->
-
-</div>
-
-<p
-class="search-info"
-id="searchInfo"
->
-I-type ang kahit bahagi ng salita.
-</p>
-
-<div
-class="search-results"
-id="searchResults"
->
-</div>
-
-</section>
-
-
-<!-- ================= NEWS ================= -->
-
-<h2 class="section-title">
-Pinakabagong Balita
-</h2>
-
-<div
-class="grid"
-id="articleGrid"
->
-</div>
-
-
-<br><br>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<h2 class="section-title">
-Mga Kategorya
-</h2>
-
-<div class="categories">
-
-<span>Balita</span>
-<span>Editoryal</span>
-<span>Lathalain</span>
-<span>Column</span>
-<span>Isports</span>
-<span>Agham at Teknolohiya</span>
-<span>Editorial Cartooning</span>
-
-</div>
-
-
-<br><br>
-
-
-<!-- ================= ABOUT ================= -->
-
-<h2 class="section-title">
-Tungkol sa Ang Salimbay
-</h2>
-
-<div class="about">
-
-Ang <strong>Ang Salimbay</strong> ay ang opisyal na pahayagang
-Filipino ng <strong>Sucat Senior High School</strong>.
-Layunin nitong maging mapagkakatiwalaang daluyan ng balita,
-impormasyon, opinyon, at mga akdang pampahayagan na
-sumasalamin sa <strong>BOSES</strong> ng mga mag-aaral
-at ng komunidad ng paaralan.
-
-</div>
-
-</div>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<h2>ANG SALIMBAY</h2>
-
-<p>
-Opisyal na Pahayagang Filipino ng Sucat Senior High School
-</p>
-
-<br>
-
-<p>
-© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
-</p>
-
-</footer>
-
-
-<!-- ================= ARTICLE DATABASE ================= -->
-
-<script src="articles.js"></script>
-
-
-<!-- ================= SEARCH ENGINE ================= -->
-
-<script>
-
-const articleGrid =
-document.getElementById("articleGrid");
-
-const searchInput =
-document.getElementById("searchInput");
-
-const searchResults =
-document.getElementById("searchResults");
-
-const searchInfo =
-document.getElementById("searchInfo");
-
-
-/* ================= DISPLAY ARTICLES ================= */
-
-function displayArticles(list){
-
-    articleGrid.innerHTML = "";
-
-    if(list.length === 0){
-
-        articleGrid.innerHTML = `
-            <div style="
-                grid-column:1/-1;
-                background:white;
-                padding:30px;
-                text-align:center;
-                border-radius:10px;
-            ">
-                <h3 style="color:#6B0015;">
-                    Walang nahanap na artikulo.
-                </h3>
-
-                <p style="margin-top:10px;">
-                    Subukan ang ibang salita.
-                </p>
-            </div>
-        `;
-
-        return;
-    }
-
-
-    list.forEach(function(article){
-
-        const card =
-        document.createElement("div");
-
-        card.className = "card";
-
-
-        let imageHTML = "";
-
-        if(article.image){
-
-            imageHTML = `
-                <img
-                    src="${article.image}"
-                    alt="${article.title}"
-                >
-            `;
-
-        }
-
-
-        card.innerHTML = `
-
-            ${imageHTML}
-
-            <div class="card-content">
-
-                <h3>
-                    ${article.title}
-                </h3>
-
-                <p>
-                    ${article.description}
-                </p>
-
-                <p style="
-                    color:#777;
-                    font-size:13px;
-                    margin-top:12px;
-                ">
-
-                    ${article.category}
-                    •
-                    ${article.date}
-
-                </p>
-
-                <p style="
-                    color:#777;
-                    font-size:13px;
-                ">
-
-                    ✍️ ${article.author}
-
-                </p>
-
-                <a href="${article.url}">
-
-                    <button>
-                        Basahin
-                    </button>
-
-                </a>
-
-            </div>
-
-        `;
-
-
-        articleGrid.appendChild(card);
-
-    });
-
-}
-
-
-/* ================= INITIAL LOAD ================= */
-
-displayArticles(articles);
-
-
-/* ================= SEARCH ENGINE ================= */
-
-searchInput.addEventListener(
-    "input",
-    function(){
-
-        const query =
-        searchInput.value
-        .toLowerCase()
-        .trim();
-
-
-        /* EMPTY */
-
-        if(query === ""){
-
-            searchResults.innerHTML = "";
-
-            searchResults.classList.remove("show");
-
-            searchInfo.textContent =
-            "I-type ang kahit bahagi ng salita.";
-
-            displayArticles(articles);
-
-            return;
-
-        }
-
-
-        /*
-        SEARCHES:
-        - TITLE
-        - CATEGORY
-        - DESCRIPTION
-        - KEYWORDS
-        - DATE
-        - AUTHOR
-        - FULL TEXT
-        */
-
-        const results =
-        articles.filter(function(article){
-
-            const searchableText = (
-
-                article.title +
-                " " +
-
-                article.category +
-                " " +
-
-                article.description +
-                " " +
-
-                article.keywords +
-                " " +
-
-                article.date +
-                " " +
-
-                article.author +
-                " " +
-
-                article.content
-
-            ).toLowerCase();
-
-
-            /*
-            PARTIAL SEARCH
-
-            Example:
-
-            "perfor"
-            finds
-            "Performing"
-
-            "wilmar"
-            finds
-            "Wilmarie"
-
-            "hunyo"
-            finds
-            "Hunyo 22, 2026"
-
-            "2026"
-            finds all 2026 articles
-            */
-
-            return searchableText.includes(query);
-
-        });
-
-
-        /* SHOW MATCHING CARDS */
-
-        displayArticles(results);
-
-
-        /* RESULT COUNT */
-
-        searchResults.classList.add("show");
-
-
-        if(results.length === 0){
-
-            searchInfo.textContent =
-            'Walang nahanap para sa "' +
-            searchInput.value +
-            '".';
-
-
-            searchResults.innerHTML = `
-
-                <div class="search-result-card">
-
-                    <h4>
-                        Walang nahanap na artikulo.
-                    </h4>
-
-                    <p>
-                        Subukan ang ibang salita,
-                        pangalan, petsa, o paksa.
-                    </p>
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-
-        searchInfo.textContent =
-        results.length +
-        " artikulo ang nahanap.";
-
-
-        /* RESULT HEADER */
-
-        searchResults.innerHTML = `
-
-            <h3>
-                Mga Resulta ng Paghahanap
-            </h3>
-
-        `;
-
-
-        /* RESULT LIST */
-
-        results.forEach(function(article){
-
-            const resultCard =
-            document.createElement("div");
-
-            resultCard.className =
-            "search-result-card";
-
-
-            resultCard.innerHTML = `
-
-                <h4>
-                    ${article.title}
-                </h4>
-
-                <small>
-                    ${article.category}
-                    •
-                    ${article.date}
-                    •
-                    ✍️ ${article.author}
-                </small>
-
-                <p>
-                    ${article.description}
-                </p>
-
-            `;
-
-
-            resultCard.addEventListener(
-                "click",
-                function(){
-
-                    window.location.href =
-                    article.url;
-
-                }
-            );
-
-
-            searchResults.appendChild(resultCard);
-
-        });
-
-    }
-);
-
-</script>
-
-
-</body>
-
-</html>
+});
