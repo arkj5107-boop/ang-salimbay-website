@@ -10,10 +10,6 @@
 
 <style>
 
-/* =========================
-   GENERAL
-========================= */
-
 *{
     margin:0;
     padding:0;
@@ -25,11 +21,6 @@ body{
     background:#f4f4f4;
     color:#222;
 }
-
-
-/* =========================
-   HEADER
-========================= */
 
 header{
     background:#6B0015;
@@ -47,11 +38,6 @@ header p{
     margin-top:8px;
     font-size:16px;
 }
-
-
-/* =========================
-   NAVIGATION
-========================= */
 
 nav{
     background:#500010;
@@ -72,18 +58,9 @@ nav a:hover{
     color:#6B0015;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
 .hero{
-
     background:
-    linear-gradient(
-        rgba(107,0,21,.80),
-        rgba(107,0,21,.80)
-    ),
+    linear-gradient(rgba(107,0,21,.8),rgba(107,0,21,.8)),
     url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
 
     background-size:cover;
@@ -91,7 +68,6 @@ nav a:hover{
 
     color:white;
     text-align:center;
-
     padding:90px 20px;
 }
 
@@ -107,11 +83,6 @@ nav a:hover{
     line-height:1.8;
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
 .container{
     width:90%;
     max-width:1200px;
@@ -120,377 +91,222 @@ nav a:hover{
 }
 
 
-/* =========================
-   SEARCH BOX
-========================= */
+/* ================= SEARCH ================= */
 
 .search-section{
-
     background:white;
-
-    padding:30px;
-
-    border-radius:12px;
-
-    box-shadow:
-    0 4px 15px rgba(0,0,0,.12);
-
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
     margin-bottom:40px;
 }
 
 .search-section h2{
-
     color:#6B0015;
-
     text-align:center;
-
-    margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .search-box{
-
     max-width:850px;
-
     margin:auto;
-
 }
 
 .search-box input{
-
     width:100%;
-
-    padding:17px 20px;
-
-    border:
-    2px solid #6B0015;
-
-    border-radius:9px;
-
+    padding:16px 20px;
+    border:2px solid #6B0015;
+    border-radius:8px;
     font-size:17px;
-
     outline:none;
 }
 
 .search-box input:focus{
-
-    box-shadow:
-    0 0 0 4px
-    rgba(107,0,21,.12);
+    box-shadow:0 0 0 3px rgba(107,0,21,.12);
 }
 
 .search-info{
-
     text-align:center;
-
     color:#777;
-
     margin-top:12px;
-
     font-size:14px;
 }
 
 
-/* =========================
-   SEARCH RESULTS
-========================= */
+/* ================= SEARCH RESULTS ================= */
 
 .search-results{
-
-    max-width:850px;
-
-    margin:20px auto 0;
-
+    margin-top:20px;
     display:none;
 }
 
 .search-results.show{
-
     display:block;
 }
 
-.search-results h3{
-
+.search-results-title{
     color:#6B0015;
-
     margin-bottom:15px;
 }
 
 .search-result-card{
-
-    background:white;
-
-    border-radius:9px;
-
-    padding:17px;
-
+    background:#fff;
+    border-left:5px solid #6B0015;
+    border-radius:8px;
+    padding:15px;
     margin-bottom:12px;
-
-    box-shadow:
-    0 2px 8px rgba(0,0,0,.10);
-
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
     cursor:pointer;
-
-    transition:.2s;
 }
 
 .search-result-card:hover{
-
     transform:translateY(-2px);
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.15);
 }
 
 .search-result-card h4{
-
     color:#6B0015;
-
-    font-size:18px;
-
     margin-bottom:7px;
 }
 
-.search-result-card .meta{
-
+.search-result-card small{
     color:#777;
-
-    font-size:13px;
-
-    line-height:1.7;
 }
 
 .search-result-card p{
-
     margin-top:8px;
-
     line-height:1.5;
 }
 
 
-/* =========================
-   SECTION TITLE
-========================= */
+/* ================= SECTION ================= */
 
 .section-title{
-
     color:#6B0015;
-
     margin-bottom:25px;
-
-    border-left:
-    6px solid #6B0015;
-
+    border-left:6px solid #6B0015;
     padding-left:12px;
 }
 
 
-/* =========================
-   ARTICLE GRID
-========================= */
+/* ================= ARTICLE GRID ================= */
 
 .grid{
-
     display:grid;
-
     grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(300px,1fr)
-    );
+    repeat(auto-fit,minmax(300px,1fr));
 
     gap:25px;
 }
 
 
-/* =========================
-   ARTICLE CARD
-========================= */
+/* ================= ARTICLE CARD ================= */
 
 .card{
-
     background:white;
-
     border-radius:10px;
-
     overflow:hidden;
-
-    box-shadow:
-    0 4px 12px rgba(0,0,0,.15);
-
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
     transition:.25s;
 }
 
 .card:hover{
-
     transform:translateY(-4px);
 }
 
-.card-image{
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-    display:block;
-
-    background:#eee;
-}
-
 .card-content{
-
-    padding:18px;
+    padding:20px;
 }
 
 .card h3{
-
     color:#6B0015;
-
-    line-height:1.35;
-}
-
-.card p{
-
-    margin-top:10px;
-
-    line-height:1.6;
+    line-height:1.4;
 }
 
 .card-meta{
-
     color:#777;
-
     font-size:13px;
+    margin-top:8px;
+}
 
-    line-height:1.7;
-
+.card p{
     margin-top:12px;
+    line-height:1.6;
 }
 
 .card a{
-
     text-decoration:none;
 }
 
 .card button{
-
     margin-top:18px;
-
     padding:10px 18px;
-
     background:#6B0015;
-
     color:white;
-
     border:none;
-
     cursor:pointer;
-
     border-radius:5px;
-
-    font-weight:bold;
 }
 
 .card button:hover{
-
     background:#500010;
 }
 
 
-/* =========================
-   CATEGORIES
-========================= */
+/* ================= CATEGORIES ================= */
 
 .categories{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:12px;
 }
 
 .categories span{
-
     background:#6B0015;
-
     color:white;
-
     padding:10px 16px;
-
     border-radius:20px;
 }
 
 
-/* =========================
-   ABOUT
-========================= */
+/* ================= ABOUT ================= */
 
 .about{
-
     background:white;
-
     padding:30px;
-
     border-radius:10px;
-
     line-height:1.8;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
-
     background:#6B0015;
-
     color:white;
-
     text-align:center;
-
     padding:30px;
-
     margin-top:50px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
     header h1{
-
         font-size:32px;
     }
 
     .hero{
-
         padding:65px 20px;
     }
 
     .hero h1{
-
         font-size:30px;
     }
 
     .container{
-
         width:92%;
-    }
-
-    .search-section{
-
-        padding:20px;
-    }
-
-    .card-image{
-
-        height:220px;
     }
 
 }
@@ -499,13 +315,7 @@ footer{
 
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -518,42 +328,18 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </header>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav>
 
 <a href="index.html">Home</a>
-
 <a href="balita.index.html">Balita</a>
-
-<a href="editoryal.html">
-Editoryal at Kolum
-</a>
-
-<a href="lathalain.html">
-Lathalain
-</a>
-
-<a href="isports.html">
-Isports
-</a>
-
-<a href="Agham.html">
-Agham
-</a>
-
-<a href="About.html">
-Tungkol sa Amin
-</a>
+<a href="editoryal.html">Editoryal at Kolum</a>
+<a href="lathalain.html">Lathalain</a>
+<a href="isports.html">Isports</a>
+<a href="Agham.html">Agham</a>
+<a href="About.html">Tungkol sa Amin</a>
 
 </nav>
 
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
@@ -575,10 +361,6 @@ balita para sa buong komunidad.
 <div class="container">
 
 
-<!-- =========================
-     SEARCH
-========================= -->
-
 <section class="search-section">
 
 <h2>
@@ -588,15 +370,10 @@ balita para sa buong komunidad.
 <div class="search-box">
 
 <input
-
 type="search"
-
 id="searchInput"
-
-placeholder="Maghanap ng balita, paksa, pangalan, petsa..."
-
+placeholder="Maghanap ng balita, pangalan, petsa, manunulat..."
 autocomplete="off"
-
 >
 
 </div>
@@ -605,27 +382,20 @@ autocomplete="off"
 class="search-info"
 id="searchInfo"
 >
-I-type ang kahit bahagi ng salita.
+I-type ang kahit anong bahagi ng salita.
 </p>
 
 
 <div
 class="search-results"
 id="searchResults"
->
-</div>
+></div>
 
 </section>
 
 
-<!-- =========================
-     LATEST NEWS
-========================= -->
-
 <h2 class="section-title">
-
 Pinakabagong Balita
-
 </h2>
 
 
@@ -633,69 +403,45 @@ Pinakabagong Balita
 class="grid"
 id="articleGrid"
 >
-
 </div>
 
 
-<br>
-<br>
+<br><br>
 
-
-<!-- =========================
-     CATEGORIES
-========================= -->
 
 <h2 class="section-title">
-
 Mga Kategorya
-
 </h2>
 
 
 <div class="categories">
 
 <span>Balita</span>
-
 <span>Editoryal</span>
-
 <span>Lathalain</span>
-
 <span>Column</span>
-
 <span>Isports</span>
-
 <span>Agham at Teknolohiya</span>
-
 <span>Editorial Cartooning</span>
 
 </div>
 
 
-<br>
-<br>
+<br><br>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
 
 <h2 class="section-title">
-
 Tungkol sa Ang Salimbay
-
 </h2>
 
 
 <div class="about">
 
-Ang <strong>Ang Salimbay</strong> ay ang opisyal na
-pahayagang Filipino ng
-<strong>Sucat Senior High School</strong>.
-
-Layunin nitong maging mapagkakatiwalaang daluyan ng
-balita, impormasyon, opinyon, at mga akdang pampahayagan
-na sumasalamin sa
-<strong>BOSES</strong> ng mga mag-aaral
+Ang <strong>Ang Salimbay</strong> ay ang opisyal na pahayagang
+Filipino ng <strong>Sucat Senior High School</strong>.
+Layunin nitong maging mapagkakatiwalaang daluyan ng balita,
+impormasyon, opinyon, at mga akdang pampahayagan na
+sumasalamin sa <strong>BOSES</strong> ng mga mag-aaral
 at ng komunidad ng paaralan.
 
 </div>
@@ -704,495 +450,220 @@ at ng komunidad ng paaralan.
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-<h2>
-ANG SALIMBAY
-</h2>
+<h2>ANG SALIMBAY</h2>
 
 <p>
-Opisyal na Pahayagang Filipino ng Sucat Senior High School
-</p>
-
-<br>
-
-<p>
-© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
-</p>
-
-</footer>
-
-
-<!-- =====================================================
-     IMPORTANT:
-     ARTICLES DATABASE
-===================================================== -->
-
-<script src="./articles.js"></script>
-
-
-<!-- =====================================================
-     SEARCH + ARTICLE DISPLAY ENGINE
-===================================================== -->
+Opisyal<script src="articles.js"></script>
 
 <script>
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+/* ==========================================
+   ARTICLE GRID
+========================================== */
 
-    const articleGrid =
-    document.getElementById(
-        "articleGrid"
-    );
-
-    const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
-
-    const searchResults =
-    document.getElementById(
-        "searchResults"
-    );
-
-    const searchInfo =
-    document.getElementById(
-        "searchInfo"
-    );
+const articleGrid =
+document.getElementById("articleGrid");
 
 
-    /* =================================================
-       CHECK ARTICLES.JS
-    ================================================= */
+function displayArticles(list){
 
-    if(
-        typeof articles === "undefined"
-        ||
-        !Array.isArray(articles)
-    ){
+    articleGrid.innerHTML = "";
+
+    if(!list || list.length === 0){
 
         articleGrid.innerHTML = `
+            <div class="search-result-card">
+                <h4>Walang artikulo.</h4>
+                <p>
+                    Wala pang artikulong inilagay sa articles.js.
+                </p>
+            </div>
+        `;
 
-            <div style="
-                grid-column:1/-1;
-                background:white;
-                padding:30px;
-                border-radius:10px;
-                text-align:center;
-            ">
+        return;
+    }
 
-                <h3 style="color:#6B0015;">
-                    Hindi ma-load ang articles.js
+
+    list.forEach(function(article){
+
+        const card =
+        document.createElement("div");
+
+        card.className = "card";
+
+
+        card.innerHTML = `
+
+            <div class="card-content">
+
+                <h3>
+                    ${article.title || "Walang pamagat"}
                 </h3>
 
-                <p style="
-                    margin-top:10px;
-                    color:#777;
-                ">
-                    Siguraduhing ang
-                    <strong>articles.js</strong>
-                    ay nasa parehong folder
-                    ng index.html.
+                <div class="card-meta">
+
+                    ${article.category || ""}
+                    ${article.date ? " • " + article.date : ""}
+
+                </div>
+
+                <p>
+                    ${article.description || ""}
                 </p>
+
+                <a href="${article.url || "#"}">
+
+                    <button>
+                        Basahin
+                    </button>
+
+                </a>
 
             </div>
 
         `;
 
-        return;
 
-    }
+        articleGrid.appendChild(card);
 
+    });
 
-    /* =================================================
-       ESCAPE HTML
-       Para ligtas ang text ng articles
-    ================================================= */
+}
 
-    function escapeHTML(text){
 
-        if(text === undefined || text === null){
+/* ==========================================
+   INITIAL ARTICLES
+========================================== */
 
-            return "";
+displayArticles(articles);
 
-        }
 
-        return String(text)
+/* ==========================================
+   SEARCH ELEMENTS
+========================================== */
 
-        .replace(/&/g,"&amp;")
+const searchInput =
+document.getElementById("searchInput");
 
-        .replace(/</g,"&lt;")
+const searchResults =
+document.getElementById("searchResults");
 
-        .replace(/>/g,"&gt;")
+const searchInfo =
+document.getElementById("searchInfo");
 
-        .replace(/"/g,"&quot;")
 
-        .replace(/'/g,"&#039;");
+/* ==========================================
+   SEARCH FUNCTION
+========================================== */
 
-    }
-
-
-    /* =================================================
-       DISPLAY ARTICLES
-    ================================================= */
-
-    function displayArticles(list){
-
-        articleGrid.innerHTML = "";
-
-
-        if(
-            !list ||
-            list.length === 0
-        ){
-
-            articleGrid.innerHTML = `
-
-                <div style="
-                    grid-column:1/-1;
-                    background:white;
-                    padding:30px;
-                    text-align:center;
-                    border-radius:10px;
-                ">
-
-                    <h3 style="color:#6B0015;">
-                        Walang nahanap na artikulo.
-                    </h3>
-
-                    <p style="
-                        margin-top:10px;
-                        color:#777;
-                    ">
-                        Subukan ang ibang salita,
-                        pangalan, petsa o paksa.
-                    </p>
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-
-        list.forEach(function(article){
-
-            const card =
-            document.createElement("div");
-
-            card.className =
-            "card";
-
-
-            /* =========================
-               IMAGE
-            ========================= */
-
-            let imageHTML = "";
-
-
-            if(article.image){
-
-                imageHTML = `
-
-                    <img
-
-                    class="card-image"
-
-                    src="${escapeHTML(article.image)}"
-
-                    alt="${escapeHTML(article.title)}"
-
-                    loading="lazy"
-
-                    onerror="
-                    this.style.display='none';
-                    "
-
-                    >
-
-                `;
-
-            }
-
-
-            /* =========================
-               CREDITS
-            ========================= */
-
-            let creditsHTML = "";
-
-
-            if(article.author){
-
-                creditsHTML += `
-                    ✍️
-                    <strong>Sumulat:</strong>
-                    ${escapeHTML(article.author)}
-                    <br>
-                `;
-
-            }
-
-
-            if(article.photographer){
-
-                creditsHTML += `
-                    📷
-                    <strong>Litrato:</strong>
-                    ${escapeHTML(article.photographer)}
-                    <br>
-                `;
-
-            }
-
-
-            if(article.illustrator){
-
-                creditsHTML += `
-                    🎨
-                    <strong>Guhit:</strong>
-                    ${escapeHTML(article.illustrator)}
-                    <br>
-                `;
-
-            }
-
-
-            if(article.editor){
-
-                creditsHTML += `
-                    📝
-                    <strong>Editor:</strong>
-                    ${escapeHTML(article.editor)}
-                    <br>
-                `;
-
-            }
-
-
-            if(article.otherCredit){
-
-                creditsHTML += `
-                    👤
-                    <strong>Iba pa:</strong>
-                    ${escapeHTML(article.otherCredit)}
-                `;
-
-            }
-
-
-            /* =========================
-               CARD
-            ========================= */
-
-            card.innerHTML = `
-
-                ${imageHTML}
-
-                <div class="card-content">
-
-                    <h3>
-                        ${escapeHTML(article.title)}
-                    </h3>
-
-
-                    <p>
-                        ${escapeHTML(article.description)}
-                    </p>
-
-
-                    <div class="card-meta">
-
-                        <strong>
-                        ${escapeHTML(article.category)}
-                        </strong>
-
-                        •
-                        ${escapeHTML(article.date)}
-
-                        <br>
-
-                        ${creditsHTML}
-
-                    </div>
-
-
-                    <a
-                    href="${escapeHTML(article.url)}"
-                    >
-
-                        <button>
-                            Basahin
-                        </button>
-
-                    </a>
-
-                </div>
-
-            `;
-
-
-            articleGrid.appendChild(card);
-
-        });
-
-    }
-
-
-    /* =================================================
-       INITIAL DISPLAY
-    ================================================= */
-
-    displayArticles(articles);
-
-
-    /* =================================================
-       SEARCH NORMALIZER
-    ================================================= */
-
-    function normalize(text){
-
-        return String(
-            text || ""
-        )
-
-        .toLowerCase()
-
-        .normalize("NFD")
-
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        )
-
-        .trim();
-
-    }
-
-
-    /* =================================================
-       SEARCH ENGINE
-    ================================================= */
-
-    searchInput.addEventListener(
+searchInput.addEventListener(
     "input",
     function(){
 
         const query =
-        normalize(
-            searchInput.value
-        );
+        searchInput.value
+        .toLowerCase()
+        .trim();
 
 
-        /* =========================
+        /* -------------------------------
            EMPTY SEARCH
-        ========================= */
+        -------------------------------- */
 
         if(query === ""){
 
+            searchResults.innerHTML = "";
+
+            searchResults.classList.remove("show");
+
             searchInfo.textContent =
-            "I-type ang kahit bahagi ng salita.";
+            "I-type ang kahit anong bahagi ng salita.";
 
-            searchResults.innerHTML =
-            "";
-
-            searchResults.classList
-            .remove("show");
-
-            displayArticles(
-                articles
-            );
+            displayArticles(articles);
 
             return;
 
         }
 
 
-        /* =========================
+        /* -------------------------------
            SEARCH EVERYTHING
-        ========================= */
+        -------------------------------- */
 
         const results =
-        articles.filter(
-        function(article){
+        articles.filter(function(article){
+
 
             const searchableText = [
 
                 article.title,
-
+                article.category,
+                article.date,
                 article.description,
 
-                article.category,
-
-                article.date,
-
-                article.author,
-
+                article.writer,
                 article.photographer,
-
                 article.illustrator,
-
                 article.editor,
 
-                article.otherCredit,
-
-                article.keywords,
-
-                article.content
+                article.keywords
 
             ]
-
             .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
 
-            .join(" ");
 
+            /*
+             * IMPORTANT:
+             * includes() means PARTIAL SEARCH.
+             *
+             * Example:
+             *
+             * "perf"
+             * finds "Performing"
+             *
+             * "wil"
+             * finds "Wilmarie"
+             *
+             * "ago"
+             * finds "Agosto"
+             *
+             * "hall"
+             * finds "Performing Arts Hall"
+             */
 
-            return normalize(
-                searchableText
-            )
-            .includes(query);
+            return searchableText.includes(query);
 
         });
 
 
-        /* =========================
+        /* -------------------------------
            SHOW MATCHING ARTICLES
-        ========================= */
+        -------------------------------- */
 
-        displayArticles(
-            results
-        );
+        displayArticles(results);
 
 
-        /* =========================
-           SHOW RESULTS
-        ========================= */
-
-        searchResults.classList
-        .add("show");
+        searchResults.classList.add("show");
 
 
-        if(
-            results.length === 0
-        ){
+        /* -------------------------------
+           NO RESULTS
+        -------------------------------- */
+
+        if(results.length === 0){
 
             searchInfo.textContent =
-            `Walang nahanap para sa "${searchInput.value}".`;
+            "Walang nahanap para sa: " +
+            searchInput.value;
 
 
             searchResults.innerHTML = `
 
-                <div class="
-                search-result-card
-                ">
+                <div class="search-result-card">
 
                     <h4>
                         Walang nahanap na artikulo.
@@ -1200,8 +671,8 @@ function(){
 
                     <p>
                         Subukan ang ibang salita,
-                        pangalan, petsa,
-                        kategorya o paksa.
+                        pangalan, petsa, o bahagi
+                        ng pamagat.
                     </p>
 
                 </div>
@@ -1213,34 +684,32 @@ function(){
         }
 
 
+        /* -------------------------------
+           RESULTS COUNT
+        -------------------------------- */
+
         searchInfo.textContent =
-
         results.length +
-
         " artikulo ang nahanap.";
 
 
-        /* =========================
-           RESULT LIST
-        ========================= */
-
         searchResults.innerHTML = `
 
-            <h3>
+            <h3 class="search-results-title">
                 Mga Resulta ng Paghahanap
             </h3>
 
         `;
 
 
-        results.forEach(
-        function(article){
+        /* -------------------------------
+           RESULT LIST
+        -------------------------------- */
+
+        results.forEach(function(article){
 
             const resultCard =
-            document.createElement(
-                "div"
-            );
-
+            document.createElement("div");
 
             resultCard.className =
             "search-result-card";
@@ -1249,66 +718,56 @@ function(){
             resultCard.innerHTML = `
 
                 <h4>
-                    ${escapeHTML(
-                        article.title
-                    )}
+                    ${article.title || ""}
                 </h4>
 
+                <small>
 
-                <div class="meta">
+                    ${article.category || ""}
 
-                    <strong>
-                    ${escapeHTML(
-                        article.category
-                    )}
-                    </strong>
-
-                    •
-
-                    ${escapeHTML(
-                        article.date
-                    )}
-
-                    <br>
-
-                    ✍️
-                    ${escapeHTML(
-                        article.author || ""
-                    )}
-
-                    ${
-                        article.photographer
-                        ?
-                        `<br>📷 ${escapeHTML(
-                            article.photographer
-                        )}`
-                        :
-                        ""
+                    ${article.date
+                        ? " • " + article.date
+                        : ""
                     }
 
-                    ${
-                        article.illustrator
-                        ?
-                        `<br>🎨 ${escapeHTML(
-                            article.illustrator
-                        )}`
-                        :
-                        ""
+                    ${article.writer
+                        ? " • " + article.writer
+                        : ""
                     }
 
-                    ${
-                        article.editor
-                        ?
-                        `<br>📝 ${escapeHTML(
-                            article.editor
-                        )}`
-                        :
-                        ""
-                    }
-
-                </div>
-
+                </small>
 
                 <p>
+                    ${article.description || ""}
+                </p>
 
-                    
+            `;
+
+
+            resultCard.addEventListener(
+                "click",
+                function(){
+
+                    if(article.url){
+
+                        window.location.href =
+                        article.url;
+
+                    }
+
+                }
+            );
+
+
+            searchResults.appendChild(resultCard);
+
+        });
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
