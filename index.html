@@ -1586,9 +1586,337 @@ Mga Kategorya
 <br><br>
 
 
-
 <!-- =========================
      ABOUT
 ========================= -->
 
-<h2 class=
+<h2 class="section-title">
+Tungkol sa Ang Salimbay
+</h2>
+
+<div class="about">
+
+Ang <strong>Ang Salimbay</strong> ay ang opisyal na pahayagang Filipino ng
+<strong>Sucat Senior High School</strong>.
+
+Layunin nitong maging mapagkakatiwalaang daluyan ng balita,
+impormasyon, opinyon, at mga akdang pampahayagan na sumasalamin
+sa <strong>BOSES</strong> ng mga mag-aaral at ng komunidad ng paaralan.
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<h2>
+ANG SALIMBAY
+</h2>
+
+<p>
+Opisyal na Pahayagang Filipino ng Sucat Senior High School
+</p>
+
+<br>
+
+<p>
+© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     ARTICLE DATABASE
+========================= -->
+
+<script src="articles.js"></script>
+
+
+
+<script>
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loadingScreen")
+            .classList.add("hide");
+
+    }, 1800);
+
+});
+
+
+
+/* =========================
+   SEARCH SYSTEM
+========================= */
+
+const grid =
+    document.getElementById("articleGrid");
+
+const input =
+    document.getElementById("searchInput");
+
+const resultsBox =
+    document.getElementById("searchResults");
+
+const info =
+    document.getElementById("searchInfo");
+
+
+
+/* =========================
+   SECURITY
+========================= */
+
+function esc(value){
+
+    return String(value ?? "")
+        .replace(
+            /[&<>"']/g,
+            function(m){
+
+                return {
+
+                    "&":"&amp;",
+                    "<":"&lt;",
+                    ">":"&gt;",
+                    '"':"&quot;",
+                    "'":"&#039;"
+
+                }[m];
+
+            }
+        );
+
+}
+
+
+
+/* =========================
+   CONTRIBUTORS
+========================= */
+
+function people(article){
+
+    const p=[];
+
+    if(article.author)
+        p.push("✍️ " + article.author);
+
+    if(article.photographer)
+        p.push("📷 " + article.photographer);
+
+    if(article.illustrator)
+        p.push("🎨 " + article.illustrator);
+
+    if(article.editor)
+        p.push("🖊️ " + article.editor);
+
+    if(article.otherCredit)
+        p.push("👤 " + article.otherCredit);
+
+    return p.join(" • ");
+
+}
+
+
+
+/* =========================
+   DISPLAY ARTICLES
+========================= */
+
+function displayArticles(list){
+
+    grid.innerHTML="";
+
+    if(!list.length){
+
+        grid.innerHTML=`
+
+        <div class="empty">
+
+            <h3>
+            Walang nahanap na artikulo.
+            </h3>
+
+            <p style="margin-top:10px">
+
+            Subukan ang ibang salita,
+            pangalan, petsa, o paksa.
+
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+    }
+
+
+
+    list.forEach(article=>{
+
+        const card =
+            document.createElement("article");
+
+        card.className="card";
+
+
+
+        card.innerHTML=`
+
+        ${
+            article.image
+
+            ?
+
+            `<img
+                src="${esc(article.image)}"
+                alt="${esc(article.title)}"
+            >`
+
+            :
+
+            ""
+        }
+
+        <div class="card-content">
+
+            <h3>
+                ${esc(article.title)}
+            </h3>
+
+            <p>
+                ${esc(article.description)}
+            </p>
+
+            <p class="meta">
+                ${esc(article.category)}
+                •
+                ${esc(article.date)}
+            </p>
+
+            <p class="meta">
+                ${esc(people(article))}
+            </p>
+
+            <a href="${esc(article.url)}">
+
+                <button>
+                    Basahin
+                </button>
+
+            </a>
+
+        </div>
+
+        `;
+
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =========================
+   SEARCHABLE CONTENT
+========================= */
+
+function searchable(article){
+
+    return [
+
+        article.title,
+        article.category,
+        article.date,
+        article.description,
+        article.keywords,
+        article.author,
+        article.photographer,
+        article.illustrator,
+        article.editor,
+        article.otherCredit,
+        article.content
+
+    ]
+
+    .filter(Boolean)
+
+    .join(" ")
+
+    .toLocaleLowerCase("fil");
+
+}
+
+
+
+/* =========================
+   INITIAL ARTICLES
+========================= */
+
+displayArticles(articles);
+
+
+
+/* =========================
+   LIVE SEARCH
+========================= */
+
+input.addEventListener(
+    "input",
+    function(){
+
+        const q =
+            input.value
+                .toLocaleLowerCase("fil")
+                .trim();
+
+
+
+        /* EMPTY */
+
+        if(!q){
+
+            resultsBox.innerHTML="";
+
+            resultsBox
+                .classList
+                .remove("show");
+
+            info.textContent =
+                "I-type ang kahit bahagi ng salita.";
+
+            displayArticles(articles);
+
+            return;
+        }
+
+
+
+        /* FIND */
+
+        const found =
+            articles.filter(
+                article =>
+                   
