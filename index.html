@@ -28,28 +28,26 @@ body{
 
 
 /* =====================================================
-   ANG SALIMBAY LOADING SCREEN
+   ANG SALIMBAY — SSHS INSPIRED LOADING SCREEN
 ===================================================== */
 
 #salimbayLoader{
 
     position:fixed;
-
     inset:0;
 
     width:100%;
     height:100%;
 
     background:
-    radial-gradient(
-        circle at center,
-        #7d1028 0%,
-        #6B0015 38%,
-        #3b000b 100%
-    );
+        radial-gradient(
+            circle at 50% 43%,
+            #8b1630 0%,
+            #6B0015 42%,
+            #360009 100%
+        );
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -58,92 +56,152 @@ body{
     overflow:hidden;
 
     opacity:1;
-
     visibility:visible;
 
     transition:
-    opacity 1s ease,
-    visibility 1s ease;
+        opacity 1.2s ease,
+        visibility 1.2s ease;
 }
 
-
-/* Loader disappears */
-
 #salimbayLoader.hide{
-
     opacity:0;
-
     visibility:hidden;
-
     pointer-events:none;
 }
 
 
 /* =====================================================
-   BACKGROUND LIGHT
+   MAIN LOADING SCENE
 ===================================================== */
 
-.loader-light{
+.loader-scene{
 
-    position:absolute;
+    position:relative;
 
-    width:600px;
-    height:600px;
+    width:min(94vw,650px);
+    height:min(94vh,700px);
 
-    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,193,7,.15),
-        rgba(255,193,7,.05) 35%,
-        transparent 70%
-    );
-
-    animation:
-    loaderLight 3.5s ease-in-out infinite;
-
-}
-
-
-@keyframes loaderLight{
-
-    0%,100%{
-        transform:scale(.85);
-        opacity:.5;
-    }
-
-    50%{
-        transform:scale(1.1);
-        opacity:1;
-    }
-
+    overflow:hidden;
 }
 
 
 /* =====================================================
-   MAIN LOADER CONTENT
+   OUTER CIRCLE — INSPIRED BY SSHS SEAL
 ===================================================== */
 
-.loader-content{
+.loader-ring{
 
-    position:relative;
+    position:absolute;
 
-    width:min(90vw,520px);
+    top:35px;
+    left:50%;
 
-    height:620px;
+    width:610px;
+    height:610px;
 
-    display:flex;
+    transform:
+        translateX(-50%);
 
-    flex-direction:column;
+    border:
+        3px solid
+        rgba(255,255,255,.45);
 
-    align-items:center;
+    border-radius:50%;
 
-    justify-content:center;
+    box-shadow:
+        0 0 0 10px
+        rgba(255,255,255,.05),
 
-    text-align:center;
+        0 0 35px
+        rgba(255,255,255,.08);
 
-    z-index:5;
+    animation:
+        ringAppear 2s ease forwards;
+}
+
+@keyframes ringAppear{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            scale(.8)
+            rotate(-20deg);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+/* =====================================================
+   GOLDEN SUN
+===================================================== */
+
+.loader-sun{
+
+    position:absolute;
+
+    top:65px;
+    left:50%;
+
+    width:230px;
+    height:230px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #FFD83D 0%,
+            #FFC21A 48%,
+            #F4A900 72%,
+            rgba(244,169,0,0) 73%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255,200,30,.55)
+        );
+
+    animation:
+        sunRise 2s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes sunRise{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(50px)
+            scale(.55);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
 }
 
 
@@ -151,453 +209,670 @@ body{
    SUN RAYS
 ===================================================== */
 
-.sun-rays{
+.loader-rays{
 
     position:absolute;
 
-    width:250px;
-    height:250px;
-
-    top:80px;
-
+    top:38px;
     left:50%;
 
+    width:360px;
+    height:300px;
+
     transform:
-    translateX(-50%);
+        translateX(-50%);
 
     animation:
-    raysAppear 2.5s ease forwards;
+        raysReveal 2.4s ease forwards;
 }
 
 
-.sun-rays span{
+.loader-rays span{
 
     position:absolute;
-
-    width:7px;
-
-    height:75px;
-
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(255,210,45,0),
-        #FFD02E
-    );
-
-    border-radius:10px;
 
     left:50%;
     top:50%;
 
+    width:11px;
+    height:105px;
+
+    margin-left:-5.5px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(255,211,45,.15),
+            #FFD12F
+        );
+
     transform-origin:
-    50% 100%;
+        50% 100%;
 
-    opacity:.75;
-
+    box-shadow:
+        0 0 12px
+        rgba(255,207,45,.35);
 }
 
 
-.sun-rays span:nth-child(1){
+/* 12 RAYS */
+
+.loader-rays span:nth-child(1){
     transform:
-    translate(-50%,-100px)
-    rotate(0deg);
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(2){
+.loader-rays span:nth-child(2){
     transform:
-    translate(-50%,-100px)
-    rotate(30deg);
+        rotate(25deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(3){
+.loader-rays span:nth-child(3){
     transform:
-    translate(-50%,-100px)
-    rotate(60deg);
+        rotate(50deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(4){
+.loader-rays span:nth-child(4){
     transform:
-    translate(-50%,-100px)
-    rotate(90deg);
+        rotate(75deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(5){
+.loader-rays span:nth-child(5){
     transform:
-    translate(-50%,-100px)
-    rotate(120deg);
+        rotate(100deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(6){
+.loader-rays span:nth-child(6){
     transform:
-    translate(-50%,-100px)
-    rotate(150deg);
+        rotate(125deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(7){
+.loader-rays span:nth-child(7){
     transform:
-    translate(-50%,-100px)
-    rotate(180deg);
+        rotate(150deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(8){
+.loader-rays span:nth-child(8){
     transform:
-    translate(-50%,-100px)
-    rotate(210deg);
+        rotate(175deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(9){
+.loader-rays span:nth-child(9){
     transform:
-    translate(-50%,-100px)
-    rotate(240deg);
+        rotate(200deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(10){
+.loader-rays span:nth-child(10){
     transform:
-    translate(-50%,-100px)
-    rotate(270deg);
+        rotate(225deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(11){
+.loader-rays span:nth-child(11){
     transform:
-    translate(-50%,-100px)
-    rotate(300deg);
+        rotate(250deg)
+        translateY(-140px);
 }
 
-.sun-rays span:nth-child(12){
+.loader-rays span:nth-child(12){
     transform:
-    translate(-50%,-100px)
-    rotate(330deg);
+        rotate(275deg)
+        translateY(-140px);
 }
 
 
-@keyframes raysAppear{
+@keyframes raysReveal{
 
     0%{
-        transform:
-        translateX(-50%)
-        scale(.4)
-        rotate(-20deg);
-
         opacity:0;
+
+        transform:
+            translateX(-50%)
+            scale(.65);
     }
 
-    50%{
+    55%{
         opacity:1;
     }
 
     100%{
+        opacity:.85;
+
         transform:
-        translateX(-50%)
-        scale(1)
-        rotate(0deg);
-
-        opacity:.8;
+            translateX(-50%)
+            scale(1);
     }
-
 }
 
 
 /* =====================================================
-   SSHS LOGO
+   GREEN MOUNTAINS / LAND
 ===================================================== */
 
-.sshs-logo{
-
-    position:relative;
-
-    width:min(72vw,330px);
-
-    height:auto;
-
-    z-index:10;
-
-    object-fit:contain;
-
-    filter:
-    drop-shadow(
-        0 15px 30px
-        rgba(0,0,0,.35)
-    );
-
-    animation:
-    sshsEntrance 1.8s cubic-bezier(.2,.8,.2,1) forwards;
-
-}
-
-
-@keyframes sshsEntrance{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-        scale(.65)
-        translateY(30px);
-
-        filter:
-        blur(8px)
-        drop-shadow(
-            0 15px 30px
-            rgba(0,0,0,.35)
-        );
-
-    }
-
-    60%{
-
-        opacity:1;
-
-        transform:
-        scale(1.05)
-        translateY(-5px);
-
-    }
-
-    100%{
-
-        opacity:1;
-
-        transform:
-        scale(1)
-        translateY(0);
-
-        filter:
-        blur(0)
-        drop-shadow(
-            0 15px 30px
-            rgba(0,0,0,.35)
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   WATER WAVES
-===================================================== */
-
-.loader-waves{
+.loader-land{
 
     position:absolute;
 
+    top:220px;
     left:50%;
 
-    bottom:175px;
-
-    width:430px;
-
-    height:90px;
+    width:560px;
+    height:150px;
 
     transform:
-    translateX(-50%);
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            150deg,
+            transparent 0 19%,
+            #3FC52C 20% 44%,
+            #55D536 45% 56%,
+            #35B827 57% 100%
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            12% 70%,
+            25% 48%,
+            38% 67%,
+            53% 27%,
+            67% 58%,
+            79% 39%,
+            100% 73%,
+            100% 100%
+        );
+
+    opacity:.95;
+
+    filter:
+        drop-shadow(
+            0 4px 8px
+            rgba(0,0,0,.12)
+        );
+
+    animation:
+        landReveal 2s ease forwards;
+}
+
+
+@keyframes landReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(35px)
+            scaleX(.8);
+    }
+
+    100%{
+        opacity:.95;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scaleX(1);
+    }
+}
+
+
+/* =====================================================
+   WATER — LARGE BLUE WAVES
+===================================================== */
+
+.loader-water{
+
+    position:absolute;
+
+    top:325px;
+    left:50%;
+
+    width:620px;
+    height:115px;
+
+    transform:
+        translateX(-50%);
 
     overflow:hidden;
 
-    opacity:.75;
-
-}
-
-
-.wave{
-
-    position:absolute;
-
-    width:700px;
-
-    height:70px;
-
-    border-top:
-    5px solid rgba(40,190,230,.75);
-
-    border-radius:50%;
-
-    left:-140px;
-
-    animation:
-    waveMove 3s ease-in-out infinite;
-
-}
-
-
-.wave:nth-child(2){
-
-    top:25px;
-
-    border-color:
-    rgba(0,105,190,.65);
-
-    animation-delay:
-    -.8s;
-
-}
-
-
-.wave:nth-child(3){
-
-    top:48px;
-
-    border-color:
-    rgba(70,210,240,.45);
-
-    animation-delay:
-    -1.5s;
-
-}
-
-
-@keyframes waveMove{
-
-    0%,100%{
-        transform:
-        translateX(-25px)
-        scaleY(.8);
-    }
-
-    50%{
-        transform:
-        translateX(25px)
-        scaleY(1.15);
-    }
-
-}
-
-
-/* =====================================================
-   MOUNTAIN / LAND LIGHT
-===================================================== */
-
-.loader-mountain{
-
-    position:absolute;
-
-    bottom:230px;
-
-    left:50%;
-
-    width:390px;
-
-    height:80px;
-
-    transform:
-    translateX(-50%);
-
     background:
-    linear-gradient(
-        135deg,
-        transparent 35%,
-        rgba(77,190,40,.75) 36%,
-        rgba(77,190,40,.75) 60%,
-        transparent 61%
-    );
+        linear-gradient(
+            to bottom,
+            #23C9E8,
+            #079AD4 50%,
+            #0068B8
+        );
 
     clip-path:
-    polygon(
-        0 100%,
-        25% 35%,
-        38% 58%,
-        55% 10%,
-        72% 55%,
-        85% 30%,
-        100% 100%
-    );
-
-    opacity:.65;
+        polygon(
+            0 18%,
+            12% 8%,
+            25% 18%,
+            38% 7%,
+            51% 18%,
+            64% 8%,
+            77% 19%,
+            89% 9%,
+            100% 18%,
+            100% 100%,
+            0 100%
+        );
 
     animation:
-    mountainGlow 3s ease-in-out infinite;
-
+        waterReveal 2.2s ease forwards;
 }
 
 
-@keyframes mountainGlow{
+/* MOVING WAVE LINES */
+
+.loader-water::before,
+.loader-water::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10%;
+
+    width:120%;
+    height:35px;
+
+    border-top:
+        6px solid
+        rgba(180,245,255,.65);
+
+    border-radius:50%;
+
+    animation:
+        waterMove 2.8s ease-in-out infinite;
+}
+
+
+.loader-water::before{
+    top:27px;
+}
+
+.loader-water::after{
+    top:67px;
+
+    animation-delay:
+        -1.2s;
+
+    opacity:.5;
+}
+
+
+@keyframes waterMove{
 
     0%,100%{
-        opacity:.45;
         transform:
-        translateX(-50%)
-        scaleX(.97);
+            translateX(-35px)
+            scaleX(.96);
     }
 
     50%{
-        opacity:.8;
         transform:
-        translateX(-50%)
-        scaleX(1);
+            translateX(35px)
+            scaleX(1.03);
+    }
+}
+
+
+@keyframes waterReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(40px);
     }
 
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
 }
 
 
 /* =====================================================
-   BLUE / RED LIGHT
+   BLUE + RED LOWER SECTIONS
 ===================================================== */
 
-.color-light{
+.loader-colors{
 
     position:absolute;
 
-    bottom:105px;
+    top:405px;
+    left:50%;
 
-    width:420px;
+    width:570px;
+    height:150px;
 
-    height:120px;
+    transform:
+        translateX(-50%);
 
-    border-radius:50%;
+    overflow:hidden;
 
-    opacity:.6;
+    display:flex;
 
-    filter:blur(22px);
+    border-radius:
+        0 0 280px 280px;
+
+    box-shadow:
+        inset 0 8px 20px
+        rgba(0,0,0,.12);
+}
+
+
+.loader-blue{
+
+    width:50%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0756B9,
+            #006CCF,
+            #003E94
+        );
 
     animation:
-    colorMove 4s ease-in-out infinite;
-
+        colorReveal 1.8s ease forwards;
 }
 
 
-.color-light.blue{
+.loader-red{
 
-    left:25%;
+    width:50%;
+    height:100%;
 
     background:
-    rgba(0,85,210,.45);
+        linear-gradient(
+            135deg,
+            #C90029,
+            #E40035,
+            #A90021
+        );
 
+    animation:
+        colorReveal 1.8s ease .15s forwards;
 }
 
 
-.color-light.red{
+@keyframes colorReveal{
 
-    right:25%;
+    0%{
+        transform:scaleY(0);
+        transform-origin:top;
+    }
+
+    100%{
+        transform:scaleY(1);
+        transform-origin:top;
+    }
+}
+
+
+/* =====================================================
+   CENTRAL OPEN BOOK
+===================================================== */
+
+.loader-book{
+
+    position:absolute;
+
+    top:365px;
+    left:50%;
+
+    width:270px;
+    height:115px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:30;
+
+    display:flex;
+
+    animation:
+        bookAppear 1.5s ease .8s both;
+}
+
+
+/* BOOK PAGES */
+
+.book-page{
+
+    position:relative;
+
+    width:50%;
+    height:100%;
 
     background:
-    rgba(220,20,50,.4);
+        linear-gradient(
+            160deg,
+            #fff 0%,
+            #f4f0e7 70%,
+            #d9d0c2 100%
+        );
 
-    animation-delay:
-    -2s;
-
+    box-shadow:
+        0 12px 18px
+        rgba(0,0,0,.25);
 }
 
 
-@keyframes colorMove{
+/* LEFT PAGE */
+
+.book-page.left{
+
+    border-radius:
+        85% 12% 8% 35%;
+
+    transform:
+        skewY(8deg);
+
+    border-right:
+        2px solid #c9bfae;
+}
+
+
+/* RIGHT PAGE */
+
+.book-page.right{
+
+    border-radius:
+        12% 85% 35% 8%;
+
+    transform:
+        skewY(-8deg);
+
+    border-left:
+        2px solid #c9bfae;
+}
+
+
+/* BOOK CENTER */
+
+.loader-book::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:8px;
+
+    width:5px;
+    height:95px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #b9aa94,
+            #806e58
+        );
+
+    border-radius:50%;
+}
+
+
+@keyframes bookAppear{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(30px)
+            scale(.8);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   CENTRAL TORCH
+===================================================== */
+
+.loader-torch{
+
+    position:absolute;
+
+    top:390px;
+    left:50%;
+
+    width:30px;
+    height:170px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:40;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111,
+            #333,
+            #050505
+        );
+
+    border-radius:
+        5px 5px 12px 12px;
+
+    box-shadow:
+        0 10px 20px
+        rgba(0,0,0,.35);
+
+    animation:
+        torchAppear 1.6s ease 1s both;
+}
+
+
+/* TORCH FLAME */
+
+.loader-torch::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-48px;
+
+    width:48px;
+    height:65px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at bottom,
+            #FF3B20 0%,
+            #FF8A00 45%,
+            #FFD52A 65%,
+            transparent 68%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(255,150,20,.7)
+        );
+
+    animation:
+        flame 1s ease-in-out infinite;
+}
+
+
+@keyframes flame{
 
     0%,100%{
         transform:
-        translateX(-30px)
-        scale(.9);
-
-        opacity:.35;
+            translateX(-50%)
+            scaleY(.9)
+            rotate(-2deg);
     }
 
     50%{
         transform:
-        translateX(30px)
-        scale(1.1);
+            translateX(-50%)
+            scaleY(1.1)
+            rotate(3deg);
+    }
+}
 
-        opacity:.7;
+
+@keyframes torchAppear{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(30px)
+            scale(.8);
     }
 
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
 }
 
 
@@ -609,40 +884,36 @@ body{
 
     position:absolute;
 
-    bottom:55px;
+    bottom:12px;
 
-    z-index:20;
+    z-index:50;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
 
-    gap:12px;
+    gap:8px;
 
     animation:
-    brandReveal 1.2s ease 1.5s both;
-
+        brandReveal 1.3s ease 1.7s both;
 }
 
 
 .salimbay-logo{
 
-    width:min(62vw,300px);
+    width:min(70vw,310px);
 
-    max-height:100px;
+    max-height:95px;
 
     object-fit:contain;
 
     filter:
-    brightness(0)
-    invert(1)
-    drop-shadow(
-        0 5px 12px
-        rgba(0,0,0,.35)
-    );
-
+        brightness(0)
+        invert(1)
+        drop-shadow(
+            0 5px 12px
+            rgba(0,0,0,.4)
+        );
 }
 
 
@@ -650,37 +921,13 @@ body{
 
     color:white;
 
-    font-size:13px;
+    font-size:12px;
 
     letter-spacing:2px;
 
     text-transform:uppercase;
 
     opacity:.9;
-
-}
-
-
-@keyframes brandReveal{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-        translateY(20px);
-
-    }
-
-    100%{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
-
 }
 
 
@@ -693,9 +940,6 @@ body{
     display:flex;
 
     gap:6px;
-
-    margin-top:3px;
-
 }
 
 
@@ -709,8 +953,7 @@ body{
     border-radius:50%;
 
     animation:
-    loadingDot 1.2s infinite ease-in-out;
-
+        loadingDot 1.2s infinite ease-in-out;
 }
 
 
@@ -734,12 +977,31 @@ body{
         opacity:1;
         transform:scale(1);
     }
+}
 
+
+@keyframes brandReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(20px)
+            scale(.92);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 
 /* =====================================================
-   MAIN PAGE
+   MAIN PAGE — HEADER
 ===================================================== */
 
 header{
@@ -761,21 +1023,29 @@ header p{
 
 
 /* =====================================================
-   NAV
+   NAVIGATION
 ===================================================== */
 
 nav{
     background:#500010;
+
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
 }
 
 nav a{
     color:white;
+
     text-decoration:none;
+
     padding:15px 18px;
+
     font-weight:bold;
+
+    transition:.2s;
 }
 
 nav a:hover{
@@ -798,9 +1068,11 @@ nav a:hover{
     url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
 
     background-size:cover;
+
     background-position:center;
 
     color:white;
+
     text-align:center;
 
     padding:90px 20px;
@@ -811,10 +1083,14 @@ nav a:hover{
 }
 
 .hero p{
+
     margin-top:15px;
+
     max-width:700px;
+
     margin-left:auto;
     margin-right:auto;
+
     line-height:1.8;
 }
 
@@ -824,9 +1100,13 @@ nav a:hover{
 ===================================================== */
 
 .container{
+
     width:90%;
+
     max-width:1200px;
+
     margin:auto;
+
     padding:40px 0;
 }
 
@@ -844,7 +1124,7 @@ nav a:hover{
     border-radius:10px;
 
     box-shadow:
-    0 4px 12px rgba(0,0,0,.10);
+        0 4px 12px rgba(0,0,0,.10);
 
     margin-bottom:40px;
 }
@@ -858,6 +1138,7 @@ nav a:hover{
     margin-bottom:15px;
 }
 
+
 .search-box{
 
     max-width:800px;
@@ -867,6 +1148,7 @@ nav a:hover{
     position:relative;
 }
 
+
 .search-box input{
 
     width:100%;
@@ -874,7 +1156,7 @@ nav a:hover{
     padding:16px 20px;
 
     border:
-    2px solid #6B0015;
+        2px solid #6B0015;
 
     border-radius:8px;
 
@@ -883,11 +1165,14 @@ nav a:hover{
     outline:none;
 }
 
+
 .search-box input:focus{
 
     box-shadow:
-    0 0 0 3px rgba(107,0,21,.12);
+        0 0 0 3px
+        rgba(107,0,21,.12);
 }
+
 
 .search-info{
 
@@ -924,6 +1209,7 @@ nav a:hover{
     margin-bottom:15px;
 }
 
+
 .search-result-card{
 
     background:white;
@@ -935,20 +1221,25 @@ nav a:hover{
     margin-bottom:12px;
 
     box-shadow:
-    0 2px 8px rgba(0,0,0,.10);
+        0 2px 8px
+        rgba(0,0,0,.10);
 
     cursor:pointer;
 
     transition:.2s;
 }
 
+
 .search-result-card:hover{
 
-    transform:translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
-    0 5px 14px rgba(0,0,0,.15);
+        0 5px 14px
+        rgba(0,0,0,.15);
 }
+
 
 .search-result-card h4{
 
@@ -957,10 +1248,12 @@ nav a:hover{
     margin-bottom:8px;
 }
 
+
 .search-result-card small{
 
     color:#777;
 }
+
 
 .search-result-card p{
 
@@ -981,20 +1274,21 @@ nav a:hover{
     margin-bottom:25px;
 
     border-left:
-    6px solid #6B0015;
+        6px solid #6B0015;
 
     padding-left:12px;
 }
+
 
 .grid{
 
     display:grid;
 
     grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(300px,1fr)
-    );
+        repeat(
+            auto-fit,
+            minmax(300px,1fr)
+        );
 
     gap:25px;
 }
@@ -1013,21 +1307,25 @@ nav a:hover{
     overflow:hidden;
 
     box-shadow:
-    0 4px 12px rgba(0,0,0,.15);
+        0 4px 12px
+        rgba(0,0,0,.15);
 
     transition:.25s;
 }
 
+
 .card:hover{
 
     transform:
-    translateY(-4px);
+        translateY(-4px);
 }
+
 
 .card-content{
 
     padding:20px;
 }
+
 
 .card h3{
 
@@ -1035,6 +1333,7 @@ nav a:hover{
 
     line-height:1.4;
 }
+
 
 .card-description{
 
@@ -1055,7 +1354,7 @@ nav a:hover{
     padding-top:12px;
 
     border-top:
-    1px solid #ddd;
+        1px solid #ddd;
 
     font-size:14px;
 
@@ -1063,6 +1362,7 @@ nav a:hover{
 
     color:#555;
 }
+
 
 .article-details strong{
 
@@ -1078,6 +1378,7 @@ nav a:hover{
 
     text-decoration:none;
 }
+
 
 .card button{
 
@@ -1098,6 +1399,7 @@ nav a:hover{
     font-weight:bold;
 }
 
+
 .card button:hover{
 
     background:#500010;
@@ -1116,6 +1418,7 @@ nav a:hover{
 
     gap:12px;
 }
+
 
 .categories span{
 
@@ -1145,100 +1448,7 @@ nav a:hover{
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    background:#6B0015;
-
-    color:white;
-
-    text-align:center;
-
-    padding:30px;
-
-    margin-top:50px;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:600px){
-
-    header h1{
-        font-size:32px;
-    }
-
-    .hero{
-        padding:65px 20px;
-    }
-
-    .hero h1{
-        font-size:30px;
-    }
-
-    .container{
-        width:92%;
-    }
-
-    .loader-content{
-        height:560px;
-    }
-
-    .sshs-logo{
-        width:250px;
-    }
-
-    .sun-rays{
-        width:210px;
-        height:210px;
-        top:85px;
-    }
-
-    .loader-waves{
-        width:330px;
-        bottom:150px;
-    }
-
-    .loader-mountain{
-        width:320px;
-        bottom:205px;
-    }
-
-    .salimbay-brand{
-        bottom:35px;
-    }
-
-}
-
-
-/* =====================================================
-   REDUCE MOTION
-===================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:
-        .01ms !important;
-
-        animation-iteration-count:
-        1 !important;
-
-        transition-duration:
-        .01ms !important;
-    }
-
-}
-
-</style>
+/* =============================</style>
 
 </head>
 
@@ -1247,35 +1457,26 @@ footer{
 
 
 <!-- =====================================================
-     ANG SALIMBAY / SSHS LOADING SCREEN
+     ANG SALIMBAY / SSHS INSPIRED LOADING SCENE
 ===================================================== -->
 
 <div id="salimbayLoader">
 
-
-    <!-- Background glow -->
-
-    <div class="loader-light"></div>
+    <div class="loader-scene">
 
 
-    <!-- Moving blue light -->
+        <!-- =================================================
+             OUTER CIRCLE
+        ================================================== -->
 
-    <div class="color-light blue"></div>
-
-
-    <!-- Moving red light -->
-
-    <div class="color-light red"></div>
-
-
-    <div class="loader-content">
+        <div class="loader-ring"></div>
 
 
         <!-- =================================================
              GOLDEN SUN RAYS
         ================================================== -->
 
-        <div class="sun-rays">
+        <div class="loader-rays">
 
             <span></span>
             <span></span>
@@ -1294,57 +1495,70 @@ footer{
 
 
         <!-- =================================================
-             MOUNTAIN / LAND
+             SUN
         ================================================== -->
 
-        <div class="loader-mountain"></div>
+        <div class="loader-sun"></div>
 
 
         <!-- =================================================
-             SSHS LOGO
-             
-             IMPORTANT:
-             Upload the SSHS logo to your repository
-             and name it:
-
-             sshs-logo.png
+             GREEN MOUNTAINS
         ================================================== -->
 
-        <img
-            src="sshs-logo.png"
-            class="sshs-logo"
-            alt="Sucat Senior High School Logo"
-        >
+        <div class="loader-land"></div>
 
 
         <!-- =================================================
-             WAVES
+             BLUE WATER / WAVES
         ================================================== -->
 
-        <div class="loader-waves">
+        <div class="loader-water"></div>
 
-            <div class="wave"></div>
 
-            <div class="wave"></div>
+        <!-- =================================================
+             BLUE + RED SECTIONS
+        ================================================== -->
 
-            <div class="wave"></div>
+        <div class="loader-colors">
+
+            <div class="loader-blue"></div>
+
+            <div class="loader-red"></div>
 
         </div>
 
 
         <!-- =================================================
-             ANG SALIMBAY
+             OPEN BOOK
+        ================================================== -->
+
+        <div class="loader-book">
+
+            <div class="book-page left"></div>
+
+            <div class="book-page right"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             TORCH
+        ================================================== -->
+
+        <div class="loader-torch"></div>
+
+
+        <!-- =================================================
+             ANG SALIMBAY BRANDING
         ================================================== -->
 
         <div class="salimbay-brand">
-
 
             <img
                 src="file_000000000964820b94bbe95f7de7b05d.png"
                 class="salimbay-logo"
                 alt="Ang Salimbay Logo"
             >
-
 
             <div class="salimbay-subtitle">
 
@@ -1362,13 +1576,13 @@ footer{
 
             </div>
 
-
         </div>
 
 
     </div>
 
 </div>
+
 
 
 <!-- =====================================================
@@ -1386,13 +1600,16 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </header>
 
 
+
 <!-- =====================================================
      NAVIGATION
 ===================================================== -->
 
 <nav>
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
 <a href="balita.index.html">
 Balita
@@ -1421,6 +1638,7 @@ Tungkol sa Amin
 </nav>
 
 
+
 <!-- =====================================================
      HERO
 ===================================================== -->
@@ -1443,6 +1661,7 @@ makabuluhang balita para sa buong komunidad.
 </section>
 
 
+
 <div class="container">
 
 
@@ -1456,31 +1675,35 @@ makabuluhang balita para sa buong komunidad.
 🔎 Maghanap sa Ang Salimbay
 </h2>
 
+
 <div class="search-box">
 
 <input
-type="search"
-id="searchInput"
-placeholder="Maghanap ng balita, pangalan, petsa, manunulat..."
-autocomplete="off"
+    type="search"
+    id="searchInput"
+    placeholder="Maghanap ng balita, pangalan, petsa, manunulat..."
+    autocomplete="off"
 >
 
 </div>
 
+
 <p
-class="search-info"
-id="searchInfo"
+    class="search-info"
+    id="searchInfo"
 >
 I-type ang kahit bahagi ng salita, pangalan, petsa o credit.
 </p>
 
+
 <div
-class="search-results"
-id="searchResults"
+    class="search-results"
+    id="searchResults"
 >
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1491,14 +1714,18 @@ id="searchResults"
 Pinakabagong Balita
 </h2>
 
+
 <div
-class="grid"
-id="articleGrid"
+    class="grid"
+    id="articleGrid"
 >
 </div>
 
 
-<br><br>
+
+<br>
+<br>
+
 
 
 <!-- =====================================================
@@ -1509,26 +1736,44 @@ id="articleGrid"
 Mga Kategorya
 </h2>
 
+
 <div class="categories">
 
-<span>Balita</span>
+<span>
+Balita
+</span>
 
-<span>Editoryal</span>
+<span>
+Editoryal
+</span>
 
-<span>Lathalain</span>
+<span>
+Lathalain
+</span>
 
-<span>Column</span>
+<span>
+Column
+</span>
 
-<span>Isports</span>
+<span>
+Isports
+</span>
 
-<span>Agham at Teknolohiya</span>
+<span>
+Agham at Teknolohiya
+</span>
 
-<span>Editorial Cartooning</span>
+<span>
+Editorial Cartooning
+</span>
 
 </div>
 
 
-<br><br>
+
+<br>
+<br>
+
 
 
 <!-- =====================================================
@@ -1538,6 +1783,7 @@ Mga Kategorya
 <h2 class="section-title">
 Tungkol sa Ang Salimbay
 </h2>
+
 
 <div class="about">
 
@@ -1553,7 +1799,9 @@ at ng komunidad ng paaralan.
 
 </div>
 
+
 </div>
+
 
 
 <!-- =====================================================
@@ -1566,17 +1814,21 @@ at ng komunidad ng paaralan.
 ANG SALIMBAY
 </h2>
 
+
 <p>
 Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </p>
 
+
 <br>
+
 
 <p>
 © 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
 </p>
 
 </footer>
+
 
 
 <!-- =====================================================
@@ -1586,6 +1838,7 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 <script src="articles.js"></script>
 
 
+
 <script>
 
 
@@ -1593,25 +1846,38 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
    LOADING SCREEN
 ===================================================== */
 
-window.addEventListener("load", function(){
+window.addEventListener(
+    "load",
+    function(){
 
-    const loader =
-    document.getElementById("salimbayLoader");
+        /*
+           Give the animation enough time to appear
+           before removing the loader.
+        */
 
+        setTimeout(
+            function(){
 
-    /*
-       Hahayaan muna nating tumakbo ang
-       SSHS + Ang Salimbay animation bago
-       mawala ang loading screen.
-    */
+                const loader =
+                    document.getElementById(
+                        "salimbayLoader"
+                    );
 
-    setTimeout(function(){
+                if(loader){
 
-        loader.classList.add("hide");
+                    loader.classList.add(
+                        "hide"
+                    );
 
-    }, 3500);
+                }
 
-});
+            },
+            3500
+        );
+
+    }
+);
+
 
 
 /* =====================================================
@@ -1621,14 +1887,18 @@ window.addEventListener("load", function(){
 const articleGrid =
 document.getElementById("articleGrid");
 
+
 const searchInput =
 document.getElementById("searchInput");
+
 
 const searchResults =
 document.getElementById("searchResults");
 
+
 const searchInfo =
 document.getElementById("searchInfo");
+
 
 
 /* =====================================================
@@ -1637,8 +1907,10 @@ document.getElementById("searchInfo");
 
 function safe(value){
 
-    if(value === undefined ||
-       value === null){
+    if(
+        value === undefined ||
+        value === null
+    ){
 
         return "";
 
@@ -1647,6 +1919,7 @@ function safe(value){
     return String(value);
 
 }
+
 
 
 /* =====================================================
@@ -1686,6 +1959,7 @@ function getSearchableText(article){
 }
 
 
+
 /* =====================================================
    ARTICLE CARD
 ===================================================== */
@@ -1693,15 +1967,16 @@ function getSearchableText(article){
 function createArticleCard(article){
 
     const card =
-    document.createElement("div");
+        document.createElement("div");
+
 
     card.className =
-    "card";
+        "card";
 
 
-    /* ===============================
+    /* =================================================
        CREDITS
-    =============================== */
+    ================================================= */
 
     let creditsHTML = "";
 
@@ -1709,10 +1984,15 @@ function createArticleCard(article){
     if(article.author){
 
         creditsHTML += `
+
         <div>
+
             ✍️ <strong>Sumulat:</strong>
+
             ${safe(article.author)}
+
         </div>
+
         `;
 
     }
@@ -1721,10 +2001,15 @@ function createArticleCard(article){
     if(article.photographer){
 
         creditsHTML += `
+
         <div>
+
             📷 <strong>Larawan:</strong>
+
             ${safe(article.photographer)}
+
         </div>
+
         `;
 
     }
@@ -1733,10 +2018,15 @@ function createArticleCard(article){
     if(article.illustrator){
 
         creditsHTML += `
+
         <div>
+
             🎨 <strong>Gumuhit / Illustrator:</strong>
+
             ${safe(article.illustrator)}
+
         </div>
+
         `;
 
     }
@@ -1745,10 +2035,15 @@ function createArticleCard(article){
     if(article.editor){
 
         creditsHTML += `
+
         <div>
+
             📝 <strong>Editor:</strong>
+
             ${safe(article.editor)}
+
         </div>
+
         `;
 
     }
@@ -1757,10 +2052,15 @@ function createArticleCard(article){
     if(article.otherCredit){
 
         creditsHTML += `
+
         <div>
+
             👤 <strong>Iba pang Credit:</strong>
+
             ${safe(article.otherCredit)}
+
         </div>
+
         `;
 
     }
@@ -1769,18 +2069,24 @@ function createArticleCard(article){
     if(article.credits){
 
         creditsHTML += `
+
         <div>
+
             📌 <strong>Credits:</strong>
+
             ${safe(article.credits)}
+
         </div>
+
         `;
 
     }
 
 
-    /* ===============================
-       CARD
-    =============================== */
+
+    /* =================================================
+       CARD HTML
+    ================================================= */
 
     card.innerHTML = `
 
@@ -1790,24 +2096,37 @@ function createArticleCard(article){
                 ${safe(article.title)}
             </h3>
 
+
             <p class="card-description">
+
                 ${safe(article.description)}
+
             </p>
 
 
             <div class="article-details">
 
-                <div>
-                    📰 <strong>Kategorya:</strong>
-                    ${safe(article.category)}
-                </div>
 
                 <div>
-                    📅 <strong>Petsa:</strong>
-                    ${safe(article.date)}
+
+                    📰 <strong>Kategorya:</strong>
+
+                    ${safe(article.category)}
+
                 </div>
+
+
+                <div>
+
+                    📅 <strong>Petsa:</strong>
+
+                    ${safe(article.date)}
+
+                </div>
+
 
                 ${creditsHTML}
+
 
             </div>
 
@@ -1822,6 +2141,7 @@ function createArticleCard(article){
 
             </a>
 
+
         </div>
 
     `;
@@ -1830,6 +2150,7 @@ function createArticleCard(article){
     return card;
 
 }
+
 
 
 /* =====================================================
@@ -1841,22 +2162,26 @@ function displayArticles(list){
     articleGrid.innerHTML = "";
 
 
-    if(!list ||
-       list.length === 0){
+    if(
+        !list ||
+        list.length === 0
+    ){
 
         articleGrid.innerHTML = `
 
         <div
-        style="
-        background:white;
-        padding:25px;
-        border-radius:10px;
-        text-align:center;
-        "
+            style="
+                background:white;
+                padding:25px;
+                border-radius:10px;
+                text-align:center;
+            "
         >
 
             <h3 style="color:#6B0015;">
+
                 Walang artikulo.
+
             </h3>
 
         </div>
@@ -1868,15 +2193,18 @@ function displayArticles(list){
     }
 
 
-    list.forEach(function(article){
+    list.forEach(
+        function(article){
 
-        articleGrid.appendChild(
-            createArticleCard(article)
-        );
+            articleGrid.appendChild(
+                createArticleCard(article)
+            );
 
-    });
+        }
+    );
 
 }
+
 
 
 /* =====================================================
@@ -1884,6 +2212,7 @@ function displayArticles(list){
 ===================================================== */
 
 displayArticles(articles);
+
 
 
 /* =====================================================
@@ -1895,107 +2224,137 @@ searchInput.addEventListener(
     function(){
 
         const query =
-        searchInput.value
-        .toLowerCase()
-        .trim();
+            searchInput.value
+            .toLowerCase()
+            .trim();
 
 
-        /* ===============================
+
+        /* =============================================
            EMPTY SEARCH
-        =============================== */
+        ============================================= */
 
         if(query === ""){
 
-            searchResults.innerHTML = "";
+            searchResults.innerHTML =
+                "";
 
-            searchResults.classList.remove("show");
+            searchResults.classList.remove(
+                "show"
+            );
+
 
             searchInfo.textContent =
-            "I-type ang kahit bahagi ng salita, pangalan, petsa o credit.";
+                "I-type ang kahit bahagi ng salita, pangalan, petsa o credit.";
 
-            displayArticles(articles);
+
+            displayArticles(
+                articles
+            );
+
 
             return;
 
         }
 
 
-        /* ===============================
-           SEARCH
-        =============================== */
+
+        /* =============================================
+           SEARCH ARTICLES
+        ============================================= */
 
         const results =
-        articles.filter(function(article){
+            articles.filter(
+                function(article){
 
-            const searchableText =
-            getSearchableText(article);
-
-            return searchableText.includes(query);
-
-        });
-
-
-        /* ===============================
-           UPDATE ARTICLES
-        =============================== */
-
-        displayArticles(results);
+                    const searchableText =
+                        getSearchableText(
+                            article
+                        );
 
 
-        searchResults.classList.add("show");
+                    return searchableText.includes(
+                        query
+                    );
+
+                }
+            );
 
 
-        /* ===============================
+
+        /* =============================================
+           UPDATE ARTICLE GRID
+        ============================================= */
+
+        displayArticles(
+            results
+        );
+
+
+        searchResults.classList.add(
+            "show"
+        );
+
+
+
+        /* =============================================
            NO RESULTS
-        =============================== */
+        ============================================= */
 
         if(results.length === 0){
 
             searchInfo.textContent =
-            "Walang nahanap para sa: " +
-            searchInput.value;
+                "Walang nahanap para sa: " +
+                searchInput.value;
 
 
             searchResults.innerHTML = `
 
                 <div
-                class="search-result-card"
+                    class="search-result-card"
                 >
 
                     <h4>
                         Walang nahanap na artikulo.
                     </h4>
 
+
                     <p>
+
                         Subukan ang ibang salita,
                         pangalan, petsa, o credit.
+
                     </p>
 
                 </div>
 
             `;
 
+
             return;
 
         }
 
 
-        /* ===============================
+
+        /* =============================================
            RESULT COUNT
-        =============================== */
+        ============================================= */
 
         searchInfo.textContent =
-        results.length +
-        (
-            results.length === 1
-            ? " artikulo ang nahanap."
-            : " mga artikulo ang nahanap."
-        );
+            results.length +
+
+            (
+                results.length === 1
+                ? " artikulo ang nahanap."
+                : " mga artikulo ang nahanap."
+            );
 
 
-        /* ===============================
+
+        /* =============================================
            RESULT TITLE
-        =============================== */
+        ============================================= */
 
         searchResults.innerHTML = `
 
@@ -2006,115 +2365,131 @@ searchInput.addEventListener(
         `;
 
 
-        /* ===============================
+
+        /* =============================================
            RESULT CARDS
-        =============================== */
+        ============================================= */
 
-        results.forEach(function(article){
+        results.forEach(
+            function(article){
 
-            const resultCard =
-            document.createElement("div");
-
-
-            resultCard.className =
-            "search-result-card";
-
-
-            let creditPreview = "";
+                const resultCard =
+                    document.createElement(
+                        "div"
+                    );
 
 
-            if(article.author){
-
-                creditPreview +=
-                "✍️ " +
-                safe(article.author) +
-                " ";
-
-            }
+                resultCard.className =
+                    "search-result-card";
 
 
-            if(article.photographer){
-
-                creditPreview +=
-                "📷 " +
-                safe(article.photographer) +
-                " ";
-
-            }
+                let creditPreview =
+                    "";
 
 
-            if(article.illustrator){
 
-                creditPreview +=
-                "🎨 " +
-                safe(article.illustrator) +
-                " ";
+                if(article.author){
 
-            }
-
-
-            if(article.editor){
-
-                creditPreview +=
-                "📝 " +
-                safe(article.editor);
-
-            }
-
-
-            resultCard.innerHTML = `
-
-                <h4>
-                    ${safe(article.title)}
-                </h4>
-
-                <small>
-
-                    📰 ${safe(article.category)}
-
-                      |  
-
-                    📅 ${safe(article.date)}
-
-                </small>
-
-                <p>
-                    ${safe(article.description)}
-                </p>
-
-                ${
-                    creditPreview
-                    ?
-                    `<small>
-                        ${creditPreview}
-                    </small>`
-                    :
-                    ""
-                }
-
-            `;
-
-
-            resultCard.addEventListener(
-                "click",
-                function(){
-
-                    window.location.href =
-                    article.url;
+                    creditPreview +=
+                        "✍️ " +
+                        safe(article.author) +
+                        " ";
 
                 }
-            );
 
 
-            searchResults.appendChild(
-                resultCard
-            );
+                if(article.photographer){
 
-        });
+                    creditPreview +=
+                        "📷 " +
+                        safe(article.photographer) +
+                        " ";
+
+                }
+
+
+                if(article.illustrator){
+
+                    creditPreview +=
+                        "🎨 " +
+                        safe(article.illustrator) +
+                        " ";
+
+                }
+
+
+                if(article.editor){
+
+                    creditPreview +=
+                        "📝 " +
+                        safe(article.editor);
+
+                }
+
+
+
+                resultCard.innerHTML = `
+
+                    <h4>
+
+                        ${safe(article.title)}
+
+                    </h4>
+
+
+                    <small>
+
+                        📰 ${safe(article.category)}
+
+                        &nbsp; | &nbsp;
+
+                        📅 ${safe(article.date)}
+
+                    </small>
+
+
+                    <p>
+
+                        ${safe(article.description)}
+
+                    </p>
+
+
+                    ${
+                        creditPreview
+                        ?
+                        `<small>
+                            ${creditPreview}
+                        </small>`
+                        :
+                        ""
+                    }
+
+                `;
+
+
+
+                resultCard.addEventListener(
+                    "click",
+                    function(){
+
+                        window.location.href =
+                            article.url;
+
+                    }
+                );
+
+
+
+                searchResults.appendChild(
+                    resultCard
+                );
+
+            }
+        );
 
     }
 );
-
 
 </script>
 
