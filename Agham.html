@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="tl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Agham | Ang Salimbay</title>
 
 <style>
+
+/* ================= GENERAL ================= */
 
 *{
     margin:0;
@@ -16,12 +20,12 @@
 }
 
 body{
-    background:white;
+    background:#ffffff;
     color:#222;
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:#800000;
@@ -40,8 +44,7 @@ header p{
 }
 
 
-
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 
 nav{
     background:#500010;
@@ -63,8 +66,7 @@ nav a:hover{
 }
 
 
-
-/* INTRO */
+/* ================= INTRO ================= */
 
 .intro{
     padding:40px 10%;
@@ -82,104 +84,123 @@ nav a:hover{
 }
 
 
-
-/* FUN FACT */
+/* ================= FUN FACT ================= */
 
 .funfact{
-
     background:#fff5f5;
     margin:20px 10%;
     padding:25px;
     border-left:7px solid #800000;
-
 }
 
 .funfact h3{
-
     color:#800000;
     margin-bottom:15px;
-
 }
 
 .funfact ul{
-
     margin-left:20px;
     line-height:1.8;
-
 }
 
 
-
-/* ARTICLE SECTION */
+/* ================= ARTICLE SECTION ================= */
 
 .article-section{
-
     padding:40px 10%;
-
 }
 
-
 .article-section h2{
-
-    text-align:center;
     color:#800000;
     font-size:32px;
     margin-bottom:30px;
-
+    border-left:7px solid #800000;
+    padding-left:15px;
 }
 
 
+/* ================= ARTICLE CARD ================= */
 
-.article-card{
-
-    border:2px solid #800000;
-    border-radius:12px;
-    padding:25px;
-    margin-bottom:30px;
+.card{
     background:white;
-
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);
+    margin-bottom:30px;
 }
 
 
+/* ================= ARTICLE IMAGE ================= */
 
-.article-card h3{
+.card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+}
 
+
+/* ================= CARD CONTENT ================= */
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
     color:#800000;
-    font-size:26px;
-    margin-bottom:10px;
-
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:12px;
 }
 
-
-.article-card .writer{
-
-    color:#777;
-    font-size:14px;
-    margin-bottom:15px;
-
-}
-
-
-
-.article-card p{
-
+.card-content p{
     line-height:1.7;
     text-align:justify;
-
+    font-size:17px;
+    margin-bottom:15px;
 }
 
 
+/* ================= ARTICLE CREDITS ================= */
 
-/* FOOTER */
+.card-content .credits{
+    color:#777;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:5px;
+}
+
+
+/* ================= READ BUTTON ================= */
+
+.card-content a{
+    text-decoration:none;
+}
+
+.card-content button{
+    margin-top:8px;
+    padding:11px 20px;
+    background:#800000;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.card-content button:hover{
+    background:#5a0000;
+}
+
+
+/* ================= FOOTER ================= */
 
 footer{
-
     background:#5a0000;
     color:white;
     text-align:center;
     padding:25px;
     margin-top:40px;
-
 }
 
 footer p{
@@ -187,23 +208,42 @@ footer p{
 }
 
 
-
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-header h1{
-    font-size:30px;
-}
+    header h1{
+        font-size:30px;
+    }
 
-.intro,
-.article-section{
-    padding:30px 5%;
-}
+    .intro,
+    .article-section{
+        padding:30px 5%;
+    }
 
-.funfact{
-    margin:20px 5%;
-}
+    .funfact{
+        margin:20px 5%;
+    }
+
+    .article-section h2{
+        font-size:27px;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+    .card-content{
+        padding:20px;
+    }
+
+    .card-content h3{
+        font-size:23px;
+    }
+
+    .card-content p{
+        font-size:16px;
+    }
 
 }
 
@@ -215,37 +255,45 @@ header h1{
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <h1>ANG SALIMBAY</h1>
 
-<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+<p>
+Opisyal na Pahayagang Filipino ng Sucat Senior High School
+</p>
 
 </header>
 
 
-
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
 <a href="index.html">Home</a>
+
 <a href="balita.index.html">Balita</a>
+
 <a href="editoryal.html">Editoryal at Kolum</a>
+
 <a href="lathalain.html">Lathalain</a>
+
 <a href="isports.html">Isports</a>
+
 <a href="Agham.html">Agham</a>
+
 <a href="About.html">Tungkol sa Amin</a>
 
 </nav>
 
 
-
-
+<!-- ================= INTRO ================= -->
 
 <section class="intro">
 
 <h2>🔬 Agham</h2>
-
 
 <p>
 
@@ -257,94 +305,126 @@ pang-araw-araw na buhay at sa paghubog ng kinabukasan.
 
 </p>
 
-
 </section>
 
 
-
-
+<!-- ================= FUN FACT ================= -->
 
 <section class="funfact">
 
-
 <h3>Alam Mo Ba? | Science Writing Facts</h3>
-
 
 <ul>
 
-<li>Ang science writing ay gumagamit ng ebidensya at pananaliksik upang ipaliwanag ang mga konsepto.</li>
+<li>
+Ang science writing ay gumagamit ng ebidensya at pananaliksik upang
+ipaliwanag ang mga konsepto.
+</li>
 
-<li>Mahalaga ang pagiging malinaw dahil layunin nitong gawing madaling maunawaan ang komplikadong kaalaman.</li>
+<li>
+Mahalaga ang pagiging malinaw dahil layunin nitong gawing madaling
+maunawaan ang komplikadong kaalaman.
+</li>
 
-<li>Ang isang siyentipikong artikulo ay dapat nakabatay sa mapagkakatiwalaang datos.</li>
+<li>
+Ang isang siyentipikong artikulo ay dapat nakabatay sa
+mapagkakatiwalaang datos.
+</li>
 
-<li>Patuloy na nagbabago ang agham dahil sa mga bagong tuklas at eksperimento.</li>
+<li>
+Patuloy na nagbabago ang agham dahil sa mga bagong tuklas at
+eksperimento.
+</li>
 
 </ul>
 
-
 </section>
 
 
-
-
-
+<!-- ================= ARTICLES ================= -->
 
 <section class="article-section">
 
+<h2>
+Mga Tuklas at Kaalaman
+</h2>
 
-<h2>Mga Tuklas at Kaalaman</h2>
+
+<!-- ================= PAX SILICA CARD ================= -->
+
+<div class="card">
 
 
+<img
+src="Messenger_creation_1372507897624513.jpeg"
+alt="Pax Silica, Kinuwestiyon Dahil sa Posibleng Epekto sa Komunidad"
+>
 
 
-<div class="grid">
+<div class="card-content">
 
-    <div class="card">
 
-        <img src="Messenger_creation_1372507897624513.jpeg"
-             alt="Pax Silica">
+<h3>
+Pax Silica, Kinuwestiyon Dahil sa Posibleng Epekto sa Komunidad
+</h3>
 
-        <div class="card-content">
 
-            <h3>
-                Pax Silica, Kinuwestiyon Dahil sa Posibleng Epekto sa Komunidad
-            </h3>
+<p>
 
-            <p>
-                Kasabay ng planong gawing sentro ng artificial intelligence,
-                semiconductors at advanced technology ang New Clark City,
-                umuusbong ang mga pangamba tungkol sa posibleng epekto ng
-                Pax Silica sa mga magsasaka, katutubong komunidad, tubig,
-                at kalikasan.
-            </p>
+Kasabay ng planong gawing sentro ng artificial intelligence,
+semiconductors at advanced technology ang New Clark City,
+umuusbong ang mga pangamba tungkol sa posibleng epekto ng
+Pax Silica sa mga magsasaka, katutubong komunidad, tubig,
+at kalikasan.
 
-            <a href="pax-silica.html">
-                <button>Basahin</button>
-            </a>
+</p>
 
-        </div>
 
-    </div>
+<p class="credits">
+
+✍🏼 <b>Sumulat:</b> Bryan James Ebante<br>
+
+🖼️ <b>Kumuha ng Larawan:</b> Ram Mendoza
+
+</p>
+
+
+<a href="pax-silica.html">
+
+<button>
+Basahin
+</button>
+
+</a>
+
 
 </div>
+
+</div>
+
 
 </section>
 
 
-
-
-
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p><b>ANG SALIMBAY</b></p>
+<p>
+<b>ANG SALIMBAY</b>
+</p>
 
-<p>© 2026 Sucat Senior High School Publication</p>
+<p>
+Opisyal na Pahayagang Filipino ng Sucat Senior High School
+</p>
+
+<p>
+© 2026 Sucat Senior High School Publication
+</p>
 
 </footer>
 
 
-
 </body>
+
 </html>
