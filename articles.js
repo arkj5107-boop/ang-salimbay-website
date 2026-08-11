@@ -417,6 +417,51 @@ const articles = [
 
     url:
     "fiesta-sto-domingo.html"
+},
+
+
+{
+    title:
+    "Pax Silica, Kinuwestiyon Dahil sa Posibleng Epekto sa Komunidad",
+
+    description:
+    "Kasabay ng planong gawing sentro ng artificial intelligence, semiconductors at advanced technology ang New Clark City, umuusbong ang mga pangamba tungkol sa posibleng epekto ng Pax Silica sa mga magsasaka, katutubong komunidad, tubig at kalikasan.",
+
+    category:
+    "Balitang Agham",
+
+    date:
+    "Agosto 11, 2026",
+
+    author:
+    "Bryan James Ebante",
+
+    photographer:
+    "Ram Mendoza",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    credits:
+    "✍🏼 Bryan James Ebante / 🖼️ Ram Mendoza",
+
+    keywords:
+    "Pax Silica New Clark City Tarlac Capas O'Donnell Aranguren Santa Lucia artificial intelligence AI semiconductors semi-conductors advanced technology technology data centers data center advanced manufacturing farmers magsasaka Indigenous Peoples IPs katutubong komunidad agricultural land sakahan tubig water resources kalikasan environment BCDA Bases Conversion and Development Authority Project Affected Persons PAPs investments trabaho direct jobs Philippine technology sector New Clark City technology hub Balitang Agham Agham science teknolohiya",
+
+    content:
+    "Pax Silica New Clark City artificial intelligence semiconductors data centers advanced manufacturing magsasaka Indigenous Peoples agricultural land tubig kalikasan BCDA Project Affected Persons investments trabaho teknolohiya",
+
+    image:
+    "",
+
+    url:
+    "pax-silica.html"
 }
 
 ];
