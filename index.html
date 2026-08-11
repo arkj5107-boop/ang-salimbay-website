@@ -10,6 +10,10 @@
 
 <style>
 
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -23,7 +27,720 @@ body{
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   ANG SALIMBAY LOADING SCREEN
+===================================================== */
+
+#salimbayLoader{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #7d1028 0%,
+        #6B0015 38%,
+        #3b000b 100%
+    );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:999999;
+
+    overflow:hidden;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+
+/* Loader disappears */
+
+#salimbayLoader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   BACKGROUND LIGHT
+===================================================== */
+
+.loader-light{
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,193,7,.15),
+        rgba(255,193,7,.05) 35%,
+        transparent 70%
+    );
+
+    animation:
+    loaderLight 3.5s ease-in-out infinite;
+
+}
+
+
+@keyframes loaderLight{
+
+    0%,100%{
+        transform:scale(.85);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.1);
+        opacity:1;
+    }
+
+}
+
+
+/* =====================================================
+   MAIN LOADER CONTENT
+===================================================== */
+
+.loader-content{
+
+    position:relative;
+
+    width:min(90vw,520px);
+
+    height:620px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:5;
+}
+
+
+/* =====================================================
+   SUN RAYS
+===================================================== */
+
+.sun-rays{
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    top:80px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    animation:
+    raysAppear 2.5s ease forwards;
+}
+
+
+.sun-rays span{
+
+    position:absolute;
+
+    width:7px;
+
+    height:75px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255,210,45,0),
+        #FFD02E
+    );
+
+    border-radius:10px;
+
+    left:50%;
+    top:50%;
+
+    transform-origin:
+    50% 100%;
+
+    opacity:.75;
+
+}
+
+
+.sun-rays span:nth-child(1){
+    transform:
+    translate(-50%,-100px)
+    rotate(0deg);
+}
+
+.sun-rays span:nth-child(2){
+    transform:
+    translate(-50%,-100px)
+    rotate(30deg);
+}
+
+.sun-rays span:nth-child(3){
+    transform:
+    translate(-50%,-100px)
+    rotate(60deg);
+}
+
+.sun-rays span:nth-child(4){
+    transform:
+    translate(-50%,-100px)
+    rotate(90deg);
+}
+
+.sun-rays span:nth-child(5){
+    transform:
+    translate(-50%,-100px)
+    rotate(120deg);
+}
+
+.sun-rays span:nth-child(6){
+    transform:
+    translate(-50%,-100px)
+    rotate(150deg);
+}
+
+.sun-rays span:nth-child(7){
+    transform:
+    translate(-50%,-100px)
+    rotate(180deg);
+}
+
+.sun-rays span:nth-child(8){
+    transform:
+    translate(-50%,-100px)
+    rotate(210deg);
+}
+
+.sun-rays span:nth-child(9){
+    transform:
+    translate(-50%,-100px)
+    rotate(240deg);
+}
+
+.sun-rays span:nth-child(10){
+    transform:
+    translate(-50%,-100px)
+    rotate(270deg);
+}
+
+.sun-rays span:nth-child(11){
+    transform:
+    translate(-50%,-100px)
+    rotate(300deg);
+}
+
+.sun-rays span:nth-child(12){
+    transform:
+    translate(-50%,-100px)
+    rotate(330deg);
+}
+
+
+@keyframes raysAppear{
+
+    0%{
+        transform:
+        translateX(-50%)
+        scale(.4)
+        rotate(-20deg);
+
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateX(-50%)
+        scale(1)
+        rotate(0deg);
+
+        opacity:.8;
+    }
+
+}
+
+
+/* =====================================================
+   SSHS LOGO
+===================================================== */
+
+.sshs-logo{
+
+    position:relative;
+
+    width:min(72vw,330px);
+
+    height:auto;
+
+    z-index:10;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(
+        0 15px 30px
+        rgba(0,0,0,.35)
+    );
+
+    animation:
+    sshsEntrance 1.8s cubic-bezier(.2,.8,.2,1) forwards;
+
+}
+
+
+@keyframes sshsEntrance{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        scale(.65)
+        translateY(30px);
+
+        filter:
+        blur(8px)
+        drop-shadow(
+            0 15px 30px
+            rgba(0,0,0,.35)
+        );
+
+    }
+
+    60%{
+
+        opacity:1;
+
+        transform:
+        scale(1.05)
+        translateY(-5px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+
+        filter:
+        blur(0)
+        drop-shadow(
+            0 15px 30px
+            rgba(0,0,0,.35)
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   WATER WAVES
+===================================================== */
+
+.loader-waves{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:175px;
+
+    width:430px;
+
+    height:90px;
+
+    transform:
+    translateX(-50%);
+
+    overflow:hidden;
+
+    opacity:.75;
+
+}
+
+
+.wave{
+
+    position:absolute;
+
+    width:700px;
+
+    height:70px;
+
+    border-top:
+    5px solid rgba(40,190,230,.75);
+
+    border-radius:50%;
+
+    left:-140px;
+
+    animation:
+    waveMove 3s ease-in-out infinite;
+
+}
+
+
+.wave:nth-child(2){
+
+    top:25px;
+
+    border-color:
+    rgba(0,105,190,.65);
+
+    animation-delay:
+    -.8s;
+
+}
+
+
+.wave:nth-child(3){
+
+    top:48px;
+
+    border-color:
+    rgba(70,210,240,.45);
+
+    animation-delay:
+    -1.5s;
+
+}
+
+
+@keyframes waveMove{
+
+    0%,100%{
+        transform:
+        translateX(-25px)
+        scaleY(.8);
+    }
+
+    50%{
+        transform:
+        translateX(25px)
+        scaleY(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   MOUNTAIN / LAND LIGHT
+===================================================== */
+
+.loader-mountain{
+
+    position:absolute;
+
+    bottom:230px;
+
+    left:50%;
+
+    width:390px;
+
+    height:80px;
+
+    transform:
+    translateX(-50%);
+
+    background:
+    linear-gradient(
+        135deg,
+        transparent 35%,
+        rgba(77,190,40,.75) 36%,
+        rgba(77,190,40,.75) 60%,
+        transparent 61%
+    );
+
+    clip-path:
+    polygon(
+        0 100%,
+        25% 35%,
+        38% 58%,
+        55% 10%,
+        72% 55%,
+        85% 30%,
+        100% 100%
+    );
+
+    opacity:.65;
+
+    animation:
+    mountainGlow 3s ease-in-out infinite;
+
+}
+
+
+@keyframes mountainGlow{
+
+    0%,100%{
+        opacity:.45;
+        transform:
+        translateX(-50%)
+        scaleX(.97);
+    }
+
+    50%{
+        opacity:.8;
+        transform:
+        translateX(-50%)
+        scaleX(1);
+    }
+
+}
+
+
+/* =====================================================
+   BLUE / RED LIGHT
+===================================================== */
+
+.color-light{
+
+    position:absolute;
+
+    bottom:105px;
+
+    width:420px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    opacity:.6;
+
+    filter:blur(22px);
+
+    animation:
+    colorMove 4s ease-in-out infinite;
+
+}
+
+
+.color-light.blue{
+
+    left:25%;
+
+    background:
+    rgba(0,85,210,.45);
+
+}
+
+
+.color-light.red{
+
+    right:25%;
+
+    background:
+    rgba(220,20,50,.4);
+
+    animation-delay:
+    -2s;
+
+}
+
+
+@keyframes colorMove{
+
+    0%,100%{
+        transform:
+        translateX(-30px)
+        scale(.9);
+
+        opacity:.35;
+    }
+
+    50%{
+        transform:
+        translateX(30px)
+        scale(1.1);
+
+        opacity:.7;
+    }
+
+}
+
+
+/* =====================================================
+   ANG SALIMBAY BRANDING
+===================================================== */
+
+.salimbay-brand{
+
+    position:absolute;
+
+    bottom:55px;
+
+    z-index:20;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+    animation:
+    brandReveal 1.2s ease 1.5s both;
+
+}
+
+
+.salimbay-logo{
+
+    width:min(62vw,300px);
+
+    max-height:100px;
+
+    object-fit:contain;
+
+    filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(
+        0 5px 12px
+        rgba(0,0,0,.35)
+    );
+
+}
+
+
+.salimbay-subtitle{
+
+    color:white;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:.9;
+
+}
+
+
+@keyframes brandReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   LOADING DOTS
+===================================================== */
+
+.loading-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-top:3px;
+
+}
+
+
+.loading-dots span{
+
+    width:5px;
+    height:5px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:
+    loadingDot 1.2s infinite ease-in-out;
+
+}
+
+
+.loading-dots span:nth-child(2){
+    animation-delay:.15s;
+}
+
+.loading-dots span:nth-child(3){
+    animation-delay:.3s;
+}
+
+
+@keyframes loadingDot{
+
+    0%,80%,100%{
+        opacity:.3;
+        transform:scale(.7);
+    }
+
+    40%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
 
 header{
     background:#6B0015;
@@ -43,7 +760,9 @@ header p{
 }
 
 
-/* ================= NAV ================= */
+/* =====================================================
+   NAV
+===================================================== */
 
 nav{
     background:#500010;
@@ -65,7 +784,9 @@ nav a:hover{
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
 
@@ -98,7 +819,9 @@ nav a:hover{
 }
 
 
-/* ================= CONTAINER ================= */
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container{
     width:90%;
@@ -108,7 +831,9 @@ nav a:hover{
 }
 
 
-/* ================= SEARCH ================= */
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-section{
 
@@ -176,7 +901,9 @@ nav a:hover{
 }
 
 
-/* ================= SEARCH RESULTS ================= */
+/* =====================================================
+   SEARCH RESULTS
+===================================================== */
 
 .search-results{
 
@@ -243,7 +970,9 @@ nav a:hover{
 }
 
 
-/* ================= ARTICLE GRID ================= */
+/* =====================================================
+   ARTICLE GRID
+===================================================== */
 
 .section-title{
 
@@ -271,7 +1000,9 @@ nav a:hover{
 }
 
 
-/* ================= ARTICLE CARD ================= */
+/* =====================================================
+   ARTICLE CARD
+===================================================== */
 
 .card{
 
@@ -313,7 +1044,9 @@ nav a:hover{
 }
 
 
-/* ================= ARTICLE DETAILS ================= */
+/* =====================================================
+   ARTICLE DETAILS
+===================================================== */
 
 .article-details{
 
@@ -337,7 +1070,9 @@ nav a:hover{
 }
 
 
-/* ================= BUTTON ================= */
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .card a{
 
@@ -369,7 +1104,9 @@ nav a:hover{
 }
 
 
-/* ================= CATEGORIES ================= */
+/* =====================================================
+   CATEGORIES
+===================================================== */
 
 .categories{
 
@@ -392,7 +1129,9 @@ nav a:hover{
 }
 
 
-/* ================= ABOUT ================= */
+/* =====================================================
+   ABOUT
+===================================================== */
 
 .about{
 
@@ -406,7 +1145,9 @@ nav a:hover{
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
 
@@ -422,7 +1163,9 @@ footer{
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:600px){
 
@@ -442,6 +1185,57 @@ footer{
         width:92%;
     }
 
+    .loader-content{
+        height:560px;
+    }
+
+    .sshs-logo{
+        width:250px;
+    }
+
+    .sun-rays{
+        width:210px;
+        height:210px;
+        top:85px;
+    }
+
+    .loader-waves{
+        width:330px;
+        bottom:150px;
+    }
+
+    .loader-mountain{
+        width:320px;
+        bottom:205px;
+    }
+
+    .salimbay-brand{
+        bottom:35px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+        .01ms !important;
+
+        animation-iteration-count:
+        1 !important;
+
+        transition-duration:
+        .01ms !important;
+    }
+
 }
 
 </style>
@@ -452,7 +1246,134 @@ footer{
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     ANG SALIMBAY / SSHS LOADING SCREEN
+===================================================== -->
+
+<div id="salimbayLoader">
+
+
+    <!-- Background glow -->
+
+    <div class="loader-light"></div>
+
+
+    <!-- Moving blue light -->
+
+    <div class="color-light blue"></div>
+
+
+    <!-- Moving red light -->
+
+    <div class="color-light red"></div>
+
+
+    <div class="loader-content">
+
+
+        <!-- =================================================
+             GOLDEN SUN RAYS
+        ================================================== -->
+
+        <div class="sun-rays">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- =================================================
+             MOUNTAIN / LAND
+        ================================================== -->
+
+        <div class="loader-mountain"></div>
+
+
+        <!-- =================================================
+             SSHS LOGO
+             
+             IMPORTANT:
+             Upload the SSHS logo to your repository
+             and name it:
+
+             sshs-logo.png
+        ================================================== -->
+
+        <img
+            src="sshs-logo.png"
+            class="sshs-logo"
+            alt="Sucat Senior High School Logo"
+        >
+
+
+        <!-- =================================================
+             WAVES
+        ================================================== -->
+
+        <div class="loader-waves">
+
+            <div class="wave"></div>
+
+            <div class="wave"></div>
+
+            <div class="wave"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             ANG SALIMBAY
+        ================================================== -->
+
+        <div class="salimbay-brand">
+
+
+            <img
+                src="file_000000000964820b94bbe95f7de7b05d.png"
+                class="salimbay-logo"
+                alt="Ang Salimbay Logo"
+            >
+
+
+            <div class="salimbay-subtitle">
+
+                Opisyal na Pahayagang Filipino
+                ng Sucat Senior High School
+
+            </div>
+
+
+            <div class="loading-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -465,7 +1386,9 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
 
@@ -498,7 +1421,9 @@ Tungkol sa Amin
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -521,7 +1446,9 @@ makabuluhang balita para sa buong komunidad.
 <div class="container">
 
 
-<!-- ================= SEARCH ================= -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <section class="search-section">
 
@@ -556,7 +1483,9 @@ id="searchResults"
 </section>
 
 
-<!-- ================= ARTICLES ================= -->
+<!-- =====================================================
+     ARTICLES
+===================================================== -->
 
 <h2 class="section-title">
 Pinakabagong Balita
@@ -572,7 +1501,9 @@ id="articleGrid"
 <br><br>
 
 
-<!-- ================= CATEGORIES ================= -->
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
 <h2 class="section-title">
 Mga Kategorya
@@ -600,7 +1531,9 @@ Mga Kategorya
 <br><br>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <h2 class="section-title">
 Tungkol sa Ang Salimbay
@@ -623,7 +1556,9 @@ at ng komunidad ng paaralan.
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -652,6 +1587,31 @@ Opisyal na Pahayagang Filipino ng Sucat Senior High School
 
 
 <script>
+
+
+/* =====================================================
+   LOADING SCREEN
+===================================================== */
+
+window.addEventListener("load", function(){
+
+    const loader =
+    document.getElementById("salimbayLoader");
+
+
+    /*
+       Hahayaan muna nating tumakbo ang
+       SSHS + Ang Salimbay animation bago
+       mawala ang loading screen.
+    */
+
+    setTimeout(function(){
+
+        loader.classList.add("hide");
+
+    }, 3500);
+
+});
 
 
 /* =====================================================
@@ -1112,7 +2072,7 @@ searchInput.addEventListener(
 
                     📰 ${safe(article.category)}
 
-                    &nbsp; | &nbsp;
+                      |  
 
                     📅 ${safe(article.date)}
 
