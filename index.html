@@ -1,224 +1,1194 @@
 <!DOCTYPE html>
 <html lang="tl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ang Salimbay | Opisyal na Pahayagang Filipino ng Sucat Senior High School</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#f4f4f4;color:#222}
-header{background:#6B0015;color:#fff;text-align:center;padding:25px}
-header h1{font-size:45px;letter-spacing:2px}
-header p{margin-top:8px;font-size:16px}
-nav{background:#500010;display:flex;justify-content:center;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;padding:15px 18px;font-weight:bold}
-nav a:hover{background:#fff;color:#6B0015}
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#222;
+}
+
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+#loadingScreen{
+    position:fixed;
+    inset:0;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:99999;
+
+    opacity:1;
+    visibility:visible;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+#loadingScreen.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.loading-logo{
+    width:230px;
+    max-width:65vw;
+
+    animation:
+        logoFade 1.2s ease-in-out infinite alternate;
+}
+
+.loading-text{
+    margin-top:20px;
+    color:#6B0015;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.loading-dots{
+    margin-top:12px;
+    color:#6B0015;
+    font-size:20px;
+    letter-spacing:5px;
+}
+
+@keyframes logoFade{
+
+    from{
+        transform:scale(.96);
+        opacity:.75;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#6B0015;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    font-size:45px;
+    letter-spacing:2px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:16px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    background:#500010;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:15px 18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:#fff;
+    color:#6B0015;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-background:linear-gradient(rgba(107,0,21,.8),rgba(107,0,21,.8)),
-url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;background-position:center;color:#fff;text-align:center;padding:90px 20px
+
+    background:
+    linear-gradient(
+        rgba(107,0,21,.8),
+        rgba(107,0,21,.8)
+    ),
+
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    color:#fff;
+    text-align:center;
+
+    padding:90px 20px;
 }
-.hero h2{font-size:42px}
-.hero p{margin:15px auto 0;max-width:700px;line-height:1.8}
-.container{width:90%;max-width:1200px;margin:auto;padding:40px 0}
-.search-section{background:#fff;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.10);margin-bottom:40px}
-.search-section h2{color:#6B0015;text-align:center;margin-bottom:15px}
-.search-box{max-width:850px;margin:auto}
-.search-box input{width:100%;padding:16px 20px;border:2px solid #6B0015;border-radius:8px;font-size:17px;outline:none}
-.search-box input:focus{box-shadow:0 0 0 3px rgba(107,0,21,.12)}
-.search-info{text-align:center;color:#777;margin-top:12px;font-size:14px}
-.search-results{max-width:850px;margin:20px auto 0;display:none}
-.search-results.show{display:block}
-.search-results h3{color:#6B0015;margin-bottom:15px}
-.search-result-card{background:#fff;border-radius:8px;padding:15px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.10);cursor:pointer;transition:.2s}
-.search-result-card:hover{transform:translateY(-2px)}
-.search-result-card h4{color:#6B0015;margin-bottom:6px}
-.search-result-card small{color:#777;line-height:1.6}
-.search-result-card p{margin-top:7px;line-height:1.5}
-.section-title{color:#6B0015;margin-bottom:25px;border-left:6px solid #6B0015;padding-left:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.25s}
-.card:hover{transform:translateY(-4px)}
-.card img{width:100%;height:220px;object-fit:cover;display:block}
-.card-content{padding:18px}
-.card h3{color:#6B0015;line-height:1.35}
-.card p{margin-top:10px;line-height:1.6}
-.meta{color:#777!important;font-size:13px!important;line-height:1.5!important}
-.card a{text-decoration:none}
-.card button{margin-top:18px;padding:10px 18px;background:#6B0015;color:#fff;border:0;cursor:pointer;border-radius:5px}
-.card button:hover{background:#500010}
-.categories{display:flex;flex-wrap:wrap;gap:12px}
-.categories span{background:#6B0015;color:#fff;padding:10px 16px;border-radius:20px}
-.about{background:#fff;padding:30px;border-radius:10px;line-height:1.8}
-footer{background:#6B0015;color:#fff;text-align:center;padding:30px;margin-top:50px}
-.empty{grid-column:1/-1;background:#fff;padding:35px;text-align:center;border-radius:10px}
-.empty h3{color:#6B0015}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    margin:15px auto 0;
+    max-width:700px;
+    line-height:1.8;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.10);
+
+    margin-bottom:40px;
+}
+
+.search-section h2{
+
+    color:#6B0015;
+
+    text-align:center;
+
+    margin-bottom:15px;
+}
+
+.search-box{
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:
+        2px solid #6B0015;
+
+    border-radius:8px;
+
+    font-size:17px;
+
+    outline:none;
+}
+
+.search-box input:focus{
+
+    box-shadow:
+        0 0 0 3px rgba(107,0,21,.12);
+}
+
+.search-info{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-top:12px;
+
+    font-size:14px;
+}
+
+.search-results{
+
+    max-width:850px;
+
+    margin:20px auto 0;
+
+    display:none;
+}
+
+.search-results.show{
+
+    display:block;
+}
+
+.search-results h3{
+
+    color:#6B0015;
+
+    margin-bottom:15px;
+}
+
+.search-result-card{
+
+    background:#fff;
+
+    border-radius:8px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.10);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.search-result-card:hover{
+
+    transform:translateY(-2px);
+}
+
+.search-result-card h4{
+
+    color:#6B0015;
+
+    margin-bottom:6px;
+}
+
+.search-result-card small{
+
+    color:#777;
+
+    line-height:1.6;
+}
+
+.search-result-card p{
+
+    margin-top:7px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+
+    color:#6B0015;
+
+    margin-bottom:25px;
+
+    border-left:
+        6px solid #6B0015;
+
+    padding-left:12px;
+}
+
+
+/* =========================
+   ARTICLE GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(300px,1fr)
+        );
+
+    gap:25px;
+}
+
+
+/* =========================
+   ARTICLE CARD
+========================= */
+
+.card{
+
+    background:#fff;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.15);
+
+    transition:.25s;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-4px);
+}
+
+.card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.card-content{
+
+    padding:18px;
+}
+
+.card h3{
+
+    color:#6B0015;
+
+    line-height:1.35;
+}
+
+.card p{
+
+    margin-top:10px;
+
+    line-height:1.6;
+}
+
+.meta{
+
+    color:#777!important;
+
+    font-size:13px!important;
+
+    line-height:1.5!important;
+}
+
+.card a{
+
+    text-decoration:none;
+}
+
+.card button{
+
+    margin-top:18px;
+
+    padding:10px 18px;
+
+    background:#6B0015;
+
+    color:#fff;
+
+    border:0;
+
+    cursor:pointer;
+
+    border-radius:5px;
+}
+
+.card button:hover{
+
+    background:#500010;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.categories span{
+
+    background:#6B0015;
+
+    color:#fff;
+
+    padding:10px 16px;
+
+    border-radius:20px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#6B0015;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:50px;
+}
+
+
+/* =========================
+   EMPTY SEARCH
+========================= */
+
+.empty{
+
+    grid-column:1/-1;
+
+    background:#fff;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:10px;
+}
+
+.empty h3{
+
+    color:#6B0015;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
-header h1{font-size:32px}
-.hero{padding:65px 20px}
-.hero h2{font-size:30px}
-.container{width:92%}
-.card img{height:220px}
+
+    header h1{
+
+        font-size:32px;
+    }
+
+    .hero{
+
+        padding:65px 20px;
+    }
+
+    .hero h2{
+
+        font-size:30px;
+    }
+
+    .container{
+
+        width:92%;
+    }
+
+    .card img{
+
+        height:220px;
+    }
+
+    .loading-logo{
+
+        width:190px;
+    }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     LOADING SCREEN
+========================= -->
+
+<div id="loadingScreen">
+
+    <img
+        class="loading-logo"
+        src="Images/file_000000000964820b94bbe95f7de7b05d.png"
+        alt="Ang Salimbay Logo"
+    >
+
+    <div class="loading-text">
+        ANG SALIMBAY
+    </div>
+
+    <div class="loading-dots">
+        • • •
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
 <h1>ANG SALIMBAY</h1>
-<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+
+<p>
+Opisyal na Pahayagang Filipino ng Sucat Senior High School
+</p>
+
 </header>
 
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
-<a href="index.html">Home</a>
-<a href="balita.index.html">Balita</a>
-<a href="editoryal.html">Editoryal at Kolum</a>
-<a href="lathalain.html">Lathalain</a>
-<a href="isports.html">Isports</a>
-<a href="Agham.html">Agham</a>
-<a href="About.html">Tungkol sa Amin</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="balita.index.html">
+Balita
+</a>
+
+<a href="editoryal.html">
+Editoryal at Kolum
+</a>
+
+<a href="lathalain.html">
+Lathalain
+</a>
+
+<a href="isports.html">
+Isports
+</a>
+
+<a href="Agham.html">
+Agham
+</a>
+
+<a href="About.html">
+Tungkol sa Amin
+</a>
+
 </nav>
 
+
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
-<h2>TINIG. KATOTOHANAN. INTEGRIDAD.</h2>
-<p>Ang opisyal na pahayagang Filipino ng Sucat Senior High School na naghahatid ng makatotohanan, napapanahon, at makabuluhang balita para sa buong komunidad.</p>
+
+<h2>
+TINIG. KATOTOHANAN. INTEGRIDAD.
+</h2>
+
+<p>
+Ang opisyal na pahayagang Filipino ng Sucat Senior High School
+na naghahatid ng makatotohanan, napapanahon, at makabuluhang
+balita para sa buong komunidad.
+</p>
+
 </section>
+
+
 
 <div class="container">
 
+
+<!-- =========================
+     SEARCH
+========================= -->
+
 <section class="search-section">
-<h2>🔎 Maghanap sa Ang Salimbay</h2>
+
+<h2>
+🔎 Maghanap sa Ang Salimbay
+</h2>
+
 <div class="search-box">
-<input id="searchInput" type="search"
-placeholder="Maghanap ng balita, paksa, pangalan, petsa, larawan, editor..."
-autocomplete="off">
+
+<input
+id="searchInput"
+type="search"
+placeholder="Maghanap ng balita, paksa, pangalan, petsa, editor..."
+autocomplete="off"
+>
+
 </div>
-<p class="search-info" id="searchInfo">I-type ang kahit bahagi ng salita.</p>
-<div class="search-results" id="searchResults"></div>
+
+<p
+class="search-info"
+id="searchInfo"
+>
+I-type ang kahit bahagi ng salita.
+</p>
+
+<div
+class="search-results"
+id="searchResults"
+></div>
+
 </section>
 
-<h2 class="section-title">Pinakabagong Balita</h2>
-<div class="grid" id="articleGrid"></div>
+
+
+<!-- =========================
+     ARTICLES
+========================= -->
+
+<h2 class="section-title">
+Pinakabagong Balita
+</h2>
+
+<div
+class="grid"
+id="articleGrid"
+></div>
+
+
 
 <br><br>
 
-<h2 class="section-title">Mga Kategorya</h2>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<h2 class="section-title">
+Mga Kategorya
+</h2>
+
 <div class="categories">
-<span>Balita</span><span>Editoryal</span><span>Lathalain</span>
-<span>Column</span><span>Isports</span><span>Agham at Teknolohiya</span>
+
+<span>Balita</span>
+
+<span>Editoryal</span>
+
+<span>Lathalain</span>
+
+<span>Column</span>
+
+<span>Isports</span>
+
+<span>Agham at Teknolohiya</span>
+
 <span>Editorial Cartooning</span>
+
 </div>
+
+
 
 <br><br>
 
-<h2 class="section-title">Tungkol sa Ang Salimbay</h2>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<h2 class="section-title">
+Tungkol sa Ang Salimbay
+</h2>
+
 <div class="about">
+
 Ang <strong>Ang Salimbay</strong> ay ang opisyal na pahayagang Filipino ng
-<strong>Sucat Senior High School</strong>. Layunin nitong maging mapagkakatiwalaang
-daluyan ng balita, impormasyon, opinyon, at mga akdang pampahayagan na
-sumasalamin sa <strong>BOSES</strong> ng mga mag-aaral at ng komunidad ng paaralan.
-</div>
+<strong>Sucat Senior High School</strong>.
+
+Layunin nitong maging mapagkakatiwalaang daluyan ng balita,
+impormasyon, opinyon, at mga akdang pampahayagan na sumasalamin
+sa <strong>BOSES</strong> ng mga mag-aaral at ng komunidad ng paaralan.
 
 </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-<h2>ANG SALIMBAY</h2>
-<p>Opisyal na Pahayagang Filipino ng Sucat Senior High School</p>
+
+<h2>
+ANG SALIMBAY
+</h2>
+
+<p>
+Opisyal na Pahayagang Filipino ng Sucat Senior High School
+</p>
+
 <br>
-<p>© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.</p>
+
+<p>
+© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
+</p>
+
 </footer>
 
+
+
+<!-- =========================
+     ARTICLE DATABASE
+========================= -->
+
 <script src="articles.js"></script>
+
+
+
 <script>
-const grid=document.getElementById("articleGrid");
-const input=document.getElementById("searchInput");
-const resultsBox=document.getElementById("searchResults");
-const info=document.getElementById("searchInfo");
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loadingScreen")
+            .classList.add("hide");
+
+    }, 1200);
+
+});
+
+
+
+/* =========================
+   SEARCH SYSTEM
+========================= */
+
+const grid =
+    document.getElementById("articleGrid");
+
+const input =
+    document.getElementById("searchInput");
+
+const resultsBox =
+    document.getElementById("searchResults");
+
+const info =
+    document.getElementById("searchInfo");
+
+
+
+/* SECURITY */
 
 function esc(value){
-  return String(value??"").replace(/[&<>"']/g,m=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[m]));
+
+    return String(value ?? "")
+        .replace(
+            /[&<>"']/g,
+            function(m){
+
+                return {
+
+                    "&":"&amp;",
+                    "<":"&lt;",
+                    ">":"&gt;",
+                    '"':"&quot;",
+                    "'":"&#039;"
+
+                }[m];
+
+            }
+        );
+
 }
+
+
+
+/* CONTRIBUTORS */
 
 function people(article){
-  const p=[];
-  if(article.author)p.push("✍️ "+article.author);
-  if(article.photographer)p.push("📷 "+article.photographer);
-  if(article.illustrator)p.push("🎨 "+article.illustrator);
-  if(article.editor)p.push("🖊️ "+article.editor);
-  if(article.otherCredit)p.push("👤 "+article.otherCredit);
-  return p.join(" • ");
+
+    const p=[];
+
+    if(article.author)
+        p.push("✍️ " + article.author);
+
+    if(article.photographer)
+        p.push("📷 " + article.photographer);
+
+    if(article.illustrator)
+        p.push("🎨 " + article.illustrator);
+
+    if(article.editor)
+        p.push("🖊️ " + article.editor);
+
+    if(article.otherCredit)
+        p.push("👤 " + article.otherCredit);
+
+    return p.join(" • ");
+
 }
+
+
+
+/* DISPLAY ARTICLES */
 
 function displayArticles(list){
-  grid.innerHTML="";
-  if(!list.length){
-    grid.innerHTML='<div class="empty"><h3>Walang nahanap na artikulo.</h3><p style="margin-top:10px">Subukan ang ibang salita, pangalan, petsa, o paksa.</p></div>';
-    return;
-  }
 
-  list.forEach(article=>{
-    const card=document.createElement("article");
-    card.className="card";
-    card.innerHTML=`
-      <div class="card-content">
-        <h3>${esc(article.title)}</h3>
-        <p>${esc(article.description)}</p>
-        <p class="meta">${esc(article.category)} • ${esc(article.date)}</p>
-        <p class="meta">${esc(people(article))}</p>
-        <a href="${esc(article.url)}"><button>Basahin</button></a>
-      </div>`;
-    grid.appendChild(card);
-  });
+    grid.innerHTML="";
+
+    if(!list.length){
+
+        grid.innerHTML=`
+
+        <div class="empty">
+
+            <h3>
+            Walang nahanap na artikulo.
+            </h3>
+
+            <p style="margin-top:10px">
+
+            Subukan ang ibang salita,
+            pangalan, petsa, o paksa.
+
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+    }
+
+
+
+    list.forEach(article=>{
+
+        const card =
+            document.createElement("article");
+
+        card.className="card";
+
+
+
+        card.innerHTML=`
+
+        ${
+            article.image
+
+            ?
+
+            `<img
+                src="${esc(article.image)}"
+                alt="${esc(article.title)}"
+            >`
+
+            :
+
+            ""
+        }
+
+        <div class="card-content">
+
+            <h3>
+                ${esc(article.title)}
+            </h3>
+
+            <p>
+                ${esc(article.description)}
+            </p>
+
+            <p class="meta">
+                ${esc(article.category)}
+                •
+                ${esc(article.date)}
+            </p>
+
+            <p class="meta">
+                ${esc(people(article))}
+            </p>
+
+            <a href="${esc(article.url)}">
+
+                <button>
+                    Basahin
+                </button>
+
+            </a>
+
+        </div>
+
+        `;
+
+
+
+        grid.appendChild(card);
+
+    });
+
 }
+
+
+
+/* SEARCHABLE CONTENT */
 
 function searchable(article){
-  return [
-    article.title,article.category,article.date,article.description,
-    article.keywords,article.author,article.photographer,article.illustrator,
-    article.editor,article.otherCredit,article.content
-  ].filter(Boolean).join(" ").toLocaleLowerCase("fil");
+
+    return [
+
+        article.title,
+        article.category,
+        article.date,
+        article.description,
+        article.keywords,
+        article.author,
+        article.photographer,
+        article.illustrator,
+        article.editor,
+        article.otherCredit,
+        article.content
+
+    ]
+
+    .filter(Boolean)
+
+    .join(" ")
+
+    .toLocaleLowerCase("fil");
+
 }
+
+
+
+/* INITIAL ARTICLES */
 
 displayArticles(articles);
 
-input.addEventListener("input",()=>{
-  const q=input.value.toLocaleLowerCase("fil").trim();
 
-  if(!q){
-    resultsBox.innerHTML="";
-    resultsBox.classList.remove("show");
-    info.textContent="I-type ang kahit bahagi ng salita.";
-    displayArticles(articles);
-    return;
-  }
 
-  const found=articles.filter(a=>searchable(a).includes(q));
-  displayArticles(found);
-  resultsBox.classList.add("show");
+/* LIVE SEARCH */
 
-  if(!found.length){
-    info.textContent=`Walang nahanap para sa "${input.value}".`;
-    resultsBox.innerHTML=`<div class="search-result-card"><h4>Walang nahanap na artikulo.</h4><p>Subukan ang ibang salita, pangalan, petsa, o contributor.</p></div>`;
-    return;
-  }
+input.addEventListener(
+    "input",
+    function(){
 
-  info.textContent=`${found.length} artikulo ang nahanap.`;
-  resultsBox.innerHTML="<h3>Mga Resulta ng Paghahanap</h3>";
+        const q =
+            input.value
+                .toLocaleLowerCase("fil")
+                .trim();
 
-  found.forEach(article=>{
-    const item=document.createElement("div");
-    item.className="search-result-card";
-    item.innerHTML=`
-      <h4>${esc(article.title)}</h4>
-      <small>${esc(article.category)} • ${esc(article.date)}<br>${esc(people(article))}</small>
-      <p>${esc(article.description)}</p>`;
-    item.onclick=()=>location.href=article.url;
-    resultsBox.appendChild(item);
-  });
-});
+
+
+        /* EMPTY */
+
+        if(!q){
+
+            resultsBox.innerHTML="";
+
+            resultsBox
+                .classList
+                .remove("show");
+
+            info.textContent =
+                "I-type ang kahit bahagi ng salita.";
+
+            displayArticles(articles);
+
+            return;
+        }
+
+
+
+        /* FIND */
+
+        const found =
+            articles.filter(
+                article =>
+                    searchable(article).includes(q)
+            );
+
+
+
+        /* DISPLAY */
+
+        displayArticles(found);
+
+        resultsBox
+            .classList
+            .add("show");
+
+
+
+        /* NO RESULT */
+
+        if(!found.length){
+
+            info.textContent =
+                `Walang nahanap para sa "${input.value}".`;
+
+            resultsBox.innerHTML=`
+
+            <div class="search-result-card">
+
+                <h4>
+                    Walang nahanap na artikulo.
+                </h4>
+
+                <p>
+                    Subukan ang ibang salita,
+                    pangalan, petsa,
+                    o contributor.
+                </p>
+
+            </div>
+
+            `;
+
+            return;
+        }
+
+
+
+        /* RESULT COUNT */
+
+        info.textContent =
+            `${found.length} artikulo ang nahanap.`;
+
+
+
+        resultsBox.innerHTML =
+            "<h3>Mga Resulta ng Paghahanap</h3>";
+
+
+
+        found.forEach(article=>{
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "search-result-card";
+
+
+
+            item.innerHTML=`
+
+            <h4>
+                ${esc(article.title)}
+            </h4>
+
+            <small>
+
+                ${esc(article.category)}
+                •
+                ${esc(article.date)}
+
+                <br>
+
+                ${esc(people(article))}
+
+            </small>
+
+            <p>
+                ${esc(article.description)}
+            </p>
+
+            `;
+
+
+
+            item.onclick =
+                () => location.href =
+                    article.url;
+
+
+
+            resultsBox.appendChild(item);
+
+        });
+
+    }
+);
+
 </script>
+
+
 </body>
 </html>
