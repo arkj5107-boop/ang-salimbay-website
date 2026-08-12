@@ -505,7 +505,7 @@ const articles = [
     "",
 
     url:
-    "katotohanan-boses-o-batayan.html"
+    "saradutae.html"
 }
 
 ];
