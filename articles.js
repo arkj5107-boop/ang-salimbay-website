@@ -462,6 +462,50 @@ const articles = [
 
     url:
     "pax-silica.html"
+},
+
+{
+    title:
+    "Katotohanan: Boses o Batayan",
+
+    description:
+    "Tinutukoy ng kolum ang kahalagahan ng pamamahayag, pananagutan ng media, at kritikal na pagtanggap ng publiko sa impormasyon sa gitna ng lumalaking impluwensiya ng social media at content creators.",
+
+    category:
+    "Kolum",
+
+    date:
+    "Hulyo 31, 2026",
+
+    author:
+    "Sean Michael Bandilla",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Lyla Lavigne Esporlas",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    credits:
+    "✍🏼 Sean Michael Bandilla / 🖼️ Lyla Lavigne Esporlas",
+
+    keywords:
+    "Katotohanan Boses o Batayan pamamahayag journalism Philippine journalism media mainstream media social media content creators influencers balita news fake news misinformation disinformation fact checking fact-checking media literacy press freedom pananagutan media accountability Vice President Sara Duterte Reuters Institute Digital News Report 2026 Philippine media news trust public trust journalism Pilipinas current events vlogger blogger impormasyon ebidensiya opinyon komentaryo",
+
+    content:
+    "Katotohanan Boses o Batayan pamamahayag journalism media social media content creators balita fact checking media literacy pananagutan katotohanan ebidensiya",
+
+    image:
+    "",
+
+    url:
+    "katotohanan-boses-o-batayan.html"
 }
 
 ];
