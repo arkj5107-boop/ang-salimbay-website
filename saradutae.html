@@ -1213,65 +1213,7 @@ Opisyal na Publikasyon ng Sucat Senior High School
 <section class="article">
 
 
-<button id="likeButton" onclick="toggleLike()">
-    👍 <span id="likeText">Thumbs Up</span>
-</button>
-
-<style>
-#likeButton{
-    background:#800000;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:8px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-#likeButton:hover{
-    background:#a00000;
-}
-
-#likeButton.liked{
-    background:#333;
-}
-</style>
-
-<script>
-
-const likeButton = document.getElementById("likeButton");
-const likeText = document.getElementById("likeText");
-
-function updateLike(){
-
-    const liked = localStorage.getItem("salimbayLiked");
-
-    if(liked === "true"){
-        likeButton.classList.add("liked");
-        likeText.textContent = "Liked!";
-    }else{
-        likeButton.classList.remove("liked");
-        likeText.textContent = "Thumbs Up";
-    }
-
-}
-
-function toggleLike(){
-
-    const liked = localStorage.getItem("salimbayLiked");
-
-    if(liked === "true"){
-        localStorage.setItem("salimbayLiked", "false");
-    }else{
-        localStorage.setItem("salimbayLiked", "true");
-    }
-
-    updateLike();
-
-}
-
-updateLike();
+<
 
 </script>
 
