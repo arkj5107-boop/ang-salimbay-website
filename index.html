@@ -33,7 +33,7 @@ body{
 
 /* =====================================================
    ANG SALIMBAY LOADING SCREEN
-   SSHS-INSPIRED — NO SSHS LOGO
+   SAME ANIMATION STYLE AS PAGPUPULONG.HTML
 ===================================================== */
 
 #salimbayLoader{
@@ -163,8 +163,7 @@ body{
     width:min(650px,88vw);
     height:min(650px,88vw);
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     border:
         3px solid
@@ -223,8 +222,7 @@ body{
     width:min(585px,79vw);
     height:min(585px,79vw);
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     border:
         1px solid
@@ -240,6 +238,7 @@ body{
 
     from{
         opacity:0;
+
         transform:
             translateX(-50%)
             scale(.8);
@@ -247,6 +246,7 @@ body{
 
     to{
         opacity:1;
+
         transform:
             translateX(-50%)
             scale(1);
@@ -268,8 +268,7 @@ body{
     width:min(270px,38vw);
     height:min(270px,38vw);
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     border-radius:50%;
 
@@ -341,8 +340,7 @@ body{
     width:min(430px,58vw);
     height:min(360px,48vw);
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     animation:
         raysReveal 2.5s ease forwards;
@@ -370,8 +368,7 @@ body{
             #FFE87A
         );
 
-    transform-origin:
-        50% 100%;
+    transform-origin:50% 100%;
 
     box-shadow:
         0 0 15px
@@ -382,8 +379,7 @@ body{
 /* 12 RAYS */
 
 .loader-rays span:nth-child(1){
-    transform:
-        translateY(-160px);
+    transform:translateY(-160px);
 }
 
 .loader-rays span:nth-child(2){
@@ -494,8 +490,7 @@ body{
     width:min(600px,86vw);
     height:165px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     background:
         linear-gradient(
@@ -571,8 +566,7 @@ body{
     width:min(660px,91vw);
     height:125px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     overflow:hidden;
 
@@ -639,8 +633,7 @@ body{
 
     opacity:.5;
 
-    animation-delay:
-        -1.2s;
+    animation-delay:-1.2s;
 }
 
 @keyframes waterMove{
@@ -694,8 +687,7 @@ body{
     width:min(600px,84vw);
     height:150px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     display:flex;
 
@@ -746,19 +738,17 @@ body{
 @keyframes colorReveal{
 
     0%{
-        transform:
-            scaleY(0);
 
-        transform-origin:
-            top;
+        transform:scaleY(0);
+
+        transform-origin:top;
     }
 
     100%{
-        transform:
-            scaleY(1);
 
-        transform-origin:
-            top;
+        transform:scaleY(1);
+
+        transform-origin:top;
     }
 }
 
@@ -777,8 +767,7 @@ body{
     width:310px;
     height:125px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     z-index:30;
 
@@ -813,8 +802,7 @@ body{
     border-radius:
         90% 12% 8% 38%;
 
-    transform:
-        skewY(8deg);
+    transform:skewY(8deg);
 
     border-right:
         2px solid #c9bfae;
@@ -825,8 +813,7 @@ body{
     border-radius:
         12% 90% 38% 8%;
 
-    transform:
-        skewY(-8deg);
+    transform:skewY(-8deg);
 
     border-left:
         2px solid #c9bfae;
@@ -844,8 +831,7 @@ body{
     width:5px;
     height:105px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     background:
         linear-gradient(
@@ -895,8 +881,7 @@ body{
     width:34px;
     height:175px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     z-index:40;
 
@@ -936,8 +921,7 @@ body{
     width:58px;
     height:75px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     background:
         radial-gradient(
@@ -1013,8 +997,7 @@ body{
 
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     z-index:50;
 
@@ -1133,7 +1116,8 @@ body{
 
 
 /* =====================================================
-   MAIN HEADER
+   MAIN WEBSITE HEADER
+   ORIGINAL SIZE — DO NOT ALTER
 ===================================================== */
 
 header{
@@ -1172,6 +1156,7 @@ header p{
 
 /* =====================================================
    NAVIGATION
+   ORIGINAL SIZE — DO NOT ALTER
 ===================================================== */
 
 nav{
@@ -1347,7 +1332,6 @@ nav a:hover{
 /* =====================================================
    SEARCH RESULTS
 ===================================================== */
-
 
 .search-results{
 
@@ -2375,7 +2359,6 @@ footer p{
 ></div>
 
 
-
 <br>
 <br>
 
@@ -2407,7 +2390,6 @@ footer p{
     <span>Editorial Cartooning</span>
 
 </div>
-
 
 
 <br>
@@ -2471,6 +2453,7 @@ footer p{
 </footer>
 
 
+
 <!-- =====================================================
      ARTICLES DATABASE
 ===================================================== -->
@@ -2480,7 +2463,6 @@ footer p{
 
 
 <script>
-
 
 /* =====================================================
    LOADING SCREEN
@@ -2497,7 +2479,6 @@ window.addEventListener(
                     document.getElementById(
                         "salimbayLoader"
                     );
-
 
                 if(loader){
 
@@ -2847,7 +2828,6 @@ function displayArticles(list){
 /* =====================================================
    INITIAL LOAD
 ===================================================== */
-
 
 displayArticles(
     articles
