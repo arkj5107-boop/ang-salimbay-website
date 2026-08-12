@@ -464,6 +464,50 @@ const articles = [
     "pax-silica.html"
 },
 
+
+{
+    title:
+    "Fisheries Scholarship Program, Ipinakilala ng BFAR sa SSHS",
+
+    description:
+    "Bumisita ang Bureau of Fisheries and Aquatic Resources (BFAR) sa Sucat Senior High School (SSHS) upang ipakilala sa mga mag-aaral sa ika-12 baitang ang Fisheries Scholarship Program at ang mga oportunidad na kaakibat nito.",
+
+    category:
+    "Balita",
+
+    date:
+    "Agosto 12, 2026",
+
+    author:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "Sean Michael Bandilla",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    credits:
+    "✍🏼 Wilmarie Gonzales / 🖼️ Sean Michael Bandilla",
+
+    keywords:
+    "Fisheries Scholarship Program BFAR Bureau of Fisheries and Aquatic Resources Sucat Senior High School SSHS scholarship scholarship program Fisheries Bachelor of Science in Fisheries BS Fisheries Grade 12 mag-aaral estudyante mangingisda fisherfolk parent guardian Indigenous Group Indigenous Peoples IPs Pilipino Filipino General Weighted Average GWA 80 percent 80% allowance 8000 8000 pesos buwanang allowance entrance examination college edukasyon financial assistance pinansyal pangisdaan fisheries scholarship oportunidad",
+
+    content:
+    "BFAR Fisheries Scholarship Program Sucat Senior High School Grade 12 scholarship BS Fisheries mangingisda Indigenous Group GWA allowance entrance examination college pangisdaan",
+
+
+    url:
+    "bfar.html"
+},
+
+
 {
     title:
     "Katotohanan: Boses o Batayan",
