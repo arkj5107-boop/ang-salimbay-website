@@ -10,6 +10,10 @@
 
 <style>
 
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -17,30 +21,32 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:white;
+    background:#f5f5f5;
     color:#222;
 }
 
 
 /* =====================================================
-   ANG SALIMBAY — SAME CAREER.HTML LOADING SCREEN
+   LOADING SCREEN
+   EXACT SAME AS CAREER.HTML
 ===================================================== */
 
 #salimbayLoader{
-
     position:fixed;
     inset:0;
-
     width:100%;
     height:100%;
-
     background:
         radial-gradient(
-            circle at 50% 43%,
-            #8b1630 0%,
-            #6B0015 42%,
-            #360009 100%
+            circle at 50% 38%,
+            #921d38 0%,
+            #6b0015 42%,
+            #350009 100%
         );
 
     display:flex;
@@ -55,8 +61,8 @@ body{
     visibility:visible;
 
     transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 #salimbayLoader.hide{
@@ -67,11 +73,10 @@ body{
 
 
 /* =====================================================
-   MAIN LOADING SCENE
+   LOADING SCENE
 ===================================================== */
 
 .loader-scene{
-
     position:relative;
 
     width:min(94vw,650px);
@@ -86,53 +91,44 @@ body{
 
 
 /* =====================================================
-   OUTER CIRCLE
+   DECORATIVE OUTER CIRCLE
 ===================================================== */
 
 .loader-ring{
-
     position:absolute;
 
-    top:35px;
+    top:28px;
     left:50%;
 
-    width:610px;
-    height:610px;
+    width:min(92vw,610px);
+    height:min(92vw,610px);
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
-    border:
-        3px solid
-        rgba(255,255,255,.45);
+    border:4px solid rgba(255,255,255,.42);
 
     border-radius:50%;
 
     box-shadow:
-        0 0 0 10px
-        rgba(255,255,255,.05),
-
-        0 0 35px
-        rgba(255,255,255,.08);
+        0 0 0 12px rgba(255,255,255,.045),
+        0 0 45px rgba(255,255,255,.08);
 
     animation:
-        ringAppear 2s ease forwards;
+        ringAppear 1.8s ease forwards;
 }
 
 @keyframes ringAppear{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            scale(.8)
-            rotate(-20deg);
+            scale(.72)
+            rotate(-15deg);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             scale(1)
@@ -142,57 +138,51 @@ body{
 
 
 /* =====================================================
-   GOLDEN SUN
+   SUN
 ===================================================== */
 
 .loader-sun{
-
     position:absolute;
 
-    top:65px;
+    top:72px;
     left:50%;
 
-    width:230px;
-    height:230px;
+    width:min(34vw,220px);
+    height:min(34vw,220px);
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            #FFD83D 0%,
-            #FFC21A 48%,
-            #F4A900 72%,
-            rgba(244,169,0,0) 73%
+            #fff16a 0%,
+            #ffd83d 35%,
+            #ffc21a 65%,
+            #f3a900 100%
         );
 
-    filter:
-        drop-shadow(
-            0 0 35px
-            rgba(255,200,30,.55)
-        );
+    box-shadow:
+        0 0 25px rgba(255,214,45,.65),
+        0 0 55px rgba(255,190,20,.35);
 
     animation:
-        sunRise 2s cubic-bezier(.2,.8,.2,1) forwards;
+        sunRise 1.8s cubic-bezier(.2,.8,.2,1) forwards;
 }
 
 @keyframes sunRise{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            translateY(50px)
-            scale(.55);
+            translateY(45px)
+            scale(.5);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0)
@@ -206,33 +196,30 @@ body{
 ===================================================== */
 
 .loader-rays{
-
     position:absolute;
 
-    top:38px;
+    top:35px;
     left:50%;
 
-    width:360px;
-    height:300px;
+    width:min(65vw,390px);
+    height:310px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     animation:
-        raysReveal 2.4s ease forwards;
+        raysReveal 2s ease forwards;
 }
 
 .loader-rays span{
-
     position:absolute;
 
     left:50%;
     top:50%;
 
-    width:11px;
-    height:105px;
+    width:13px;
+    height:120px;
 
-    margin-left:-5.5px;
+    margin-left:-6.5px;
 
     border-radius:20px;
 
@@ -240,181 +227,143 @@ body{
         linear-gradient(
             to top,
             rgba(255,211,45,.15),
-            #FFD12F
+            #ffd12f
         );
 
-    transform-origin:
-        50% 100%;
+    transform-origin:50% 100%;
 
     box-shadow:
-        0 0 12px
-        rgba(255,207,45,.35);
+        0 0 15px rgba(255,207,45,.4);
 }
 
 
 /* 12 RAYS */
 
 .loader-rays span:nth-child(1){
-    transform:
-        translateY(-140px);
+    transform:translateY(-150px);
 }
 
 .loader-rays span:nth-child(2){
-    transform:
-        rotate(25deg)
-        translateY(-140px);
+    transform:rotate(30deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(3){
-    transform:
-        rotate(50deg)
-        translateY(-140px);
+    transform:rotate(60deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(4){
-    transform:
-        rotate(75deg)
-        translateY(-140px);
+    transform:rotate(90deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(5){
-    transform:
-        rotate(100deg)
-        translateY(-140px);
+    transform:rotate(120deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(6){
-    transform:
-        rotate(125deg)
-        translateY(-140px);
+    transform:rotate(150deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(7){
-    transform:
-        rotate(150deg)
-        translateY(-140px);
+    transform:rotate(180deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(8){
-    transform:
-        rotate(175deg)
-        translateY(-140px);
+    transform:rotate(210deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(9){
-    transform:
-        rotate(200deg)
-        translateY(-140px);
+    transform:rotate(240deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(10){
-    transform:
-        rotate(225deg)
-        translateY(-140px);
+    transform:rotate(270deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(11){
-    transform:
-        rotate(250deg)
-        translateY(-140px);
+    transform:rotate(300deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(12){
-    transform:
-        rotate(275deg)
-        translateY(-140px);
+    transform:rotate(330deg) translateY(-150px);
 }
-
 
 @keyframes raysReveal{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            scale(.65);
-    }
-
-    55%{
-        opacity:1;
+            scale(.55)
+            rotate(-20deg);
     }
 
     100%{
-        opacity:.85;
-
+        opacity:.9;
         transform:
             translateX(-50%)
-            scale(1);
+            scale(1)
+            rotate(0);
     }
 }
 
 
 /* =====================================================
-   GREEN MOUNTAINS / LAND
+   GREEN LAND / MOUNTAINS
 ===================================================== */
 
 .loader-land{
-
     position:absolute;
 
-    top:220px;
+    top:235px;
     left:50%;
 
-    width:560px;
-    height:150px;
+    width:min(86vw,560px);
+    height:145px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     background:
         linear-gradient(
-            150deg,
-            transparent 0 19%,
-            #3FC52C 20% 44%,
-            #55D536 45% 56%,
-            #35B827 57% 100%
+            145deg,
+            #2fae27,
+            #55d536 48%,
+            #229c22
         );
 
     clip-path:
         polygon(
             0 100%,
-            12% 70%,
-            25% 48%,
-            38% 67%,
-            53% 27%,
-            67% 58%,
-            79% 39%,
-            100% 73%,
+            10% 72%,
+            23% 48%,
+            37% 68%,
+            52% 25%,
+            67% 60%,
+            79% 38%,
+            100% 72%,
             100% 100%
         );
 
-    opacity:.95;
-
     filter:
         drop-shadow(
-            0 4px 8px
-            rgba(0,0,0,.12)
+            0 5px 8px rgba(0,0,0,.16)
         );
 
     animation:
-        landReveal 2s ease forwards;
+        landReveal 1.8s ease forwards;
 }
 
 @keyframes landReveal{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             translateY(35px)
-            scaleX(.8);
+            scaleX(.75);
     }
 
     100%{
-        opacity:.95;
-
+        opacity:1;
         transform:
             translateX(-50%)
             translateY(0)
@@ -428,26 +377,24 @@ body{
 ===================================================== */
 
 .loader-water{
-
     position:absolute;
 
-    top:325px;
+    top:330px;
     left:50%;
 
-    width:620px;
-    height:115px;
+    width:min(92vw,620px);
+    height:125px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     overflow:hidden;
 
     background:
         linear-gradient(
             to bottom,
-            #23C9E8,
-            #079AD4 50%,
-            #0068B8
+            #27d2ee,
+            #079bd4 52%,
+            #0067b7
         );
 
     clip-path:
@@ -466,12 +413,11 @@ body{
         );
 
     animation:
-        waterReveal 2.2s ease forwards;
+        waterReveal 2s ease forwards;
 }
 
 .loader-water::before,
 .loader-water::after{
-
     content:"";
 
     position:absolute;
@@ -483,7 +429,7 @@ body{
 
     border-top:
         6px solid
-        rgba(180,245,255,.65);
+        rgba(190,248,255,.68);
 
     border-radius:50%;
 
@@ -492,16 +438,13 @@ body{
 }
 
 .loader-water::before{
-    top:27px;
+    top:28px;
 }
 
 .loader-water::after{
-    top:67px;
-
-    animation-delay:
-        -1.2s;
-
-    opacity:.5;
+    top:72px;
+    opacity:.45;
+    animation-delay:-1.2s;
 }
 
 @keyframes waterMove{
@@ -523,15 +466,13 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            translateY(40px);
+            translateY(45px);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0);
@@ -540,66 +481,61 @@ body{
 
 
 /* =====================================================
-   BLUE + RED LOWER SECTIONS
+   BLUE + RED LOWER AREA
 ===================================================== */
 
 .loader-colors{
-
     position:absolute;
 
-    top:405px;
+    top:410px;
     left:50%;
 
-    width:570px;
-    height:150px;
+    width:min(86vw,570px);
+    height:145px;
 
-    transform:
-        translateX(-50%);
-
-    overflow:hidden;
+    transform:translateX(-50%);
 
     display:flex;
+
+    overflow:hidden;
 
     border-radius:
         0 0 280px 280px;
 
     box-shadow:
-        inset 0 8px 20px
-        rgba(0,0,0,.12);
+        inset 0 8px 20px rgba(0,0,0,.12);
 }
 
 .loader-blue{
-
     width:50%;
     height:100%;
 
     background:
         linear-gradient(
             135deg,
-            #0756B9,
-            #006CCF,
-            #003E94
+            #0756b9,
+            #006ccf,
+            #003e94
         );
 
     animation:
-        colorReveal 1.8s ease forwards;
+        colorReveal 1.6s ease forwards;
 }
 
 .loader-red{
-
     width:50%;
     height:100%;
 
     background:
         linear-gradient(
             135deg,
-            #C90029,
-            #E40035,
-            #A90021
+            #c90029,
+            #e40035,
+            #a90021
         );
 
     animation:
-        colorReveal 1.8s ease .15s forwards;
+        colorReveal 1.6s ease .15s forwards;
 }
 
 @keyframes colorReveal{
@@ -617,32 +553,29 @@ body{
 
 
 /* =====================================================
-   CENTRAL OPEN BOOK
+   OPEN BOOK
 ===================================================== */
 
 .loader-book{
-
     position:absolute;
 
-    top:365px;
+    top:375px;
     left:50%;
 
-    width:270px;
+    width:min(48vw,270px);
     height:115px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     z-index:30;
 
     display:flex;
 
     animation:
-        bookAppear 1.5s ease .8s both;
+        bookAppear 1.4s ease .7s both;
 }
 
 .book-page{
-
     position:relative;
 
     width:50%;
@@ -651,42 +584,36 @@ body{
     background:
         linear-gradient(
             160deg,
-            #fff 0%,
+            #fff,
             #f4f0e7 70%,
-            #d9d0c2 100%
+            #d9d0c2
         );
 
     box-shadow:
-        0 12px 18px
-        rgba(0,0,0,.25);
+        0 12px 18px rgba(0,0,0,.25);
 }
 
 .book-page.left{
-
     border-radius:
         85% 12% 8% 35%;
 
-    transform:
-        skewY(8deg);
+    transform:skewY(8deg);
 
     border-right:
         2px solid #c9bfae;
 }
 
 .book-page.right{
-
     border-radius:
         12% 85% 35% 8%;
 
-    transform:
-        skewY(-8deg);
+    transform:skewY(-8deg);
 
     border-left:
         2px solid #c9bfae;
 }
 
 .loader-book::after{
-
     content:"";
 
     position:absolute;
@@ -697,8 +624,7 @@ body{
     width:5px;
     height:95px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     background:
         linear-gradient(
@@ -714,16 +640,14 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             translateY(30px)
-            scale(.8);
+            scale(.75);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0)
@@ -733,11 +657,10 @@ body{
 
 
 /* =====================================================
-   CENTRAL TORCH
+   TORCH
 ===================================================== */
 
 .loader-torch{
-
     position:absolute;
 
     top:390px;
@@ -746,8 +669,7 @@ body{
     width:30px;
     height:170px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     z-index:40;
 
@@ -763,15 +685,13 @@ body{
         5px 5px 12px 12px;
 
     box-shadow:
-        0 10px 20px
-        rgba(0,0,0,.35);
+        0 10px 20px rgba(0,0,0,.35);
 
     animation:
-        torchAppear 1.6s ease 1s both;
+        torchAppear 1.5s ease .9s both;
 }
 
 .loader-torch::before{
-
     content:"";
 
     position:absolute;
@@ -782,22 +702,20 @@ body{
     width:48px;
     height:65px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     background:
         radial-gradient(
             ellipse at bottom,
-            #FF3B20 0%,
-            #FF8A00 45%,
-            #FFD52A 65%,
+            #ff3b20 0%,
+            #ff8a00 45%,
+            #ffd52a 65%,
             transparent 68%
         );
 
     filter:
         drop-shadow(
-            0 0 15px
-            rgba(255,150,20,.7)
+            0 0 15px rgba(255,150,20,.7)
         );
 
     animation:
@@ -825,7 +743,6 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             translateY(30px)
@@ -834,7 +751,6 @@ body{
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0)
@@ -844,14 +760,13 @@ body{
 
 
 /* =====================================================
-   ANG SALIMBAY BRANDING
+   LOADING BRAND
 ===================================================== */
 
 .salimbay-brand{
-
     position:absolute;
 
-    bottom:12px;
+    bottom:18px;
 
     z-index:50;
 
@@ -862,55 +777,52 @@ body{
     gap:8px;
 
     animation:
-        brandReveal 1.3s ease 1.7s both;
+        brandReveal 1.2s ease 1.5s both;
 }
 
-.salimbay-logo{
+.salimbay-name{
+    color:white;
 
-    width:min(70vw,310px);
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    max-height:95px;
+    font-size:
+        clamp(32px,8vw,58px);
 
-    object-fit:contain;
+    font-weight:bold;
 
-    filter:
-        brightness(0)
-        invert(1)
-        drop-shadow(
-            0 5px 12px
-            rgba(0,0,0,.4)
-        );
+    letter-spacing:3px;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.4);
 }
 
 .salimbay-subtitle{
-
     color:white;
 
-    font-size:12px;
+    font-size:
+        clamp(9px,2.5vw,12px);
 
     letter-spacing:2px;
 
+    text-align:center;
+
     text-transform:uppercase;
 
-    opacity:.9;
+    opacity:.92;
 }
 
-
-/* =====================================================
-   LOADING DOTS
-===================================================== */
-
 .loading-dots{
-
     display:flex;
-
     gap:6px;
+    margin-top:2px;
 }
 
 .loading-dots span{
-
-    width:5px;
-    height:5px;
+    width:6px;
+    height:6px;
 
     background:white;
 
@@ -945,7 +857,6 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateY(20px)
             scale(.92);
@@ -953,7 +864,6 @@ body{
 
     100%{
         opacity:1;
-
         transform:
             translateY(0)
             scale(1);
@@ -962,23 +872,41 @@ body{
 
 
 /* =====================================================
-   HEADER
+   MAIN HEADER
 ===================================================== */
 
 header{
-    background:#800000;
+    background:
+        linear-gradient(
+            135deg,
+            #800000,
+            #6b0015
+        );
+
     color:white;
+
     text-align:center;
+
     padding:35px 20px;
+
+    border-bottom:
+        5px solid #500010;
 }
 
 header h1{
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size:42px;
+
     letter-spacing:3px;
 }
 
 header p{
     margin-top:10px;
+    font-size:15px;
 }
 
 
@@ -987,13 +915,16 @@ header p{
 ===================================================== */
 
 nav{
-    background:#5a0000;
+    background:#500010;
 
     display:flex;
 
     justify-content:center;
 
     flex-wrap:wrap;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.15);
 }
 
 nav a{
@@ -1005,11 +936,14 @@ nav a{
 
     font-weight:bold;
 
-    transition:.2s;
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 nav a:hover{
-    background:#a00000;
+    background:white;
+    color:#6b0015;
 }
 
 
@@ -1027,6 +961,11 @@ nav a:hover{
 
 .article h1{
     color:#800000;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:42px;
 
@@ -1049,11 +988,10 @@ nav a:hover{
 
 
 /* =====================================================
-   MAIN IMAGE
+   IMAGE
 ===================================================== */
 
 .image-box{
-
     width:100%;
 
     height:420px;
@@ -1069,15 +1007,20 @@ nav a:hover{
     margin-bottom:35px;
 
     overflow:hidden;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.12);
 }
 
 .image-box img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
+
+    display:block;
 }
 
 
@@ -1086,7 +1029,6 @@ nav a:hover{
 ===================================================== */
 
 .caption{
-
     text-align:center;
 
     color:#777;
@@ -1096,6 +1038,8 @@ nav a:hover{
     margin-top:-25px;
 
     margin-bottom:30px;
+
+    line-height:1.5;
 }
 
 
@@ -1104,7 +1048,6 @@ nav a:hover{
 ===================================================== */
 
 .article p{
-
     font-size:18px;
 
     line-height:1.8;
@@ -1115,7 +1058,6 @@ nav a:hover{
 }
 
 .article .lead{
-
     font-size:20px;
 
     font-weight:500;
@@ -1127,8 +1069,8 @@ nav a:hover{
 ===================================================== */
 
 .quote{
-
-    border-left:7px solid #800000;
+    border-left:
+        7px solid #800000;
 
     background:#fff5f5;
 
@@ -1143,6 +1085,9 @@ nav a:hover{
     font-weight:bold;
 
     line-height:1.6;
+
+    border-radius:
+        0 8px 8px 0;
 }
 
 
@@ -1151,12 +1096,12 @@ nav a:hover{
 ===================================================== */
 
 .author{
-
     margin-top:35px;
 
     padding-top:20px;
 
-    border-top:1px solid #ddd;
+    border-top:
+        2px solid #ddd;
 
     color:#666;
 
@@ -1173,20 +1118,40 @@ nav a:hover{
 ===================================================== */
 
 footer{
-
-    background:#5a0000;
+    background:
+        linear-gradient(
+            135deg,
+            #500010,
+            #6b0015
+        );
 
     color:white;
 
     text-align:center;
 
-    padding:25px;
+    padding:35px 20px;
 
     margin-top:50px;
+
+    border-top:
+        5px solid #800000;
 }
 
 footer p{
-    margin:5px;
+    margin:7px;
+
+    line-height:1.5;
+}
+
+footer p:first-child{
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:24px;
+
+    letter-spacing:2px;
 }
 
 
@@ -1196,8 +1161,73 @@ footer p{
 
 @media(max-width:600px){
 
+    .loader-ring{
+        width:92vw;
+        height:92vw;
+        top:35px;
+    }
+
+    .loader-sun{
+        top:90px;
+        width:31vw;
+        height:31vw;
+    }
+
+    .loader-rays{
+        top:45px;
+    }
+
+    .loader-rays span{
+        width:9px;
+        height:90px;
+        margin-left:-4.5px;
+    }
+
+    .loader-land{
+        top:250px;
+        width:90vw;
+    }
+
+    .loader-water{
+        top:335px;
+        width:95vw;
+    }
+
+    .loader-colors{
+        top:405px;
+        width:88vw;
+    }
+
+    .loader-book{
+        top:370px;
+        width:55vw;
+        height:100px;
+    }
+
+    .loader-torch{
+        top:385px;
+        height:145px;
+    }
+
+    .salimbay-brand{
+        bottom:20px;
+    }
+
+    header{
+        padding:28px 15px;
+    }
+
     header h1{
         font-size:30px;
+    }
+
+    header p{
+        font-size:13px;
+    }
+
+    nav a{
+        padding:12px 10px;
+        font-size:13px;
     }
 
     .article{
@@ -1219,10 +1249,16 @@ footer p{
 
     .image-box{
         height:280px;
+        border-radius:5px;
     }
 
     .quote{
         font-size:18px;
+        padding:18px;
+    }
+
+    footer{
+        padding:30px 15px;
     }
 
 }
@@ -1230,10 +1266,12 @@ footer p{
 </style>
 
 </head>
-
 <body>
+
+
 <!-- =====================================================
-     LOADING SCENE
+     LOADING SCREEN
+     EXACT SAME SCENE AS CAREER.HTML
 ===================================================== -->
 
 <div id="salimbayLoader">
@@ -1241,6 +1279,7 @@ footer p{
     <div class="loader-scene">
 
         <div class="loader-ring"></div>
+
 
         <div class="loader-rays">
 
@@ -1259,41 +1298,46 @@ footer p{
 
         </div>
 
+
         <div class="loader-sun"></div>
+
 
         <div class="loader-land"></div>
 
+
         <div class="loader-water"></div>
+
 
         <div class="loader-colors">
 
             <div class="loader-blue"></div>
+
             <div class="loader-red"></div>
 
         </div>
 
+
         <div class="loader-book">
 
             <div class="book-page left"></div>
+
             <div class="book-page right"></div>
 
         </div>
 
+
         <div class="loader-torch"></div>
+
 
         <div class="salimbay-brand">
 
-            <img
-                src="../file_000000000964820b94bbe95f7de7b05d.png"
-                class="salimbay-logo"
-                alt="Ang Salimbay"
-            >
+            <div class="salimbay-name">
+                ANG SALIMBAY
+            </div>
 
             <div class="salimbay-subtitle">
-
                 Opisyal na Pahayagang Filipino
                 ng Sucat Senior High School
-
             </div>
 
             <div class="loading-dots">
@@ -1311,19 +1355,23 @@ footer p{
 </div>
 
 
+
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
 <header>
 
-    <h1>ANG SALIMBAY</h1>
+    <h1>
+        ANG SALIMBAY
+    </h1>
 
     <p>
         Opisyal na Publikasyon ng Sucat Senior High School
     </p>
 
 </header>
+
 
 
 <!-- =====================================================
@@ -1363,20 +1411,24 @@ footer p{
 </nav>
 
 
+
 <!-- =====================================================
      ARTICLE
 ===================================================== -->
 
 <section class="article">
 
+
     <h1>
-        “BAGONG PERFORMING ARTS HALL, PINASINAYAAN SA SSHS”
+        “BAGONG PERFORMING ARTS HALL,
+        PINASINAYAAN SA SSHS”
     </h1>
 
 
     <p class="category">
         BALITA | Ang Salimbay | Hunyo 22, 2026
     </p>
+
 
 
     <!-- MAIN IMAGE -->
@@ -1393,13 +1445,14 @@ footer p{
 
     <p class="caption">
 
-        Bagong Performing Arts Hall ng Sucat Senior High School na pormal
-        na pinasinayaan noong Hunyo 22, 2026.
+        Bagong Performing Arts Hall ng Sucat Senior High School
+        na pormal na pinasinayaan noong Hunyo 22, 2026.
 
     </p>
 
 
-    <!-- ARTICLE -->
+
+    <!-- ARTICLE BODY -->
 
     <p class="lead">
 
@@ -1415,27 +1468,28 @@ footer p{
 
         Pinangunahan ng Punongguro na si
         <strong>Dr. Jay Boy Evano</strong>
-        ang pagbibigay ng pambungad na mensahe. Ayon sa kanya, layunin ng
-        bagong pasilidad na mabigyan ng mas maayos at komportableng lugar
-        ang mga mag-aaral na may hilig sa sining upang higit nilang
-        malinang ang kanilang talento sa bawat pagsasanay at pagtatanghal.
+        ang pagbibigay ng pambungad na mensahe. Ayon sa kanya,
+        layunin ng bagong pasilidad na mabigyan ng mas maayos
+        at komportableng lugar ang mga mag-aaral na may hilig
+        sa sining upang higit nilang malinang ang kanilang
+        talento sa bawat pagsasanay at pagtatanghal.
 
     </p>
 
 
     <div class="quote">
 
-        “This is a testament to our unwavering effort to give the best
-        to our students,” pahayag ni Dr. Evano.
+        “This is a testament to our unwavering effort to give
+        the best to our students,” pahayag ni Dr. Evano.
 
     </div>
 
 
     <p>
 
-        Binigyang-diin din niya ang kahalagahan ng sining bilang daan
-        upang maipakita sa iba ang kagandahan ng bansa sa kabila ng mga
-        hamong kinahaharap nito.
+        Binigyang-diin din niya ang kahalagahan ng sining bilang
+        daan upang maipakita sa iba ang kagandahan ng bansa
+        sa kabila ng mga hamong kinahaharap nito.
 
     </p>
 
@@ -1443,11 +1497,13 @@ footer p{
     <p>
 
         Nagbahagi rin ng inspirasyonal na mensahe si
-        <strong>Public School District Supervisor Dr. Meniano D. Ebora</strong>.
-        Ani niya, kapansin-pansin ang malaking pagbabago ng lugar na dati
-        umanong tambakan lamang ngunit ngayo’y isa nang makabagong pasilidad.
-        Patunay ito ng dedikasyon at sama-samang pagsisikap ng komunidad
-        ng SSHS para sa pagpapaunlad ng paaralan.
+        <strong>Public School District Supervisor
+        Dr. Meniano D. Ebora.</strong>
+        Ani niya, kapansin-pansin ang malaking pagbabago ng
+        lugar na dati umanong tambakan lamang ngunit ngayo’y
+        isa nang makabagong pasilidad. Patunay ito ng dedikasyon
+        at sama-samang pagsisikap ng komunidad ng SSHS para sa
+        pagpapaunlad ng paaralan.
 
     </p>
 
@@ -1455,30 +1511,34 @@ footer p{
     <p>
 
         Samantala, nagpahayag ng pasasalamat si
-        <strong>Public School District Supervisor Dr. Ada Trinidad Tagle</strong>
-        sa patuloy na suporta at pamumuno ni Dr. Evano sa pagpapahusay ng
-        mga pasilidad ng paaralan at sa pagbibigay ng mas magandang
-        karanasan sa mga mag-aaral.
+        <strong>Public School District Supervisor
+        Dr. Ada Trinidad Tagle</strong>
+        sa patuloy na suporta at pamumuno ni Dr. Evano sa
+        pagpapahusay ng mga pasilidad ng paaralan at sa
+        pagbibigay ng mas magandang karanasan sa mga mag-aaral.
 
     </p>
 
 
     <div class="quote">
 
-        “You are given these facilities for free. Use them and take care
-        of them because the purpose of this hall is to bring out the best
-        in you,” paalala ni Dr. Tagle sa mga mag-aaral at guro.
+        “You are given these facilities for free. Use them and
+        take care of them because the purpose of this hall is
+        to bring out the best in you,” paalala ni Dr. Tagle
+        sa mga mag-aaral at guro.
 
     </div>
 
 
     <p>
 
-        Bilang bahagi ng programa, nagpakitang-gilas ang mga mag-aaral
-        mula sa <strong>Performing Visual Arts (PVA) Pathway</strong> at
-        <strong>Cypheria Dance Troupe</strong> sa pamamagitan ng kanilang
-        makukulay na pagtatanghal sa awit at sayaw—na nagbigay-sigla at
-        kasiyahan sa mga dumalo.
+        Bilang bahagi ng programa, nagpakitang-gilas ang mga
+        mag-aaral mula sa
+        <strong>Performing Visual Arts (PVA) Pathway</strong>
+        at <strong>Cypheria Dance Troupe</strong>
+        sa pamamagitan ng kanilang makukulay na pagtatanghal
+        sa awit at sayaw—na nagbigay-sigla at kasiyahan
+        sa mga dumalo.
 
     </p>
 
@@ -1486,61 +1546,66 @@ footer p{
     <p>
 
         Sinundan ito ng pormal na
-        <strong>“Ribbon-Cutting Ceremony”</strong> na pinangunahan ni
-        Dr. Evano kasama ang mga panauhing pandangal at mga kinatawan
-        ng PVA.
+        <strong>“Ribbon-Cutting Ceremony”</strong>
+        na pinangunahan ni Dr. Evano kasama ang mga
+        panauhing pandangal at mga kinatawan ng PVA.
 
     </p>
 
 
     <p>
 
-        Sa pagtatapos ng programa, naghatid ng mensahe ng pasasalamat si
-        <strong>Assistant to the School Principal for Learner’s Support
-        Jorge T. Endozo.</strong>
+        Sa pagtatapos ng programa, naghatid ng mensahe
+        ng pasasalamat si
+        <strong>Assistant to the School Principal for
+        Learner’s Support Jorge T. Endozo.</strong>
 
     </p>
 
 
     <div class="quote">
 
-        “Let this hall be a place where dreams take center stage and
-        talents shine brightly,” aniya.
+        “Let this hall be a place where dreams take center stage
+        and talents shine brightly,” aniya.
 
     </div>
 
 
     <p>
 
-        Sinuklian naman ito ng masigabong palakpakan mula sa mga dumalo
-        sa inagurasyon, bilang pagpapakita ng suporta sa bagong pasilidad
-        na magsisilbing tahanan ng talento, pagkamalikhain, at sining
-        ng mga mag-aaral ng Sucat Senior High School.
+        Sinuklian naman ito ng masigabong palakpakan mula sa
+        mga dumalo sa inagurasyon, bilang pagpapakita ng suporta
+        sa bagong pasilidad na magsisilbing tahanan ng talento,
+        pagkamalikhain, at sining ng mga mag-aaral ng
+        Sucat Senior High School.
 
     </p>
 
 
-    <p class="ending">
+    <p>
 
-        Sa bagong Performing Arts Hall, hindi lamang sining ang binigyan
-        ng bagong entablado—pati ang mga pangarap ng kabataan ay binigyan
-        ng pagkakataong umangat.
+        Sa bagong Performing Arts Hall, hindi lamang sining
+        ang binigyan ng bagong entablado—pati ang mga pangarap
+        ng kabataan ay binigyan ng pagkakataong umangat.
 
     </p>
 
 
-    <!-- =================================================
+
+    <!-- =====================================================
          AUTHOR
-    ================================================== -->
+    ===================================================== -->
 
     <div class="author">
 
-        ✍️ Wilmarie A. Gonzales<br>
-        📷 Joanna Zyme M. Beltran
+        ✍️ <strong>Wilmarie A. Gonzales</strong><br>
+        📷 <strong>Joanna Zyme M. Beltran</strong>
 
     </div>
 
+
 </section>
+
 
 
 <!-- =====================================================
@@ -1554,7 +1619,7 @@ footer p{
     </p>
 
     <p>
-        Opisyal na Publikasyon ng Sucat Senior High School
+        Opisyal na Pahayagang Filipino ng Sucat Senior High School
     </p>
 
     <p>
@@ -1562,6 +1627,7 @@ footer p{
     </p>
 
 </footer>
+
 
 
 <!-- =====================================================
@@ -1572,10 +1638,15 @@ footer p{
 
 window.addEventListener("load", function(){
 
-    setTimeout(function(){
+    const loader =
+        document.getElementById("salimbayLoader");
 
-        const loader =
-            document.getElementById("salimbayLoader");
+    /*
+       Lalabas ang EXACT SAME loading animation
+       sa bawat pag-open o refresh ng article page.
+    */
+
+    setTimeout(function(){
 
         if(loader){
 
