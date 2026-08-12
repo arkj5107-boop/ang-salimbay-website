@@ -21,29 +21,31 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#f4f4f4;
+    background:#f5f5f5;
     color:#222;
 }
 
 
 /* =====================================================
-   ANG SALIMBAY LOADING SCREEN
+   LOADING SCREEN
+   SSHS-INSPIRED — NO SSHS LOGO
 ===================================================== */
 
 #salimbayLoader{
-
     position:fixed;
     inset:0;
-
     width:100%;
     height:100%;
-
     background:
         radial-gradient(
-            circle at 50% 42%,
-            #8b1630 0%,
-            #6B0015 42%,
+            circle at 50% 38%,
+            #921d38 0%,
+            #6b0015 42%,
             #350009 100%
         );
 
@@ -59,12 +61,11 @@ body{
     visibility:visible;
 
     transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 #salimbayLoader.hide{
-
     opacity:0;
     visibility:hidden;
     pointer-events:none;
@@ -76,7 +77,6 @@ body{
 ===================================================== */
 
 .loader-scene{
-
     position:relative;
 
     width:min(94vw,650px);
@@ -91,49 +91,44 @@ body{
 
 
 /* =====================================================
-   OUTER CIRCLE
+   DECORATIVE OUTER CIRCLE
 ===================================================== */
 
 .loader-ring{
-
     position:absolute;
 
-    top:35px;
+    top:28px;
     left:50%;
 
-    width:610px;
-    height:610px;
+    width:min(92vw,610px);
+    height:min(92vw,610px);
 
     transform:translateX(-50%);
 
-    border:
-        3px solid
-        rgba(255,255,255,.45);
+    border:4px solid rgba(255,255,255,.42);
 
     border-radius:50%;
 
     box-shadow:
-        0 0 0 10px rgba(255,255,255,.05),
-        0 0 35px rgba(255,255,255,.08);
+        0 0 0 12px rgba(255,255,255,.045),
+        0 0 45px rgba(255,255,255,.08);
 
     animation:
-        ringAppear 2s ease forwards;
+        ringAppear 1.8s ease forwards;
 }
 
 @keyframes ringAppear{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            scale(.8)
-            rotate(-20deg);
+            scale(.72)
+            rotate(-15deg);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             scale(1)
@@ -143,18 +138,17 @@ body{
 
 
 /* =====================================================
-   GOLDEN SUN
+   SUN
 ===================================================== */
 
 .loader-sun{
-
     position:absolute;
 
-    top:65px;
+    top:72px;
     left:50%;
 
-    width:230px;
-    height:230px;
+    width:min(34vw,220px);
+    height:min(34vw,220px);
 
     transform:translateX(-50%);
 
@@ -163,36 +157,32 @@ body{
     background:
         radial-gradient(
             circle,
-            #FFE45A 0%,
-            #FFD02E 42%,
-            #F4A900 67%,
-            rgba(244,169,0,0) 72%
+            #fff16a 0%,
+            #ffd83d 35%,
+            #ffc21a 65%,
+            #f3a900 100%
         );
 
-    filter:
-        drop-shadow(
-            0 0 35px
-            rgba(255,200,30,.6)
-        );
+    box-shadow:
+        0 0 25px rgba(255,214,45,.65),
+        0 0 55px rgba(255,190,20,.35);
 
     animation:
-        sunRise 2s cubic-bezier(.2,.8,.2,1) forwards;
+        sunRise 1.8s cubic-bezier(.2,.8,.2,1) forwards;
 }
 
 @keyframes sunRise{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            translateY(50px)
-            scale(.55);
+            translateY(45px)
+            scale(.5);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0)
@@ -206,119 +196,109 @@ body{
 ===================================================== */
 
 .loader-rays{
-
     position:absolute;
 
     top:35px;
     left:50%;
 
-    width:390px;
-    height:330px;
+    width:min(65vw,390px);
+    height:310px;
 
     transform:translateX(-50%);
 
     animation:
-        raysReveal 2.4s ease forwards;
+        raysReveal 2s ease forwards;
 }
 
 .loader-rays span{
-
     position:absolute;
 
     left:50%;
     top:50%;
 
-    width:11px;
-    height:115px;
+    width:13px;
+    height:120px;
 
-    margin-left:-5.5px;
+    margin-left:-6.5px;
 
     border-radius:20px;
 
     background:
         linear-gradient(
             to top,
-            rgba(255,211,45,.12),
-            #FFD12F
+            rgba(255,211,45,.15),
+            #ffd12f
         );
 
-    transform-origin:
-        50% 100%;
+    transform-origin:50% 100%;
 
     box-shadow:
-        0 0 12px
-        rgba(255,207,45,.35);
+        0 0 15px rgba(255,207,45,.4);
 }
 
 
 /* 12 RAYS */
 
 .loader-rays span:nth-child(1){
-    transform:translateY(-145px);
+    transform:translateY(-150px);
 }
 
 .loader-rays span:nth-child(2){
-    transform:rotate(30deg) translateY(-145px);
+    transform:rotate(30deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(3){
-    transform:rotate(60deg) translateY(-145px);
+    transform:rotate(60deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(4){
-    transform:rotate(90deg) translateY(-145px);
+    transform:rotate(90deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(5){
-    transform:rotate(120deg) translateY(-145px);
+    transform:rotate(120deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(6){
-    transform:rotate(150deg) translateY(-145px);
+    transform:rotate(150deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(7){
-    transform:rotate(180deg) translateY(-145px);
+    transform:rotate(180deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(8){
-    transform:rotate(210deg) translateY(-145px);
+    transform:rotate(210deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(9){
-    transform:rotate(240deg) translateY(-145px);
+    transform:rotate(240deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(10){
-    transform:rotate(270deg) translateY(-145px);
+    transform:rotate(270deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(11){
-    transform:rotate(300deg) translateY(-145px);
+    transform:rotate(300deg) translateY(-150px);
 }
 
 .loader-rays span:nth-child(12){
-    transform:rotate(330deg) translateY(-145px);
+    transform:rotate(330deg) translateY(-150px);
 }
 
 @keyframes raysReveal{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             scale(.55)
-            rotate(-10deg);
-    }
-
-    55%{
-        opacity:1;
+            rotate(-20deg);
     }
 
     100%{
-        opacity:.85;
-
+        opacity:.9;
         transform:
             translateX(-50%)
             scale(1)
@@ -332,65 +312,58 @@ body{
 ===================================================== */
 
 .loader-land{
-
     position:absolute;
 
-    top:220px;
+    top:235px;
     left:50%;
 
-    width:560px;
-    height:150px;
+    width:min(86vw,560px);
+    height:145px;
 
     transform:translateX(-50%);
 
     background:
         linear-gradient(
-            150deg,
-            transparent 0 19%,
-            #3FC52C 20% 44%,
-            #55D536 45% 56%,
-            #35B827 57% 100%
+            145deg,
+            #2fae27,
+            #55d536 48%,
+            #229c22
         );
 
     clip-path:
         polygon(
             0 100%,
-            12% 70%,
-            25% 48%,
-            38% 67%,
-            53% 27%,
-            67% 58%,
-            79% 39%,
-            100% 73%,
+            10% 72%,
+            23% 48%,
+            37% 68%,
+            52% 25%,
+            67% 60%,
+            79% 38%,
+            100% 72%,
             100% 100%
         );
 
-    opacity:.95;
-
     filter:
         drop-shadow(
-            0 4px 8px
-            rgba(0,0,0,.12)
+            0 5px 8px rgba(0,0,0,.16)
         );
 
     animation:
-        landReveal 2s ease forwards;
+        landReveal 1.8s ease forwards;
 }
 
 @keyframes landReveal{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             translateY(35px)
-            scaleX(.8);
+            scaleX(.75);
     }
 
     100%{
-        opacity:.95;
-
+        opacity:1;
         transform:
             translateX(-50%)
             translateY(0)
@@ -400,18 +373,17 @@ body{
 
 
 /* =====================================================
-   BLUE WATER
+   WATER
 ===================================================== */
 
 .loader-water{
-
     position:absolute;
 
-    top:325px;
+    top:330px;
     left:50%;
 
-    width:620px;
-    height:115px;
+    width:min(92vw,620px);
+    height:125px;
 
     transform:translateX(-50%);
 
@@ -420,9 +392,9 @@ body{
     background:
         linear-gradient(
             to bottom,
-            #23C9E8,
-            #079AD4 50%,
-            #0068B8
+            #27d2ee,
+            #079bd4 52%,
+            #0067b7
         );
 
     clip-path:
@@ -441,12 +413,11 @@ body{
         );
 
     animation:
-        waterReveal 2.2s ease forwards;
+        waterReveal 2s ease forwards;
 }
 
 .loader-water::before,
 .loader-water::after{
-
     content:"";
 
     position:absolute;
@@ -458,7 +429,7 @@ body{
 
     border-top:
         6px solid
-        rgba(180,245,255,.65);
+        rgba(190,248,255,.68);
 
     border-radius:50%;
 
@@ -467,15 +438,13 @@ body{
 }
 
 .loader-water::before{
-    top:27px;
+    top:28px;
 }
 
 .loader-water::after{
-    top:67px;
-
+    top:72px;
+    opacity:.45;
     animation-delay:-1.2s;
-
-    opacity:.5;
 }
 
 @keyframes waterMove{
@@ -497,15 +466,13 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
-            translateY(40px);
+            translateY(45px);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0);
@@ -514,65 +481,61 @@ body{
 
 
 /* =====================================================
-   BLUE + RED LOWER SECTION
+   BLUE + RED LOWER AREA
 ===================================================== */
 
 .loader-colors{
-
     position:absolute;
 
-    top:405px;
+    top:410px;
     left:50%;
 
-    width:570px;
-    height:150px;
+    width:min(86vw,570px);
+    height:145px;
 
     transform:translateX(-50%);
 
-    overflow:hidden;
-
     display:flex;
+
+    overflow:hidden;
 
     border-radius:
         0 0 280px 280px;
 
     box-shadow:
-        inset 0 8px 20px
-        rgba(0,0,0,.12);
+        inset 0 8px 20px rgba(0,0,0,.12);
 }
 
 .loader-blue{
-
     width:50%;
     height:100%;
 
     background:
         linear-gradient(
             135deg,
-            #0756B9,
-            #006CCF,
-            #003E94
+            #0756b9,
+            #006ccf,
+            #003e94
         );
 
     animation:
-        colorReveal 1.8s ease forwards;
+        colorReveal 1.6s ease forwards;
 }
 
 .loader-red{
-
     width:50%;
     height:100%;
 
     background:
         linear-gradient(
             135deg,
-            #C90029,
-            #E40035,
-            #A90021
+            #c90029,
+            #e40035,
+            #a90021
         );
 
     animation:
-        colorReveal 1.8s ease .15s forwards;
+        colorReveal 1.6s ease .15s forwards;
 }
 
 @keyframes colorReveal{
@@ -594,13 +557,12 @@ body{
 ===================================================== */
 
 .loader-book{
-
     position:absolute;
 
-    top:365px;
+    top:375px;
     left:50%;
 
-    width:270px;
+    width:min(48vw,270px);
     height:115px;
 
     transform:translateX(-50%);
@@ -610,11 +572,10 @@ body{
     display:flex;
 
     animation:
-        bookAppear 1.5s ease .8s both;
+        bookAppear 1.4s ease .7s both;
 }
 
 .book-page{
-
     position:relative;
 
     width:50%;
@@ -623,18 +584,16 @@ body{
     background:
         linear-gradient(
             160deg,
-            #fff 0%,
+            #fff,
             #f4f0e7 70%,
-            #d9d0c2 100%
+            #d9d0c2
         );
 
     box-shadow:
-        0 12px 18px
-        rgba(0,0,0,.25);
+        0 12px 18px rgba(0,0,0,.25);
 }
 
 .book-page.left{
-
     border-radius:
         85% 12% 8% 35%;
 
@@ -645,7 +604,6 @@ body{
 }
 
 .book-page.right{
-
     border-radius:
         12% 85% 35% 8%;
 
@@ -656,7 +614,6 @@ body{
 }
 
 .loader-book::after{
-
     content:"";
 
     position:absolute;
@@ -683,16 +640,14 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             translateY(30px)
-            scale(.8);
+            scale(.75);
     }
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0)
@@ -706,7 +661,6 @@ body{
 ===================================================== */
 
 .loader-torch{
-
     position:absolute;
 
     top:390px;
@@ -731,15 +685,13 @@ body{
         5px 5px 12px 12px;
 
     box-shadow:
-        0 10px 20px
-        rgba(0,0,0,.35);
+        0 10px 20px rgba(0,0,0,.35);
 
     animation:
-        torchAppear 1.6s ease 1s both;
+        torchAppear 1.5s ease .9s both;
 }
 
 .loader-torch::before{
-
     content:"";
 
     position:absolute;
@@ -755,16 +707,15 @@ body{
     background:
         radial-gradient(
             ellipse at bottom,
-            #FF3B20 0%,
-            #FF8A00 45%,
-            #FFD52A 65%,
+            #ff3b20 0%,
+            #ff8a00 45%,
+            #ffd52a 65%,
             transparent 68%
         );
 
     filter:
         drop-shadow(
-            0 0 15px
-            rgba(255,150,20,.7)
+            0 0 15px rgba(255,150,20,.7)
         );
 
     animation:
@@ -792,7 +743,6 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateX(-50%)
             translateY(30px)
@@ -801,7 +751,6 @@ body{
 
     100%{
         opacity:1;
-
         transform:
             translateX(-50%)
             translateY(0)
@@ -811,14 +760,13 @@ body{
 
 
 /* =====================================================
-   ANG SALIMBAY BRANDING
+   LOADING BRAND
 ===================================================== */
 
 .salimbay-brand{
-
     position:absolute;
 
-    bottom:12px;
+    bottom:18px;
 
     z-index:50;
 
@@ -829,52 +777,52 @@ body{
     gap:8px;
 
     animation:
-        brandReveal 1.3s ease 1.7s both;
+        brandReveal 1.2s ease 1.5s both;
 }
 
-.salimbay-logo{
+.salimbay-name{
+    color:white;
 
-    width:min(70vw,310px);
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    max-height:95px;
+    font-size:
+        clamp(32px,8vw,58px);
 
-    object-fit:contain;
+    font-weight:bold;
 
-    filter:
-        brightness(0)
-        invert(1)
-        drop-shadow(
-            0 5px 12px
-            rgba(0,0,0,.4)
-        );
+    letter-spacing:3px;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.4);
 }
 
 .salimbay-subtitle{
-
     color:white;
 
-    font-size:12px;
+    font-size:
+        clamp(9px,2.5vw,12px);
 
     letter-spacing:2px;
 
+    text-align:center;
+
     text-transform:uppercase;
 
-    opacity:.9;
-
-    text-align:center;
+    opacity:.92;
 }
 
 .loading-dots{
-
     display:flex;
-
     gap:6px;
+    margin-top:2px;
 }
 
 .loading-dots span{
-
-    width:5px;
-    height:5px;
+    width:6px;
+    height:6px;
 
     background:white;
 
@@ -909,7 +857,6 @@ body{
 
     0%{
         opacity:0;
-
         transform:
             translateY(20px)
             scale(.92);
@@ -917,7 +864,6 @@ body{
 
     100%{
         opacity:1;
-
         transform:
             translateY(0)
             scale(1);
@@ -926,21 +872,32 @@ body{
 
 
 /* =====================================================
-   HEADER
+   MAIN HEADER
 ===================================================== */
 
 header{
-
-    background:#6B0015;
+    background:
+        linear-gradient(
+            135deg,
+            #800000,
+            #6b0015
+        );
 
     color:white;
 
     text-align:center;
 
-    padding:30px 20px;
+    padding:35px 20px;
+
+    border-bottom:
+        5px solid #500010;
 }
 
 header h1{
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:42px;
 
@@ -948,9 +905,7 @@ header h1{
 }
 
 header p{
-
     margin-top:10px;
-
     font-size:15px;
 }
 
@@ -960,7 +915,6 @@ header p{
 ===================================================== */
 
 nav{
-
     background:#500010;
 
     display:flex;
@@ -968,10 +922,12 @@ nav{
     justify-content:center;
 
     flex-wrap:wrap;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.15);
 }
 
 nav a{
-
     color:white;
 
     text-decoration:none;
@@ -980,14 +936,14 @@ nav a{
 
     font-weight:bold;
 
-    transition:.2s;
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 nav a:hover{
-
     background:white;
-
-    color:#6B0015;
+    color:#6b0015;
 }
 
 
@@ -996,7 +952,6 @@ nav a:hover{
 ===================================================== */
 
 .article{
-
     max-width:900px;
 
     margin:50px auto;
@@ -1005,8 +960,12 @@ nav a:hover{
 }
 
 .article h1{
+    color:#800000;
 
-    color:#6B0015;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:42px;
 
@@ -1018,7 +977,6 @@ nav a:hover{
 }
 
 .article .category{
-
     text-align:center;
 
     color:#777;
@@ -1030,11 +988,10 @@ nav a:hover{
 
 
 /* =====================================================
-   MAIN IMAGE
+   IMAGE
 ===================================================== */
 
 .image-box{
-
     width:100%;
 
     height:420px;
@@ -1054,17 +1011,16 @@ nav a:hover{
     border-radius:8px;
 
     box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.12);
+        0 5px 18px rgba(0,0,0,.12);
 }
 
 .image-box img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
+
+    display:block;
 }
 
 
@@ -1073,7 +1029,6 @@ nav a:hover{
 ===================================================== */
 
 .caption{
-
     text-align:center;
 
     color:#777;
@@ -1093,7 +1048,6 @@ nav a:hover{
 ===================================================== */
 
 .article p{
-
     font-size:18px;
 
     line-height:1.8;
@@ -1104,7 +1058,6 @@ nav a:hover{
 }
 
 .article .lead{
-
     font-size:20px;
 
     font-weight:500;
@@ -1112,13 +1065,12 @@ nav a:hover{
 
 
 /* =====================================================
-   HIGHLIGHT / QUOTE
+   HIGHLIGHT
 ===================================================== */
 
 .highlight{
-
     border-left:
-        7px solid #6B0015;
+        7px solid #800000;
 
     background:#fff5f5;
 
@@ -1126,7 +1078,7 @@ nav a:hover{
 
     margin:30px 0;
 
-    color:#6B0015;
+    color:#800000;
 
     font-size:20px;
 
@@ -1144,13 +1096,12 @@ nav a:hover{
 ===================================================== */
 
 .author{
-
     margin-top:35px;
 
     padding-top:20px;
 
     border-top:
-        1px solid #ddd;
+        2px solid #ddd;
 
     color:#666;
 
@@ -1167,8 +1118,12 @@ nav a:hover{
 ===================================================== */
 
 footer{
-
-    background:#6B0015;
+    background:
+        linear-gradient(
+            135deg,
+            #500010,
+            #6b0015
+        );
 
     color:white;
 
@@ -1177,18 +1132,24 @@ footer{
     padding:35px 20px;
 
     margin-top:50px;
+
+    border-top:
+        5px solid #800000;
 }
 
 footer p{
-
-    margin:7px 0;
+    margin:7px;
 
     line-height:1.5;
 }
 
 footer p:first-child{
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    font-size:22px;
+    font-size:24px;
 
     letter-spacing:2px;
 }
@@ -1200,201 +1161,106 @@ footer p:first-child{
 
 @media(max-width:600px){
 
+    .loader-ring{
+        width:92vw;
+        height:92vw;
+        top:35px;
+    }
+
+    .loader-sun{
+        top:90px;
+        width:31vw;
+        height:31vw;
+    }
+
+    .loader-rays{
+        top:45px;
+    }
+
+    .loader-rays span{
+        width:9px;
+        height:90px;
+        margin-left:-4.5px;
+    }
+
+    .loader-land{
+        top:250px;
+        width:90vw;
+    }
+
+    .loader-water{
+        top:335px;
+        width:95vw;
+    }
+
+    .loader-colors{
+        top:405px;
+        width:88vw;
+    }
+
+    .loader-book{
+        top:370px;
+        width:55vw;
+        height:100px;
+    }
+
+    .loader-torch{
+        top:385px;
+        height:145px;
+    }
+
+    .salimbay-brand{
+        bottom:20px;
+    }
+
+    header{
+        padding:28px 15px;
+    }
+
     header h1{
         font-size:30px;
     }
 
-    header{
-        padding:25px 15px;
+    header p{
+        font-size:13px;
     }
 
     nav a{
         padding:12px 10px;
-        font-size:14px;
+        font-size:13px;
     }
 
     .article{
-
         margin:30px auto;
-
         padding:0 18px;
     }
 
     .article h1{
-
         font-size:31px;
     }
 
     .article p{
-
         font-size:17px;
     }
 
     .article .lead{
-
         font-size:18px;
     }
 
     .image-box{
-
         height:280px;
+        border-radius:5px;
     }
 
     .highlight{
-
         font-size:18px;
-
         padding:18px;
     }
 
-
-    /* LOADER MOBILE */
-
-    .loader-scene{
-
-        width:100vw;
-
-        height:100vh;
+    footer{
+        padding:30px 15px;
     }
 
-    .loader-ring{
-
-        width:430px;
-        height:430px;
-
-        top:70px;
-    }
-
-    .loader-sun{
-
-        width:155px;
-        height:155px;
-
-        top:105px;
-    }
-
-    .loader-rays{
-
-        width:270px;
-        height:240px;
-
-        top:75px;
-    }
-
-    .loader-rays span{
-
-        width:8px;
-        height:80px;
-
-        margin-left:-4px;
-    }
-
-    .loader-rays span:nth-child(1),
-    .loader-rays span:nth-child(2),
-    .loader-rays span:nth-child(3),
-    .loader-rays span:nth-child(4),
-    .loader-rays span:nth-child(5),
-    .loader-rays span:nth-child(6),
-    .loader-rays span:nth-child(7),
-    .loader-rays span:nth-child(8),
-    .loader-rays span:nth-child(9),
-    .loader-rays span:nth-child(10),
-    .loader-rays span:nth-child(11),
-    .loader-rays span:nth-child(12){
-
-        transform:
-            rotate(
-                calc((var(--i) - 1) * 30deg)
-            )
-            translateY(-105px);
-    }
-
-    .loader-land{
-
-        width:380px;
-
-        height:105px;
-
-        top:245px;
-    }
-
-    .loader-water{
-
-        width:430px;
-
-        height:95px;
-
-        top:335px;
-    }
-
-    .loader-colors{
-
-        width:390px;
-
-        height:120px;
-
-        top:410px;
-    }
-
-    .loader-book{
-
-        width:220px;
-
-        height:90px;
-
-        top:385px;
-    }
-
-    .loader-torch{
-
-        top:405px;
-
-        height:135px;
-    }
-
-    .salimbay-brand{
-
-        bottom:25px;
-
-        width:90%;
-    }
-
-    .salimbay-logo{
-
-        width:250px;
-
-        max-height:75px;
-    }
-
-    .salimbay-subtitle{
-
-        font-size:10px;
-
-        letter-spacing:1.5px;
-    }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            .01ms !important;
-    }
 }
 
 </style>
@@ -1405,4 +1271,386 @@ footer p:first-child{
 <body>
 
 
-<!-- ==============================================
+<!-- =====================================================
+     LOADING SCREEN
+===================================================== -->
+
+<div id="salimbayLoader">
+
+    <div class="loader-scene">
+
+        <div class="loader-ring"></div>
+
+
+        <div class="loader-rays">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <div class="loader-sun"></div>
+
+
+        <div class="loader-land"></div>
+
+
+        <div class="loader-water"></div>
+
+
+        <div class="loader-colors">
+
+            <div class="loader-blue"></div>
+
+            <div class="loader-red"></div>
+
+        </div>
+
+
+        <div class="loader-book">
+
+            <div class="book-page left"></div>
+
+            <div class="book-page right"></div>
+
+        </div>
+
+
+        <div class="loader-torch"></div>
+
+
+        <!-- WALANG SSHS LOGO DITO -->
+
+        <div class="salimbay-brand">
+
+            <div class="salimbay-name">
+                ANG SALIMBAY
+            </div>
+
+            <div class="salimbay-subtitle">
+                Opisyal na Pahayagang Filipino
+                ng Sucat Senior High School
+            </div>
+
+            <div class="loading-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <h1>
+        ANG SALIMBAY
+    </h1>
+
+    <p>
+        Opisyal na Publikasyon ng Sucat Senior High School
+    </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <a href="../index.html">
+        Home
+    </a>
+
+    <a href="../balita.index.html">
+        Balita
+    </a>
+
+    <a href="../editoryal.html">
+        Editoryal at Kolum
+    </a>
+
+    <a href="../lathalain.html">
+        Lathalain
+    </a>
+
+    <a href="../isports.html">
+        Isports
+    </a>
+
+    <a href="../Agham.html">
+        Agham
+    </a>
+
+    <a href="../About.html">
+        Tungkol sa Amin
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     ARTICLE
+===================================================== -->
+
+<section class="article">
+
+
+    <h1>
+        TINGNAN | Career Guidance ng SIM Diamond,
+        Dinaluhan ng mga Kababaihang Mag-aaral ng SSHS
+    </h1>
+
+
+    <p class="category">
+        TINGNAN | Ang Salimbay | Hunyo 25, 2026
+    </p>
+
+
+
+    <!-- MAIN IMAGE -->
+
+    <div class="image-box">
+
+        <img
+            src="Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg"
+            alt="Career Support Program ng SIM Diamond"
+        >
+
+    </div>
+
+
+    <p class="caption">
+
+        Mga mag-aaral ng Sucat Senior High School na dumalo sa
+        Career Support Program ng Soroptimist International
+        Manila Diamond – Dream It, Be It.
+
+    </p>
+
+
+
+    <!-- ARTICLE BODY -->
+
+    <p class="lead">
+
+        Nagkaroon ng <strong>Career Support Program</strong> para sa mga
+        mag-aaral ng Sucat Senior High School (SSHS) sa pangunguna ng
+        <strong>Soroptimist International Manila Diamond (SIMD) –
+        Dream It, Be It (DIBI) Organization</strong> ngayong
+        Hunyo 25, 2026.
+
+    </p>
+
+
+    <p>
+
+        Pinangunahan ng panauhing tagapagsalita na si
+        <strong>Bb. Christine Codrington</strong>, kasalukuyang pangulo ng
+        SIMD at tagapangulo ng DIBI Organization, ang pagtalakay sa mga
+        hakbang na makatutulong sa mga mag-aaral sa pagpaplano ng kanilang
+        karera sa hinaharap.
+
+    </p>
+
+
+    <div class="highlight">
+
+        “Dapat hindi ka na-buburnout.
+        Dapat gusto mo ang ginagawa mo,”
+        paalala ni Bb. Christine Codrington sa mga mag-aaral.
+
+    </div>
+
+
+    <p>
+
+        Binigyang-diin din niya ang kahalagahan ng pagpaplano gamit ang
+        <strong>SMART</strong> o <em>Specific, Measurable, Attainable,
+        Relevant, at Timely</em> upang maging gabay sa pagbuo ng mga
+        mithiin at layunin.
+
+    </p>
+
+
+    <p>
+
+        Sumunod namang nagbahagi ng payo si
+        <strong>G. Kinwood Galiza</strong>, trainer ng CPDC Training and
+        Testing Corp., tungkol sa mga dapat gawin ng mga estudyanteng
+        nakararanas ng suliranin sa pag-aaral.
+
+    </p>
+
+
+    <p>
+
+        Ayon sa kaniya, ang bawat balakid, paghihirap, at pagkatalo ay
+        hindi dahilan upang sumuko; bagkus, dapat itong gawing inspirasyon
+        upang patuloy na magsikap at makamit ang tagumpay.
+
+    </p>
+
+
+    <p>
+
+        Dumalo rin si <strong>Bb. Christina Dela Cruz-Frey</strong>,
+        charter president ng SIMD para sa taong 2024–2026. Ibinahagi niya
+        ang kaniyang karanasan sa buhay at kung paano siya nagtagumpay sa
+        murang edad. Nagsilbi itong inspirasyon sa mga mag-aaral na dumalo
+        sa programa.
+
+    </p>
+
+
+    <p>
+
+        Samantala, binanggit din ang <strong>Scholarship Program ng
+        SIMD</strong> na bukas para sa mga mag-aaral ng SSHS na nangangailangan
+        ng tulong pinansyal upang maipagpatuloy ang kanilang pag-aaral.
+
+    </p>
+
+
+    <div class="highlight">
+
+        Pangarap ang simula, ngunit ang tamang gabay at determinasyon
+        ang tumutulong upang ito ay maging isang layunin na kayang abutin.
+
+    </div>
+
+
+    <p>
+
+        Bago tuluyang matapos ang programa, namahagi ang DIBI Organization
+        ng aklat na tumatalakay sa buhay ni <strong>Dioceldo Sy</strong>,
+        na kilala bilang “Father of Philippine Cosmetics.”
+
+    </p>
+
+
+    <p>
+
+        Ang aklat ay may pamagat na <em>Dioceldo’s Big Dream</em> at
+        inaasahang magsisilbing inspirasyon sa mga mag-aaral na magbabasa
+        nito.
+
+    </p>
+
+
+    <p>
+
+        Nagtapos ang palatuntunan sa pamamahagi ng sertipiko ng pagkilala
+        para sa butihing punong-guro ng SSHS na si
+        <strong>Dr. Jay Boy Evano</strong> at sa
+        <strong>Assistant to the School Principal for Learner Support
+        na si G. Jorge T. Endozo.</strong>
+
+    </p>
+
+
+    <p>
+
+        Sa pamamagitan ng mga programang tulad nito, mas nabibigyan ng
+        pagkakataon ang mga mag-aaral na mangarap, magplano, at ihanda
+        ang sarili para sa kinabukasang nais nilang tahakin.
+
+    </p>
+
+
+
+    <!-- AUTHOR -->
+
+    <div class="author">
+
+        ✍️ <strong>Wilmarie A. Gonzales</strong>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        <b>ANG SALIMBAY</b>
+    </p>
+
+    <p>
+        Opisyal na Pahayagang Filipino ng Sucat Senior High School
+    </p>
+
+    <p>
+        © 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     LOADING SCRIPT
+===================================================== -->
+
+<script>
+
+window.addEventListener("load", function(){
+
+    const loader =
+        document.getElementById("salimbayLoader");
+
+    /*
+       Lalabas ang loading animation sa bawat
+       pag-open o refresh ng article page.
+    */
+
+    setTimeout(function(){
+
+        if(loader){
+
+            loader.classList.add("hide");
+
+        }
+
+    }, 3500);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
