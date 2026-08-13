@@ -546,7 +546,7 @@ const articles = [
     "Buwan ng Wika Sucat Senior High School SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika mag-aaral larawan reaksyon magsasaka guro doktor estudyante Ferdinand Marcos Jr. pagiging malikhain saloobin makabayan",
 
     url:
-    "sonawika.html"
+    "sonasshs.html"
 },
 
 {
