@@ -510,6 +510,47 @@ const articles = [
 
 {
     title:
+    "TINGNAN | Sulyap sa SONA, Tinig ng Wika",
+
+    description:
+    "Bilang bahagi ng pagdiriwang sa Buwan ng Wika, nagkaisa ang mga mag-aaral ng Sucat Senior High School sa paglikha ng mga litratong nagpapakita ng kanilang reaksyon sa naganap na ika-limang State of the Nation Address (SONA) sa pamamagitan ng temang “Larawan-Reaksyon: Sulyap sa SONA, Tinig ng Wika.”",
+
+    category:
+    "Balita",
+
+    date:
+    "Agosto 2026",
+
+    author:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    credits:
+    "✍🏼 Wilmarie Gonzales",
+
+    keywords:
+    "Buwan ng Wika Sucat Senior High School SSHS State of the Nation Address SONA ika-limang SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika Filipino Wika wikang Filipino patimpalak larawan reaksyon mag-aaral estudyante Sucsenian Pangulong Ferdinand Marcos Jr. Marcos Jr. magsasaka guro doktor estudyante mamamayang Pilipino lipunan makabayan pagiging malikhain saloobin damdaming makabayan photography photo contest larawan Buwan ng Wika 2026",
+
+    content:
+    "Buwan ng Wika Sucat Senior High School SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika mag-aaral larawan reaksyon magsasaka guro doktor estudyante Ferdinand Marcos Jr. pagiging malikhain saloobin makabayan",
+
+    url:
+    "sonawika.html"
+},
+
+{
+    title:
     "Katotohanan: Boses o Batayan",
 
     description:
