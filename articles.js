@@ -1,6 +1,52 @@
 const articles = [
 
 /* =====================================================
+   2. SISI O KATOTOHANAN?
+===================================================== */
+
+{
+    title:
+    "Sisi o Katotohanan?",
+
+    description:
+    "Hindi maipagkakaila ang malaking papel ng mga guro sa paghubog ng asal, ugali, at pananaw ng mga kabataan. Ngunit sa oras ng trahedya, higit na mahalagang hanapin ang katotohanan batay sa ebidensiya kaysa agad maghanap ng masisisi.",
+
+    category:
+    "Kolum",
+
+    date:
+    "",
+
+    author:
+    "Sean Michael Bandilla",
+
+    photographer:
+    "Ram Mendoza",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    otherCredit:
+    "",
+
+    keywords:
+    "Sisi o Katotohanan guro paaralan karahasan kabataan tahanan pamilya edukasyon ebidensiya akusasyon pananagutan katotohanan",
+
+    content:
+    "guro paaralan kabataan pamilya tahanan komunidad akusasyon ebidensiya pananagutan katotohanan",
+
+    image:
+    "Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png",
+
+    url:
+    "sisi-o-katotohanan.html"
+},
+
+
+/* =====================================================
    1. PERFORMING ARTS HALL
 ===================================================== */
 
