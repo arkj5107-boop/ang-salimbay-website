@@ -1023,29 +1023,37 @@ nav a:hover{
 
 
 /* =====================================================
-   REACTIONS
+   ARTICLE REACTIONS
 ===================================================== */
 
 .article-reactions{
     display:flex;
     align-items:center;
     gap:10px;
+
     margin-top:15px;
     padding-top:14px;
+
     border-top:1px solid #eee;
+
+    flex-wrap:wrap;
 }
 
 .reaction-btn{
     display:flex;
     align-items:center;
+    justify-content:center;
+
     gap:7px;
 
     border:1px solid #e3d6d9;
+
     background:#fffafa;
 
     color:#6B0015;
 
     padding:8px 13px;
+
     border-radius:20px;
 
     cursor:pointer;
@@ -1058,12 +1066,17 @@ nav a:hover{
 
 .reaction-btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 3px 8px rgba(107,0,21,.12);
+
+    box-shadow:
+        0 3px 8px
+        rgba(107,0,21,.12);
 }
 
 .reaction-btn.active{
     background:#6B0015;
+
     color:white;
+
     border-color:#6B0015;
 }
 
@@ -1073,7 +1086,9 @@ nav a:hover{
 
 .reaction-btn.trash.active{
     background:#555;
+
     color:white;
+
     border-color:#555;
 }
 
@@ -1083,6 +1098,7 @@ nav a:hover{
 
 .reaction-count{
     min-width:14px;
+
     text-align:center;
 }
 
@@ -1162,6 +1178,16 @@ footer p{
     }
 
 
+    .article-reactions{
+        gap:7px;
+    }
+
+    .reaction-btn{
+        padding:7px 11px;
+        font-size:13px;
+    }
+
+
     /* LOADING MOBILE */
 
     .loader-ring{
@@ -1224,7 +1250,6 @@ footer p{
 </style>
 
 </head>
-
 
 <body>
 
@@ -1293,6 +1318,7 @@ footer p{
             <div class="salimbay-name">
                 ANG SALIMBAY
             </div>
+            <div class="salimbay-name">
                 ANG SALIMBAY
             </div>
 
@@ -1361,9 +1387,8 @@ footer p{
 <section class="article">
 
     <h1>
-        “Pananagutan, Hindi Pagbubuntunant”
+        “Pananagutan, Hindi Pagbubuntunan”
     </h1>
-
 
     <p class="category">
         KOLUM | Pananagutan, Hindi Pagbubuntunan
@@ -1376,7 +1401,7 @@ footer p{
 
         <img
             src="Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png"
-            alt="Sisi o Katotohananan?"
+            alt="Pananagutan, Hindi Pagbubuntunan"
         >
 
     </div>
@@ -1387,9 +1412,9 @@ footer p{
     </p>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          COLUMN
-    ================================================= -->
+    ===================================================== -->
 
     <p class="lead">
 
@@ -1447,9 +1472,9 @@ footer p{
     </p>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          REACTIONS
-    ================================================= -->
+    ===================================================== -->
 
     <div class="article-reactions">
 
@@ -1458,7 +1483,7 @@ footer p{
             data-reaction="like"
             type="button"
         >
-            👍
+            <span class="reaction-icon">👍</span>
             <span class="reaction-count">0</span>
         </button>
 
@@ -1468,7 +1493,7 @@ footer p{
             data-reaction="love"
             type="button"
         >
-            ❤️
+            <span class="reaction-icon">❤️</span>
             <span class="reaction-count">0</span>
         </button>
 
@@ -1478,7 +1503,7 @@ footer p{
             data-reaction="idea"
             type="button"
         >
-            💡
+            <span class="reaction-icon">💡</span>
             <span class="reaction-count">0</span>
         </button>
 
@@ -1488,16 +1513,16 @@ footer p{
             data-reaction="dislike"
             type="button"
         >
-            👎
+            <span class="reaction-icon">👎</span>
             <span class="reaction-count">0</span>
         </button>
 
     </div>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          AUTHOR
-    ================================================= -->
+    ===================================================== -->
 
     <div class="author">
 
@@ -1564,47 +1589,30 @@ window.addEventListener("load", function(){
 
 <script type="module">
 
-import { initializeApp } from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+/*
+    IMPORTANT:
+
+    Huwag muna nating imbentuhin ang Firebase configuration dito.
+
+    Ang script na ito ay gagamit ng Firebase functions
+    mula sa firebase.js.
+
+    Siguraduhing ang firebase.js ay nasa tamang location.
+*/
+
 
 import {
     getFirestore,
     doc,
     onSnapshot,
-    updateDoc,
-    setDoc
+    runTransaction
 } from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
+import {
+    app
+} from "./firebase.js";
 
-/* =====================================================
-   FIREBASE CONFIGURATION
-===================================================== */
-
-const firebaseConfig = {
-
-    /* ILAGAY DITO ANG FIREBASE CONFIG MO */
-
-    apiKey: "YOUR_API_KEY",
-
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-
-    projectId: "YOUR_PROJECT_ID",
-
-    storageBucket: "YOUR_PROJECT.appspot.com",
-
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-
-    appId: "YOUR_APP_ID"
-
-};
-
-
-/* =====================================================
-   INITIALIZE FIREBASE
-===================================================== */
-
-const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
@@ -1613,74 +1621,69 @@ const db = getFirestore(app);
    ARTICLE ID
 ===================================================== */
 
-const articleId = "sisi";
+const ARTICLE_ID = "sisi";
 
 
 /* =====================================================
-   FIRESTORE DOCUMENT
+   FIREBASE DOCUMENT
 ===================================================== */
 
-const reactionRef = doc(
-    db,
-    "articleReactions",
-    articleId
-);
+const reactionRef =
+    doc(
+        db,
+        "articleReactions",
+        ARTICLE_ID
+    );
 
 
 /* =====================================================
-   REACTION BUTTONS
+   DISPLAY COUNTS
 ===================================================== */
 
 const reactionButtons =
     document.querySelectorAll(".reaction-btn");
 
 
+function updateReactionCounts(data){
+
+    reactionButtons.forEach(function(button){
+
+        const type =
+            button.dataset.reaction;
+
+        const count =
+            data[type] || 0;
+
+        const countElement =
+            button.querySelector(".reaction-count");
+
+        if(countElement){
+
+            countElement.textContent =
+                count;
+
+        }
+
+    });
+
+}
+
+
 /* =====================================================
-   LOAD REACTION COUNTS
+   REAL-TIME LISTENER
 ===================================================== */
 
 onSnapshot(
     reactionRef,
-    (snapshot) => {
+    function(snapshot){
 
-        if(!snapshot.exists()){
+        if(snapshot.exists()){
 
-            setDoc(
-                reactionRef,
-                {
-                    like: 0,
-                    love: 0,
-                    idea: 0,
-                    dislike: 0
-                }
+            updateReactionCounts(
+                snapshot.data()
             );
 
-            return;
         }
-
-
-        const data = snapshot.data();
-
-
-        reactionButtons.forEach(button => {
-
-            const reaction =
-                button.dataset.reaction;
-
-            const count =
-                data[reaction] || 0;
-
-            const countElement =
-                button.querySelector(".reaction-count");
-
-            if(countElement){
-
-                countElement.textContent =
-                    count;
-
-            }
-
-        });
 
     }
 );
@@ -1690,70 +1693,63 @@ onSnapshot(
    ADD REACTION
 ===================================================== */
 
-reactionButtons.forEach(button => {
+reactionButtons.forEach(function(button){
 
     button.addEventListener(
         "click",
         async function(){
 
             const reaction =
-                this.dataset.reaction;
+                button.dataset.reaction;
 
 
             try{
 
-                const snapshot =
-                    await import(
-                        "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
-                    );
+                await runTransaction(
+                    db,
+                    async function(transaction){
+
+                        const snapshot =
+                            await transaction.get(
+                                reactionRef
+                            );
 
 
-                const currentSnapshot =
-                    await snapshot.getDoc(
-                        reactionRef
-                    );
+                        let data =
+                            snapshot.exists()
+                            ? snapshot.data()
+                            : {};
 
 
-                let data;
+                        const currentCount =
+                            Number(
+                                data[reaction] || 0
+                            );
 
 
-                if(currentSnapshot.exists()){
+                        transaction.set(
+                            reactionRef,
+                            {
+                                [reaction]:
+                                    currentCount + 1
+                            },
+                            {
+                                merge:true
+                            }
+                        );
 
-                    data =
-                        currentSnapshot.data();
-
-                }else{
-
-                    data = {
-
-                        like: 0,
-                        love: 0,
-                        idea: 0,
-                        dislike: 0
-
-                    };
-
-                }
-
-
-                data[reaction] =
-                    (data[reaction] || 0) + 1;
-
-
-                await setDoc(
-                    reactionRef,
-                    data
+                    }
                 );
 
 
-                this.classList.add("active");
+                button.classList.add("active");
 
 
-                setTimeout(() => {
+                setTimeout(function(){
 
-                    this.classList.remove("active");
+                    button.classList.remove("active");
 
-                }, 500);
+                }, 350);
 
 
             }catch(error){
@@ -1773,5 +1769,4 @@ reactionButtons.forEach(button => {
 </script>
 
 </body>
-
 </html>
