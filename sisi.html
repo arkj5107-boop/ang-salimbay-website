@@ -1054,11 +1054,25 @@ nav a:hover{
     font-weight:bold;
 
     transition:.2s;
+
+    /*
+       IMPORTANT:
+       Pinipigilan nitong ma-block ng ibang
+       element ang click sa reaction buttons.
+    */
+    position:relative;
+    z-index:100;
+
+    pointer-events:auto;
 }
 
 .reaction-btn:hover{
     transform:translateY(-2px);
     box-shadow:0 3px 8px rgba(107,0,21,.12);
+}
+
+.reaction-btn:active{
+    transform:scale(.96);
 }
 
 .reaction-btn.active{
@@ -1225,7 +1239,6 @@ footer p{
 
 </head>
 
-
 <body>
 
 
@@ -1238,7 +1251,6 @@ footer p{
     <div class="loader-scene">
 
         <div class="loader-ring"></div>
-
 
         <div class="loader-rays">
 
@@ -1257,15 +1269,11 @@ footer p{
 
         </div>
 
-
         <div class="loader-sun"></div>
-
 
         <div class="loader-land"></div>
 
-
         <div class="loader-water"></div>
-
 
         <div class="loader-colors">
 
@@ -1275,7 +1283,6 @@ footer p{
 
         </div>
 
-
         <div class="loader-book">
 
             <div class="book-page left"></div>
@@ -1284,18 +1291,17 @@ footer p{
 
         </div>
 
-
         <div class="loader-torch"></div>
-
 
         <div class="salimbay-brand">
 
             <div class="salimbay-name">
                 ANG SALIMBAY
             </div>
+
             <div class="salimbay-subtitle">
                 Opisyal na Pahayagang Filipino
-                ng Sucat Senior High School
+                                ng Sucat Senior High School
             </div>
 
             <div class="loading-dots">
@@ -1361,13 +1367,9 @@ footer p{
         “Pananagutan, Hindi Pagbubuntunant”
     </h1>
 
-
     <p class="category">
         KOLUM | Pananagutan, Hindi Pagbubuntunan
     </p>
-
-
-    <!-- MAIN IMAGE -->
 
     <div class="image-box">
 
@@ -1378,13 +1380,9 @@ footer p{
 
     </div>
 
-
     <p class="caption">
         Kolum | Pananagutan, Hindi Pagbubuntunan
     </p>
-
-
-    <!-- COLUMN -->
 
     <p class="lead">
 
@@ -1399,7 +1397,6 @@ footer p{
 
     </p>
 
-
     <p>
 
         Kaya hindi makatarungang iugnay agad sa mga guro ang karahasang
@@ -1408,7 +1405,6 @@ footer p{
         nag-uugnay sa kanila sa ugat ng insidente.
 
     </p>
-
 
     <p>
 
@@ -1420,7 +1416,6 @@ footer p{
 
     </p>
 
-
     <p>
 
         Sa halip na gawing puntirya ng malawakang akusasyon ang mga gurong
@@ -1429,7 +1424,6 @@ footer p{
         lalong lalo na sa lipunang kinabibilangan.
 
     </p>
-
 
     <p>
 
@@ -1446,11 +1440,16 @@ footer p{
          ARTICLE REACTIONS
     ===================================================== -->
 
-    <div class="article-reactions">
+    <div
+        class="article-reactions"
+        id="articleReactions"
+        data-article-id="sisi"
+    >
 
         <button
             class="reaction-btn"
             type="button"
+            data-reaction="like"
         >
 
             <span class="reaction-icon">👍</span>
@@ -1463,6 +1462,7 @@ footer p{
         <button
             class="reaction-btn"
             type="button"
+            data-reaction="love"
         >
 
             <span class="reaction-icon">❤️</span>
@@ -1475,6 +1475,7 @@ footer p{
         <button
             class="reaction-btn"
             type="button"
+            data-reaction="insightful"
         >
 
             <span class="reaction-icon">💡</span>
@@ -1487,6 +1488,7 @@ footer p{
         <button
             class="reaction-btn trash"
             type="button"
+            data-reaction="dislike"
         >
 
             <span class="reaction-icon">👎</span>
@@ -1544,7 +1546,6 @@ window.addEventListener("load", function(){
 
     const loader =
         document.getElementById("salimbayLoader");
-
 
     setTimeout(function(){
 
