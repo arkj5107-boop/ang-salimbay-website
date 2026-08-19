@@ -10,7 +10,6 @@ import {
     doc,
     getDoc,
     setDoc,
-    updateDoc,
     increment
 } from
     "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -47,7 +46,7 @@ const db = getFirestore(app);
 
 
 // =====================================================
-// ARTICLE
+// ARTICLE ID
 // =====================================================
 
 const articleId = "sisi";
@@ -66,7 +65,7 @@ const reactionTypes = [
 
 
 // =====================================================
-// REACTION DOCUMENT
+// FIRESTORE DOCUMENT
 // =====================================================
 
 const reactionRef = doc(
@@ -111,15 +110,15 @@ async function loadReactions(){
         }
 
 
-        const data = snapshot.data();
-
-        updateReactionDisplay(data);
+        updateReactionDisplay(
+            snapshot.data()
+        );
 
 
     }catch(error){
 
         console.error(
-            "ERROR LOADING REACTIONS:",
+            "FIREBASE LOAD ERROR:",
             error
         );
 
@@ -129,7 +128,7 @@ async function loadReactions(){
 
 
 // =====================================================
-// UPDATE NUMBERS IN HTML
+// DISPLAY COUNTS
 // =====================================================
 
 function updateReactionDisplay(data){
@@ -174,22 +173,31 @@ async function addReaction(
     button
 ){
 
+    if(!reactionTypes.includes(type)){
+        return;
+    }
+
+
     try{
 
         console.log(
-            "Reaction clicked:",
+            "REACTION:",
             type
         );
 
 
         await setDoc(
+
             reactionRef,
+
             {
                 [type]: increment(1)
             },
+
             {
-                merge: true
+                merge:true
             }
+
         );
 
 
@@ -204,12 +212,12 @@ async function addReaction(
     }catch(error){
 
         console.error(
-            "ERROR ADDING REACTION:",
+            "FIREBASE REACTION ERROR:",
             error
         );
 
         alert(
-            "Hindi maidagdag ang reaction. Pakicheck ang Firebase configuration at Firestore Rules."
+            "Hindi ma-save ang reaction. Pakicheck ang Firebase configuration at Firestore Rules."
         );
 
     }
@@ -230,13 +238,13 @@ function setupReactionButtons(){
 
 
     console.log(
-        "Reaction buttons found:",
+        "REACTION BUTTONS:",
         buttons.length
     );
 
 
     buttons.forEach(
-        (button, index) => {
+        (button,index) => {
 
             const type =
                 reactionTypes[index];
@@ -249,7 +257,7 @@ function setupReactionButtons(){
 
             button.addEventListener(
                 "click",
-                function(){
+                () => {
 
                     addReaction(
                         type,
@@ -271,7 +279,7 @@ function setupReactionButtons(){
 
 document.addEventListener(
     "DOMContentLoaded",
-    function(){
+    () => {
 
         setupReactionButtons();
 
