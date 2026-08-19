@@ -8,9 +8,8 @@ import { initializeApp } from
 import {
     getFirestore,
     doc,
-    getDoc,
+    onSnapshot,
     setDoc,
-    updateDoc,
     increment
 } from
     "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -18,7 +17,7 @@ import {
 
 // =====================================================
 // FIREBASE CONFIG
-// PALITAN ITO NG CONFIG MULA SA FIREBASE CONSOLE
+// PALITAN ANG VALUES SA IBABA NG ACTUAL FIREBASE CONFIG MO
 // =====================================================
 
 const firebaseConfig = {
@@ -67,60 +66,84 @@ const reactionTypes = [
 
 
 // =====================================================
-// GET REACTION COUNTS
+// FIRESTORE DOCUMENT
 // =====================================================
 
-async function loadReactions(){
-
-    try{
-
-        const reactionRef =
-            doc(db, "reactions", articleId);
-
-        const reactionSnap =
-            await getDoc(reactionRef);
+const reactionRef =
+    doc(
+        db,
+        "reactions",
+        articleId
+    );
 
 
-        if(!reactionSnap.exists()){
+// =====================================================
+// LOAD REACTIONS — REAL TIME
+// =====================================================
 
-            await setDoc(reactionRef, {
+function loadReactions(){
 
-                like: 0,
-                love: 0,
-                insightful: 0,
-                dislike: 0
+    onSnapshot(
+        reactionRef,
+        async (snapshot) => {
 
-            });
+            try{
 
-            updateReactionDisplay({
-                like: 0,
-                love: 0,
-                insightful: 0,
-                dislike: 0
-            });
+                // Kung wala pang document,
+                // gagawa tayo ng initial values.
 
-            return;
+                if(!snapshot.exists()){
+
+                    await setDoc(
+                        reactionRef,
+                        {
+                            like: 0,
+                            love: 0,
+                            insightful: 0,
+                            dislike: 0
+                        }
+                    );
+
+                    return;
+
+                }
+
+
+                const data =
+                    snapshot.data();
+
+
+                updateReactionDisplay(
+                    data
+                );
+
+
+            }catch(error){
+
+                console.error(
+                    "Firebase reaction listener error:",
+                    error
+                );
+
+            }
+
+        },
+
+        (error) => {
+
+            console.error(
+                "Firebase connection error:",
+                error
+            );
+
         }
-
-
-        updateReactionDisplay(
-            reactionSnap.data()
-        );
-
-    }catch(error){
-
-        console.error(
-            "Firebase error:",
-            error
-        );
-
-    }
+    );
 
 }
 
 
 // =====================================================
-// DISPLAY COUNTS
+// DISPLAY REACTION COUNTS
 // =====================================================
 
 function updateReactionDisplay(data){
@@ -131,25 +154,28 @@ function updateReactionDisplay(data){
         );
 
 
-    buttons.forEach((button, index) => {
+    buttons.forEach(
+        (button, index) => {
 
-        const type =
-            reactionTypes[index];
-
-        const count =
-            button.querySelector(
-                ".reaction-count"
-            );
+            const type =
+                reactionTypes[index];
 
 
-        if(count){
+            const countElement =
+                button.querySelector(
+                    ".reaction-count"
+                );
 
-            count.textContent =
-                data[type] || 0;
+
+            if(countElement){
+
+                countElement.textContent =
+                    data[type] || 0;
+
+            }
 
         }
-
-    });
+    );
 
 }
 
@@ -158,18 +184,23 @@ function updateReactionDisplay(data){
 // ADD REACTION
 // =====================================================
 
-async function addReaction(type, button){
+async function addReaction(
+    type,
+    button
+){
 
-    if(!reactionTypes.includes(type)){
+    if(
+        !reactionTypes.includes(type)
+    ){
+
         return;
+
     }
 
 
     try{
 
-        const reactionRef =
-            doc(db, "reactions", articleId);
-
+        // Dagdag ng +1 sa tamang reaction
 
         await setDoc(
 
@@ -180,16 +211,29 @@ async function addReaction(type, button){
             },
 
             {
-                merge:true
+                merge: true
             }
 
         );
 
 
-        button.classList.add("active");
+        // Visual feedback
+
+        button.classList.add(
+            "active"
+        );
 
 
-        await loadReactions();
+        setTimeout(
+            () => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            },
+            350
+        );
 
 
     }catch(error){
@@ -216,25 +260,27 @@ function setupReactionButtons(){
         );
 
 
-    buttons.forEach((button, index) => {
+    buttons.forEach(
+        (button, index) => {
 
-        const type =
-            reactionTypes[index];
+            const type =
+                reactionTypes[index];
 
 
-        button.addEventListener(
-            "click",
-            () => {
+            button.addEventListener(
+                "click",
+                () => {
 
-                addReaction(
-                    type,
-                    button
-                );
+                    addReaction(
+                        type,
+                        button
+                    );
 
-            }
-        );
+                }
+            );
 
-    });
+        }
+    );
 
 }
 
