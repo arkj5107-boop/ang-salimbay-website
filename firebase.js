@@ -8,8 +8,9 @@ import { initializeApp } from
 import {
     getFirestore,
     doc,
-    onSnapshot,
+    getDoc,
     setDoc,
+    updateDoc,
     increment
 } from
     "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -17,7 +18,6 @@ import {
 
 // =====================================================
 // FIREBASE CONFIG
-// PALITAN ANG VALUES SA IBABA NG ACTUAL FIREBASE CONFIG MO
 // =====================================================
 
 const firebaseConfig = {
@@ -47,7 +47,7 @@ const db = getFirestore(app);
 
 
 // =====================================================
-// ARTICLE ID
+// ARTICLE
 // =====================================================
 
 const articleId = "sisi";
@@ -66,84 +66,70 @@ const reactionTypes = [
 
 
 // =====================================================
-// FIRESTORE DOCUMENT
+// REACTION DOCUMENT
 // =====================================================
 
-const reactionRef =
-    doc(
-        db,
-        "reactions",
-        articleId
-    );
+const reactionRef = doc(
+    db,
+    "reactions",
+    articleId
+);
 
 
 // =====================================================
-// LOAD REACTIONS — REAL TIME
+// LOAD REACTIONS
 // =====================================================
 
-function loadReactions(){
+async function loadReactions(){
 
-    onSnapshot(
-        reactionRef,
-        async (snapshot) => {
+    try{
 
-            try{
+        const snapshot =
+            await getDoc(reactionRef);
 
-                // Kung wala pang document,
-                // gagawa tayo ng initial values.
 
-                if(!snapshot.exists()){
+        if(!snapshot.exists()){
 
-                    await setDoc(
-                        reactionRef,
-                        {
-                            like: 0,
-                            love: 0,
-                            insightful: 0,
-                            dislike: 0
-                        }
-                    );
-
-                    return;
-
+            await setDoc(
+                reactionRef,
+                {
+                    like: 0,
+                    love: 0,
+                    insightful: 0,
+                    dislike: 0
                 }
-
-
-                const data =
-                    snapshot.data();
-
-
-                updateReactionDisplay(
-                    data
-                );
-
-
-            }catch(error){
-
-                console.error(
-                    "Firebase reaction listener error:",
-                    error
-                );
-
-            }
-
-        },
-
-        (error) => {
-
-            console.error(
-                "Firebase connection error:",
-                error
             );
 
+            updateReactionDisplay({
+                like: 0,
+                love: 0,
+                insightful: 0,
+                dislike: 0
+            });
+
+            return;
         }
-    );
+
+
+        const data = snapshot.data();
+
+        updateReactionDisplay(data);
+
+
+    }catch(error){
+
+        console.error(
+            "ERROR LOADING REACTIONS:",
+            error
+        );
+
+    }
 
 }
 
 
 // =====================================================
-// DISPLAY REACTION COUNTS
+// UPDATE NUMBERS IN HTML
 // =====================================================
 
 function updateReactionDisplay(data){
@@ -160,17 +146,16 @@ function updateReactionDisplay(data){
             const type =
                 reactionTypes[index];
 
-
-            const countElement =
+            const counter =
                 button.querySelector(
                     ".reaction-count"
                 );
 
 
-            if(countElement){
+            if(counter){
 
-                countElement.textContent =
-                    data[type] || 0;
+                counter.textContent =
+                    data[type] ?? 0;
 
             }
 
@@ -189,58 +174,42 @@ async function addReaction(
     button
 ){
 
-    if(
-        !reactionTypes.includes(type)
-    ){
-
-        return;
-
-    }
-
-
     try{
 
-        // Dagdag ng +1 sa tamang reaction
-
-        await setDoc(
-
-            reactionRef,
-
-            {
-                [type]: increment(1)
-            },
-
-            {
-                merge: true
-            }
-
+        console.log(
+            "Reaction clicked:",
+            type
         );
 
 
-        // Visual feedback
+        await setDoc(
+            reactionRef,
+            {
+                [type]: increment(1)
+            },
+            {
+                merge: true
+            }
+        );
+
 
         button.classList.add(
             "active"
         );
 
 
-        setTimeout(
-            () => {
-
-                button.classList.remove(
-                    "active"
-                );
-
-            },
-            350
-        );
+        await loadReactions();
 
 
     }catch(error){
 
         console.error(
-            "Failed to add reaction:",
+            "ERROR ADDING REACTION:",
             error
+        );
+
+        alert(
+            "Hindi maidagdag ang reaction. Pakicheck ang Firebase configuration at Firestore Rules."
         );
 
     }
@@ -249,7 +218,7 @@ async function addReaction(
 
 
 // =====================================================
-// BUTTON EVENTS
+// SETUP BUTTONS
 // =====================================================
 
 function setupReactionButtons(){
@@ -260,6 +229,12 @@ function setupReactionButtons(){
         );
 
 
+    console.log(
+        "Reaction buttons found:",
+        buttons.length
+    );
+
+
     buttons.forEach(
         (button, index) => {
 
@@ -267,9 +242,14 @@ function setupReactionButtons(){
                 reactionTypes[index];
 
 
+            if(!type){
+                return;
+            }
+
+
             button.addEventListener(
                 "click",
-                () => {
+                function(){
 
                     addReaction(
                         type,
@@ -291,7 +271,7 @@ function setupReactionButtons(){
 
 document.addEventListener(
     "DOMContentLoaded",
-    () => {
+    function(){
 
         setupReactionButtons();
 
