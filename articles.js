@@ -6,7 +6,7 @@ const articles = [
 
 {
     title:
-    "Sisi o Katotohanan?",
+    "Pananagutan, Hindi Pagbubuntunan",
 
     description:
     "Hindi maipagkakaila ang malaking papel ng mga guro sa paghubog ng asal, ugali, at pananaw ng mga kabataan. Ngunit sa oras ng trahedya, higit na mahalagang hanapin ang katotohanan batay sa ebidensiya kaysa agad maghanap ng masisisi.",
