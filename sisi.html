@@ -886,14 +886,13 @@ header{
     padding:35px 20px;
 }
 
-/*
-   TINANGGAL ANG HEADER H1
-   PARA ISANG "ANG SALIMBAY" LANG
-   ANG MAKIKITA SA LOADING SCREEN.
-*/
+header h1{
+    font-size:42px;
+    letter-spacing:3px;
+}
 
 header p{
-    margin-top:0;
+    margin-top:10px;
 }
 
 
@@ -1024,44 +1023,34 @@ nav a:hover{
 
 
 /* =====================================================
-   REACTIONS
+   ARTICLE REACTIONS
 ===================================================== */
 
 .article-reactions{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     margin-top:15px;
-
     padding-top:14px;
-
     border-top:1px solid #eee;
 }
 
 .reaction-btn{
     display:flex;
-
     align-items:center;
-
     gap:7px;
 
     border:1px solid #e3d6d9;
-
     background:#fffafa;
 
     color:#6B0015;
 
     padding:8px 13px;
-
     border-radius:20px;
 
     cursor:pointer;
 
     font-size:14px;
-
     font-weight:bold;
 
     transition:.2s;
@@ -1069,17 +1058,12 @@ nav a:hover{
 
 .reaction-btn:hover{
     transform:translateY(-2px);
-
-    box-shadow:
-        0 3px 8px
-        rgba(107,0,21,.12);
+    box-shadow:0 3px 8px rgba(107,0,21,.12);
 }
 
 .reaction-btn.active{
     background:#6B0015;
-
     color:white;
-
     border-color:#6B0015;
 }
 
@@ -1089,9 +1073,7 @@ nav a:hover{
 
 .reaction-btn.trash.active{
     background:#555;
-
     color:white;
-
     border-color:#555;
 }
 
@@ -1101,7 +1083,6 @@ nav a:hover{
 
 .reaction-count{
     min-width:14px;
-
     text-align:center;
 }
 
@@ -1154,8 +1135,8 @@ footer p{
 
 @media(max-width:600px){
 
-    header{
-        padding:20px;
+    header h1{
+        font-size:30px;
     }
 
     .article{
@@ -1178,19 +1159,6 @@ footer p{
 
     .image-box{
         height:280px;
-    }
-
-
-    /* REACTIONS MOBILE */
-
-    .article-reactions{
-        gap:7px;
-
-        flex-wrap:wrap;
-    }
-
-    .reaction-btn{
-        padding:8px 11px;
     }
 
 
@@ -1325,11 +1293,10 @@ footer p{
             <div class="salimbay-name">
                 ANG SALIMBAY
             </div>
-
             <div class="salimbay-subtitle">
                 Opisyal na Pahayagang Filipino
                 ng Sucat Senior High School
-                    </div>
+            </div>
 
             <div class="loading-dots">
 
@@ -1391,7 +1358,7 @@ footer p{
 <section class="article">
 
     <h1>
-        “Pananagutan, Hindi Pagbubuntunan”
+        “Pananagutan, Hindi Pagbubuntunant”
     </h1>
 
 
@@ -1406,7 +1373,7 @@ footer p{
 
         <img
             src="Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png"
-            alt="Pananagutan, Hindi Pagbubuntunan"
+            alt="Sisi o Katotohananan?"
         >
 
     </div>
@@ -1417,9 +1384,7 @@ footer p{
     </p>
 
 
-    <!-- =================================================
-         COLUMN
-    ================================================== -->
+    <!-- COLUMN -->
 
     <p class="lead">
 
@@ -1477,57 +1442,65 @@ footer p{
     </p>
 
 
-    <!-- =================================================
-         REACTIONS
-    ================================================== -->
+    <!-- =====================================================
+         ARTICLE REACTIONS
+    ===================================================== -->
 
     <div class="article-reactions">
 
         <button
-            type="button"
             class="reaction-btn"
-            data-reaction="like"
+            type="button"
         >
+
             <span class="reaction-icon">👍</span>
+
             <span class="reaction-count">0</span>
+
         </button>
 
 
         <button
-            type="button"
             class="reaction-btn"
-            data-reaction="love"
+            type="button"
         >
+
             <span class="reaction-icon">❤️</span>
+
             <span class="reaction-count">0</span>
+
         </button>
 
 
         <button
-            type="button"
             class="reaction-btn"
-            data-reaction="insightful"
+            type="button"
         >
+
             <span class="reaction-icon">💡</span>
+
             <span class="reaction-count">0</span>
+
         </button>
 
 
         <button
-            type="button"
             class="reaction-btn trash"
-            data-reaction="dislike"
+            type="button"
         >
+
             <span class="reaction-icon">👎</span>
+
             <span class="reaction-count">0</span>
+
         </button>
 
     </div>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          AUTHOR
-    ================================================== -->
+    ===================================================== -->
 
     <div class="author">
 
@@ -1592,256 +1565,11 @@ window.addEventListener("load", function(){
      FIREBASE REACTIONS
 ===================================================== -->
 
-<script type="module">
-
-import { initializeApp } from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
-import {
-    getFirestore,
-    doc,
-    getDoc,
-    setDoc,
-    increment
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-
-const firebaseConfig = {
-
-    apiKey: "ILAGAY_DITO",
-
-    authDomain: "ILAGAY_DITO",
-
-    projectId: "ILAGAY_DITO",
-
-    storageBucket: "ILAGAY_DITO",
-
-    messagingSenderId: "ILAGAY_DITO",
-
-    appId: "ILAGAY_DITO"
-
-};
-
-
-const app =
-    initializeApp(firebaseConfig);
-
-const db =
-    getFirestore(app);
-
-
-/* =====================================================
-   ARTICLE ID
-===================================================== */
-
-const articleId = "sisi";
-
-
-/* =====================================================
-   REACTION TYPES
-===================================================== */
-
-const reactionTypes = [
-    "like",
-    "love",
-    "insightful",
-    "dislike"
-];
-
-
-/* =====================================================
-   LOAD REACTIONS
-===================================================== */
-
-async function loadReactions(){
-
-    try{
-
-        const reactionRef =
-            doc(
-                db,
-                "reactions",
-                articleId
-            );
-
-
-        const snapshot =
-            await getDoc(reactionRef);
-
-
-        if(!snapshot.exists()){
-
-            await setDoc(
-                reactionRef,
-                {
-                    like: 0,
-                    love: 0,
-                    insightful: 0,
-                    dislike: 0
-                }
-            );
-
-
-            updateReactionDisplay({
-                like: 0,
-                love: 0,
-                insightful: 0,
-                dislike: 0
-            });
-
-            return;
-
-        }
-
-
-        updateReactionDisplay(
-            snapshot.data()
-        );
-
-    }
-
-    catch(error){
-
-        console.error(
-            "Firebase reactions error:",
-            error
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   DISPLAY COUNTS
-===================================================== */
-
-function updateReactionDisplay(data){
-
-    const buttons =
-        document.querySelectorAll(
-            ".reaction-btn"
-        );
-
-
-    buttons.forEach(button => {
-
-        const type =
-            button.dataset.reaction;
-
-
-        const count =
-            button.querySelector(
-                ".reaction-count"
-            );
-
-
-        if(count){
-
-            count.textContent =
-                data[type] || 0;
-
-        }
-
-    });
-
-}
-
-
-/* =====================================================
-   ADD REACTION
-===================================================== */
-
-async function addReaction(button){
-
-    const type =
-        button.dataset.reaction;
-
-
-    if(!reactionTypes.includes(type)){
-        return;
-    }
-
-
-    try{
-
-        const reactionRef =
-            doc(
-                db,
-                "reactions",
-                articleId
-            );
-
-
-        await setDoc(
-
-            reactionRef,
-
-            {
-                [type]: increment(1)
-            },
-
-            {
-                merge: true
-            }
-
-        );
-
-
-        button.classList.add("active");
-
-
-        await loadReactions();
-
-    }
-
-    catch(error){
-
-        console.error(
-            "Failed to add reaction:",
-            error
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   BUTTON EVENTS
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        const buttons =
-            document.querySelectorAll(
-                ".reaction-btn"
-            );
-
-
-        buttons.forEach(button => {
-
-            button.addEventListener(
-                "click",
-                function(){
-
-                    addReaction(button);
-
-                }
-            );
-
-        });
-
-
-        loadReactions();
-
-    }
-);
-
+<script
+    type="module"
+    src="../firebase.js">
 </script>
+
 
 </body>
 
