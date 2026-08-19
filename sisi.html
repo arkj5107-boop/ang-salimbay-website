@@ -6,9 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sisi o Katotohanan? | Ang Salimbay</title>
+<title>Pananagutan, Hindi Pagbubuntunan | Ang Salimbay</title>
 
 <style>
+
+/* =====================================================
+   BASIC
+===================================================== */
 
 *{
     margin:0;
@@ -1023,6 +1027,93 @@ nav a:hover{
 
 
 /* =====================================================
+   ARTICLE REACTIONS
+===================================================== */
+
+.article-reactions{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:15px;
+
+    padding-top:14px;
+
+    border-top:1px solid #eee;
+
+    flex-wrap:wrap;
+}
+
+.reaction-btn{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    border:1px solid #e3d6d9;
+
+    background:#fffafa;
+
+    color:#6B0015;
+
+    padding:8px 13px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.reaction-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 3px 8px
+        rgba(107,0,21,.12);
+}
+
+.reaction-btn.active{
+    background:#6B0015;
+
+    color:white;
+
+    border-color:#6B0015;
+}
+
+.reaction-btn.trash{
+    color:#666;
+}
+
+.reaction-btn.trash.active{
+    background:#555;
+
+    color:white;
+
+    border-color:#555;
+}
+
+.reaction-icon{
+    font-size:17px;
+}
+
+.reaction-count{
+    min-width:14px;
+
+    text-align:center;
+}
+
+
+/* =====================================================
    AUTHOR
 ===================================================== */
 
@@ -1097,6 +1188,19 @@ footer p{
     }
 
 
+    /* REACTIONS MOBILE */
+
+    .article-reactions{
+        gap:7px;
+    }
+
+    .reaction-btn{
+        padding:7px 11px;
+
+        font-size:13px;
+    }
+
+
     /* LOADING MOBILE */
 
     .loader-ring{
@@ -1160,7 +1264,6 @@ footer p{
 
 </head>
 
-
 <body>
 
 
@@ -1173,7 +1276,6 @@ footer p{
     <div class="loader-scene">
 
         <div class="loader-ring"></div>
-
 
         <div class="loader-rays">
 
@@ -1192,15 +1294,11 @@ footer p{
 
         </div>
 
-
         <div class="loader-sun"></div>
-
 
         <div class="loader-land"></div>
 
-
         <div class="loader-water"></div>
-
 
         <div class="loader-colors">
 
@@ -1210,7 +1308,6 @@ footer p{
 
         </div>
 
-
         <div class="loader-book">
 
             <div class="book-page left"></div>
@@ -1219,28 +1316,25 @@ footer p{
 
         </div>
 
-
         <div class="loader-torch"></div>
-
 
         <div class="salimbay-brand">
 
             <div class="salimbay-name">
                 ANG SALIMBAY
-            </div>
+            
+        </div>
 
-            <div class="salimbay-subtitle">
-                Opisyal na Pahayagang Filipino
-                ng Sucat Senior High School
-            </div>
+        <div class="salimbay-subtitle">
+            Opisyal na Pahayagang Filipino
+            ng Sucat Senior High School
+        </div>
 
-            <div class="loading-dots">
+        <div class="loading-dots">
 
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </div>
+            <span></span>
+            <span></span>
+            <span></span>
 
         </div>
 
@@ -1270,153 +1364,532 @@ footer p{
 
 <nav>
 
-    <a href="../index.html">Home</a>
+    <a href="../index.html">
+        Home
+    </a>
 
-    <a href="../balita.index.html">Balita</a>
+    <a href="../balita.index.html">
+        Balita
+    </a>
 
-    <a href="../editoryal.html">Editoryal at Kolum</a>
+    <a href="../editoryal.html">
+        Editoryal at Kolum
+    </a>
 
-    <a href="../lathalain.html">Lathalain</a>
+    <a href="../lathalain.html">
+        Lathalain
+    </a>
 
-    <a href="../isports.html">Isports</a>
+    <a href="../isports.html">
+        Isports
+    </a>
 
-    <a href="../Agham.html">Agham</a>
+    <a href="../Agham.html">
+        Agham
+    </a>
 
-    <a href="../About.html">Tungkol sa Amin</a>
+    <a href="../About.html">
+        Tungkol sa Amin
+    </a>
 
 </nav>
 
+
 <!-- =====================================================
      ARTICLE
-===================================================== --><section class="article"><h1>
-    “Pananagutan, Hindi Pagbubuntunant”
-</h1>
+===================================================== -->
+
+<section class="article">
+
+    <h1>
+        “Pananagutan, Hindi Pagbubuntunan”
+    </h1>
+
+    <p class="category">
+        KOLUM | Pananagutan, Hindi Pagbubuntunan
+    </p>
 
 
-<p class="category">
-    KOLUM | Pananagutan, Hindi Pagbubuntunan
-</p>
+    <!-- =================================================
+         MAIN IMAGE
+    ================================================== -->
+
+    <div class="image-box">
+
+        <img
+            src="Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png"
+            alt="Pananagutan, Hindi Pagbubuntunan"
+        >
+
+    </div>
 
 
-<!-- MAIN IMAGE -->
-
-<div class="image-box">
-
-    <img
-        src="Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png"
-        alt="Sisi o Katotohananan?"
-    >
-
-</div>
+    <p class="caption">
+        Kolum | Pananagutan, Hindi Pagbubuntunan
+    </p>
 
 
-<p class="caption">
-    Kolum | Pananagutan, Hindi Pagbubuntunan
-</p>
+    <!-- =================================================
+         COLUMN
+    ================================================== -->
+
+    <p class="lead">
+
+        Hindi maipagkakaila ang malaking papel ng mga guro sa paghubog ng asal,
+        ugali, at pananaw ng mga kabataan. Ngunit bago ituro ang daliri sa kahit
+        na sino man, dapat nating tandaan na ang unang paaralan ng isang bata ay
+        ang kaniyang tahanan, at ang unang mga gurong kaniyang nakikilala ay ang
+        kaniyang mga magulang o tagapag-alagang nakakasama sa isang tahanan.
+        Ang paghubog sa katauhan ng isang bata ay hindi responsibilidad ng iisang
+        sektor lamang—pinaghahatian ito ng pamilya, paaralan, komunidad, at
+        lipunang kaniyang ginagalawan.
+
+    </p>
 
 
-<!-- COLUMN -->
+    <p>
 
-<p class="lead">
+        Kaya hindi makatarungang iugnay agad sa mga guro ang karahasang
+        nagaganap sa paaralan, lalo na kung ito ay purong akusasyon lamang at
+        wala namang inilalatag na kahit anong malinaw na ebidensiya o batayang
+        nag-uugnay sa kanila sa ugat ng insidente.
 
-    Hindi maipagkakaila ang malaking papel ng mga guro sa paghubog ng asal,
-    ugali, at pananaw ng mga kabataan. Ngunit bago ituro ang daliri sa kahit
-    na sino man, dapat nating tandaan na ang unang paaralan ng isang bata ay
-    ang kaniyang tahanan, at ang unang mga gurong kaniyang nakikilala ay ang
-    kaniyang mga magulang o tagapag-alagang nakakasama sa isang tahanan.
-    Ang paghubog sa katauhan ng isang bata ay hindi responsibilidad ng iisang
-    sektor lamang—pinaghahatian ito ng pamilya, paaralan, komunidad, at
-    lipunang kaniyang ginagalawan.
-
-</p>
+    </p>
 
 
-<p>
+    <p>
 
-    Kaya hindi makatarungang iugnay agad sa mga guro ang karahasang
-    nagaganap sa paaralan, lalo na kung ito ay purong akusasyon lamang at
-    wala namang inilalatag na kahit anong malinaw na ebidensiya o batayang
-    nag-uugnay sa kanila sa ugat ng insidente.
+        May mga gurong maaaring magkamali, at nararapat silang managot kung
+        may tunay na nilabag. Ngunit ang pagkukulang ng iilan ay hindi lisensiya
+        upang pagdudahan o paratangan ang isang buong propesyong dugo’t pawis
+        ang iniaalay para mahubog ang mga nangangarap at maibigay sa kanila
+        ang isang magandang hinaharap.
 
-</p>
-
-
-<p>
-
-    May mga gurong maaaring magkamali, at nararapat silang managot kung
-    may tunay na nilabag. Ngunit ang pagkukulang ng iilan ay hindi lisensiya
-    upang pagdudahan o paratangan ang isang buong propesyong dugo’t pawis
-    ang iniaalay para mahubog ang mga nangangarap at maibigay sa kanila
-    ang isang magandang hinaharap.
-
-</p>
+    </p>
 
 
-<p>
+    <p>
 
-    Sa halip na gawing puntirya ng malawakang akusasyon ang mga gurong
-    nagsasakripisyo upang magturo, mas nararapat na siyasatin ang buong
-    kapaligirang humuhubog sa kabataan—mula sa tahanan hanggang paaralan—
-    lalong lalo na sa lipunang kinabibilangan.
+        Sa halip na gawing puntirya ng malawakang akusasyon ang mga gurong
+        nagsasakripisyo upang magturo, mas nararapat na siyasatin ang buong
+        kapaligirang humuhubog sa kabataan—mula sa tahanan hanggang paaralan—
+        lalong lalo na sa lipunang kinabibilangan.
 
-</p>
-
-
-<p>
-
-    Sapagkat sa oras ng trahedya, madaling humanap ng masisisi; ang mas
-    mahirap ay hanapin ang katotohanan. At kung ang mga nasa kapangyarihan
-    ay tunay na nagmamalasakit sa mga guro at mag-aaral, ang kanilang mga
-    salita ay dapat hindi nagbubunton ng sisi sa kahit sino man—kundi
-    naghahanap ng solusyon batay sa ebidensiya, pananagutan, at katotohanan.
-
-</p>
+    </p>
 
 
-<!-- AUTHOR -->
+    <p>
 
-<div class="author">
+        Sapagkat sa oras ng trahedya, madaling humanap ng masisisi; ang mas
+        mahirap ay hanapin ang katotohanan. At kung ang mga nasa kapangyarihan
+        ay tunay na nagmamalasakit sa mga guro at mag-aaral, ang kanilang mga
+        salita ay dapat hindi nagbubunton ng sisi sa kahit sino man—kundi
+        naghahanap ng solusyon batay sa ebidensiya, pananagutan, at katotohanan.
 
-    ✍️: 𝐒𝐞𝐚𝐧 𝐌𝐢𝐜𝐡𝐚𝐞𝐥 𝐁𝐚𝐧𝐝𝐢𝐥𝐥𝐚<br>
+    </p>
 
-    🖼️: 𝐑𝐚𝐦 𝐌𝐞𝐧𝐝𝐨𝐳𝐚
 
-</div>
+    <!-- =================================================
+         ARTICLE REACTIONS
+    ================================================== -->
 
-</section><!-- =====================================================
+    <div class="article-reactions">
+
+        <button
+            class="reaction-btn"
+            data-reaction="like"
+            type="button"
+        >
+
+            <span class="reaction-icon">
+                👍
+            </span>
+
+            <span class="reaction-count">
+                0
+            </span>
+
+        </button>
+
+
+        <button
+            class="reaction-btn"
+            data-reaction="love"
+            type="button"
+        >
+
+            <span class="reaction-icon">
+                ❤️
+            </span>
+
+            <span class="reaction-count">
+                0
+            </span>
+
+        </button>
+
+
+        <button
+            class="reaction-btn"
+            data-reaction="idea"
+            type="button"
+        >
+
+            <span class="reaction-icon">
+                💡
+            </span>
+
+            <span class="reaction-count">
+                0
+            </span>
+
+        </button>
+
+
+        <button
+            class="reaction-btn trash"
+            data-reaction="dislike"
+            type="button"
+        >
+
+            <span class="reaction-icon">
+                👎
+            </span>
+
+            <span class="reaction-count">
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         AUTHOR
+    ================================================== -->
+
+    <div class="author">
+
+        ✍️: 𝐒𝐞𝐚𝐧 𝐌𝐢𝐜𝐡𝐚𝐞𝐥 𝐁𝐚𝐧𝐝𝐢𝐥𝐥𝐚<br>
+
+        🖼️: 𝐑𝐚𝐦 𝐌𝐞𝐧𝐝𝐨𝐳𝐚
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      FOOTER
-===================================================== --><footer><p>
-    <b>ANG SALIMBAY</b>
-</p>
+===================================================== -->
 
-<p>
-    Opisyal na Publikasyon ng Sucat Senior High School
-</p>
+<footer>
 
-<p>
-    © 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
-</p>
+    <p>
+        <b>ANG SALIMBAY</b>
+    </p>
 
-</footer><!-- =====================================================
-     LOADING SCRIPT
-===================================================== --><script>
+    <p>
+        Opisyal na Publikasyon ng Sucat Senior High School
+    </p>
 
-window.addEventListener("load", function(){
+    <p>
+        © 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
+    </p>
 
-    const loader =
-        document.getElementById("salimbayLoader");
+</footer>
 
 
-    setTimeout(function(){
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
 
-        if(loader){
+<script type="module">
 
-            loader.classList.add("hide");
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    setDoc,
+    updateDoc,
+    increment
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* =====================================================
+   FIREBASE CONFIGURATION
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey: "ILAGAY_DITO_ANG_API_KEY",
+
+    authDomain:
+        "ILAGAY-DITO-ANG-PROJECT.firebaseapp.com",
+
+    projectId:
+        "ILAGAY-DITO-ANG-PROJECT-ID",
+
+    storageBucket:
+        "ILAGAY-DITO-ANG-STORAGE-BUCKET",
+
+    messagingSenderId:
+        "ILAGAY_DITO_ANG_SENDER_ID",
+
+    appId:
+        "ILAGAY_DITO_ANG_APP_ID"
+
+};
+
+
+/* =====================================================
+   INITIALIZE FIREBASE
+===================================================== */
+
+const app =
+    initializeApp(firebaseConfig);
+
+const db =
+    getFirestore(app);
+
+
+/* =====================================================
+   ARTICLE ID
+===================================================== */
+
+const articleId = "sisi";
+
+
+/* =====================================================
+   FIRESTORE DOCUMENT
+===================================================== */
+
+const articleRef = doc(
+    db,
+    "articleReactions",
+    articleId
+);
+
+
+/* =====================================================
+   REACTION BUTTONS
+===================================================== */
+
+const reactionButtons =
+    document.querySelectorAll(
+        ".reaction-btn"
+    );
+
+
+/* =====================================================
+   LOAD REACTION COUNTS
+===================================================== */
+
+async function loadReactions(){
+
+    try{
+
+        const snapshot =
+            await getDoc(articleRef);
+
+
+        if(!snapshot.exists()){
+
+            await setDoc(
+                articleRef,
+                {
+                    like: 0,
+                    love: 0,
+                    idea: 0,
+                    dislike: 0
+                }
+            );
+
+            return;
 
         }
 
-    }, 3500);
 
-});
+        const data =
+            snapshot.data();
 
-</script></body></html>
+
+        reactionButtons.forEach(
+            button => {
+
+                const type =
+                    button.dataset.reaction;
+
+                const count =
+                    button.querySelector(
+                        ".reaction-count"
+                    );
+
+
+                count.textContent =
+                    data[type] || 0;
+
+            }
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Firebase error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ADD REACTION
+===================================================== */
+
+async function addReaction(
+    type,
+    button
+){
+
+    try{
+
+        await updateDoc(
+            articleRef,
+            {
+                [type]:
+                    increment(1)
+            }
+        );
+
+
+        const count =
+            button.querySelector(
+                ".reaction-count"
+            );
+
+
+        count.textContent =
+            Number(
+                count.textContent
+            ) + 1;
+
+
+        button.classList.add(
+            "active"
+        );
+
+
+        button.disabled = true;
+
+
+        setTimeout(
+            () => {
+
+                button.disabled = false;
+
+            },
+            800
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Hindi ma-save ang reaction:",
+            error
+        );
+
+        alert(
+            "Hindi na-save ang reaction. Pakisubukang muli."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+reactionButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const type =
+                    button.dataset.reaction;
+
+                addReaction(
+                    type,
+                    button
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   LOAD DATA
+===================================================== */
+
+loadReactions();
+
+</script>
+
+
+<!-- =====================================================
+     LOADING SCRIPT
+===================================================== -->
+
+<script>
+
+window.addEventListener(
+    "load",
+    function(){
+
+        const loader =
+            document.getElementById(
+                "salimbayLoader"
+            );
+
+
+        setTimeout(
+            function(){
+
+                if(loader){
+
+                    loader.classList.add(
+                        "hide"
+                    );
+
+                }
+
+            },
+            3500
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
