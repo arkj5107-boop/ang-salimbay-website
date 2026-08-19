@@ -42,7 +42,7 @@ const articles = [
     "Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png",
 
     url:
-    "sisi-o-katotohanan.html"
+    "sisi.html"
 },
 
 
