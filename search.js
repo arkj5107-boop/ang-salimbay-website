@@ -1,57 +1,6 @@
 const articles = [
 
 
-/* =====================================================
-   1. EALA, TUMBOK ANG BAGONG RUROK
-===================================================== */
-
-{
-    title:
-    "Eala, Tumbok ang Bagong Rurok",
-
-    description:
-    "Muling gumawa ng kasaysayan si Alex Eala matapos umakyat sa No. 18 sa WTA rankings at magtala ng panibagong career-high bago ang kaniyang pagbabalik sa US Open.",
-
-    category:
-    "Isports",
-
-    date:
-    "Agosto 24, 2026",
-
-    sortDate:
-    "2026-08-24",
-
-    writer:
-    "Wilmar Gaspar",
-
-    photographer:
-    "",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    videographer:
-    "",
-
-    designer:
-    "Sean Michael Bandilla",
-
-    keywords:
-    "Alex Eala tennis WTA rankings US Open Washington Open Canadian Open Cincinnati Open Felix Auger-Aliassime Belinda Bencic Amanda Anisimova Philippine tennis",
-
-    content:
-    "Alex Eala bagong career-high No. 18 WTA rankings US Open tennis Washington Open Canadian Open Cincinnati Open",
-
-    image:
-    "Messenger_creation_BB727CB0-3070-45BF-8B4C-C43EDE480D96.png",
-
-    url:
-    "alex.html"
-},
-
 
 /* =====================================================
    1. BASANG KALSADA
@@ -521,6 +470,59 @@ const articles = [
 }
 
 ];
+
+/* =====================================================
+   10. EALA, TUMBOK ANG BAGONG RUROK
+===================================================== */
+
+{
+    title:
+    "Eala, Tumbok ang Bagong Rurok",
+
+    description:
+    "Muling gumawa ng kasaysayan si Alex Eala matapos umakyat sa No. 18 sa WTA rankings at magtala ng panibagong career-high bago ang kaniyang pagbabalik sa US Open.",
+
+    category:
+    "Isports",
+
+    date:
+    "Agosto 24, 2026",
+
+    sortDate:
+    "2026-08-24",
+
+    writer:
+    "Wilmar Gaspar",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "Sean Michael Bandilla",
+
+    keywords:
+    "Alex Eala tennis WTA rankings US Open Washington Open Canadian Open Cincinnati Open Felix Auger-Aliassime Belinda Bencic Amanda Anisimova Philippine tennis",
+
+    content:
+    "Alex Eala bagong career-high No. 18 WTA rankings US Open tennis Washington Open Canadian Open Cincinnati Open",
+
+    image:
+    "Messenger_creation_BB727CB0-3070-45BF-8B4C-C43EDE480D96.png",
+
+    url:
+    "alex.html"
+},
+
+
 
 
 /* =====================================================
