@@ -2,27 +2,27 @@ const articles = [
 
 
 /* =====================================================
-   1. SCIENCE ARTICLE
+   1. EALA, TUMBOK ANG BAGONG RUROK
 ===================================================== */
 
 {
     title:
-    "TITULO NG SCIENCE ARTICLE",
+    "Eala, Tumbok ang Bagong Rurok",
 
     description:
-    "Maikling paglalarawan tungkol sa pangunahing paksa, isyung pang-agham, pagtuklas, o impormasyong tinatalakay sa artikulo.",
+    "Muling gumawa ng kasaysayan si Alex Eala matapos umakyat sa No. 18 sa WTA rankings at magtala ng panibagong career-high bago ang kaniyang pagbabalik sa US Open.",
 
     category:
-    "Agham",
+    "Isports",
 
     date:
-    "Agosto XX, 2026",
+    "Agosto 24, 2026",
 
     sortDate:
-    "2026-08-XX",
+    "2026-08-24",
 
     writer:
-    "Pangalan ng Manunulat",
+    "Wilmar Gaspar",
 
     photographer:
     "",
@@ -37,19 +37,19 @@ const articles = [
     "",
 
     designer:
-    "",
+    "Sean Michael Bandilla",
 
     keywords:
-    "science agham siyensya pananaliksik teknolohiya kalikasan kapaligiran",
+    "Alex Eala tennis WTA rankings US Open Washington Open Canadian Open Cincinnati Open Felix Auger-Aliassime Belinda Bencic Amanda Anisimova Philippine tennis",
 
     content:
-    "Science Agham siyensya pananaliksik teknolohiya kalikasan kapaligiran",
+    "Alex Eala bagong career-high No. 18 WTA rankings US Open tennis Washington Open Canadian Open Cincinnati Open",
 
     image:
-    "IMAGE_FILENAME.png",
+    "Messenger_creation_BB727CB0-3070-45BF-8B4C-C43EDE480D96.png",
 
     url:
-    "science-article.html"
+    "alex.html"
 },
 
 
