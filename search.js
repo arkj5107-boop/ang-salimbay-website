@@ -1,5 +1,58 @@
 const articles = [
 
+
+/* =====================================================
+   1. SCIENCE ARTICLE
+===================================================== */
+
+{
+    title:
+    "TITULO NG SCIENCE ARTICLE",
+
+    description:
+    "Maikling paglalarawan tungkol sa pangunahing paksa, isyung pang-agham, pagtuklas, o impormasyong tinatalakay sa artikulo.",
+
+    category:
+    "Agham",
+
+    date:
+    "Agosto XX, 2026",
+
+    sortDate:
+    "2026-08-XX",
+
+    writer:
+    "Pangalan ng Manunulat",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "science agham siyensya pananaliksik teknolohiya kalikasan kapaligiran",
+
+    content:
+    "Science Agham siyensya pananaliksik teknolohiya kalikasan kapaligiran",
+
+    image:
+    "IMAGE_FILENAME.png",
+
+    url:
+    "science-article.html"
+},
+
+
 /* =====================================================
    1. BASANG KALSADA
 ===================================================== */
