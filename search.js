@@ -1,6 +1,57 @@
 const articles = [
 
 
+/* =====================================================
+   PAGLUSONG SA TUBIG
+===================================================== */
+
+{
+    title:
+    "Paglusong sa Tubig, Nakalalason Pala",
+
+    description:
+    "Hindi lamang simpleng tubig-ulan ang baha dahil maaari itong maglaman ng bacteria, dumi, kemikal, debris, at iba pang panganib na maaaring makapinsala sa kalusugan.",
+
+    category:
+    "Balitang Agham",
+
+    date:
+    "Agosto 27, 2026",
+
+    sortDate:
+    "2026-08-27",
+
+    writer:
+    "Bryan James Ebante",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Paglusong sa Tubig Nakalalason Pala baha floodwater leptospirosis bacteria Leptospira ulan kalusugan kontaminadong tubig panganib",
+
+    content:
+    "Paglusong sa Tubig Nakalalason Pala baha leptospirosis kontaminadong tubig bacteria kalusugan panganib",
+
+    image:
+    "Messenger_creation_865FFB73-7D88-46E9-AA78-DDB4F2AF3B4F.png",
+
+    url:
+    "paglusong.html"
+},
+
 
 /* =====================================================
    1. BASANG KALSADA
