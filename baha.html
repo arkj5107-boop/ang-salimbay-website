@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="tl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paglusong sa Tubig, Nakalalasong Pala | Ang Salimbay</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:white;
+    color:#222;
+}
+
+
+/* =====================================================
+   LOADING SCREEN
+===================================================== */
+
+#salimbayLoader{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            #921d38 0%,
+            #6b0015 42%,
+            #350009 100%
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    z-index:999999;
+    overflow:hidden;
+
+    opacity:1;
+    visibility:visible;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+#salimbayLoader.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   LOADING SCENE
+===================================================== */
+
+.loader-scene{
+    position:relative;
+
+    width:min(94vw,650px);
+    height:min(94vh,700px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   RING
+===================================================== */
+
+.loader-ring{
+    position:absolute;
+
+    top:28px;
+    left:50%;
+
+    width:min(92vw,610px);
+    height:min(92vw,610px);
+
+    transform:translateX(-50%);
+
+    border:4px solid rgba(255,255,255,.42);
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 0 12px rgba(255,255,255,.045),
+        0 0 45px rgba(255,255,255,.08);
+
+    animation:
+        ringAppear 1.8s ease forwards;
+}
+
+@keyframes ringAppear{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            scale(.72)
+            rotate(-15deg);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+/* =====================================================
+   SUN
+===================================================== */
+
+.loader-sun{
+    position:absolute;
+
+    top:72px;
+    left:50%;
+
+    width:min(34vw,220px);
+    height:min(34vw,220px);
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff16a 0%,
+            #ffd83d 35%,
+            #ffc21a 65%,
+            #f3a900 100%
+        );
+
+    box-shadow:
+        0 0 25px rgba(255,214,45,.65),
+        0 0 55px rgba(255,190,20,.35);
+
+    animation:
+        sunRise 1.8s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes sunRise{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            translateY(45px)
+            scale(.5);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   SUN RAYS
+===================================================== */
+
+.loader-rays{
+    position:absolute;
+
+    top:35px;
+    left:50%;
+
+    width:min(65vw,390px);
+    height:310px;
+
+    transform:translateX(-50%);
+
+    animation:
+        raysReveal 2s ease forwards;
+}
+
+.loader-rays span{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:13px;
+    height:120px;
+
+    margin-left:-6.5px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(255,211,45,.15),
+            #ffd12f
+        );
+
+    transform-origin:50% 100%;
+
+    box-shadow:
+        0 0 15px rgba(255,207,45,.4);
+}
+
+.loader-rays span:nth-child(1){
+    transform:translateY(-150px);
+}
+
+.loader-rays span:nth-child(2){
+    transform:rotate(30deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(3){
+    transform:rotate(60deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(4){
+    transform:rotate(90deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(5){
+    transform:rotate(120deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(6){
+    transform:rotate(150deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(7){
+    transform:rotate(180deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(8){
+    transform:rotate(210deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(9){
+    transform:rotate(240deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(10){
+    transform:rotate(270deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(11){
+    transform:rotate(300deg) translateY(-150px);
+}
+
+.loader-rays span:nth-child(12){
+    transform:rotate(330deg) translateY(-150px);
+}
+
+@keyframes raysReveal{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            scale(.55)
+            rotate(-20deg);
+    }
+
+    100%{
+        opacity:.9;
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+/* =====================================================
+   GREEN LAND / MOUNTAINS
+===================================================== */
+
+.loader-land{
+    position:absolute;
+
+    top:235px;
+    left:50%;
+
+    width:min(86vw,560px);
+    height:145px;
+
+    transform:translateX(-50%);
+
+    background:
+        linear-gradient(
+            145deg,
+            #2fae27,
+            #55d536 48%,
+            #229c22
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            10% 72%,
+            23% 48%,
+            37% 68%,
+            52% 25%,
+            67% 60%,
+            79% 38%,
+            100% 72%,
+            100% 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 5px 8px rgba(0,0,0,.16)
+        );
+
+    animation:
+        landReveal 1.8s ease forwards;
+}
+
+@keyframes landReveal{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            translateY(35px)
+            scaleX(.75);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scaleX(1);
+    }
+}
+
+
+/* =====================================================
+   WATER
+===================================================== */
+
+.loader-water{
+    position:absolute;
+
+    top:330px;
+    left:50%;
+
+    width:min(92vw,620px);
+    height:125px;
+
+    transform:translateX(-50%);
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #27d2ee,
+            #079bd4 52%,
+            #0067b7
+        );
+
+    clip-path:
+        polygon(
+            0 18%,
+            12% 8%,
+            25% 18%,
+            38% 7%,
+            51% 18%,
+            64% 8%,
+            77% 19%,
+            89% 9%,
+            100% 18%,
+            100% 100%,
+            0 100%
+        );
+
+    animation:
+        waterReveal 2s ease forwards;
+}
+
+.loader-water::before,
+.loader-water::after{
+    content:"";
+
+    position:absolute;
+
+    left:-10%;
+
+    width:120%;
+    height:35px;
+
+    border-top:
+        6px solid
+        rgba(190,248,255,.68);
+
+    border-radius:50%;
+
+    animation:
+        waterMove 2.8s ease-in-out infinite;
+}
+
+.loader-water::before{
+    top:28px;
+}
+
+.loader-water::after{
+    top:72px;
+    opacity:.45;
+    animation-delay:-1.2s;
+}
+
+@keyframes waterMove{
+
+    0%,100%{
+        transform:
+            translateX(-35px)
+            scaleX(.96);
+    }
+
+    50%{
+        transform:
+            translateX(35px)
+            scaleX(1.03);
+    }
+}
+
+@keyframes waterReveal{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            translateY(45px);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   BLUE + RED LOWER AREA
+===================================================== */
+
+.loader-colors{
+    position:absolute;
+
+    top:410px;
+    left:50%;
+
+    width:min(86vw,570px);
+    height:145px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:
+        0 0 280px 280px;
+
+    box-shadow:
+        inset 0 8px 20px rgba(0,0,0,.12);
+}
+
+.loader-blue{
+    width:50%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0756b9,
+            #006ccf,
+            #003e94
+        );
+
+    animation:
+        colorReveal 1.6s ease forwards;
+}
+
+.loader-red{
+    width:50%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c90029,
+            #e40035,
+            #a90021
+        );
+
+    animation:
+        colorReveal 1.6s ease .15s forwards;
+}
+
+@keyframes colorReveal{
+
+    0%{
+        transform:scaleY(0);
+        transform-origin:top;
+    }
+
+    100%{
+        transform:scaleY(1);
+        transform-origin:top;
+    }
+}
+
+
+/* =====================================================
+   OPEN BOOK
+===================================================== */
+
+.loader-book{
+    position:absolute;
+
+    top:375px;
+    left:50%;
+
+    width:min(48vw,270px);
+    height:115px;
+
+    transform:translateX(-50%);
+
+    z-index:30;
+
+    display:flex;
+
+    animation:
+        bookAppear 1.4s ease .7s both;
+}
+
+.book-page{
+    position:relative;
+
+    width:50%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            160deg,
+            #fff,
+            #f4f0e7 70%,
+            #d9d0c2
+        );
+
+    box-shadow:
+        0 12px 18px rgba(0,0,0,.25);
+}
+
+.book-page.left{
+    border-radius:
+        85% 12% 8% 35%;
+
+    transform:skewY(8deg);
+
+    border-right:
+        2px solid #c9bfae;
+}
+
+.book-page.right{
+    border-radius:
+        12% 85% 35% 8%;
+
+    transform:skewY(-8deg);
+
+    border-left:
+        2px solid #c9bfae;
+}
+
+.loader-book::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:8px;
+
+    width:5px;
+    height:95px;
+
+    transform:translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #b9aa94,
+            #806e58
+        );
+
+    border-radius:50%;
+}
+
+@keyframes bookAppear{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            translateY(30px)
+            scale(.75);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   TORCH
+===================================================== */
+
+.loader-torch{
+    position:absolute;
+
+    top:390px;
+    left:50%;
+
+    width:30px;
+    height:170px;
+
+    transform:translateX(-50%);
+
+    z-index:40;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111,
+            #333,
+            #050505
+        );
+
+    border-radius:
+        5px 5px 12px 12px;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.35);
+
+    animation:
+        torchAppear 1.5s ease .9s both;
+}
+
+.loader-torch::before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-48px;
+
+    width:48px;
+    height:65px;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at bottom,
+            #ff3b20 0%,
+            #ff8a00 45%,
+            #ffd52a 65%,
+            transparent 68%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(255,150,20,.7)
+        );
+
+    animation:
+        flame 1s ease-in-out infinite;
+}
+
+@keyframes flame{
+
+    0%,100%{
+        transform:
+            translateX(-50%)
+            scaleY(.9)
+            rotate(-2deg);
+    }
+
+    50%{
+        transform:
+            translateX(-50%)
+            scaleY(1.1)
+            rotate(3deg);
+    }
+}
+
+@keyframes torchAppear{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            translateY(30px)
+            scale(.8);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   LOADING BRAND
+===================================================== */
+
+.salimbay-brand{
+    position:absolute;
+
+    bottom:18px;
+
+    z-index:50;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:8px;
+
+    animation:
+        brandReveal 1.2s ease 1.5s both;
+}
+
+.salimbay-name{
+    color:white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(32px,8vw,58px);
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.4);
+}
+
+.salimbay-subtitle{
+    color:white;
+
+    font-size:
+        clamp(9px,2.5vw,12px);
+
+    letter-spacing:2px;
+
+    text-align:center;
+
+    text-transform:uppercase;
+
+    opacity:.92;
+}
+
+.loading-dots{
+    display:flex;
+    gap:6px;
+    margin-top:2px;
+}
+
+.loading-dots span{
+    width:6px;
+    height:6px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:
+        loadingDot 1.2s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2){
+    animation-delay:.15s;
+}
+
+.loading-dots span:nth-child(3){
+    animation-delay:.3s;
+}
+
+@keyframes loadingDot{
+
+    0%,80%,100%{
+        opacity:.3;
+        transform:scale(.7);
+    }
+
+    40%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes brandReveal{
+
+    0%{
+        opacity:0;
+        transform:
+            translateY(20px)
+            scale(.92);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    background:#800000;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+header h1{
+    font-size:42px;
+    letter-spacing:3px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+    background:#5a0000;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:#a00000;
+}
+
+
+/* =====================================================
+   ARTICLE
+===================================================== */
+
+.article{
+    max-width:900px;
+    margin:50px auto;
+    padding:0 25px;
+}
+
+.article h1{
+    color:#800000;
+    font-size:42px;
+    line-height:1.2;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.article .category{
+    text-align:center;
+    color:#777;
+    font-size:15px;
+    margin-bottom:35px;
+}
+
+
+/* =====================================================
+   MAIN IMAGE
+===================================================== */
+
+.image-box{
+    width:100%;
+    height:420px;
+    background:#fff5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:35px;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+
+/* =====================================================
+   CAPTION
+===================================================== */
+
+.caption{
+    text-align:center;
+    color:#777;
+    font-size:13px;
+    margin-top:-25px;
+    margin-bottom:30px;
+}
+
+
+/* =====================================================
+   ARTICLE TEXT
+===================================================== */
+
+.article p{
+    font-size:18px;
+    line-height:1.8;
+    text-align:justify;
+    margin-bottom:22px;
+}
+
+.article .lead{
+    font-size:20px;
+    font-weight:500;
+}
+
+
+/* =====================================================
+   AUTHOR
+===================================================== */
+
+.author{
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid #ddd;
+    color:#666;
+    font-size:14px;
+    text-align:right;
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#5a0000;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+footer p{
+    margin:5px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    .article{
+        margin:30px auto;
+        padding:0 18px;
+    }
+
+    .article h1{
+        font-size:31px;
+    }
+
+    .article p{
+        font-size:17px;
+    }
+
+    .article .lead{
+        font-size:18px;
+    }
+
+    .image-box{
+        height:280px;
+    }
+
+    .loader-ring{
+        width:92vw;
+        height:92vw;
+        top:35px;
+    }
+
+    .loader-sun{
+        top:90px;
+        width:31vw;
+        height:31vw;
+    }
+
+    .loader-rays{
+        top:45px;
+    }
+
+    .loader-rays span{
+        width:9px;
+        height:90px;
+        margin-left:-4.5px;
+    }
+
+    .loader-land{
+        top:250px;
+        width:90vw;
+    }
+
+    .loader-water{
+        top:335px;
+        width:95vw;
+    }
+
+    .loader-colors{
+        top:405px;
+        width:88vw;
+    }
+
+    .loader-book{
+        top:370px;
+        width:55vw;
+        height:100px;
+    }
+
+    .loader-torch{
+        top:385px;
+        height:145px;
+    }
+
+    .salimbay-brand{
+        bottom:20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOADING SCREEN
+===================================================== -->
+
+<div id="salimbayLoader">
+
+    <div class="loader-scene">
+
+        <div class="loader-ring"></div>
+
+        <div class="loader-rays">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="loader-sun"></div>
+
+        <div class="loader-land"></div>
+
+        <div class="loader-water"></div>
+
+        <div class="loader-colors">
+
+            <div class="loader-blue"></div>
+            <div class="loader-red"></div>
+
+        </div>
+
+        <div class="loader-book">
+
+            <div class="book-page left"></div>
+            <div class="book-page right"></div>
+
+        </div>
+
+        <div class="loader-torch"></div>
+
+        <div class="salimbay-brand">
+
+            <div class="salimbay-name">
+                ANG SALIMBAY
+            </div>
+
+            <div class="salimbay-subtitle">
+                Opisyal na Pahayagang Filipino
+                ng Sucat Senior High School
+            </div>
+
+            <div class="loading-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<h1>ANG SALIMBAY</h1>
+
+<p>
+Opisyal na Publikasyon ng Sucat Senior High School
+</p>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="../balita.index.html">Balita</a>
+
+<a href="../editoryal.html">Editoryal at Kolum</a>
+
+<a href="../lathalain.html">Lathalain</a>
+
+<a href="../isports.html">Isports</a>
+
+<a href="../Agham.html">Agham</a>
+
+<a href="../About.html">Tungkol sa Amin</a>
+
+</nav>
+
+
+<!-- =====================================================
+     ARTICLE
+===================================================== -->
+<section class="article">
+
+<h1>
+PAGLUSONG SA TUBIG, NAKALALASON PALA
+</h1>
+
+<p class="category">
+BALITANG AGHAM | Paglusong sa Tubig, Nakalalason Pala
+</p>
+
+
+<!-- MAIN IMAGE -->
+
+<div class="image-box">
+
+<img
+src="Messenger_creation_865FFB73-7D88-46E9-AA78-DDB4F2AF3B4F.png"
+alt="Paglusong sa baha"
+>
+
+</div>
+
+
+<p class="lead">
+
+Sa tuwing bumabaha, karaniwang tubig lamang ang nakikita ng ating mga mata. Para sa iba, isa lamang itong abala na kailangang tawirin upang makauwi, makapasok sa paaralan, o makapunta sa ibang lugar. Ngunit sa likod ng maputik at maruming tubig na iyon ay maaaring may mga bagay na hindi agad napapansin. Maaaring may bacteria, dumi, kemikal, matutulis na debris, at maging mga panganib na nakatago sa ilalim ng tubig.
+
+</p>
+
+
+<p>
+
+Hindi basta tubig-ulan ang baha. Habang dumadaloy ito sa mga kalsada, kanal, estero at kabahayan, maaari nitong makuha ang dumi ng tao at hayop, basura, langis, kemikal at iba pang contaminants. Ayon sa Centers for Disease Control and Prevention (CDC), maaaring maglaman ang floodwater ng sewage, bacteria, chemicals at debris na maaaring makapinsala sa kalusugan. Maaari rin itong magdulot ng impeksiyon, lalo na kapag ang balat ay may sugat o hiwa.
+
+</p>
+
+
+<p>
+
+Dito nagiging mas mapanganib ang simpleng paglusong sa baha. Kapag may maliit na sugat sa paa o binti at ito ay direktang nadikit sa kontaminadong tubig, maaaring magkaroon ng pagkakataong makapasok ang mga mikrobyo. Hindi rin kailangang malalim ang sugat para magkaroon ng panganib. Minsan, sapat na ang isang maliit na gasgas na hindi napansin.
+
+</p>
+
+
+<p>
+
+Isa sa mga sakit na madalas iniuugnay sa pagbaha ay leptospirosis. Dulot ito ng bacteria na Leptospira, na maaaring matagpuan sa tubig o lupang kontaminado ng ihi ng infected na hayop, partikular ng daga. Kapag ang kontaminadong tubig ay nakapasok sa katawan sa pamamagitan ng sugat o mucous membranes, maaaring magkaroon ng impeksiyon.
+
+</p>
+
+
+<p>
+
+Hindi maliit na problema ang leptospirosis sa Pilipinas. Ayon sa isang ulat ng CDC's Emerging Infectious Diseases, nakapagtala ang Department of Health ng 3,037 kaso ng leptospirosis mula Enero hanggang Hulyo 2025. Sa bilang na ito, 1,114 kaso ang naitala isang linggo matapos magsimula ang rainy season noong Hunyo 2. Ipinapakita ng mga bilang na ito na ang sakit ay hindi lamang isang posibilidad na naririnig tuwing tag-ulan. Isa itong tunay na panganib na dapat paghandaan.
+
+</p>
+
+
+<p>
+
+Mayroon ding kasaysayan ang bansa ng mga leptospirosis outbreak na nauugnay sa pagbaha. Matapos ang Bagyong Ondoy noong 2009, iniulat ang 2,089 kaso at 162 pagkamatay na may kaugnayan sa leptospirosis sa Metro Manila. Ang ganitong mga pangyayari ay nagpapakita kung gaano kalaki ang maaaring maging epekto ng baha kapag sinabayan ng exposure sa kontaminadong tubig.
+
+</p>
+
+
+<p>
+
+Ngunit hindi lamang bacteria ang dapat katakutan. Sa ilalim ng maputik na tubig ay maaaring nakatago ang basag na salamin, pako, bakal, kahoy at iba pang debris. Maaari ring hindi makita ang mga bukas na manhole o malalim na bahagi ng kalsada. Sa isang simpleng hakbang, maaaring hindi lamang sakit ang maging kapalit kundi pati isang aksidenteng maaaring magdulot ng seryosong pinsala.
+
+</p>
+
+
+<p>
+
+Kaya kung hindi maiiwasan ang contact sa baha, hindi dapat matapos sa pag-uwi ang pag-iingat. Inirerekomenda ng CDC na hugasan agad ang balat gamit ang malinis na tubig at sabon. Ang mga sugat ay dapat linisin at panatilihing natatakpan. Mahalaga ring bantayan ang anumang sintomas ng impeksiyon at magpakonsulta sa health professional kung kinakailangan.
+
+</p>
+
+
+<p>
+
+Sa huli, hindi dapat husgahan ang baha batay lamang sa itsura nito. Maaaring mababaw ito, maaaring tila malinis, at maaaring parang tubig-ulan lamang. Ngunit hindi nakikita ng mata ang lahat ng maaaring dala nito. Sa bawat pag-apak sa baha, may mga panganib na hindi natin kayang makita. Kaya ang pag-iwas sa baha at ang tamang paglilinis matapos ang exposure ay simpleng hakbang na maaaring makatulong upang maprotektahan ang kalusugan.
+
+</p>
+
+
+<!-- =====================================================
+     AUTHOR
+===================================================== -->
+
+<div class="author">
+
+✍🏼: 𝐁𝐫𝐲𝐚𝐧 𝐉𝐚𝐦𝐞𝐬 𝐄𝐛𝐚𝐧𝐭𝐞<br>
+🖼️: 𝐑𝐚𝐦 𝐌𝐞𝐧𝐝𝐨𝐳𝐚
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<p><b>ANG SALIMBAY</b></p>
+
+<p>
+Opisyal na Publikasyon ng Sucat Senior High School
+</p>
+
+<p>
+© 2026 Ang Salimbay. Lahat ng Karapatan ay Nakalaan.
+</p>
+
+</footer>
+
+
+<!-- =====================================================
+     LOADING SCRIPT
+===================================================== -->
+
+<script>
+
+window.addEventListener("load", function(){
+
+    const loader =
+        document.getElementById("salimbayLoader");
+
+    setTimeout(function(){
+
+        if(loader){
+
+            loader.classList.add("hide");
+
+        }
+
+    }, 3500);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
