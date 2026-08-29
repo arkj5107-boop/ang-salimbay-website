@@ -1,355 +1,187 @@
 const articles = [
 
+
 /* =====================================================
-   2. SISI O KATOTOHANAN?
+   1. HANGGANG KAILAN TAYO MAGBUBULAG-BULAGAN?
 ===================================================== */
 
 {
     title:
-    "Pananagutan, Hindi Pagbubuntunan",
+    "Hanggang Kailan Tayo Magbubulag-bulagan?",
 
     description:
-    "Hindi maipagkakaila ang malaking papel ng mga guro sa paghubog ng asal, ugali, at pananaw ng mga kabataan. Ngunit sa oras ng trahedya, higit na mahalagang hanapin ang katotohanan batay sa ebidensiya kaysa agad maghanap ng masisisi.",
+    "Sa gitna ng impeachment case laban kay Vice President Sara Duterte, mahalagang timbangin ang mga ebidensya, pakinggan ang magkabilang panig, at manindigan para sa patas at makatarungang proseso.",
 
     category:
-    "Kolum",
+    "Editoryal",
 
     date:
-    "",
+    "Agosto 2026",
 
-    author:
-    "Sean Michael Bandilla",
+    sortDate:
+    "2026-08-29",
+
+    writer:
+    "Kenneth Tuscano",
 
     photographer:
+    "",
+
+    illustrator:
     "Ram Mendoza",
 
-    illustrator:
-    "",
-
     editor:
     "",
 
-    otherCredit:
+    videographer:
+    "",
+
+    designer:
     "",
 
     keywords:
-    "Sisi o Katotohanan guro paaralan karahasan kabataan tahanan pamilya edukasyon ebidensiya akusasyon pananagutan katotohanan",
+    "Hanggang Kailan Tayo Magbubulag-bulagan Sara Duterte impeachment case Vice President Sara Duterte ebidensya katotohanan katarungan pananagutan politika propaganda",
 
     content:
-    "guro paaralan kabataan pamilya tahanan komunidad akusasyon ebidensiya pananagutan katotohanan",
+    "Hindi lahat ng katotohanan kailangan patunayan hindi lahat ng kasinungalingan kayang pagtakpan impeachment Sara Duterte ebidensya proseso batas katarungan pananagutan",
 
     image:
-    "Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png",
+    "",
 
     url:
-    "sisi.html"
+    "mata.html"
 },
 
 
 /* =====================================================
-   1. PERFORMING ARTS HALL
+   2. BAKIT NGA BA MARAMING BAGYO ANG DUMADAAN SA PILIPINAS?
 ===================================================== */
 
 {
     title:
-    "Bagong Performing Arts Hall Pinasinayaan sa SSHS",
+    "Bakit Nga Ba Maraming Bagyo ang Dumadaan sa Pilipinas?",
 
     description:
-    "Pormal nang binuksan ang bagong Performing Arts Hall ng Sucat Senior High School (SSHS) sa isinagawang pasinaya na may temang Where Art Comes Alive nitong Hunyo 22, 2026.",
+    "Sinusuri ng balitang agham kung bakit madalas daanan ng mga bagyo ang Pilipinas at kung paano nakaaapekto ang lokasyon at climate change sa pagbuo at paglakas ng mga ito.",
 
     category:
-    "Balita",
+    "Balitang Agham",
 
     date:
-    "Hunyo 22, 2026",
+    "Agosto 2026",
 
-    author:
-    "Wilmarie A. Gonzales",
+    sortDate:
+    "2026-08-28",
 
-    photographer:
-    "Joanna Zyme M. Beltran",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    otherCredit:
-    "",
-
-    keywords:
-    "Performing Arts Hall SSHS Sucat Senior High School Where Art Comes Alive sining pasinaya Dr Jay Boy Evano Meniano Ebora Ada Trinidad Tagle Jorge Endozo PVA Cypheria Dance Troupe ribbon cutting",
-
-    content:
-    "PVA Performing Visual Arts Cypheria Dance Troupe sining pagtatanghal pasilidad paaralan",
-
-    image:
-    "Messenger_creation_CC6E278C-72C7-4F31-934B-DE99E607B71E.jpeg",
-
-    url:
-    "performinghall.html"
-},
-
-
-/* =====================================================
-   2. CAREER GUIDANCE
-===================================================== */
-
-{
-    title:
-    "Career Guidance ng SIM Diamond, Dinaluhan ng mga Kababaihang Mag-aaral ng SSHS",
-
-    description:
-    "Nagkaroon ng Career Support Program para sa mga mag-aaral ng Sucat Senior High School sa pangunguna ng Soroptimist International Manila Diamond – Dream It, Be It Organization noong Hunyo 25, 2026.",
-
-    category:
-    "Balita",
-
-    date:
-    "Hunyo 25, 2026",
-
-    author:
-    "Wilmarie A. Gonzales",
+    writer:
+    "Melnard Rain Pamesa",
 
     photographer:
     "",
 
     illustrator:
-    "",
+    "Lyla Lavigne Esporlas",
 
     editor:
     "",
 
-    otherCredit:
+    videographer:
+    "",
+
+    designer:
     "",
 
     keywords:
-    "Career Guidance SIM Diamond Soroptimist International Manila Diamond SIMD Dream It Be It DIBI Christine Codrington Kinwood Galiza Christina Dela Cruz Frey scholarship Dioceldo Sy career support",
+    "Bakit Nga Ba Maraming Bagyo Dumadaan Pilipinas bagyo PAGASA Philippine Area of Responsibility PAR climate change Pacific Typhoon Belt karagatan Pasipiko low pressure area Pilandok panahon ulan",
 
     content:
-    "career planning SMART scholarship students kababaihan mag aaral",
+    "maraming bagyo Pilipinas PAGASA PAR climate change Pacific Typhoon Belt karagatan Pasipiko tropikal na bagyo lokasyon greenhouse gases panahon kalamidad paghahanda",
 
     image:
-    "Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg",
+    "",
 
     url:
-    "career.html"
+    "bakit.html"
 },
 
 
 /* =====================================================
-   3. KAMPANYA NG ANG SALIMBAY
+   3. PERA O PANGARAP
 ===================================================== */
 
 {
     title:
-    "Kampanya Para sa mga Batang Mamamahayag, Inilunsad ng Ang Salimbay",
+    "Pera o Pangarap: Reyalidad ng Isang Guro",
 
     description:
-    "Bilang paghahanda sa pagpili ng mga bagong miyembro ng opisyal na publikasyong Filipino ng paaralan, inilunsad ng Ang Salimbay ang kampanya upang hikayatin ang mga mag-aaral na makilahok sa pamamahayag.",
+    "Mababang sahod, mabigat na responsibilidad, at patuloy na paghahanap ng mas magandang buhay—isang editoryal tungkol sa kalagayan ng mga guro at sa pagpapahalaga sa kanilang serbisyo.",
 
     category:
-    "Balita",
+    "Editoryal",
 
     date:
-    "2026",
+    "Agosto 2026",
 
-    author:
-    "Ang Salimbay",
+    sortDate:
+    "2026-08-27",
 
-    photographer:
-    "Ram Mendoza / Bryan James Ebante / Rashad Arkjan Miranda",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    otherCredit:
-    "",
-
-    keywords:
-    "Ang Salimbay kampanya batang mamamahayag journalism pamamahayag bagong miyembro Sucat Senior High School",
-
-    content:
-    "pahayagan pamamahayag tinig mag aaral journalism campaign",
-
-    /*
-       NOTE:
-       Ito ang filename na ginagamit mismo ng
-       nanghikayat.html sa GitHub.
-    */
-
-    image:
-    "Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg",
-
-    url:
-    "nanghikayat.html"
-},
-
-
-/* =====================================================
-   4. PAGPUPULONG / BAGONG MAMAMAHAYAG
-===================================================== */
-
-{
-    title:
-    "Ang Salimbay, Nagbukas ng Pinto Para sa mga Bagong Mamamahayag",
-
-    description:
-    "Nagkaroon ng pagpupulong ang Ang Salimbay noong Hulyo 18, 2026 bilang daan sa paghahanap ng mga panibagong miyembro ng pahayagan.",
-
-    category:
-    "Balita",
-
-    date:
-    "Hulyo 18, 2026",
-
-    author:
-    "Wilmarie Gonzales",
+    writer:
+    "Danna Mae Amador",
 
     photographer:
     "",
 
     illustrator:
-    "",
+    "Ram Mendoza",
 
     editor:
     "",
 
-    otherCredit:
+    videographer:
+    "",
+
+    designer:
     "",
 
     keywords:
-    "Ang Salimbay bagong mamamahayag journalism pagpupulong Nheil Patrick Raymunde Ang Katha DSPC 2024 Radio Broadcasting TV Broadcasting Individual Categories",
+    "Pera o Pangarap Reyalidad ng Isang Guro guro sahod sweldo Teacher I DepEd Senate Bill 335 Dagdag Suweldo guro JV Ejercito pampublikong paaralan pribadong paaralan edukasyon",
 
     content:
-    "pagsulat pagbigkas pagguhit photography pagsusulit bagong miyembro",
+    "guro sahod suweldo DepEd Teacher I Senate Bill 335 Dagdag Suweldo mga guro pampublikong paaralan pribadong paaralan serbisyo edukasyon pamahalaan",
 
     image:
-    "received_1259784629511883.jpeg",
+    "Messenger_creation_C0A77FB8-959E-4EE6-A75E-FEADC1AF617F.png",
 
     url:
-    "pagpupulong.html"
+    "guro.html"
 },
 
 
 /* =====================================================
-   5. MUNWALK
+   4. PAGLUSONG SA TUBIG
 ===================================================== */
 
 {
     title:
-    "MUNwalk SNEAKER Turn Over Ceremony sa Sucat Senior High School",
+    "Paglusong sa Tubig, Nakalalason Pala",
 
     description:
-    "Ipinamahagi ang mga libreng sapatos ng Pamahalaang Lungsod ng Muntinlupa para sa mga mag-aaral ng Sucat Senior High School.",
+    "Hindi lamang simpleng tubig-ulan ang baha dahil maaari itong maglaman ng bacteria, dumi, kemikal, debris, at iba pang panganib na maaaring makapinsala sa kalusugan.",
 
     category:
-    "Balita",
+    "Balitang Agham",
 
     date:
-    "Hulyo 15, 2026",
+    "Agosto 27, 2026",
 
-    author:
-    "Wilmarie Gonzales",
+    sortDate:
+    "2026-08-27",
 
-    photographer:
-    "",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    otherCredit:
-    "",
-
-    keywords:
-    "MUNwalk SNEAKER sapatos Muntinlupa SSHS Jorge Endozo Erwin Alfonso Rhodora Mandap Joel Cruz Wesly Aquino Zhane Ayanna Palomo Marvie Salmingo Mayor Ruffy Biazon",
-
-    content:
-    "libreng sapatos Pamahalaang Lungsod Muntinlupa taxpayers zumba Sucsen Performers",
-
-    image:
-    "Messenger_creation_2777425902629198.jpeg",
-
-    url:
-    "munwalk.html"
-},
-
-
-/* =====================================================
-   6. JEREMY CORTEZ
-===================================================== */
-
-{
-    title:
-    "Nakakasilaw na Liwanag ng Pag-asa: Sucat Senior High School, Nagkaisa sa Paggunita kay Jeremy A. Cortez",
-
-    description:
-    "Nagkaisa ang pamayanan ng Sucat Senior High School sa isang candle-lighting ceremony upang parangalan ang buhay ni Jeremy A. Cortez.",
-
-    category:
-    "Lathalain",
-
-    date:
-    "2026",
-
-    author:
-    "Sean Michael Bandilla at Rashad Arkjan Miranda",
-
-    photographer:
-    "",
-
-    illustrator:
+    writer:
     "Bryan James Ebante",
 
-    editor:
-    "",
-
-    otherCredit:
-    "",
-
-    keywords:
-    "Jeremy A Cortez candle lighting paggunita Sucat Senior High School Scout Sr Scout Lyn Mar Danugo Every Nation Campus Alabang Sa Kabilang Buhay Kalapastangan Fitterkarma",
-
-    content:
-    "Scout candle lighting scripture reflection alaala pagdadalamhati pagkakaisa",
-
-    image:
-    "received_1259784629511883.jpeg",
-
-    url:
-    "jeremy.html"
-},
-
-
-/* =====================================================
-   7. LINGKOD-BAYAN
-===================================================== */
-
-{
-    title:
-    "Lingkod-Bayan o Lingkod ba 'yan?",
-
-    description:
-    "Isang editoryal tungkol sa pananagutan, attendance, at tunay na paglilingkod ng mga halal na opisyal sa bayan.",
-
-    category:
-    "Editoryal",
-
-    date:
-    "2026",
-
-    author:
-    "Kenneth Tuscano",
-
     photographer:
-    "Ram Mendoza",
+    "",
 
     illustrator:
     "",
@@ -357,45 +189,51 @@ const articles = [
     editor:
     "",
 
-    otherCredit:
+    videographer:
+    "",
+
+    designer:
     "",
 
     keywords:
-    "Lingkod Bayan Senado senador attendance serbisyo publiko Bato dela Rosa Camille Villar Alan Cayetano GMA Public Affairs",
+    "Paglusong sa Tubig Nakalalason Pala baha floodwater leptospirosis bacteria Leptospira ulan kalusugan kontaminadong tubig panganib",
 
     content:
-    "58 session days Senate attendance public service accountability elections botante",
+    "Paglusong sa Tubig Nakalalason Pala baha leptospirosis kontaminadong tubig bacteria kalusugan panganib",
 
     image:
-    "received_1552567129154682.jpeg",
+    "Messenger_creation_865FFB73-7D88-46E9-AA78-DDB4F2AF3B4F.png",
 
     url:
-    "lingkod.html"
+    "baha.html"
 },
 
 
 /* =====================================================
-   8. ESKUWELAGIM
+   5. EALA, TUMBOK ANG BAGONG RUROK
 ===================================================== */
 
 {
     title:
-    "EskuweLAGIM",
+    "Eala, Tumbok ang Bagong Rurok",
 
     description:
-    "Isang editoryal tungkol sa kaligtasan sa paaralan, karahasan, disiplina, seguridad, at pananagutan ng komunidad.",
+    "Muling gumawa ng kasaysayan si Alex Eala matapos umakyat sa No. 18 sa WTA rankings at magtala ng panibagong career-high bago ang kaniyang pagbabalik sa US Open.",
 
     category:
-    "Editoryal",
+    "Isports",
 
     date:
-    "2026",
+    "Agosto 24, 2026",
 
-    author:
-    "Kenneth Tuscano",
+    sortDate:
+    "2026-08-24",
+
+    writer:
+    "Wilmar Gaspar",
 
     photographer:
-    "Ram Mendoza",
+    "",
 
     illustrator:
     "",
@@ -403,25 +241,28 @@ const articles = [
     editor:
     "",
 
-    otherCredit:
+    videographer:
     "",
 
+    designer:
+    "Sean Michael Bandilla",
+
     keywords:
-    "EskuweLAGIM paaralan kaligtasan karahasan seguridad Las Piñas National High School LPNHS school violence metal detector guwardiya",
+    "Alex Eala tennis WTA rankings US Open Washington Open Canadian Open Cincinnati Open Felix Auger-Aliassime Belinda Bencic Amanda Anisimova Philippine tennis",
 
     content:
-    "paaralan seguridad estudyante guro magulang komunidad disiplina",
+    "Alex Eala bagong career-high No. 18 WTA rankings US Open tennis Washington Open Canadian Open Cincinnati Open",
 
     image:
-    "received_2517081808793748.jpeg",
+    "Messenger_creation_BB727CB0-3070-45BF-8B4C-C43EDE480D96.png",
 
     url:
-    "lagim.html"
+    "alex.html"
 },
 
 
 /* =====================================================
-   9. BASANG KALSADA MASAYANG PARADA
+   6. BASANG KALSADA, MASAYANG PARADA
 ===================================================== */
 
 {
@@ -429,7 +270,7 @@ const articles = [
     "Basang Kalsada, Masayang Parada: Pista ni Sto. Domingo de Guzman, Hindi Nagpatinag sa Ulan",
 
     description:
-    "Hindi nagpahuli ang mga taga-Sucat sa pagdiriwang ng pista ni Sto. Domingo de Guzman sa kabila ng ulan, karakol, at parada.",
+    "Pista ni Sto. Domingo de Guzman sa Sucat na itinuloy sa kabila ng ulan, tampok ang karakol, parada, pananampalataya, at pagkakaisa ng komunidad.",
 
     category:
     "Lathalain",
@@ -437,7 +278,10 @@ const articles = [
     date:
     "Agosto 8, 2026",
 
-    author:
+    sortDate:
+    "2026-08-08",
+
+    writer:
     "Rashad Arkjan Miranda",
 
     photographer:
@@ -449,22 +293,185 @@ const articles = [
     editor:
     "",
 
-    otherCredit:
+    videographer:
+    "",
+
+    designer:
     "",
 
     keywords:
-    "Sto Domingo de Guzman pista fiesta Sucat Muntinlupa ulan karakol parada Sto Domingo de Guzman Parish Barangay Sucat",
+    "Basang Kalsada Masayang Parada Sto Domingo de Guzman pista fiesta Sucat ulan karakol parada pananampalataya komunidad",
 
     content:
-    "Basang Kalsada Masayang Parada pista ulan karakol parada komunidad",
+    "Basang Kalsada Masayang Parada Pista Sto Domingo de Guzman Sucat ulan karakol parada fiesta",
 
     image:
-    "Messenger_creation_C6572A7C-EC18-4B97-A68C-32D28DF9E756.jpeg",
+    "Messenger_creation_E01A3847-1D12-4638-84AD-98AC4A477C96.png",
 
     url:
     "fiesta-sto-domingo.html"
 },
 
+
+/* =====================================================
+   7. TINGNAN | SULYAP SA SONA, TINIG NG WIKA
+===================================================== */
+
+{
+    title:
+    "TINGNAN | Sulyap sa SONA, Tinig ng Wika",
+
+    description:
+    "Bilang bahagi ng pagdiriwang sa Buwan ng Wika, nagkaisa ang mga mag-aaral ng Sucat Senior High School sa paglikha ng mga litratong nagpapakita ng kanilang reaksyon sa naganap na ika-limang State of the Nation Address (SONA) sa pamamagitan ng temang “Larawan-Reaksyon: Sulyap sa SONA, Tinig ng Wika.”",
+
+    category:
+    "Balita",
+
+    date:
+    "Agosto 2026",
+
+    sortDate:
+    "2026-08-01",
+
+    writer:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Buwan ng Wika Sucat Senior High School SSHS State of the Nation Address SONA ika-limang SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika Filipino Wika wikang Filipino patimpalak larawan reaksyon mag-aaral estudyante Sucsenian Pangulong Ferdinand Marcos Jr. Marcos Jr. magsasaka guro doktor estudyante mamamayang Pilipino lipunan makabayan pagiging malikhain saloobin damdaming makabayan photography photo contest larawan Buwan ng Wika 2026",
+
+    content:
+    "Buwan ng Wika Sucat Senior High School SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika mag-aaral larawan reaksyon magsasaka guro doktor estudyante Ferdinand Marcos Jr. pagiging malikhain saloobin makabayan",
+
+    image:
+    "",
+
+    url:
+    "sonasshs.html"
+},
+
+
+/* =====================================================
+   8. KATOTOHANAN: BOSES O BATAYAN
+===================================================== */
+
+{
+    title:
+    "Katotohanan: Boses o Batayan",
+
+    description:
+    "Tinutukoy ng kolum ang kahalagahan ng pamamahayag, pananagutan ng media, at kritikal na pagtanggap ng publiko sa impormasyon sa gitna ng lumalaking impluwensiya ng social media at content creators.",
+
+    category:
+    "Kolum",
+
+    date:
+    "Hulyo 31, 2026",
+
+    sortDate:
+    "2026-07-31",
+
+    writer:
+    "Sean Michael Bandilla",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Lyla Lavigne Esporlas",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Katotohanan Boses o Batayan pamamahayag journalism Philippine journalism media mainstream media social media content creators influencers balita news fake news misinformation disinformation fact checking fact-checking media literacy press freedom pananagutan media accountability Vice President Sara Duterte Reuters Institute Digital News Report 2026 Philippine media news trust public trust journalism Pilipinas current events vlogger blogger impormasyon ebidensiya opinyon komentaryo",
+
+    content:
+    "Katotohanan Boses o Batayan pamamahayag journalism media social media content creators balita fact checking media literacy pananagutan katotohanan ebidensiya",
+
+    image:
+    "",
+
+    url:
+    "saradutae.html"
+},
+
+
+/* =====================================================
+   9. FISHERIES SCHOLARSHIP PROGRAM
+===================================================== */
+
+{
+    title:
+    "Fisheries Scholarship Program, Ipinakilala ng BFAR sa SSHS",
+
+    description:
+    "Bumisita ang Bureau of Fisheries and Aquatic Resources (BFAR) sa Sucat Senior High School (SSHS) upang ipakilala sa mga mag-aaral sa ika-12 baitang ang Fisheries Scholarship Program at ang mga oportunidad na kaakibat nito.",
+
+    category:
+    "Balita",
+
+    date:
+    "Agosto 12, 2026",
+
+    sortDate:
+    "2026-08-12",
+
+    writer:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "Sean Michael Bandilla",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Fisheries Scholarship Program BFAR Bureau of Fisheries and Aquatic Resources Sucat Senior High School SSHS scholarship scholarship program Fisheries Bachelor of Science in Fisheries BS Fisheries Grade 12 mag-aaral estudyante mangingisda fisherfolk parent guardian Indigenous Group Indigenous Peoples IPs Pilipino Filipino General Weighted Average GWA 80 percent 80% allowance 8000 8000 pesos buwanang allowance entrance examination college edukasyon financial assistance pinansyal pangisdaan fisheries scholarship oportunidad",
+
+    content:
+    "BFAR Fisheries Scholarship Program Sucat Senior High School Grade 12 scholarship BS Fisheries mangingisda Indigenous Group GWA allowance entrance examination college pangisdaan",
+
+    image:
+    "",
+
+    url:
+    "bfar.html"
+},
+
+
+/* =====================================================
+   10. PAX SILICA
+===================================================== */
 
 {
     title:
@@ -479,7 +486,10 @@ const articles = [
     date:
     "Agosto 11, 2026",
 
-    author:
+    sortDate:
+    "2026-08-11",
+
+    writer:
     "Bryan James Ebante",
 
     photographer:
@@ -491,11 +501,11 @@ const articles = [
     editor:
     "",
 
-    otherCredit:
+    videographer:
     "",
 
-    credits:
-    "✍🏼 Bryan James Ebante / 🖼️ Ram Mendoza",
+    designer:
+    "",
 
     keywords:
     "Pax Silica New Clark City Tarlac Capas O'Donnell Aranguren Santa Lucia artificial intelligence AI semiconductors semi-conductors advanced technology technology data centers data center advanced manufacturing farmers magsasaka Indigenous Peoples IPs katutubong komunidad agricultural land sakahan tubig water resources kalikasan environment BCDA Bases Conversion and Development Authority Project Affected Persons PAPs investments trabaho direct jobs Philippine technology sector New Clark City technology hub Balitang Agham Agham science teknolohiya",
@@ -511,63 +521,27 @@ const articles = [
 },
 
 
+/* =====================================================
+   11. BAGONG MAMAMAHAYAG
+===================================================== */
+
 {
     title:
-    "Fisheries Scholarship Program, Ipinakilala ng BFAR sa SSHS",
+    "Ang Salimbay, Nagbukas ng Pinto Para sa mga Bagong Mamamahayag",
 
     description:
-    "Bumisita ang Bureau of Fisheries and Aquatic Resources (BFAR) sa Sucat Senior High School (SSHS) upang ipakilala sa mga mag-aaral sa ika-12 baitang ang Fisheries Scholarship Program at ang mga oportunidad na kaakibat nito.",
+    "Nagkaroon ng pagpupulong ang Ang Salimbay bilang daan sa paghahanap ng mga panibagong miyembro ng pahayagan.",
 
     category:
     "Balita",
 
     date:
-    "Agosto 12, 2026",
+    "Hulyo 18, 2026",
 
-    author:
-    "Wilmarie Gonzales",
+    sortDate:
+    "2026-07-18",
 
-    photographer:
-    "Sean Michael Bandilla",
-
-    illustrator:
-    "",
-
-    editor:
-    "",
-
-    otherCredit:
-    "",
-
-    credits:
-    "✍🏼 Wilmarie Gonzales / 🖼️ Sean Michael Bandilla",
-
-    keywords:
-    "Fisheries Scholarship Program BFAR Bureau of Fisheries and Aquatic Resources Sucat Senior High School SSHS scholarship scholarship program Fisheries Bachelor of Science in Fisheries BS Fisheries Grade 12 mag-aaral estudyante mangingisda fisherfolk parent guardian Indigenous Group Indigenous Peoples IPs Pilipino Filipino General Weighted Average GWA 80 percent 80% allowance 8000 8000 pesos buwanang allowance entrance examination college edukasyon financial assistance pinansyal pangisdaan fisheries scholarship oportunidad",
-
-    content:
-    "BFAR Fisheries Scholarship Program Sucat Senior High School Grade 12 scholarship BS Fisheries mangingisda Indigenous Group GWA allowance entrance examination college pangisdaan",
-
-
-    url:
-    "bfar.html"
-},
-
-
-{
-    title:
-    "TINGNAN | Sulyap sa SONA, Tinig ng Wika",
-
-    description:
-    "Bilang bahagi ng pagdiriwang sa Buwan ng Wika, nagkaisa ang mga mag-aaral ng Sucat Senior High School sa paglikha ng mga litratong nagpapakita ng kanilang reaksyon sa naganap na ika-limang State of the Nation Address (SONA) sa pamamagitan ng temang “Larawan-Reaksyon: Sulyap sa SONA, Tinig ng Wika.”",
-
-    category:
-    "Balita",
-
-    date:
-    "Agosto 2026",
-
-    author:
+    writer:
     "Wilmarie Gonzales",
 
     photographer:
@@ -579,64 +553,451 @@ const articles = [
     editor:
     "",
 
-    otherCredit:
+    videographer:
     "",
 
-    credits:
-    "✍🏼 Wilmarie Gonzales",
+    designer:
+    "",
 
     keywords:
-    "Buwan ng Wika Sucat Senior High School SSHS State of the Nation Address SONA ika-limang SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika Filipino Wika wikang Filipino patimpalak larawan reaksyon mag-aaral estudyante Sucsenian Pangulong Ferdinand Marcos Jr. Marcos Jr. magsasaka guro doktor estudyante mamamayang Pilipino lipunan makabayan pagiging malikhain saloobin damdaming makabayan photography photo contest larawan Buwan ng Wika 2026",
+    "Ang Salimbay bagong mamamahayag journalism pagpupulong School Paper Adviser SPA Nheil Patrick Raymunde Ang Katha DSPC Radio Broadcasting TV Broadcasting",
 
     content:
-    "Buwan ng Wika Sucat Senior High School SONA Larawan-Reaksyon Sulyap sa SONA Tinig ng Wika mag-aaral larawan reaksyon magsasaka guro doktor estudyante Ferdinand Marcos Jr. pagiging malikhain saloobin makabayan",
+    "Ang Katha Ang Salimbay Nheil Patrick Raymunde journalism mamamahayag pagsusulat pagbigkas pagguhit larawan photography",
+
+    image:
+    "received_1259784629511883.jpeg",
 
     url:
-    "sonasshs.html"
+    "pagpupulong.html"
 },
+
+
+/* =====================================================
+   12. MUNWALK
+===================================================== */
 
 {
     title:
-    "Katotohanan: Boses o Batayan",
+    "MUNwalk SNEAKER Turn Over Ceremony sa Sucat Senior High School (SSHS)",
 
     description:
-    "Tinutukoy ng kolum ang kahalagahan ng pamamahayag, pananagutan ng media, at kritikal na pagtanggap ng publiko sa impormasyon sa gitna ng lumalaking impluwensiya ng social media at content creators.",
+    "Ipinamahagi ang mga libreng sapatos ng Pamahalaang Lungsod ng Muntinlupa para sa mga mag-aaral ng Sucat Senior High School.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hulyo 15, 2026",
+
+    sortDate:
+    "2026-07-15",
+
+    writer:
+    "Wilmarie Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "MUNwalk SNEAKER sapatos Muntinlupa SSHS Pamahalaang Lungsod Jorge Endozo Erwin Alfonso Rhodora Mandap Joel Cruz Wesly Aquino Zhane Ayanna Palomo",
+
+    content:
+    "MUNwalk SNEAKER Turn Over Ceremony libreng sapatos Muntinlupa Sucat Senior High School DDRM SSLG GPTA",
+
+    image:
+    "received_2517081808793748.jpeg",
+
+    url:
+    "munwalk.html"
+},
+
+
+/* =====================================================
+   13. PERFORMING ARTS HALL
+===================================================== */
+
+{
+    title:
+    "Bagong Performing Arts Hall, Pinasinayaan sa SSHS",
+
+    description:
+    "Pormal nang binuksan ang bagong Performing Arts Hall ng Sucat Senior High School sa isang pasinaya na may temang Where Art Comes Alive.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hunyo 22, 2026",
+
+    sortDate:
+    "2026-06-22",
+
+    writer:
+    "Wilmarie A. Gonzales",
+
+    photographer:
+    "Joanna Zyme M. Beltran",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Performing Arts Hall SSHS sining pasinaya Where Art Comes Alive Jay Boy Evano Meniano Ebora Ada Trinidad Tagle Jorge Endozo PVA Cypheria Dance Troupe ribbon cutting",
+
+    content:
+    "Performing Visual Arts PVA Pathway Cypheria Dance Troupe Ribbon Cutting Ceremony Performing Arts Hall sining",
+
+    image:
+    "Messenger_creation_CC6E278C-72C7-4F31-934B-DE99E607B71E.jpeg",
+
+    url:
+    "performinghall.html"
+},
+
+
+/* =====================================================
+   14. CAREER GUIDANCE
+===================================================== */
+
+{
+    title:
+    "Career Guidance ng SIM Diamond, Dinaluhan ng mga Kababaihang Mag-aaral ng SSHS",
+
+    description:
+    "Nagkaroon ng Career Support Program para sa mga mag-aaral ng Sucat Senior High School sa pangunguna ng Soroptimist International Manila Diamond.",
+
+    category:
+    "Balita",
+
+    date:
+    "Hunyo 25, 2026",
+
+    sortDate:
+    "2026-06-25",
+
+    writer:
+    "Wilmarie A. Gonzales",
+
+    photographer:
+    "",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Career Guidance SIM Diamond DIBI Scholarship career Christine Codrington Kinwood Galiza Christina Dela Cruz Frey SMART Dioceldo Sy",
+
+    content:
+    "Soroptimist International Manila Diamond Dream It Be It Career Support Program Scholarship Program Dioceldo Big Dream",
+
+    image:
+    "Messenger_creation_EADC6BF3-7E9F-483E-ADF5-29787308405F.jpeg",
+
+    url:
+    "career.html"
+},
+
+
+/* =====================================================
+   15. KAMPANYA PARA SA MGA BATANG MAMAMAHAYAG
+===================================================== */
+
+{
+    title:
+    "Kampanya Para sa mga Batang Mamamahayag, Inilunsad ng Ang Salimbay",
+
+    description:
+    "Inilunsad ng Ang Salimbay ang kampanya upang hikayatin ang mga mag-aaral ng SSHS na makilahok sa pamamahayag.",
+
+    category:
+    "Balita",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-01",
+
+    writer:
+    "",
+
+    photographer:
+    "Ram Mendoza / Bryan James Ebante / Rashad Arkjan Miranda",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Ang Salimbay kampanya mamamahayag journalism batang mamamahayag recruitment publication",
+
+    content:
+    "pag-aanunsyo pamamahayag pagsusulat balita paaralan komunidad",
+
+    image:
+    "Images/Messenger_creation_ADE8D76A-1078-418E-B254-0D737A6C51AA.jpeg",
+
+    url:
+    "nanghikayat.html"
+},
+
+
+/* =====================================================
+   16. JEREMY A. CORTEZ
+===================================================== */
+
+{
+    title:
+    "Nakakasilaw na Liwanag ng Pag-asa: Sucat Senior High School, Nagkaisa sa Paggunita kay Jeremy A. Cortez",
+
+    description:
+    "Nagkaisa ang pamayanan ng Sucat Senior High School sa isang candle-lighting ceremony bilang paggunita kay Jeremy A. Cortez.",
+
+    category:
+    "Lathalain",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-02",
+
+    writer:
+    "Sean Michael Bandilla at Rashad Arkjan Miranda",
+
+    photographer:
+    "Bryan James Ebante",
+
+    illustrator:
+    "",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Jeremy A Cortez SSHS paggunita candle lighting Sr Scout Scout Adviser Lyn Mar Danugo Every Nation Campus Alabang",
+
+    content:
+    "candle lighting ceremony paggunita pagkakaisa pag-asa Sucat Senior High School Jeremy",
+
+    image:
+    "Messenger_creation_1695648618385477.jpeg",
+
+    url:
+    "jeremy.html"
+},
+
+
+/* =====================================================
+   17. LINGKOD-BAYAN
+===================================================== */
+
+{
+    title:
+    "Lingkod-Bayan o Lingkod ba ’yan?",
+
+    description:
+    "Isang editoryal tungkol sa pananagutan, attendance, at tungkulin ng mga halal na opisyal sa serbisyo publiko.",
+
+    category:
+    "Editoryal",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-03",
+
+    writer:
+    "Kenneth Tuscano",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Lingkod Bayan Lingkod ba yan Senado senador attendance serbisyo publiko GMA Public Affairs Bato dela Rosa Camille Villar Alan Cayetano",
+
+    content:
+    "Senado session days attendance absenteeism serbisyo publiko pananagutan",
+
+    image:
+    "received_1552567129154682.jpeg",
+
+    url:
+    "lingkod.html"
+},
+
+
+/* =====================================================
+   18. ESKUWELAGIM
+===================================================== */
+
+{
+    title:
+    "EskuweLAGIM",
+
+    description:
+    "Editoryal tungkol sa kaligtasan sa paaralan, disiplina, at pananagutan ng komunidad sa paglikha ng ligtas na kapaligiran.",
+
+    category:
+    "Editoryal",
+
+    date:
+    "2026",
+
+    sortDate:
+    "2026-01-04",
+
+    writer:
+    "Kenneth Tuscano",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "EskuweLAGIM paaralan kaligtasan karahasan seguridad Las Piñas National High School LPNHS school safety",
+
+    content:
+    "paaralan seguridad disiplina edukasyon kaligtasan komunidad",
+
+    image:
+    "Messenger_creation_2777425902629198.jpeg",
+
+    url:
+    "lagim.html"
+},
+
+
+/* =====================================================
+   19. SISI O KATOTOHANAN?
+===================================================== */
+
+{
+    title:
+    "Pananagutan, Hindi Pagbubuntunan",
+
+    description:
+    "Hindi maipagkakaila ang malaking papel ng mga guro sa paghubog ng asal, ugali, at pananaw ng mga kabataan. Ngunit sa oras ng trahedya, higit na mahalagang hanapin ang katotohanan batay sa ebidensiya kaysa agad maghanap ng masisisi.",
 
     category:
     "Kolum",
 
     date:
-    "Hulyo 31, 2026",
+    "",
 
-    author:
+    sortDate:
+    "2026-01-05",
+
+    writer:
     "Sean Michael Bandilla",
 
     photographer:
-    "",
+    "Ram Mendoza",
 
     illustrator:
-    "Lyla Lavigne Esporlas",
+    "",
 
     editor:
     "",
 
-    otherCredit:
+    videographer:
     "",
 
-    credits:
-    "✍🏼 Sean Michael Bandilla / 🖼️ Lyla Lavigne Esporlas",
+    designer:
+    "",
 
     keywords:
-    "Katotohanan Boses o Batayan pamamahayag journalism Philippine journalism media mainstream media social media content creators influencers balita news fake news misinformation disinformation fact checking fact-checking media literacy press freedom pananagutan media accountability Vice President Sara Duterte Reuters Institute Digital News Report 2026 Philippine media news trust public trust journalism Pilipinas current events vlogger blogger impormasyon ebidensiya opinyon komentaryo",
+    "Sisi o Katotohanan guro paaralan karahasan kabataan tahanan pamilya edukasyon ebidensiya akusasyon pananagutan katotohanan",
 
     content:
-    "Katotohanan Boses o Batayan pamamahayag journalism media social media content creators balita fact checking media literacy pananagutan katotohanan ebidensiya",
+    "guro paaralan kabataan pamilya tahanan komunidad akusasyon ebidensiya pananagutan katotohanan",
 
     image:
-    "",
+    "Messenger_creation_4BF12874-B417-4C9F-9B65-66B3174C17C8.png",
 
     url:
-    "saradutae.html"
+    "sisi.html"
 }
 
 ];
+
+
+/* =====================================================
+   AUTOMATIC NEWEST-FIRST
+===================================================== */
+
+articles.sort(function(a, b) {
+
+    return new Date(b.sortDate) -
+           new Date(a.sortDate);
+
+});
