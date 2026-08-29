@@ -1,5 +1,162 @@
 const articles = [
 
+
+/* =====================================================
+   12. HANGGANG KAILAN TAYO MAGBUBULAG-BULAGAN?
+===================================================== */
+
+{
+    title:
+    "Hanggang Kailan Tayo Magbubulag-bulagan?",
+
+    description:
+    "Sa gitna ng impeachment case laban kay Vice President Sara Duterte, mahalagang timbangin ang mga ebidensya, pakinggan ang magkabilang panig, at manindigan para sa patas at makatarungang proseso.",
+
+    category:
+    "Editoryal",
+
+    date:
+    "Agosto 2026",
+
+    sortDate:
+    "2026-08-29",
+
+    writer:
+    "Kenneth Tuscano",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Hanggang Kailan Tayo Magbubulag-bulagan Sara Duterte impeachment case Vice President Sara Duterte ebidensya katotohanan katarungan pananagutan politika propaganda",
+
+    content:
+    "Hindi lahat ng katotohanan kailangan patunayan hindi lahat ng kasinungalingan kayang pagtakpan impeachment Sara Duterte ebidensya proseso batas katarungan pananagutan",
+
+    image:
+    "",
+
+    url:
+    "mata.html"
+},
+
+
+/* =====================================================
+   13. BAKIT NGA BA MARAMING BAGYO ANG DUMADAAN SA PILIPINAS?
+===================================================== */
+
+{
+    title:
+    "Bakit Nga Ba Maraming Bagyo ang Dumadaan sa Pilipinas?",
+
+    description:
+    "Sinusuri ng balitang agham kung bakit madalas daanan ng mga bagyo ang Pilipinas at kung paano nakaaapekto ang lokasyon at climate change sa pagbuo at paglakas ng mga ito.",
+
+    category:
+    "Balitang Agham",
+
+    date:
+    "Agosto 2026",
+
+    sortDate:
+    "2026-08-28",
+
+    writer:
+    "Melnard Rain Pamesa",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Lyla Lavigne Esporlas",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Bakit Nga Ba Maraming Bagyo Dumadaan Pilipinas bagyo PAGASA Philippine Area of Responsibility PAR climate change Pacific Typhoon Belt karagatan Pasipiko low pressure area Pilandok panahon ulan",
+
+    content:
+    "maraming bagyo Pilipinas PAGASA PAR climate change Pacific Typhoon Belt karagatan Pasipiko tropikal na bagyo lokasyon greenhouse gases panahon kalamidad paghahanda",
+
+    image:
+    "",
+
+    url:
+    "bakit.html"
+},
+
+
+/* =====================================================
+   14. PERA O PANGARAP
+===================================================== */
+
+{
+    title:
+    "Pera o Pangarap: Reyalidad ng Isang Guro",
+
+    description:
+    "Mababang sahod, mabigat na responsibilidad, at patuloy na paghahanap ng mas magandang buhay—isang editoryal tungkol sa kalagayan ng mga guro at sa pagpapahalaga sa kanilang serbisyo.",
+
+    category:
+    "Editoryal",
+
+    date:
+    "Agosto 2026",
+
+    sortDate:
+    "2026-08-27",
+
+    writer:
+    "Danna Mae Amador",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Pera o Pangarap Reyalidad ng Isang Guro guro sahod sweldo Teacher I DepEd Senate Bill 335 Dagdag Suweldo guro JV Ejercito pampublikong paaralan pribadong paaralan edukasyon",
+
+    content:
+    "guro sahod suweldo DepEd Teacher I Senate Bill 335 Dagdag Suweldo mga guro pampublikong paaralan pribadong paaralan serbisyo edukasyon pamahalaan",
+
+    image:
+    "Messenger_creation_C0A77FB8-959E-4EE6-A75E-FEADC1AF617F.png",
+
+    url:
+    "guro.html"
+}
+
+
 /* =====================================================
    1. PAGLUSONG SA TUBIG
 ===================================================== */
