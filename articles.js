@@ -2,6 +2,57 @@ const articles = [
 
 
 /* =====================================================
+   2. INAY, WAG PO!
+===================================================== */
+
+{
+    title:
+    "Inay, wag po!",
+
+    description:
+    "Isang lathalain tungkol sa trahedyang kinasangkutan ng mag-iinang Macalinao, at sa mga tanong na naiwan matapos ang isang paglalakbay na biglang nagwakas.",
+
+    category:
+    "Lathalain",
+
+    date:
+    "Agosto 2026",
+
+    sortDate:
+    "2026-08-29",
+
+    writer:
+    "Rashad Arkjan B. Miranda",
+
+    photographer:
+    "",
+
+    illustrator:
+    "Ram Bagavahn F. Mendoza",
+
+    editor:
+    "",
+
+    videographer:
+    "",
+
+    designer:
+    "",
+
+    keywords:
+    "Inay wag po Macalinao Margie Macalinao Jaeson Matthew Jaziel Margarette Angat Bulacan Frontline News lathalain trahedya pamilya paglalakbay katotohanan tanong",
+
+    content:
+    "Inay wag po Margie Macalinao Jaeson Matthew Jaziel Margarette Macalinao Angat Bulacan Frontline News paglalakbay trahedya katotohanan mga tanong pamilya",
+
+    image:
+    "Messenger_creation_E2A6C508-ACD8-4928-9E76-4BAB5C52C9E5.jpeg",
+
+    url:
+    "macalinao.html"
+},
+
+/* =====================================================
    1. HANGGANG KAILAN TAYO MAGBUBULAG-BULAGAN?
 ===================================================== */
 
