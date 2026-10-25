@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#650018">
+<title>Ang Salimbay | Digital Dyaryo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#650018;--deep:#35000e;--wine:#8b1734;--gold:#d8b779;--cream:#fff8ed;--ink:#292126}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:"DM Sans",sans-serif;background:radial-gradient(ellipse at 50% 0%,#7b1630 0%,#450013 45%,#21000a 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(#f6dfb4 .7px,transparent .7px);background-size:7px 7px}
+header{position:relative;z-index:2;padding:25px 5vw 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff22}
+.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:44px;height:44px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-family:"Playfair Display",serif;font-weight:800;font-size:22px;transform:rotate(-3deg)}
+.brand-name{font-family:"Playfair Display",serif;font-weight:800;font-size:clamp(20px,3vw,29px);letter-spacing:.4px}.brand-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e6cda2;margin-top:4px}
+.header-note{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8d5c0}
+main{width:min(1180px,94vw);margin:0 auto;padding:35px 0 25px}
+.intro{text-align:center;margin-bottom:24px}.eyebrow{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:4px;font-weight:700}
+h1{font-family:"Playfair Display",serif;font-size:clamp(28px,5vw,47px);margin:8px 0 7px;line-height:1.1}.intro p{margin:0;color:#ead8d5;font-size:14px}
+.viewer{display:flex;justify-content:center;align-items:center;min-height:55vh;position:relative;padding:12px 0 18px}
+.book-shell{position:relative;width:min(88vw,900px);height:min(68vh,680px);min-height:410px;display:flex;justify-content:center;align-items:center}
+#book{margin:auto!important}
+.page{background:#fffaf1;overflow:hidden;box-shadow:0 4px 20px #0003}
+.page canvas{width:100%;height:100%;display:block;object-fit:contain;background:#fffaf1}
+.cover-page{background:var(--cream);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:var(--maroon);padding:30px;border:8px double var(--maroon)}
+.cover-page .small{letter-spacing:3px;font-size:10px;text-transform:uppercase}.cover-page h2{font:800 clamp(30px,5vw,52px)/1.05 "Playfair Display",serif;margin:18px 0}.cover-page .rule{height:2px;width:55%;background:var(--gold);margin:8px auto 16px}.cover-page p{font-size:12px;line-height:1.7;max-width:240px}
+.loading{position:absolute;z-index:3;text-align:center;color:var(--cream);font-size:14px}.spinner{width:34px;height:34px;border:3px solid #ffffff30;border-top-color:var(--gold);border-radius:50%;margin:0 auto 12px;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.controls{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin:5px auto 0}
+.control-btn{border:1px solid #d8b77988;background:#ffffff0a;color:var(--cream);border-radius:4px;padding:11px 17px;font:600 13px "DM Sans",sans-serif;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:8px}
+.control-btn:hover:not(:disabled){background:var(--gold);color:var(--deep);transform:translateY(-1px)}.control-btn:disabled{opacity:.35;cursor:not-allowed}
+.page-counter{font-variant-numeric:tabular-nums;min-width:90px;text-align:center;color:#f2dfc2;font-size:13px}
+.progress-track{width:min(420px,75vw);height:3px;background:#ffffff25;margin:17px auto 0;overflow:hidden}.progress{height:100%;width:0;background:var(--gold);transition:width .25s}
+.hint{text-align:center;color:#d6bfc3;font-size:11px;margin-top:13px}
+footer{border-top:1px solid #ffffff20;text-align:center;padding:19px 15px 25px;color:#d9c3c7;font-size:11px;letter-spacing:.5px}
+footer strong{color:var(--gold);font-family:"Playfair Display",serif}
+.error{display:none;text-align:center;max-width:560px;padding:22px;background:#ffffff0b;border:1px solid #ffffff22;border-radius:8px;line-height:1.7}
+.error code{color:var(--gold)}
+@media(max-width:650px){header{padding:17px 4vw}.header-note{display:none}main{padding-top:25px}.viewer{min-height:unset}.book-shell{width:96vw;height:58vh;min-height:360px}.controls{gap:7px}.control-btn{padding:10px 12px}.hint{padding:0 18px}.brand-sub{font-size:8px;letter-spacing:1.2px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="brand-mark">S</div>
+    <div><div class="brand-name">Ang Salimbay</div><div class="brand-sub">Tinig · Katotohanan · Integridad</div></div>
+  </div>
+  <div class="header-note">Opisyal na Publikasyon ng SSHS</div>
+</header>
+<main>
+  <section class="intro">
+    <div class="eyebrow">Ang digital na edisyon</div>
+    <h1>Buksan. Basahin. Salimbayin.</h1>
+    <p>Isang bagong paraan upang basahin ang mga kuwento ng Sucat Senior High School.</p>
+  </section>
+  <section class="viewer" aria-label="Interactive newspaper flipbook">
+    <div class="loading" id="loading"><div class="spinner"></div><div>Inihahanda ang mga pahina ng dyaryo…</div></div>
+    <div class="book-shell"><div id="book"></div></div>
+    <div class="error" id="error">
+      <strong>Hindi ma-load ang dyaryo.</strong><br>
+      Tiyaking nasa iisang folder ang <code>index.html</code> at <code>NEWSPAPER_ANGSALIMBAYFINALFINAL.pdf</code>.
+      Kung binuksan mo ito mula sa local files at may browser restriction, i-upload ang dalawang file sa web hosting mo.
+    </div>
+  </section>
+  <div class="controls">
+    <button class="control-btn" id="prev" disabled aria-label="Previous page">← <span>Previous</span></button>
+    <div class="page-counter" id="counter">Page — / —</div>
+    <button class="control-btn" id="next" disabled aria-label="Next page"><span>Next</span> →</button>
+    <button class="control-btn" id="fullscreen" title="Toggle fullscreen">⛶ <span>Fullscreen</span></button>
+  </div>
+  <div class="progress-track"><div class="progress" id="progress"></div></div>
+  <div class="hint">Tip: I-click o i-drag ang sulok ng pahina para magbuklat. Maaari ring gamitin ang ← at → keys.</div>
+</main>
+<footer><strong>ANG SALIMBAY</strong> · Tinig ng kabataan, lipad ng katotohanan</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+<script>
+const PDF_FILE = "NEWSPAPER_ANGSALIMBAYFINALFINAL.pdf";
+const loading = document.getElementById("loading");
+const errorBox = document.getElementById("error");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const bookEl = document.getElementById("book");
+let flipBook = null;
+let totalPages = 0;
+
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+}
+function updateControls(current) {
+  counter.textContent = `Page ${Math.min(current + 1,totalPages)} / ${totalPages}`;
+  progress.style.width = `${((current + 1) / totalPages) * 100}%`;
+  prevBtn.disabled = current <= 0;
+  nextBtn.disabled = current >= totalPages - 1;
+}
+async function renderNewspaper() {
+  try {
+    if (!window.pdfjsLib || !window.St) throw new Error("Required libraries did not load.");
+    const pdf = await pdfjsLib.getDocument(PDF_FILE).promise;
+    totalPages = pdf.numPages;
+    const pages = [];
+    for (let n = 1; n <= totalPages; n++) {
+      const pdfPage = await pdf.getPage(n);
+      const base = pdfPage.getViewport({scale: 1});
+      const targetWidth = Math.min(1000, Math.max(650, window.innerWidth * 1.2));
+      const viewport = pdfPage.getViewport({scale: targetWidth / base.width});
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d", {alpha:false});
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      await pdfPage.render({canvasContext:ctx, viewport}).promise;
+      const page = document.createElement("div");
+      page.className = "page";
+      const image = document.createElement("img");
+      image.alt = `Ang Salimbay newspaper page ${n}`;
+      image.src = canvas.toDataURL("image/jpeg", .91);
+      image.style.cssText = "width:100%;height:100%;object-fit:contain;display:block";
+      page.appendChild(image);
+      pages.push(page);
+      pdfPage.cleanup();
+    }
+    const w = Math.min(440, Math.max(280, Math.floor(window.innerWidth * .42)));
+    const h = Math.min(622, Math.floor(w * 1.414));
+    flipBook = new St.PageFlip(bookEl, {
+      width:w, height:h, size:"stretch", minWidth:260, maxWidth:650,
+      minHeight:368, maxHeight:920, showCover:false, usePortrait:true,
+      flippingTime:750, drawShadow:true, maxShadowOpacity:.35,
+      mobileScrollSupport:false, swipeDistance:30, clickEventForward:true,
+      autoSize:true, startPage:0
+    });
+    flipBook.loadFromHTML(pages);
+    flipBook.on("flip", e => updateControls(e.data));
+    updateControls(0);
+    prevBtn.disabled = true;
+    nextBtn.disabled = totalPages <= 1;
+    loading.style.display = "none";
+    prevBtn.addEventListener("click", () => flipBook && flipBook.flipPrev());
+    nextBtn.addEventListener("click", () => flipBook && flipBook.flipNext());
+    document.getElementById("fullscreen").addEventListener("click", async () => {
+      const target = document.querySelector(".viewer");
+      try {
+        if (!document.fullscreenElement) await target.requestFullscreen();
+        else await document.exitFullscreen();
+      } catch(e) { /* Fullscreen may be blocked by the browser. */ }
+    });
+    document.addEventListener("keydown", e => {
+      if (!flipBook) return;
+      if (e.key === "ArrowRight") flipBook.flipNext();
+      if (e.key === "ArrowLeft") flipBook.flipPrev();
+    });
+  } catch (err) {
+    console.error(err);
+    loading.style.display = "none";
+    errorBox.style.display = "block";
+  }
+}
+renderNewspaper();
+</script>
+</body>
+</html>
